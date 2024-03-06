@@ -1,0 +1,66 @@
+{
+    "name": "askui-dev-docs",
+    "license": "MIT",
+    "author": "askui GmbH <info@askui.com> (http://www.askui.com/)",
+    "description": "Developer Docs for AskUI",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/askui/askui-dev-docs.git"
+    },
+    "bugs": {
+        "url": "https://github.com/askui/askui-dev-docs/issues"
+    },
+    "homepage": "https://github.com/askui/askui-dev-docs#askui",
+    "engines": {
+        "npm": ">8.1.2",
+        "node": ">16.13.2"
+    },
+    "keywords": [
+        "test",
+        "testing",
+        "automated-testing",
+        "e2e-testing",
+        "rpa",
+        "askui",
+        "function-testing",
+        "ui-testing",
+        "automation",
+        "selenium",
+        "cypress",
+        "playwright",
+        "ui-automation"
+    ],
+    "scripts": {
+        "postinstall": "husky install",
+        "postpublish": "pinst --enable",
+        "prepublishOnly": "pinst --disable",
+        "release:prerelease": "release-it --preRelease=next",
+        "release": "release-it"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "19.0.3",
+        "@commitlint/config-conventional": "16.0.0",
+        "@release-it/bumper": "^6.0.1",
+        "@release-it/conventional-changelog": "^8.0.1",
+        "@typescript-eslint/eslint-plugin": "5.10.0",
+        "@typescript-eslint/parser": "5.10.0",
+        "commitizen": "4.2.5",
+        "cz-conventional-changelog": "3.3.0",
+        "husky": "7.0.4",
+        "is-ci": "3.0.1",
+        "jira-prepare-commit-msg": "1.6.2",
+        "lint-staged": "12.3.2",
+        "pinst": "2.1.6",
+        "release-it": "^17.0.3",
+        "zx": "7.2.3"
+    },
+    "jira-prepare-commit-msg": {
+        "isConventionalCommit": true,
+        "messagePattern": "$M (#$J)"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    }
+}
