@@ -56,7 +56,7 @@ It might seem strange to mention empathy when talking about a statistical model.
 
 It is all about providing clear instructions!
 
-![A person spreading peanut butter with a knife on the side of a toast instead on top. Has the label AskUI. Right of them a little kid looking at them in disbelief. Has the label You. They are sitting in front of a counter which has peanut butter, jelly, another toastbroat and a sheet of paper label Your Instructions on it.](../images/empathize.png)
+![A person spreading peanut butter with a knife on the side of a toast instead on top. Has the label AskUI. Right of them a little kid looking at them in disbelief. Has the label You. They are sitting in front of a counter which has peanut butter, jelly, another toast and a sheet of paper label Your Instructions on it.](../images/empathize.png)
 
 For some users, this comes easy, while for others, it’s a long journey of relearning concepts. In any case, we’re here to help you along the way.
 

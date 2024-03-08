@@ -84,10 +84,10 @@ import { aui, mongodb } from './helper/jest.setup';
 
 ## Usage Example
 
-First we want to insert some testdata into our database. In this example just two labels for buttons. But it can be anything you would normally store in a MongoDB.
+First we want to insert some test data into our database. In this example just two labels for buttons. But it can be anything you would normally store in a MongoDB.
 
 :::note
-> 💡If you already have testdata in your database you can skip this step.
+> 💡If you already have test data in your database you can skip this step.
 :::
 
 ```typescript
@@ -105,7 +105,7 @@ describe('jest with askui', () => {
 });
 ```
 
-You can now use the testdata in any subsequent test. Let us try to click the buttons with the labels we just stored before.
+You can now use the test data in any subsequent test. Let us try to click the buttons with the labels we just stored before.
 
 ```typescript
 it('should click on buttons with a label', async () => {
@@ -120,4 +120,4 @@ it('should click on buttons with a label', async () => {
 
 ## Example Repository
 
-We also provide an [example repository on Github](https://github.com/askui/askui-mongodb-example) where you can check out the full setup described here 🙂.
+We also provide an [example repository on GitHub](https://github.com/askui/askui-mongodb-example) where you can check out the full setup described here 🙂.

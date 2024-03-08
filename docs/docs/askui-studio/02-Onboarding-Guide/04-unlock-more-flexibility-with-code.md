@@ -88,7 +88,7 @@ const captchaDetectedElement = texts[0];
 const captcha = captchaRaw.text.match(/\d{6}/)[0];
 ```
 
-Now the only thing that is left is to type the captcha back into the right textfield
+Now the only thing that is left is to type the CAPTCHA back into the correct textfield
 
 ```typescript
 await aui.typeIn(captcha).textfield().contains().text().withText("123456").exec();

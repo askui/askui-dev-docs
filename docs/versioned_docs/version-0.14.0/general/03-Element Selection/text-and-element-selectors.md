@@ -541,9 +541,9 @@ async function waitUntil(AskUICommand: () => Promise<void>, maxTry = 5) {
   }
 }
 
-// Wait for the text 'Github' to be displayed
+// Wait for the text 'GitHub' to be displayed
 await waitUntil(
   async () => 
-    aui.expect().text('Github').exists().exec()
+    aui.expect().text('GitHub').exists().exec()
   );
 ```
