@@ -46,7 +46,7 @@
         "@typescript-eslint/parser": "5.10.0",
         "commitizen": "4.2.5",
         "cz-conventional-changelog": "3.3.0",
-        "husky": "7.0.4",
+        "husky": "9.0.11",
         "is-ci": "3.0.1",
         "jira-prepare-commit-msg": "1.7.2",
         "lint-staged": "12.3.2",
