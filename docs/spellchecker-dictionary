@@ -121,7 +121,7 @@ notExists
 clickButton
 clickIcon
 clickText[s]?
-clickTextfield
+clickTextfield(NearestTo)?
 dragTo
 element[12]?
 pressKeyNTimes
