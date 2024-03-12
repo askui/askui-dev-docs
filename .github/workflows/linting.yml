@@ -21,9 +21,10 @@ jobs:
     # Make styles folder
     - name: Create folder
       run: |
-        ls -la
         mkdir -p .github/styles
-        cp -R askui-vale/styles/* .github/styles 
+        cp -R askui-vale/styles/* .github/styles/
+        ls -la .github
+        ls -la .github/styles
     # Lint with Vale
     - name: Vale
       uses: errata-ai/vale-action@reviewdog
