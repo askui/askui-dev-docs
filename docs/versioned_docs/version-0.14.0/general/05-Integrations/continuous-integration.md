@@ -7,7 +7,7 @@ You have two options to implement your pipeline. With our AskUI Runner Docker co
 
 The main difference without the AskUI Runner container is, that you can not download the latest version of your workflows from AskUI Studio inside your pipeline but have to provide them to your build.
 
-## Github Actions
+## GitHub Actions
 
 ### AskUI Runner Container: Get Workflows from AskUI Studio
 

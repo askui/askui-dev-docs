@@ -3,7 +3,7 @@ displayed_sidebar: askuiStudioSidebar
 custom_edit_url: null
 ---
 
-# Github Actions
+# GitHub Actions
 You have two options to implement your pipeline. With our AskUI Runner container or without it.
 
 The main difference without the AskUI Runner is, that you can not download the latest version of your workflows from AskUI Studio inside your pipeline but have to provide them to your build.
@@ -64,7 +64,7 @@ Then implement the following steps in your pipeline:
     - `ASKUI_WORKSPACE_ID`
     - `ASKUI_TOKEN`
     - `ASKUI_INFERENCE_SERVER_URL`
-    - __Optional:__ `UI_CONTROLLER_URL` if the UiController is running on a remote machine and not localhost or as a service inside your pipeline.
+    - __Optional:__ `UI_CONTROLLER_URL` if the UIController is running on a remote machine and not localhost or as a service inside your pipeline.
 - For reports:
   - Generate reports
   - Deploy/Send reports

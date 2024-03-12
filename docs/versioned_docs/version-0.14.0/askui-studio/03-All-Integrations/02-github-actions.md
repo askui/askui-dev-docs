@@ -3,7 +3,7 @@ displayed_sidebar: askuiStudioSidebar
 custom_edit_url: null
 ---
 
-# Github Actions
+# GitHub Actions
 You have two options to implement your pipeline. With our AskUI Runner container or without it.
 
 The main difference without the AskUI Runner is, that you can not download the latest version of your workflows from AskUI Studio inside your pipeline but have to provide them to your build.

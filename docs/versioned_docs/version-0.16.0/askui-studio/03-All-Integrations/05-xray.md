@@ -134,7 +134,7 @@ Please consult the [official XRAY-Docs](https://docs.getxray.app/display/XRAYCLO
 
 If you need help with setting up your CI-Pipeline in the first place, please consult [our continuous integration docs](../../general/05-Integrations/continuous-integration.md).
 
-## Github
+## GitHub
 
 Below you find the step you need to transfer the report file `junit.xml` to XRAY. Do not forget to set the variables ([See also official docs](https://docs.getxray.app/display/XRAY740/Integration+with+GitHub)):
 

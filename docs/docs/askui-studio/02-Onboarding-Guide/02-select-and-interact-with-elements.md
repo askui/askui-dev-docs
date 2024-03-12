@@ -31,7 +31,7 @@ Type "<text>"
 Selecting elements with AskUI is done *visually*. This means you describe what you see with a predefined syntax that is nearly natural language.
 
 ## Text Selectors
-Let us start with a a selector you will use a lot: The **with text** selector.
+Let us start with a selector you will use a lot: The **with text** selector.
 
 Clicking on a specific text is done like this:
 

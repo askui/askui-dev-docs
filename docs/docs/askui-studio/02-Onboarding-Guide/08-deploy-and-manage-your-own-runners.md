@@ -22,11 +22,11 @@ If you want to execute your workflows defined in **AskUI Studio** in your own en
 The `Askui-StartRunner` command starts the AskUI Runner. This function accepts the following parameters:
 
 - `Token`: Specifies the AskUI token to be used for the runner. If not specified, the token from the AskUI settings is used.
-- `WorkspaceId`: Specifies the AskUI workspace ID to be used for the runner. If not specified, the workspace ID from the AskUI seings is used.
+- `WorkspaceId`: Specifies the AskUI workspace ID to be used for the runner. If not specified, the workspace ID from the AskUI settings is used.
 - `Port`: Specifies the port of the device controller to be used for the runner. The default is 6769.
 - `WebSocketHost`: Specifies the host of the device controller to be used for the runner. The default is 127.0.0.1.
 - `ForceProjectTemplateUpdate`: Specifies whether to force the update of the project template. This is helpful for debugging.
-- `LogLevel`: Specifies the AskUI Runner log level. Available values are: 'INFO', 'DEBUG', 'WARNING', 'ERROR', 'CRITICAL'. The deult is 'INFO'.
+- `LogLevel`: Specifies the AskUI Runner log level. Available values are: 'INFO', 'DEBUG', 'WARNING', 'ERROR', 'CRITICAL'. The default is 'INFO'.
 - `Tags`: Specifies the tags to be set in the AskUI Runner configuration.
 
 ## Linux and macOS
@@ -63,7 +63,7 @@ Currently, the standard logging output of the **AskUI runner** is minimal - we
 
 ### Usage
 
-Create a configuration file (`.y{a}ml` or `.json`) in a directory of your choosing. The configuration file should contain at least some credentials and the command with which you start the runner without the config file flag:
+Create a configuration file (`.y{a}ml` or `.json`) in a directory of your choosing. The configuration file should contain at least some credentials and the command with which you start the runner without the `config` file flag:
 
 ```yaml
 credentials:
@@ -84,9 +84,9 @@ Start the runner using
 python -m askui_runner -c <path to your config file, e.g., askui-runner.config.yaml>
 ```
 
-### Start UiController
+### Start UIController
 
-If you want to run your workflows on the same system as the runner you need to start an UiController that listens on port `6769`. Please download the one for your operating system and start it:
+If you want to run your workflows on the same system as the runner you need to start an UIController that listens on port `6769`. Please download the one for your operating system and start it:
 
 - Please use our AskUI Installer and follow the Getting Started guide: [Windows](../../general/01-Getting%20Started/Installing%20AskUI/getting-started.md)
 - [Linux](https://files.askui.com/releases/askui-ui-controller/latest/linux/x64/askui-ui-controller.AppImage)
@@ -98,9 +98,9 @@ If you want to run your workflows on the same system as the runner you need to s
 - [macOS(Intel)](https://files.askui.com/releases/askui-ui-controller/latest/darwin/x64/askui-ui-controller.dmg)
 - [macOS(Apple silicon)](https://files.askui.com/releases/askui-ui-controller/latest/darwin/arm64/askui-ui-controller.dmg)
 
-### Execute Workflows on a Remote System: Change UiController URL
+### Execute Workflows on a Remote System: Change UIController URL
 
-You can change the UiController-URL so the runner can talk to a UiController that runs on a remote machine or on a different port:
+You can change the UIController-URL so the runner can talk to a UIController that runs on a remote machine or on a different port:
 
 ```yaml
 ...

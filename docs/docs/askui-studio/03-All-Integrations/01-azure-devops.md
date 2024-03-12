@@ -75,7 +75,7 @@ Then implement the following steps in your pipeline:
     - `ASKUI_WORKSPACE_ID`
     - `ASKUI_TOKEN`
     - `ASKUI_INFERENCE_SERVER_URL`
-    - **Optional**: `UI_CONTROLLER_URL` if the UiController is running on a remote machine and not localhost or as a service inside your pipeline.
+    - **Optional**: `UI_CONTROLLER_URL` if the UIController is running on a remote machine and not localhost or as a service inside your pipeline.
 - Setup docker and `node` in version `16.x`
 
 ```yaml

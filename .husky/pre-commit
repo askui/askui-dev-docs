@@ -3,6 +3,4 @@
 
 npx is-ci && exit 0
 
-cd ./docs || exit
-npm run spellcheck-docs
-npm run lint-language-docs
+vale docs/askui-studio

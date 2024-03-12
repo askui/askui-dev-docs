@@ -10,7 +10,7 @@ Use it to wait for an element to appear like this:
 
 **Examples:** 
 ```typescript
-await waitUntil(aui.expect().text('Github').exists());
+await waitUntil(aui.expect().text('GitHub').exists());
 ```
 
    * @param \{Executable} AskUICommand
