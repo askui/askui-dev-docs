@@ -22,6 +22,7 @@ jobs:
     - name: Create folder
       run: |
         mkdir -p .github/styles
+        ls -la .github
         cp -R askui-vale/styles/* .github/styles/
         ls -la .github
         ls -la .github/styles
