@@ -3,4 +3,4 @@
 
 npx is-ci && exit 0
 
-cd ./docs || exit
+vale docs/askui-studio

@@ -34,13 +34,25 @@ npm run build
 
 This command generates static content into the `dist` directory and can be served using any static contents hosting service.
 
-### Spellchecker
+### Vale Prose Linting
 
-Before every commit, a spellchecker will run against the next version of the docs located under `docs/`.
-To run the spellchecker manually before committing:
+Before every commit, vale will run against every Markdown file under `docs/`.
+
+Do the following to install _Vale_ and the AskUI style guide.
+
+* [Install _Vale_ instructions](https://vale.sh/docs/vale-cli/installation/).
+* Clone th [askui-vale repository](https://github.com/askui/askui-vale)
+* Symlink the styles to your `.github` folder
+
+```bash
+ln -s <Path to cloned askui-vale-repository>/styles styles  
+```
+
+To run _Vale_ manually before committing:
 
 ```shell
-npm run spellcheck-docs
+# Switch to root directory first
+vale docs
 ```
 
 ### Create a New Release Notes Entry
