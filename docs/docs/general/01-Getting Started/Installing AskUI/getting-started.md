@@ -25,7 +25,7 @@ It will install the following components:
 * (optional) [AskUI Runner (Executing workflows from AskUI Studio)](../../02-Components/AskUI-Runner.md)
 
 ### Step 2: Setup AskUI on Your Computer
-Run the downloaded installer as **Administrator** (Rightclick the installer and select **Run as administrator**).
+Run the downloaded installer as **Administrator** (Right click the installer and select **Run as administrator**).
 
 :::info
 The installer prompts Windows to display a security alert. Click on `More Info` in the top left and then on `Run Anyway` in the bottom right corner of the dialog to proceed with the installation.
@@ -79,7 +79,7 @@ Please [fill out this form](https://www.askui.com/demo) to schedule a demonstrat
 Run the following command to authenticate and connect your ADE to your AskUI account. Replace `<access token>` and `<workspace id>` with your real credentials.
 
 - **Access Token** You can create a new access token inside our web app. Go to any Workspace and navigate to *Access Tokens* in the left sidebar.
-- **Workspace ID** Navigate to your workspace's settings. You can find the workspace ID under *General* below the workspace's name.
+- **Workspace ID** Navigate to your workspace settings. You can find the workspace ID under *General* below the workspace name.
 
 ```shell
 AskUI-SetSettings -WorkspaceId <workspace id> -Token <access token>
@@ -157,7 +157,7 @@ On the left, in your file explorer, you should see the files that make up your A
 ![AskUI Project Visual Studio Code](Visual_Studio_Code.png)
 
 ### Step 9: Open a Workflow File
-The workflow files are where you will write your automations scripts.
+The workflow files are where you will write your automation scripts.
 To find them, navigate to the `askui_example` folder. This is the place, where you can store your workflow files.
 
 To add a new workflow, create a file in this folder, ending in `.test.ts`

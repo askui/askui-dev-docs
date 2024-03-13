@@ -124,7 +124,7 @@ If you initialized your AskUI project with an older version of AskUI or upgraded
 
 ### Connect via VNC
 
-To check what is happening inside a running container, you can connect via VNC. For this, you need to open a browser and navigate to `http://localhost:7900`. When [using the testcontainers example code](#starting-container-from-within-beforeall-using-testcontainers), the VNC port to connect to is logged to the console.
+To check what is happening inside a running container, you can connect via VNC. For this, you need to open a browser and navigate to `http://localhost:7900`. When [using the Testcontainers example code](#starting-container-from-within-beforeall-using-testcontainers), the VNC port to connect to is logged to the console.
 
 When connecting, enter the password `secret` when asked.
 

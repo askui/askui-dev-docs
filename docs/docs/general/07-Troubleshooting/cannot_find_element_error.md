@@ -19,7 +19,7 @@ Reason ControlCommandError: Cannot find "button contains with text 'I feel happy
 ## Use Interactive Annotation to Debug
 When you develop an automation you can use interactive annotation to extract filters as described on our [interactive annotation page](../03-Element%20Selection/annotations-and-screenshots.md).
 
-This gif illustrates the process:
+This animated image illustrates the process:
 ![Interactive Annotation in action](/img/gif/interactive-annotate.gif)
 
 If an element-description derived through this method does not work you may run the interactive annotation again and check if AskUI gives you the same element-description. Sometimes elements are hard to identify correctly, like icons or specific fonts. Read the next sections on how to tackle this 🙂
@@ -71,8 +71,8 @@ Generally speaking, everything on the screen can be an image. For example, icons
 ## Selecting Text
 OCR is tricky and we are working hard to improve it. But you will encounter cases where some text may not be recognized reliably depending on the font size, style or typeface:
 
-### 1. Missing Whitespaces Between Words
-You can guard against missing whitespaces with `withTextRegex()`:
+### 1. Missing Blankspaces Between Words
+You can guard against missing blankspaces with `withTextRegex()`:
 
 ```javascript
 // Use [\\s]{0,1} as a replacement for whitespace

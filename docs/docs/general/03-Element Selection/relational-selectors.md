@@ -126,7 +126,7 @@ await aui
   .exec();
 ```
 
-![leftof](/img/gif/leftOf.gif)
+![leftOf](/img/gif/leftOf.gif)
 
 ```ts
 await aui
@@ -138,7 +138,7 @@ await aui
   .exec();
 ```
 
-![leftof](/img/gif/rightOf.gif)
+![rightOf](/img/gif/rightOf.gif)
 
 
 ## nearestTo()
@@ -155,10 +155,10 @@ await aui
   .exec();
 ```
 
-![nearestto](/img/gif/nearestTo.gif)
+![nearestTo](/img/gif/nearestTo.gif)
 
 ## Additional Considerations About the Distance Metric
-The distance is not entirely based on physical distance. If you use an additional element-description like `withText()` it optimizes to find the best match. It also considers special cases, for example, modal dialogs. Therefore the element selected by AskUI might sometimes be wrong from a user's point of view.
+The distance is not entirely based on physical distance. If you use an additional element-description like `withText()` it optimizes to find the best match. It also considers special cases, for example, modal dialogues. Therefore the element selected by AskUI might sometimes be wrong from a user's point of view.
 
 You can use `moveMouseTo()` like in the following example to see what element an instruction targets.
 

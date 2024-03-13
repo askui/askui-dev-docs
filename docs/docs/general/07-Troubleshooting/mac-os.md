@@ -35,7 +35,7 @@ But be sure that we keep trying!
 
 ## Mouse Cursor Not Moving as Expected
 
-Apple devices that have a display manufactured by Apple, i.e., Macbook, iMac have a so-called Retina Display, and they have a higher pixel density. 
+Apple devices that have a display manufactured by Apple, i.e., MacBook, iMac have a so-called Retina Display, and they have a higher pixel density. 
 
 To use the actions such as `moveMouse()` or `moveMouseRelatively()`, the **coordinates should be doubled** in order to move the mouse cursor as expected.
 

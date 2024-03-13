@@ -77,7 +77,7 @@ flutter run
 Now you should see the demo app running on your Android device.
 
 2. Setup ADBKeyboard
-In this example, we are going to automate the typing on the Android device. To let AskUI fluently type as desired, we will use a virtual keyboard that handles the keyboard input via adb: [ADBKeyboard.apk](https://github.com/senzhk/ADBKeyBoard)
+In this example, we are going to automate the typing on the Android device. To let AskUI fluently type as desired, we will use a virtual keyboard that handles the keyboard input via `adb`: [ADBKeyboard.apk](https://github.com/senzhk/ADBKeyBoard)
 
 ‍
 1) Download the ADBKeyboard package (Important: Version 2.0): [Link to GitHub Repository](https://github.com/senzhk/ADBKeyBoard/releases/tag/v2.0)
@@ -195,7 +195,7 @@ The code is divided into three parts, and each part automates a different tab wi
 
 3) **Try to select the elements by their text**
 
-*tip: If you are using a device with a bigger screen e.g. Tablet, then the screen of your device (real Android device or emulator) might be big enough to see the whole page without scrolling.*
+*tip: If you are using a device with a larger screen e.g. Tablet, then the screen of your device (real Android device or emulator) might be big enough to see the whole page without scrolling.*
 
 ### 1. Click and Type
 The code is within the file `askui-test/demo-automation.ts`. Copy and paste the code into your AskUI code.

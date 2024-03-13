@@ -16,7 +16,7 @@ You can check if you are running on Wayland with
 echo $XDG_SESSION_TYPE
 ```
 
-If it says "wayland", you guessed it, you are running on Wayland.
+If it says `wayland` you guessed it, you are running on Wayland.
 
 As a solution, you can switch to Xorg instead of Wayland 
 ([how to switch to Xorg](https://www.maketecheasier.com/switch-xorg-wayland-ubuntu1710/)). 

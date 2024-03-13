@@ -3,6 +3,7 @@ sidebar_position: 7
 hide_table_of_contents: true
 ---
 
+<!-- vale off -->
 # Supported Keys
 
 Scroll the table to the right if the table is not shown completely 🙃.
@@ -193,3 +194,5 @@ Scroll the table to the right if the table is not shown completely 🙃.
 |                   | SELECT key                                                                                                                                                                                                                                             | Unsupported  | Unsupported  | 🦄 Special purpose | 
 |                   | CLEAR key                                                                                                                                                                                                                                              | Unsupported  | Unsupported  | 🦄 Special purpose | 
 |                   | Control-break processing                                                                                                                                                                                                                               | Unsupported  | Unsupported  | 🦄 Special purpose |
+
+<!-- vale off -->

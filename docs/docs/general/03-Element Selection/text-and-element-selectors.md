@@ -256,7 +256,9 @@ The quality of the __crop-out__ determines how good the element will be recogniz
 * Crop it out as tight as possible. At best with no pixel space on the borders.
 :::
 
+<!-- vale off -->
 **2) The Time of the Execution will Increase by a Notable Amount**
+<!-- vale on -->
 
 - To examine whether the custom image matches the given screen, AskUI iterates through the whole pixels of the given screen as well as the custom image. So it is likely to increase the runtime by a notable amount. Therefore, if the task could be accomplished with other element-descriptions such as `icon()`, `button()`, or `text()`, then it's maybe better to avoid using the `customElement()`.
 
@@ -441,7 +443,7 @@ This page will give you examples of how to use AskUI efficiently and effectively
 
 ### General Considerations on Speed of Inference for Different Element-Descriptions
 
-| Submodel | Tasks   | Speed  |
+| Sub-model | Tasks   | Speed  |
 | -------- | ------- | -------|
 | Object Detector | Common elements, e.g. a button or textfield | fast :rocket: |
 | Icon Classifier | Predict the class of an icon, e.g., a user icon  | fast :rocket: |
@@ -521,7 +523,7 @@ await aui.pressKey('pageup').exec()
 ```
 
 ### Wait for an Element to Appear
-AskUI implements a conservative retry strategy to wait for an element to appear. But sometimes this is not long enough.
+AskUI implements a careful retry strategy to wait for an element to appear. But sometimes this is not long enough.
 You can wait for an element to appear with the following helper function:
 
 ```javascript

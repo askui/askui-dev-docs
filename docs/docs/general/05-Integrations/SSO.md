@@ -93,7 +93,7 @@ To set up Single Sign-On (SSO) for your account, reach out to our dedicated supp
 
 ## Step 5: Testing the Integration
 
-After configuring SSO, test the login and signup process with a user account from your domain to verify that the integration works as expected.
+After configuring SSO, test the login and sign up process with a user account from your domain to verify that the integration works as expected.
 
 ## Support and Troubleshooting
 

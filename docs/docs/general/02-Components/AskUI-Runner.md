@@ -53,7 +53,7 @@ Currently, the standard logging output of the __AskUI runner__ is minimal - we a
 
 ### Usage
 
-Create a configuration file (`.y{a}ml` or `.json`) in a directory of your choosing. The configuration file should contain at least some credentials and the command with which you start the runner without the config file flag:
+Create a configuration file (`.y{a}ml` or `.json`) in a directory of your choosing. The configuration file should contain at least some credentials and the command with which you start the runner without the configuration file flag:
 
 ```yml
 credentials:
@@ -69,7 +69,7 @@ See [Generating up-to-date Configuration Schema](#generating-up-to-date-configur
 Start the runner using
 
 ```bash
-python -m askui_runner -c <path to your config file, e.g., askui-runner.config.yaml>
+python -m askui_runner -c <path to your configuration file, e.g., askui-runner.config.yaml>
 ```
 
 ### Start AskUI Controller
@@ -103,7 +103,7 @@ Go back to AskUI Studio and access the workflow you intend to execute. Head over
 ### Generating up-to-date Configuration Schema
 
 Requirements:
-- [PDM](https://pdm.fming.dev/latest/) 2.8 or higher for contributing and creating the JSON schema of the config
+- [PDM](https://pdm.fming.dev/latest/) 2.8 or higher for contributing and creating the JSON schema of the configuration
 
 Find out about all configuration options by taking a look at the JSON schema of the configuration. You can generate an up-to-date JSON schema by cloning this repository and running the following commands.
 

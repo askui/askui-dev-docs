@@ -48,7 +48,7 @@ expect(imageBuffer).toMatchImageSnapshot();
 ## Get It to Work with TypeScript
 When you run this as it is you will get an error.
 
-This is because Jest's typings in `jest.d.ts` do not include `toMatchImageSnapshot`.
+This is because Jest's TypeScript-typings in `jest.d.ts` do not include `toMatchImageSnapshot`.
 
 Luckily TypeScript has a mechanism called [Declaration Merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html). When we create a file `jest.d.ts` in our project and declare our matcher there, TypeScript will pick it up.
 
@@ -63,7 +63,7 @@ declare namespace jest {
 ## How Jest-Image-Snapshot Works
 Explanation from the [repository](https://github.com/americanexpress/jest-image-snapshot):
 
-> Given an image (Buffer instance with PNG image data) the `toMatchImageSnapshot()` matcher will create an image_snapshots directory in the directory the test is in and will store the baseline snapshot image there on the first run. Note that if `customSnapshotsDir` option is given then it will store baseline snapshot there instead. On subsequent test runs the matcher will compare the image being passed against the stored snapshot. To update the stored image snapshot run Jest with `--updateSnapshot` or `-u` argument. All this works the same way as Jest snapshots.
+> Given an image (Buffer instance with PNG image data) the `toMatchImageSnapshot()` matcher will create an `image_snapshots` directory in the directory the test is in and will store the baseline snapshot image there on the first run. Note that if `customSnapshotsDir` option is given then it will store baseline snapshot there instead. On subsequent test runs the matcher will compare the image being passed against the stored snapshot. To update the stored image snapshot run Jest with `--updateSnapshot` or `-u` argument. All this works the same way as Jest snapshots.
 
 You also want to check out the [options you can provide](https://github.com/americanexpress/jest-image-snapshot#%EF%B8%8F-api) to `toMatchImageSnapshot()` to fine-tune the behavior. For example you might want to set a threshold for a mismatch so that minimal differences do not _fail_ a run:
 
