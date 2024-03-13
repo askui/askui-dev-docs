@@ -101,7 +101,7 @@ it('Should log into account', async () => {
 
 ### 5. Check whether Login worked & Log out
 
-Finally, we need to check whether the login worked. We can do this by checking if the text "Logout test@askui.com" is displayed in the header as this is only displayed if we are logged in. We complete the workflow by logging out so that the workflow can easily be rerun without having to log out manually.
+Finally, we need to check whether the login worked. We can do this by checking if the text "Logout test@askui.com" is displayed in the header as this is only displayed if we are logged in. We complete the workflow by logging out so that the workflow can be rerun without having to log out manually.
 
 ```ts
 it('Should log into account', async () => {

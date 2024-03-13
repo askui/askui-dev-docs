@@ -19,7 +19,7 @@ ___
 
 - **display**: `number` - Default: `0`
 
-You can choose on which display you want to excecute all
+You can choose on which display you want to run all
 tests. You can only perform all tests on one display.
 The application which you want to automate should be open and selected on your chosen display.
 
@@ -53,7 +53,7 @@ ___
 
 - **logLevel**: `LogLevels` - Default: `debug`
 
-You can set the log level using the `LogLevels`. The following values are available: `"fatal"`, `"error"`, `"warn"`, `"info"`, `"debug"`, `"trace"`, `"silent"`, `"verbose"`. All log levels are defined in an `LogLevels` enum.
+You can set the log level using the `LogLevels`. The following values are available: `"fatal"`, `"error"`, `"warn"`, `"info"`, `"debug"`, `"trace"`, `"silent"`, `"verbose"`. All log levels are defined in an `LogLevels` enumeration.
 ___
 
 ### minimize

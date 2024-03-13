@@ -88,7 +88,7 @@ See our [API documentation](../02-Components/askui-ui-controller.md) for more in
 
 The **AskUI Inference Server** is responsible for the prediction of UI elements within the given screenshot. As soon as it receives a request from the **AskUI Control Client**, it performs the prediction on the given image and returns the annotation to the **AskUI Control Client**. 
 
-For the inference, we use a machine-learning model that consists of several submodels:
+For the inference, we use a machine-learning model that consists of several sub-models:
 - **Object Detector**: Detects UI elements (e.g button, textfield).
 - **Icon Classifier**: Predicts the class of an icon based on the detected objects (e.g. a user icon 👤).
 - **Optical Character Recognition (OCR)**: Converts the image of a text into text.

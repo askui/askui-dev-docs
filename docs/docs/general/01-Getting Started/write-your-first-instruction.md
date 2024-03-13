@@ -37,8 +37,9 @@ An AskUI Workflow file, using the Jest framework, is a versatile tool for automa
 **`it` Blocks**: Each block defines a specific UI interaction or automation task, such as form submissions, navigation, or simulating user actions.
 
 **AskUI API**: Utilized within it blocks for direct UI interactions, like clicking, typing, or navigating.
-
+<!-- vale off -->
 **Execution Instructions**: Commands provided for running the automated tasks or tests through the terminal.
+<!-- vale on -->
 
 ### Example
 
@@ -142,7 +143,7 @@ With AskUI, there are near-infinite ways to target an element. We outlined the t
 #### Approach A: Standard Element-Description Extraction (Recommended)
 
 - **Process**: Click the UI element during annotation to copy its description to your clipboard.
-- **Advantages**: Quick for easily identifiable elements.
+- **Advantages**: Quick for reliably identifiable elements.
 - **Best Used When**: The element is distinctly recognizable and not surrounded by similar elements.
 
 To close out the interactive annotation, use `CMD/CTRL + W` or `ESC`.

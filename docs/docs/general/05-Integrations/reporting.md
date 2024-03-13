@@ -265,7 +265,7 @@ import { AskUIAnnotationStepReporter, AnnotationLevel } from '@askui/askui-repor
 ...
 ```
 
-`AnnotationLevel` is implemented as an enum. You have two options:
+`AnnotationLevel` is implemented as an enumeration. You have two options:
 
 * `ON_FAILURE` (Default Value): After a step failed
 * `ALL`: After every step
