@@ -27,7 +27,7 @@ jobs:
     - name: Vale
       uses: errata-ai/vale-action@reviewdog
       with:
-        files: '["README.md", "docs/askui-studio"]'
+        files: '["README.md", "docs/docs/askui-studio"]'
       env:
         # Required, set by GitHub actions automatically:
         # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
