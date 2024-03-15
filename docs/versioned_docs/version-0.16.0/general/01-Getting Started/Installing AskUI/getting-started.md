@@ -14,6 +14,14 @@ Check if you have the following requirements, before you start the process.
 
 ## Setup
 
+### Step 0: Create an AskUI Account
+
+:::warning
+As we need to prevent misuse of our API, we need you to create some credentials through our __AskUI Studio__.
+
+Please [fill out this form](https://www.askui.com/demo) to schedule a demonstration or request a trial to obtain access to __AskUI Studio__.
+:::
+
 ### Step 1: Download Installer
 Download the AskUI Installer [here](https://files.askui.com/releases/Installer/24.3.1/AskUI-Suite-24.3.1-System-Installer-Win-AMD64-Full.exe).
 
@@ -71,7 +79,7 @@ If you are not what an ADE command does, you can run `Get-Help <command>` to get
 ### Step 4: Connect Your AskUI Account
 
 :::info
-As we need to prevent misuse of our API, we need you to create some credentials through our __AskUI Studio__ (for free).
+As we need to prevent misuse of our API, we need you to create some credentials through our __AskUI Studio__.
 
 Please [fill out this form](https://www.askui.com/demo) to schedule a demonstration or request a trial to obtain access to __AskUI Studio__.
 :::
