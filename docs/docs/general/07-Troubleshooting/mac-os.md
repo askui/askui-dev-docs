@@ -33,6 +33,10 @@ We are actively searching for a solution to improve the current state of affairs
 does not make it easy (which is good for your privacy but not so much for automation frameworks). 
 But be sure that we keep trying!
 
+:::tip
+If the AskUI Controller still does work as expected: Please restart your machine. Users reported that it fixed the issue for them.
+:::
+
 ## Mouse Cursor Not Moving as Expected
 
 Apple devices that have a display manufactured by Apple, i.e., MacBook, iMac have a so-called Retina Display, and they have a higher pixel density. 
