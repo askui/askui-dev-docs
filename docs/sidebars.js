@@ -56,18 +56,21 @@ const sidebars = {
       collapsed: true,
       className: 'menu_category_guides',
       items: [
-        'general/Element Selection/text-and-element-selectors',
+        {
+          type: 'category',
+          label: 'How to Select Elements',
+          collapsed: true,
+          className: 'menu_category_element_selection',
+          items: [
+            'general/Element Selection/text-and-element-selectors',
+            'general/Element Selection/relational-selectors',
+            'general/Element Selection/scraping-and-storing-lements',
+            'general/Element Selection/assertions',
+          ],
+        },
         'general/Executing Automations/mobile-automation',
-        'general/Element Selection/relational-selectors',
-        'general/Element Selection/annotations-and-screenshots',
         'general/Executing Automations/multi-device-automation',
-        'general/Element Selection/scraping-and-storing-lements',
-        'general/Integrations/reporting',
-        'general/Element Selection/assertions',
-        'general/Integrations/visual-regression',
-        'general/Integrations/continuous-integration',
-        'general/Integrations/containers',
-        'general/Integrations/SSO',
+        'general/Element Selection/annotations-and-screenshots',
         {
           type: 'category',
           label: 'Examples',
@@ -116,6 +119,19 @@ const sidebars = {
       className: 'menu_category_askui_packages',
       items: [
         'general/Components/AskUI-Runner'
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Integrations',
+      collapsed: true,
+      className: 'menu_category_integrations',
+      items: [
+        'general/Integrations/reporting',
+        'general/Integrations/visual-regression',
+        'general/Integrations/continuous-integration',
+        'general/Integrations/containers',
+        'general/Integrations/SSO',
       ],
     },
     {

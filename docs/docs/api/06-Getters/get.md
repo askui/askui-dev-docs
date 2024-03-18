@@ -53,6 +53,7 @@ console.log(texts);
       xmax: 1178.8204241071428,
       ymax: 180.83512834821428
     },
+  },
   DetectedElement {
     name: 'TEXT',
     text: 'Login',

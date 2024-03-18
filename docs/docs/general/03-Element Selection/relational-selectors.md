@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Filtering Elements by Proximity
+# Select Elements by Proximity
 
 A common problem while writing instructions which one encounters is interacting with elements which share the same text.
 
@@ -158,7 +158,25 @@ await aui
 ![nearestTo](/img/gif/nearestTo.gif)
 
 ## Additional Considerations About the Distance Metric
-The distance is not entirely based on physical distance. If you use an additional element-description like `withText()` it optimizes to find the best match. It also considers special cases, for example, modal dialogues. Therefore the element selected by AskUI might sometimes be wrong from a user's point of view.
+The distance is based entirely on physical distance __to the bounding box of a specified element__ for `above()`, `below()`, `leftOf()` and `rightOf()`.
+
+For `above()` it takes the upper-left and upper right-corner coordinates of the bounding box. The area that is searched is bordered by orthogonal lines upwards from these coordinates. Every element that is touched by that area can be found.
+
+```typescript
+  |  ------------  |
+  |  | Returned |  |
+  |  ------------  |
+  |                |
+  |                |   ----------------
+  |   SEARCHED     |   | Not returned |
+  |     AREA       |   ----------------
+  |                |
+  ------------------
+  |     button     |
+  ------------------
+```
+
+For `nearestTo()` it also considers special cases, for example, modal dialogues. Therefore the element selected by AskUI might sometimes be wrong from a user's point of view.
 
 You can use `moveMouseTo()` like in the following example to see what element an instruction targets.
 
@@ -171,4 +189,3 @@ await aui
   .withText('Submit')
   .exec()
 ```
-
