@@ -9,7 +9,11 @@ title: Allure
 Please read the [Getting started with reporting first](reporting.md).
 :::
 
-## Add the reporter to the `UiControlClient` in `jest.setup.ts`:
+:::warning
+If you used the AskUI Installer or followed the _Getting Started_ for Linux or macOS and did not change anything in `helpers/askui-helper.ts` you can skip the configuration and directly go to [Display Report](#display-report).
+:::
+
+## Add the reporter to the `UiControlClient` in `helpers/askui-helper.ts`:
 
 ```typescript
 import { AskUIAllureStepReporter } from "@askui/askui-reporters";
@@ -36,8 +40,8 @@ There are four possible values (See [the @askui/askui-reporters README for a det
 * begin
 * always
 
-## Configure `beforeEach()` and `afterEach()` in `jest.setup.ts`
-The `UiControlClient` retrieves the videos and images from your `AskUI Controller`. You have to implement `beforeEach()` and `afterEach()` in `jest.setup.ts` to start the recording and then add it to your report:
+## Configure `beforeEach()` and `afterEach()` in `helpers/askui-helper.ts`
+The `UiControlClient` retrieves the videos and images from your `AskUI Controller`. You have to implement `beforeEach()` and `afterEach()` in `helpers/askui-helper.ts` to start the recording and then add it to your report:
 
 1. Allure Reporter
 ```typescript
@@ -64,7 +68,7 @@ import type { Config } from '@jest/types';
 
 const config: Config.InitialOptions = {
   preset: 'ts-jest',
-  setupFilesAfterEnv: ['./helper/jest.setup.ts'],
+  setupFilesAfterEnv: ['./helper/askui-helper.ts'],
   sandboxInjectedGlobals: [
     'Math',
   ],
@@ -76,4 +80,54 @@ const config: Config.InitialOptions = {
 
 // eslint-disable-next-line import/no-default-export
 export default config;
+```
+
+## Display Report
+
+:::warning
+If you used the AskUI Installer or followed the _Getting Started_ for Linux or macOS and did not change anything in `helpers/askui-helper.ts` you can skip the configuration and directly go to [Step 4](#step-4-run-the-scripts).
+:::
+
+### Step 1: Install Java
+We recommend _SDKMAN!_ for managing Java. Please follow the [Installation guide on their homepage](https://sdkman.io/install).
+
+Then run the following command to use the latest Java JDK:
+
+```sh
+sdk install java 21.0.2-amzn
+```
+
+Answer the question `Do you want java 21.0.2-amzn to be set as default? (Y/n)` with `Y`.
+
+### Step 2: Install `allure-commandline`
+The next thing you install is a `npm`-package so you can run _Allure_ inside `npm`.
+
+```sh
+npm install allure-commandline --save-dev
+```
+
+### Step 3: Generate HTML and Serve Report
+Add the following scripts to your `package.json`s `script` section.
+
+```json
+...
+  "scripts": {
+    ...
+    "allure-generate": "allure generate",
+    "allure-serve": "allure serve"
+  },
+...
+```
+
+### Step 4: Run the Scripts
+First create the HTML-Report by running:
+
+```sh
+npm run allure-generate
+```
+
+And after that serve the HTML-Report by running the following command, which will also open the report in the browser automatically:
+
+```sh
+npm run allure-serve
 ```
