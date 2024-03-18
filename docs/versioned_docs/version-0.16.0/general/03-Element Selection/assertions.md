@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# How to use Assertions
+# Implementing Assertions
 
 In this guide we will first show you how to assert if an element is there or not.
 

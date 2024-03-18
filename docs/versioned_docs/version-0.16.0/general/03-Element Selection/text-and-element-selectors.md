@@ -1,13 +1,11 @@
 ---
 sidebar_position: 2
-title: How to Select Elements
+title: Text and Element Selectors
 ---
 
 **Index**
 
 [Text Selectors](#text-selectors)
-
-[Element Selectors](#element-selectors)
 
 [Custom Elements](#custom-elements)
 
@@ -155,23 +153,6 @@ The regular expression `[3-4][0-9]{2}` means,
 
 As the result, it will try to match every text that has a sequence starting with the digit 3 or 4, and then has any two digits in a row.
 
-
-
-
-
-
-## Element Selectors
-
-:::caution
-
-This page is currently under construction. If you have any questions, please feel free to reach out to info@AskUI.com or book a meeting with Jonas [over Calendly](https://calendly.com/jonas-menesklou/digital-get-to-know).
-
-:::
-
-
-
-
-
 ## Custom Elements
 
 :::caution
@@ -256,7 +237,9 @@ The quality of the __crop-out__ determines how good the element will be recogniz
 * Crop it out as tight as possible. At best with no pixel space on the borders.
 :::
 
+<!-- vale off -->
 **2) The Time of the Execution will Increase by a Notable Amount**
+<!-- vale on -->
 
 - To examine whether the custom image matches the given screen, AskUI iterates through the whole pixels of the given screen as well as the custom image. So it is likely to increase the runtime by a notable amount. Therefore, if the task could be accomplished with other element-descriptions such as `icon()`, `button()`, or `text()`, then it's maybe better to avoid using the `customElement()`.
 
@@ -430,23 +413,11 @@ it('enable street view', async ()=>{
     - 1) Make the custom image to be as precise as possible (cropping from the screen).
     - 2) Keep the `threshold` relatively higher, but below `1.0`
 
-### Conclusion
-If you plan to program an automation where you have elements with non-standard properties, you might want to consider using the custom element feature of AskUI. But as mentioned above, keep in mind that, as a trade-off, it consumes more time than other features. Taking it into account, using a custom element to interact with the given UI can be a huge help, especially if the element lacks standard properties such as tag or appearance. 
-
-If you got any issues while following this article, don't hesitate to ask for help in our [Outverse-Community](https://app.outverse.com/askui/community/home). We are more than glad to hear about your experience and help!
-
 ## Recommended Practices
 
 This page will give you examples of how to use AskUI efficiently and effectively. 
 
-### General Considerations on Speed of Inference for Different Element-Descriptions
-
-| Submodel | Tasks   | Speed  |
-| -------- | ------- | -------|
-| Object Detector | Common elements, e.g. a button or textfield | fast :rocket: |
-| Icon Classifier | Predict the class of an icon, e.g., a user icon  | fast :rocket: |
-| Optical Character Recognition (OCR) | Recognize text | fast :rocket: |
-| Custom Element Detector | Search via an image inside the screen | slow :snail: |
+### Recommendation for improved Speed of Inference
 
 #### Avoid Optical Character Recognition (OCR) on Too Many Element
 
@@ -521,29 +492,9 @@ await aui.pressKey('pageup').exec()
 ```
 
 ### Wait for an Element to Appear
-AskUI implements a conservative retry strategy to wait for an element to appear. But sometimes this is not long enough.
-You can wait for an element to appear with the following helper function:
+AskUI implements a careful retry strategy to wait for an element to appear. But sometimes this is not long enough.
+You can wait for an element to appear with the [convenience function `waitUntil()` API docs](../../api/08-Convenience/waituntil.md):
 
-```javascript
-// Retry the command 5 times with a
-// wait time of 2 seconds between each try
-async function waitUntil(AskUICommand: () => Promise<void>, maxTry = 5) {
-  try {
-    await AskUICommand();
-  }
-  catch (error) {
-    if (maxTry == 0) {
-      throw error
-    }
-    console.log(`Retry predicting command, ${maxTry} tries left`)
-    await aui.waitFor(2000).exec();
-    await waitUntil(AskUICommand, maxTry - 1)
-  }
-}
-
-// Wait for the text 'GitHub' to be displayed
-await waitUntil(
-  async () => 
-    aui.expect().text('GitHub').exists().exec()
-  );
+```typescript
+await waitUntil(aui.expect().text('GitHub').exists());
 ```
