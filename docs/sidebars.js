@@ -127,7 +127,19 @@ const sidebars = {
       collapsed: true,
       className: 'menu_category_integrations',
       items: [
-        'general/Integrations/reporting',
+        {
+          type: 'category',
+          label: 'Reporting',
+          collapsed: true,
+          className: 'menu_category_reporting',
+          items: [
+            'general/Integrations/reporting',
+            'general/Integrations/allure-reporting',
+            'general/Integrations/html-reporting',
+            'general/Integrations/xray-reporting',
+            'general/Integrations/annotation-reporting',
+          ],
+        },
         'general/Integrations/visual-regression',
         'general/Integrations/continuous-integration',
         'general/Integrations/containers',
