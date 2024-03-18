@@ -62,12 +62,7 @@ const sidebars = {
         'general/Element Selection/annotations-and-screenshots',
         'general/Executing Automations/multi-device-automation',
         'general/Element Selection/scraping-and-storing-lements',
-        'general/Integrations/reporting',
         'general/Element Selection/assertions',
-        'general/Integrations/visual-regression',
-        'general/Integrations/continuous-integration',
-        'general/Integrations/containers',
-        'general/Integrations/SSO',
         {
           type: 'category',
           label: 'Examples',
@@ -82,6 +77,19 @@ const sidebars = {
             'general/Tutorials/spotify-tutorial',
           ],
         },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Integrations',
+      collapsed: true,
+      className: 'menu_category_integrations',
+      items: [
+        'general/Integrations/reporting',
+        'general/Integrations/visual-regression',
+        'general/Integrations/continuous-integration',
+        'general/Integrations/containers',
+        'general/Integrations/SSO',
       ],
     },
     {
