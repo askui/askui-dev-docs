@@ -496,5 +496,5 @@ AskUI implements a careful retry strategy to wait for an element to appear. But 
 You can wait for an element to appear with the [convenience function `waitUntil()` API docs](../../api/08-Convenience/waituntil.md):
 
 ```typescript
-await waitUntil(aui.expect().text('GitHub').exists());
+await aui.waitUntil(aui.expect().text('GitHub').exists());
 ```

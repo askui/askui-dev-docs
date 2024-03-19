@@ -101,7 +101,7 @@ Sometimes you have some data you want to input into a form and don’t want to w
 const data = ['Johannes', 'Dienst', 'AskUI Street', '42', 'Karlsruhe'];
         
 // Focus the first textfield
-await aui.click().textfield().contains().text('Firstname').exec();
+await aui.clickTextfield('Firstname').exec();
 
 // Use the tab-key to navigate through the form
 for (let entry of data) {

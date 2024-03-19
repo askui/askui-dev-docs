@@ -426,7 +426,7 @@ If you use `containsText()`, `withText()`, `withExactText()` or `withTextRegex()
 ```javascript
 // Do this
 await aui.click().button('See here').exec();
-await aui.click().text('Sign in').exec();
+await aui.clickText('Sign in');
 
 // And NOT this
 await aui.click('See here').exec();
@@ -439,8 +439,8 @@ If you use `customElement()` you are doing an image-in-image search. Use this sp
 
 ```javascript
 // Do this
-await aui.click().button().withText('Login').exec();
-await aui.click().text('Overview').exec();
+await aui.clickButton('Login');
+await aui.clickText('Overview');
 
 // And NOT this
 await aui.click().customElement({
@@ -496,5 +496,5 @@ AskUI implements a careful retry strategy to wait for an element to appear. But 
 You can wait for an element to appear with the [convenience function `waitUntil()` API docs](../../api/08-Convenience/waituntil.md):
 
 ```typescript
-await waitUntil(aui.expect().text('GitHub').exists());
+await aui.waitUntil(aui.expect().text('GitHub').exists());
 ```
