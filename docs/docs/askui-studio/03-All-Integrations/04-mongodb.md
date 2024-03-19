@@ -112,7 +112,7 @@ it('should click on buttons with a label', async () => {
     const buttonsCursor = buttons.find();
     let nextButton = await buttonsCursor.next();
     while (nextButton !== null) {
-      await aui.click().button().withText(nextButton.label).exec();
+      await aui.clickButton(nextButton.label);
       nextButton = await buttonsCursor.next();
     }
   });

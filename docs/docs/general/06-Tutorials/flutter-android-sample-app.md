@@ -209,7 +209,7 @@ To type into a textfield, we first need to get focus on the desired textfield. W
 ```typescript
 // click on the textfield and type characters
 // repeat this as many times as the textfields
-await aui.click().text('Enter your username').exec();
+await aui.clickText('Enter your username');
 await aui.type('askui').exec();
 ```
 
@@ -218,15 +218,15 @@ As we have multiple of textfields in our demo app, we can iterate the same proce
 ```typescript
 // click on the textfield and type characters
 // repeat this as many times as the textfields
-await aui.click().text('Enter your username').exec();
+await aui.clickText('Enter your username');
 await aui.type('askui').exec();
 
 // click and type the email address
-await aui.click().text('Enter your email').exec();
+await aui.clickText('Enter your email');
 await aui.type('askui@askui.com').exec();
 
 // Click and type the address
-await aui.click().text('Enter your address').exec();
+await aui.clickText('Enter your address');
 await aui.type('Haid-und-Neu-Straße 18').exec();
 
 // Pressing enter is the equivalent of pressing the return button on the on-screen-keyboard
@@ -238,17 +238,13 @@ After filling up the textfields, we can push the buttons at the bottom of the pa
 
 ```typescript
 // Press the 'Submit' button
-await aui.click().text('Submit').exec();
+await aui.clickText('Submit');
 
 // We will have a popup window that has two buttons. Press the 'Refuse' button
-await aui.click().text('Refuse').exec();
+await aui.clickText('Refuse');
 
 // Here we press multiple toggle buttons one by one
-await aui.click().text('Banana').exec();
-await aui.click().text('Mango').exec();
-await aui.click().text('Sunny').exec();
-await aui.click().text('Rainy').exec();
-await aui.click().text('Windy').exec();
+await aui.clickTexts(['Banana', 'Mango', 'Sunny', 'Rainy', 'Windy']);
 
 // Attention for swiping!
 /*  Swipe/scroll within the page
@@ -276,9 +272,9 @@ First, we select and type characters into two different textfields:
 
 ```typescript
 // First, we type in the desired values into the textfields.
-await aui.click().text('Title').exec();
+await aui.clickText('Title');
 await aui.type('My vacation plan').exec();
-await aui.click().text('Description').exec();
+await aui.clickText('Description');
 await aui.type('0. Drink a lot of water').exec();
 await aui.pressAndroidKey('tab').exec();
 ```
@@ -293,16 +289,16 @@ await aui.click().icon().withText('chevron right').exec();
 
 // within the calendar, we push the > icon on the top right corner
 await aui.click().icon().withText('chevron right').exec();
-await aui.click().text('7').exec(); // select 7
-await aui.click().text('ok').exec(); // then, press OK
+await aui.clickText('7'); // select 7
+await aui.clickText('ok'); // then, press OK
 
 // Repeat the step for the next Datepicker widget.
 await aui.click().text('edit').nearestTo().text('Return').exec();
 await aui.click().icon().withText('chevron right').exec();
 await aui.click().icon().withText('chevron right').exec();
 await aui.click().icon().withText('chevron right').exec();
-await aui.click().text('5').exec();
-await aui.click().text('ok').exec();
+await aui.clickText('5');
+await aui.clickText('ok');
 ```
 
 Let's go further below to the bottom of the page, and then interact with more interfaces:
@@ -348,15 +344,15 @@ describe('jest with askui', () => {
     it('should fill up the textfields and push buttons', async () => {
         // click on the textfield and type characters
         // repeat this as many times as the textfields
-        await aui.click().text('Enter your username').exec();
+        await aui.clickText('Enter your username');
         await aui.type('askui').exec();
 
         // click on the textfield and type the email        
-        await aui.click().text('Enter your email').exec();
+        await aui.clickText('Enter your email');
         await aui.type('askui@askui.com').exec();
 
         // Click and type the address
-        await aui.click().text('Enter your address').exec();
+        await aui.clickText('Enter your address');
         await aui.type('Haid-und-Neu-Straße 18').exec();
 
         // Pressing enter is the equivelant to pressing the return button on the on-screen-keyboard
@@ -364,18 +360,13 @@ describe('jest with askui', () => {
         await aui.pressAndroidKey('enter').exec();
 
         // Press the 'Submit' button
-        await aui.click().text('Submit').exec();
+        await aui.clickText('Submit');
 
         // We will have a popup window that has two buttons. Press the 'Refuse' button
-        await aui.click().text('Refuse').exec();
+        await aui.clickText('Refuse');
 
         // Here we press multiple of toggle buttons one by one
-        await aui.click().text('Banana').exec();
-        await aui.click().text('Mango').exec();
-        await aui.click().text('Sunny').exec();
-        await aui.click().text('Rainy').exec();
-        await aui.click().text('Windy').exec();
-
+        await aui.clickTexts(['Banana', 'Mango', 'Sunny', 'Rainy', 'Windy']);
 
         // Attention for swiping!
         /*  Swipe/scroll within the page
@@ -397,9 +388,9 @@ describe('jest with askui', () => {
 
     it('should pick the dates', async () => {
         // First, we type in the desired values into the textfields.
-        await aui.click().text('Title').exec();
+        await aui.clickText('Title');
         await aui.type('My vacation plan').exec();
-        await aui.click().text('Description').exec();
+        await aui.clickText('Description');
         await aui.type('0. Drink a lot of water').exec();
         await aui.pressAndroidKey('tab').exec();
 
@@ -408,8 +399,8 @@ describe('jest with askui', () => {
         await aui.click().text('edit').nearestTo().text('Depature').exec(); // this will open up the calendar
         await aui.click().icon().withText('chevron right').exec(); // within the calendar, we push the > icon on the top right corner
         await aui.click().icon().withText('chevron right').exec();
-        await aui.click().text('7').exec(); // select 7
-        await aui.click().text('ok').exec(); // then, press OK
+        await aui.clickText('7'); // select 7
+        await aui.clickText('ok'); // then, press OK
 
 
         // Repeat the step for the next Datepicker widget.
@@ -417,8 +408,8 @@ describe('jest with askui', () => {
         await aui.click().icon().withText('chevron right').exec();
         await aui.click().icon().withText('chevron right').exec();
         await aui.click().icon().withText('chevron right').exec();
-        await aui.click().text('5').exec();
-        await aui.click().text('ok').exec();
+        await aui.clickText('5');
+        await aui.clickText('ok');
 
         // click and check the checkbox
         await aui.click().checkboxUnchecked().nearestTo().text('Brushed Teeth').exec();
