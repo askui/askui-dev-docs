@@ -82,11 +82,7 @@ const config: Config.InitialOptions = {
 export default config;
 ```
 
-## Display Report
-
-:::warning
-If you used the AskUI Installer or followed the _Getting Started_ for Linux or macOS and did not change anything in `helpers/askui-helper.ts` you can skip the configuration and directly go to [Step 4](#step-4-run-the-scripts).
-:::
+## Display Report in a Browser
 
 ### Step 1: Install Java
 We recommend _SDKMAN!_ for managing Java. Please follow the [Installation guide on their homepage](https://sdkman.io/install).
