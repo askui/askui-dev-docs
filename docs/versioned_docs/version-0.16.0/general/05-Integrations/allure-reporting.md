@@ -10,7 +10,7 @@ Please read the [Getting started with reporting first](reporting.md).
 :::
 
 :::warning
-If you used the AskUI Installer or followed the _Getting Started_ for Linux or macOS and did not change anything in `helpers/askui-helper.ts` you can skip the configuration and directly go to [Display Report](#display-report).
+If you used the AskUI Installer or followed the _Getting Started_ for Linux or macOS and did not change anything in `helpers/askui-helper.ts` you can skip the configuration and directly go to [Display Report](#display-report-in-a-browser).
 :::
 
 ## Add the reporter to the `UiControlClient` in `helpers/askui-helper.ts`:
