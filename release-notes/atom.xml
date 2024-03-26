@@ -2,12 +2,45 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://docs.askui.com/release-notes</id>
     <title>askui - Humanizing UI Automation Blog</title>
-    <updated>2024-03-04T00:00:00.000Z</updated>
+    <updated>2024-03-25T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://docs.askui.com/release-notes"/>
     <subtitle>askui - Humanizing UI Automation Blog</subtitle>
     <icon>https://docs.askui.com/img/askui_favicon.png</icon>
     <rights>Copyright © 2024 askui GmbH.</rights>
+    <entry>
+        <title type="html"><![CDATA[2024.03.25 | AskUI SDK Automations Directory Option]]></title>
+        <id>https://docs.askui.com/release-notes/release-2024-03-25</id>
+        <link href="https://docs.askui.com/release-notes/release-2024-03-25"/>
+        <updated>2024-03-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Introduction]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a href="https://docs.askui.com/release-notes/release-2024-03-25#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h2>
+<p>This week we introduced a new convenience method <code>clickTextfieldNearestTo(label: string)</code> which lets you click on a textfield with a label instead of a placeholder.</p>
+<p>We also removed the convenience method <code>dragTo</code> as it was not working as intended.</p>
+<p>There is a new option <code>-ad --automations-description</code> for initialising an AskUI project with <code>npx askui@latest init</code>. It lets you specify the name of the automations directory which was hardcoded to <code>askui_example</code> before.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="convenience-methods">Convenience Methods<a href="https://docs.askui.com/release-notes/release-2024-03-25#convenience-methods" class="hash-link" aria-label="Direct link to Convenience Methods" title="Direct link to Convenience Methods">​</a></h2>
+<p>We had to remove <code>dragTo()</code> as it was not working as expected</p>
+<hr>
+<p>We introduced the following method:</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="clicktextfieldnearesttolabel-string"><code>clickTextfieldNearestTo(label: string)</code><a href="https://docs.askui.com/release-notes/release-2024-03-25#clicktextfieldnearesttolabel-string" class="hash-link" aria-label="Direct link to clicktextfieldnearesttolabel-string" title="Direct link to clicktextfieldnearesttolabel-string">​</a></h3>
+<p>Searches for an element of type textfield with a specific label nearest to it. If found, clicks it.</p>
+<div class="language-typescript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-typescript codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">await</span><span class="token plain"> aui</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">clickTextfieldNearestTo</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">'E-Mail Address'</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-option--ad---automations-description-for-init">New Option <code>-ad --automations-description</code> for <code>init</code><a href="https://docs.askui.com/release-notes/release-2024-03-25#new-option--ad---automations-description-for-init" class="hash-link" aria-label="Direct link to new-option--ad---automations-description-for-init" title="Direct link to new-option--ad---automations-description-for-init">​</a></h2>
+<p>When you run <code>npx askui@latest init</code> you always got a directory <code>askui_example</code>. This broke backwards compatibility with existing installations of AskUI.</p>
+<p>Thus we introduced a new option when running <code>askui init</code>:</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">-ad, --automations-directory &lt;value&gt;  a name for the directory askui stores its configuration and workflows in. (default: "askui_example")</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>You can use it like this to store the AskUI automations in a directory <code>askui-Workflows</code>:</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">npx askui@latest init -ad askui-Workflows</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>]]></content>
+        <author>
+            <name>Johannes Dienst</name>
+            <email>johannes.dienst@askui.com</email>
+        </author>
+        <author>
+            <name>Jonas Menesklou</name>
+            <email>jonas.menesklou@askui.com</email>
+        </author>
+        <category label="AskUI SDK" term="AskUI SDK"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[2024.03.04 | AskUI SDK Convenience Methods]]></title>
         <id>https://docs.askui.com/release-notes/release-2024-03-04</id>
