@@ -43,7 +43,7 @@
         "@release-it/bumper": "^6.0.1",
         "@release-it/conventional-changelog": "^8.0.1",
         "@typescript-eslint/eslint-plugin": "7.3.1",
-        "@typescript-eslint/parser": "7.3.1",
+        "@typescript-eslint/parser": "7.4.0",
         "commitizen": "4.3.0",
         "cz-conventional-changelog": "3.3.0",
         "husky": "9.0.11",
