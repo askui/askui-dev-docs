@@ -3,4 +3,4 @@
 
 npx is-ci && exit 0
 
-vale docs/docs/askui-studio docs/docs/api docs/docs/general/01-Getting\ Started docs/docs/general/02-Components docs/docs/general/03-Element\ Selection docs/docs/general/04-Executing\ Automations docs/docs/general/05-Integrations docs/docs/general/06-Tutorials docs/docs/general/07-Troubleshooting docs/docs/general/12-Terminology.md
+vale docs/docs/api docs/docs/general/01-Getting\ Started docs/docs/general/02-Components docs/docs/general/03-Element\ Selection docs/docs/general/04-Executing\ Automations docs/docs/general/05-Integrations docs/docs/general/06-Tutorials docs/docs/general/07-Troubleshooting docs/docs/general/12-Terminology.md
