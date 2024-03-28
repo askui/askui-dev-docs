@@ -169,12 +169,6 @@ const config = {
             label: 'API',
           },
           {
-            type: 'doc',
-            docId: 'askui-studio/overview',
-            position: 'left',
-            label: 'AskUI Studio',
-          },
-          {
             type: 'docsVersionDropdown',
             position: 'left',
             dropdownActiveClassDisabled: true,
