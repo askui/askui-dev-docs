@@ -49,10 +49,6 @@ const config = {
         indexBaseUrl: true,
         maxHits: 7,
         includeRoutes: [
-          '/docs/**/api/API/*',
-          '/docs/**/api/**/*',
-          '/docs/**/general/*',
-          '/docs/**/general/**/*',
           '/docs/api/API/*',
           '/docs/api/**/*',
           '/docs/general/*',
