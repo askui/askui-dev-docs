@@ -80,7 +80,7 @@ Sign In
 // Log the text of the SECOND element
 // with shorter code
 const texts = await aui.get().text().below().textfield().exec();
-console.log(text[1].text)
+console.log(texts[1].text)
 
 // Console output
 Login
