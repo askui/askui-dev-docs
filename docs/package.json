@@ -27,7 +27,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@docusaurus/types": "3.1.1",
+    "@docusaurus/types": "3.2.1",
     "docusaurus-plugin-sass": "0.2.5",
     "sass": "1.72.0",
     "eslint": "8.57.0",
