@@ -93,7 +93,7 @@ We are finally done with the preparation for automating apps running on Android 
 
 You can now try your setup in our [Automate Web Search on Android Devices Tutorial](../06-Tutorials/android-search-in-browser.md).
 
-If you have a recurring or persisting issue while following this tutorial, don’t hesitate to ask the [Outverse-Community](https://app.outverse.com/askui/community/home) for help!
+If you have a recurring or persisting issue while following this tutorial, don’t hesitate to ask the [Outverse-Community](https://community.askui.com/forums/home) for help!
 
 ## iOS Automation
 

@@ -15,4 +15,4 @@ challenge after you have read through the pages, please drop us a note. We are h
 
 # Support
 
-* Join our [Outverse-Community](https://app.outverse.com/askui/community/home) to get help from fellow users and AskUI staff.
+* Join our [Outverse-Community](https://community.askui.com/forums/home) to get help from fellow users and AskUI staff.
