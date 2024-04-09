@@ -189,7 +189,7 @@ const config = {
             items: [
               {
                 label: 'Outverse',
-                href: 'https://app.outverse.com/askui/community/home',
+                href: 'https://community.askui.com/forums/home',
               },
               {
                 label: 'Linkedin',

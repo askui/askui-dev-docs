@@ -33,7 +33,7 @@ AskUI Runner gives you the ability to remotely carry out a workflow in QA on a l
 Need ideas or prior art? Our [YouTube channel](https://www.youtube.com/@askui4398) has some cool things you can do by hooking your AskUI environment up to different things. Everything from automating your Android phone, to orchestrating and debugging your Workflows with custom-built software.
 
 ## Join Our Community
-Expand your AskUI skills and connect with others in the field by joining our [AskUI Community](https://app.outverse.com/askui/community/home). It’s a great place to exchange ideas, find solutions, and discuss your projects with fellow users. Whether you're starting out or have expertise to share, the community is an invaluable resource for all things AskUI.
+Expand your AskUI skills and connect with others in the field by joining our [AskUI Community](https://community.askui.com/forums/home). It’s a great place to exchange ideas, find solutions, and discuss your projects with fellow users. Whether you're starting out or have expertise to share, the community is an invaluable resource for all things AskUI.
 
 ## Technical Support
 If you’re experiencing problems, have questions about implementing AskUI, or want to report a bug, you can write to us at [support@askui.com](mailto:support@askui.com) and our Product Support Engineers will get back to you.

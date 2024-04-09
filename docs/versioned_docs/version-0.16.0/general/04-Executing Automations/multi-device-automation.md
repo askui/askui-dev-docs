@@ -352,4 +352,4 @@ Run the command below to run the AskUI code:
 </Tabs>
 
 ## Conclusion
-Now you should be able to automate multiple devices in the network. If you got any issues while following this tutorial, don't hesitate to ask our [Outverse-Community](https://app.outverse.com/askui/community/home)!
+Now you should be able to automate multiple devices in the network. If you got any issues while following this tutorial, don't hesitate to ask our [Outverse-Community](https://community.askui.com/forums/home)!
