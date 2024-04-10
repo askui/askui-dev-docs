@@ -48,17 +48,33 @@ You will move your mouse cursor to a little human-figure ![human-figure](images/
   <source src="https://d2dnep8p8ldagm.cloudfront.net/assets/docs/blog_customElement_askui_google_street_view.mp4"/>
 </video>
 
+### 0. Create a Folder for Your Custom Elements
+We recommend to create a folder `custom_elements` in project's directory to store all the screenshots for custom elements (See also the section [Recommended Structure and Naming](#recommended-structure-and-naming)).
+
+```bash
+project_root/
+├─ askui_example/
+├─ node_modules/
+├─ custom_elements/
+├─ .eslintignore
+├─ .eslintrc.json
+├─ package.json
+├─ tsconfig.json
+```
+
 ### 1. Create a Screenshot of the Element
 You can use your favorite _Snipping_ tool for this. Our recommendations for the different operating systems are as follows:
 
-* [Windows Snipping Tool (Win 7, 10, 11)]https://support.microsoft.com/en-us/windows/use-snipping-tool-to-capture-screenshots-00246869-1843-655f-f220-97299b865f6b
+* Open the [Windows Snipping Tool (Win 7, 10, 11)](https://support.microsoft.com/en-us/windows/use-snipping-tool-to-capture-screenshots-00246869-1843-655f-f220-97299b865f6b)
+  * Select *Rectangle* as area
+  * You will be asked to select a certain portion of the screen
+  * The captured image will be stored in the clipboard, save it to `custom_elements` folder.
 
-* macOS: Press `cmd` + `shift` + `4`
+* macOS: Press `cmd` + `shift` + `5`
+  * Adjust the area to only enclose your custom element
+  * Select the `custom_elements` folder under `Options - Save to`
 
 * Linux: [Shutter](https://shutter-project.org/)
-
-
-You will be asked to select a certain portion of the screen. On Windows, the captured image will be stored in the clipboard, so you will need to save it to an image file. On macOS, the image will be saved on the `~/Desktop` by default.
 
 :::tip
 The quality of the __crop-out__ plays a big role in how good the element will be recognized. Make sure to:
@@ -68,13 +84,13 @@ The quality of the __crop-out__ plays a big role in how good the element will be
 :::
 
 ### 2. Save It in Your AskUI Project Folder
-Save the image in your project's directory with the name `human-figure.png`. We recommend to create a folder `custom-elements` to store all the screenshots for custom elements (See also the section [Recommended Structure and Naming](#recommended-structure-and-naming)).
+Save the image in your project's directory folder `custom_elements` with the name `human-figure.png`.
 
 ```bash
 project_root/
 ├─ askui_example/
 ├─ node_modules/
-├─ custom-elements/
+├─ custom_elements/
   ├─ human-figure.png
 ├─ .eslintignore
 ├─ .eslintrc.json
@@ -89,7 +105,7 @@ Finally you can move the mouse cursor to the custom element.
 // move the mouse to the custom element
 await aui.moveMouseTo()
     .customElement({
-        customImage: "./custom-elements/human-figure.png",
+        customImage: "./custom_elements/human-figure.png",
         name: "street-view-icon",
         threshold: 0.9,
     })
@@ -100,15 +116,15 @@ await aui.moveMouseTo()
 When you have more than a few custom elements you want to think about the correct folder structure of your AskUI project and a naming scheme for each custom element. This ensures maintainability of your project.
 
 ### AskUI Project Structure
-The custom elements screenshots should not clutter your `root` folder of your AskUI project. Create a `custom-elements` folder to store all your screenshots. If you have many workflows with custom elements only used in specific workflows, you can think about creating subfolders for each workflow as shown in the example below:
+The custom elements screenshots should not clutter your `root` folder of your AskUI project. Create a `custom_elements` folder to store all your screenshots. If you have many workflows with custom elements only used in specific workflows, you can think about creating subfolders for each workflow as shown in the example below:
 
 ```bash
 project_root/
 ├─ askui_example/
 ├─ node_modules/
-├─ custom-elements/
+├─ custom_elements/
   ├─ workflow1/
-     ├─ lastname.form.textfield.png # path: ./custom-elements/workflow1/lastname.form.textfield.png
+     ├─ lastname.form.textfield.png # path: ./custom_elements/workflow1/lastname.form.textfield.png
      ├─ ...
   ├─ workflow2/
   ├─ ...
