@@ -58,7 +58,7 @@ This method is not restricted to icon elements, but can also be used for a wide 
 
 
 ### 3. Use Custom Element Selection
-Custom element selection is your last resort because it is slow as it uses image-in-image search. Check out our [Google Street View Tutorial](../03-Element%20Selection/text-and-element-selectors.md#custom-elements) to see how you can make use of it.
+Custom element selection is your last resort because it is slow as it uses image-in-image search. Check out our [Custom Elements page](../03-Element%20Selection/custom-elements.md) to see how you can make use of it.
 
 ## Selecting Image
 Images are supposed to have a very certain visual property.

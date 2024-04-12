@@ -99,7 +99,7 @@ The `AskUI-NewProject` command creates a new AskUI project with customizable opt
 - `WorkspaceID`: Provides the AskUI workspace ID.
 - `Token`: Inputs the AskUI Token.
 - `AskUINodeJsVersion`: Determines the version of AskUI Node.js to install (defaults to the latest).
-- `SkipChangingPathUserPrompt`: Skips the prompt to change the project directory (defaults to false).
+- `SkipChangingPathUserPrompt`: Skips the prompt to change the project directory.
 - `TestFramework`: Chooses the test framework: 'jest' or 'jasmine'.
 - `UsingProxy`: Use a proxy: 'true' or 'false'.
 - `TypeScriptConfig`: Overwrite `tsconfig.json`: 'true' or 'false'.
@@ -108,7 +108,7 @@ The `AskUI-NewProject` command creates a new AskUI project with customizable opt
 
 ```powershell
 #This Command will create a new project in the current directory with the name `MyProject` and will skip the prompt to change the project directory.
-AskUI-NewProject -ProjectName MyProject -WorkspaceId <Workspace_id> -Token <Token> -SkipChangingPathUserPrompt true
+AskUI-NewProject -ProjectName MyProject -WorkspaceId <Workspace_id> -Token <Token> -SkipChangingPathUserPrompt
 ```
 
 ### `AskUI-RunProject` Command
