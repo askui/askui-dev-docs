@@ -4,65 +4,80 @@ title: Recommended Practices
 ---
 
 # Recommended Practices
-On this page you will learn the different methods to detect elements. Every method has its strength and weaknesses, for example one is more accurate than another but also more effort when using it.
+On this page you will learn the different methods to detect elements. Every method has its strength and weaknesses.
 
-## The Overarching Goal
-As a user you want to detect elements reliably. There are two axes of reliability:
+You will learn:
 
-* False Positives: Detecting the wrong element or detecting more elements than you want to detect.
-* False Negatives: Detecting no element where there is one.
+* What methods AskUI offers and their strengths and weaknesses
+* Use case based recommendations on what method to use
 
-## Methods of Detecting Elements in AskUI
+## Methods of Detecting Elements
 
-**Ranked by detection accuracy:**
+* `Custom element`
+  * Detect elements with a screenshot
+* `Text`
+  * Finds an element of class text. If you pass an argument `text('hello')` it also uses text-recognition
+  * **Limitation**: Sometimes dependent on resolution, font and linebreaks
+* `Button, textfield, checkbox, ...` [all classes](../../api/03-Element-Descriptions/button.md)
+  * Finds an element of the class
+* `Icon`
+  * Finds elements of type icon and then filters for _specific_ icon
+  * Detects icons reliably
+  * **Limitation**: Naming of icons inconsistent
+* `Matching`
+  * Natural language description.
+  * Works on logos and images with text
+  * **Limitation**: Only finds the best matching element
 
-| Method         | Description                               |   Advantages     | Disadvantages                            |
-| :------------- | :-------------                            | :--------------- | :---------------                         | 
-| custom element | Detects elements by image-in-image search | Reliable         | Elaborate creation |
-| text           | Finds an element of class text. If you pass an argument `text('hello')` it also uses text-recognition | Fast to write. High reliability | Dependent on resolution, font and linebreaks |
-| button, textfield, checkbox, ...| Finds an element of the class      | Reliable when element is clearly distinguishible | Sometimes fails if element, for example a button, is clearly distinguishable as a specific class |
-| icon           | Finds elements of type icon and then filters for _specific_ icon | Detects icons reliably | Naming of icons inconsistent. |
-| matching       | Natural language description.             | Works on logos and images with text; Needs experimentation for detecting the correct element | Only finds the best matching element |
+## Use Cases
+This section describes typical use cases and problems you will eventually run into and their **solutions**.
 
-## Recommendation for Optimal Detection Experience
-The general recommendation is to use a class-based method like `text`, `button` or `textfield` first. When you run into non-detectable elements, like a button AskUI does not detect, you can use a custom element.
-
-Here are two problems to consider while implementing workflows:
-
-* Responsive text causes linebreaks: Custom element detection and text detection fails.
-* The color of element/text changes during workflow.
-
-## Avoid False Negatives by Using More than One Method
-Detecting elements reliably can be achieved through chaining detection methods with `or()`. Chain them always from highest to lowest quality, so the highest quality methods get executed first. This makes sure to minimize the chance of _false positive_ detection of wrong elements. Here are a few examples of how that looks like:
-
-```typescript
-// custom element or() class based method or() matching
-await askui.click().customElement({
-                     customImage: 'custom_elements/submit.button.png'
-                   }).leftOf().button().withText('Cancel')
-                   .or().button().withText('Submit')
-                   .or().button().containsText('Submit')
-                   .or().element().matching('green submit button').leftOf().button().withText('Cancel').exec();
-
-await askui.click().customElement({customImage: 'custom_elements/figure.icon.png'}).leftOf().text('Maps')
-                   .or().icon().withText('human')
-                   .or().element().matching('a human figure icon').leftOf().text('Maps').exec();
-```
-
-## Avoid False Positives by Using More than One Method
-When you want to detect a specific button and AskUI falsely detects more elements, than you can use `and()` to use more than one method. This makes the detection more specific:
+### Detection Fails Randomly
+Visual detection of elements is highly sensitive to changes in your UI, even if they are small. For example a button that you target may fail randomly on a workflow run every now and then:
 
 ```typescript
-await askui.click().customElement({
-                     customImage: 'custom_elements/submit.button.png'
-                   }).leftOf().button().withText('Cancel')
-                   .and()
-                   .button().withText('Submit')
-                   .exec();
+await aui.click().button().withText('Sign in').exec();
 ```
 
-## Dealing with Linebreaks in Responsive Text
-AskUI detects based visually. If text is responsive and a linebreak is added the following text detection fails:
+You can do three things about this:
+
+1. Make the element-description more specific, for example with [relational selectors](../../api/04-Relations/above.md)
+2. Add a custom element with `or()` as a fallback
+3. Combine the two methods
+
+All three of them you can find in the following code:
+
+```typescript
+// Make element-description more specific
+await aui.click().button().withText('Sign in')
+                 .leftOf().button().withText('Login')
+                 .exec();
+
+// Fallback to custom element
+await aui.click().button().withText('Sign in')
+                 .or()
+                 .customElement({
+                     customImage: 'custom_elements/signin.button.png'
+                   })
+                 .exec();
+
+// Add additional element-description and a custom element as fallback
+await aui.click().button().withText('Sign in');
+                 .or().button().containsText('Sign')
+                 .or().customElement({
+                     customImage: 'custom_elements/signin.button.png'
+                   })
+                 .exec();
+```
+
+### Detection Fails on a Different Machine / in Pipeline
+When the resolution changes for a workflow run on a different machine or inside a Continuous integration pipeline for example, you may encounter the following problems:
+
+* Text linebreaks and text detection fails
+* Elements change shape or color during a workflow run
+
+#### Text Detection Fails Because of Linebreaks
+If text is responsive and a linebreak is added the following text detection may fail:
 
 ```typescript
 await aui.click()
@@ -70,17 +85,19 @@ await aui.click()
          .exec();
 ```
 
-You have to change the code to use `containsText()` and match for the start of the text:
+You have to change the code to use `containsText()` and match for the start of the text to remedy this:
 
 ```typescript
 await aui.click()
-         .text('A very long text that breaks after the comma, oh no!')
+         .text()
          .containsText('A very long text that')
          .exec();
 ```
 
-## Dealing with Changing Custom Elements
-You may have a text that can change its color and thus you can not use a _single_ custom element. When you chain a custom element for each color with `or` the text can be detected reliably:
+<!-- vale off -->
+### Color of Same Element Changes
+<!-- vale on -->
+AskUI can not detect color (yet). But you can use two custom elements together with `or()` to prepare for a change of color of the element:
 
 ```typescript
 await askui.click().customElement({customImage: 'custom_elements/red.text.png'})
@@ -88,84 +105,23 @@ await askui.click().customElement({customImage: 'custom_elements/red.text.png'})
                    .customElement({customImage: 'custom_elements/blue.text.png'}).exec()
 ```
 
-## Recommendation for Fast Speed of Inference
+### Duplicate Elements
+Sometimes you run into duplicate elements on an UI and you want to target a specific one. You need to make your element-description more specific in this case by doing one or all of the following:
 
-### Avoid Optical Character Recognition (OCR) on Too Many Element
-
-If you use `containsText()`, `withText()`, `withExactText()` or `withTextRegex()` **OCR** is applied to all elements detected on your screen. This can slow down AskUI. It is more efficient to narrow down the elements first. For example, if you want to click a `button` with a specific text you should select all buttons first.
-
-```javascript
-// Do this
-await aui.click().button('See here').exec();
-await aui.clickText('Sign in');
-
-// And NOT this
-await aui.click('See here').exec();
-await aui.click('Sign in').exec();
-```
-
-### Avoid Custom Element Detection if Possible
-
-If you use `customElement()` you are doing an image-in-image search. Use this sparingly for elements that you can not detect as the execution time is sometimes slower!
-
-```javascript
-// Do this
-await aui.clickButton('Login');
-await aui.clickText('Overview');
-
-// And NOT this
-await aui.click().customElement({
-  customImage: '.../login_button.png', 
-  name: 'login button',
-}).exec();
-await aui.click().customElement({
-  customImage: '.../text_overview.png', 
-  name: 'overview button',
-}).exec();
-```
-
-## Scrolling
-When you use AskUI you can only interact with elements that you can see on your screen. Therefore you have to scroll down/sideways to interact with currently invisible elements.
-
-### Scrolling on Touch Displays
-On touch displays you have to recreate the swipe gesture:
-
-```javascript
-// Touch the display with your finger, move finger to the left, release
-await aui.mouseToggleDown().exec()
-await aui.moveMouseRelatively(-1500, 0).exec()
-await aui.mouseToggleUp().exec()
-```
-
-### Scrolling With Mouse Wheel
-If you want to scroll with your mouse wheel you can use the `scroll()` action:
-
-```javascript
-// Scroll 10 down in y direction<>
-await aui.scroll(0, -10).exec()
-```
-
-### Scrolling With Key Press
-If you want to scroll with a key press you could use your arrow keys (`up`, `down`, `left`, `right` ) or the `pagedown`-key.
-
-```javascript
-// Press down arrow key
-await aui.pressKey('down').exec()
-
-// Press up arrow key
-await aui.pressKey('up').exec()
-
-// Scroll down a page
-await aui.pressKey('pagedown').exec()
-
-// Scroll up a page
-await aui.pressKey('pageup').exec()
-```
-
-## Wait for an Element to Appear
-AskUI implements a careful retry strategy to wait for an element to appear. But sometimes this is not long enough.
-You can wait for an element to appear with the [convenience function `waitUntil()` API docs](../../api/08-Convenience/waituntil.md):
+* Add [relational selectors](../../api/04-Relations/above.md)
+* Add more element-descriptions with `and()`
 
 ```typescript
-await aui.waitUntil(aui.expect().text('GitHub').exists());
+// Add relational selector to custom element
+await askui.click().customElement({
+                     customImage: 'custom_elements/submit.button.png'
+                   }).leftOf().button().withText('Cancel')
+
+// More specificity with and() and additional element-description
+await askui.click().customElement({
+                     customImage: 'custom_elements/submit.button.png'
+                   }).leftOf().button().withText('Cancel')
+                   .and()
+                   .button().withText('Submit').above().text('Welcome')
+                   .exec();
 ```
