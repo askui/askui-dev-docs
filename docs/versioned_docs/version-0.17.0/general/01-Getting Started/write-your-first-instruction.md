@@ -58,7 +58,7 @@ describe('AskUI Automation Scenarios', () => {
 ```
 
 ## Step-by-Step Implementation With Example
-We will automate the [Google Calculator](https://www.google.com/search?q=calculator) in this example to show you all the different techniques. Feel free to follow along. Our goal is to type `2.5+1` by clicking the buttons and then get the result by clicking `=`.
+You will automate the [Google Calculator](https://www.google.com/search?q=calculator) in this example to show you all the different techniques. Feel free to follow along. Our goal is to type `2.5+1` by clicking the buttons and then get the result by clicking `=`.
 
 ![The Google calculator](images/create-first-instruction-calculator-raw.png)
 
@@ -71,11 +71,8 @@ You will learn:
 
 :::
 
-
 ### Step 1: Annotate Your Screen
-The interactive annotation serves as the first step in automating UI interactions. It's a process where the tool captures a snapshot of the user interface and identifies all interactive elements like buttons, textfields, and other controls.
-
-By generating an annotated HTML file, you create a 'map' of the UI, which is crucial for accurately targeting and interacting with specific elements in subsequent steps.
+The (interactive) annotation serves as the first step in automating UI interactions. It's a process where the tool captures a snapshot of the user interface and identifies all interactive elements like buttons, textfields, and other controls.
 
 <Tabs>
   <TabItem value="windows" label="Windows" default>
@@ -89,10 +86,6 @@ describe('AskUI on Windows', () => {
   });
 });
 ```
-:::info
-**Windows Bug**  
-The interactive annotation `aui.annotateInteractively()` currently leads to an error on Windows. Instead use `annotate()` as outlined in the code above.
-:::
   </TabItem>
   <TabItem value="macos" label="MacOS">
 
@@ -122,21 +115,26 @@ describe('AskUI on Linux', () => {
 
 #### Run the Annotation
 
-To execute the instructions, enter into your terminal (Windows: [AskUI Development Environment (ADE)](../02-Components/AskUI-Development-Environment.md)).
+To execute the instructions:
 
 <Tabs>
   <TabItem value="windows" label="Windows" default>
-  Switch into ADE by running `askui-shell` in a Command Prompt first.
+  Switch into [AskUI Development Environment (ADE)](../02-Components/AskUI-Development-Environment.md) by running `askui-shell` in a Command Prompt first.
+
   ```shell
   AskUI-RunProject
   ```
   </TabItem>
   <TabItem value="macOS" label="macOS" default>
+  Enter into your terminal:
+
   ```shell
   npm run askui
   ```
   </TabItem>
   <TabItem value="linux" label="Linux" default>
+  Enter into your terminal:
+
   ```shell
   npm run askui
   ```
@@ -145,22 +143,34 @@ To execute the instructions, enter into your terminal (Windows: [AskUI Developme
 
 A few seconds later an (interactive) annotation will be generated. If you have used the `annotate()` command, the annotation files are saved under `<project_root>/report`.
 
-Your (interactive) annotation looks like this (cropped version to show only the calculator):
+Your (interactive) annotation looks something like this (cropped to show only the calculator):
 
 ![Annotation of the Google calculator](images/create-first-instruction-calculator-annotated.png)
 
-To close out the interactive annotation, use `CMD/CTRL + W` or `ESC`.
+To close the interactive annotation, use `CMD/CTRL + W` or `ESC`.
 
 If you’d like a deeper explanation as to what an (interactive) annotation is, read about it here. [Explanation of (Interactive) Annotations](../03-Element%20Selection/annotations-and-screenshots.md)
 
-### Step 2: Identifying and Interacting with Your Target Element
+### Step 2: Interacting with Your Target Element
+You first need an _action_ to interact with the element. You want to `click` the button so you add a `click()` to the instruction as you can see in the following code. Check our [API documentation](../../api/02-Actions/click.md) for all the actions.
+
+The code is commented out for now as it is not valid yet.
+
+```typescript title="askui_example/my-first-askui-test-suite.test.ts" showLineNumbers
+it('should click on my element', async () => {
+//  await aui
+//    .click(); // your action
+});
+```
+
+### Step 3: Identifying Your Target Element
 This step is about pinpointing the exact UI element (like a button or link) you want to interact with. The element's properties (e.g. element-description) acts like a unique identifier for each UI component.
 
 :::info
 
-**Standard Element-Description (Recommended)**
+**Standard Element-Description**
 
-- **Process**: Click the UI element during annotation to copy its description to your clipboard.
+- **Process**: Click the UI element in the annotation (overlay or HTML page depending on if you used `annotateInteractively()` or `annotate()`, respectively) to copy its description to your clipboard.
 - **Advantages**: Quick for reliably identifiable elements.
 - **Best Used When**: The element is distinctly recognizable and not surrounded by similar elements.
 
@@ -168,9 +178,9 @@ This step is about pinpointing the exact UI element (like a button or link) you 
 
 First hover over the button containing the `2` and do a left mouse click. You now have the element-description in your clipboard.
 
-![Hovering over the button contain the `2`](images/create-first-instruction-two-button-copy.png)
+![Hovering over the button containing the `2`](images/create-first-instruction-two-button-copy.png)
 
-To interact with the element you also need an `action`. We want to `click` the button so we add a `click() to the instruction as you can see in the following code. Check our [API Documentation](https://docs.askui.com/docs/0.11.6/api/API/table-of-contents#actions) for all the actions.
+Then add it to your action as shown in the code below.
 
 ```typescript title="askui_example/my-first-askui-test-suite.test.ts" showLineNumbers
 it('should click on my element', async () => {
@@ -181,7 +191,7 @@ it('should click on my element', async () => {
 });
 ```
 
-As you can see AskUI tries to click a `button()` but it does not know _which one_ yet. We need to add more information like, for example that the button contains the text `2`. Add it by using `contains().text('2')`:
+As you can see AskUI tries to click a `button()` but it does not know _which one_ yet. Generally you need to think about what makes the target element unique visually. Possibly over multiple runs. In this case there is no other button with the label `2`, so targeting a button that contains the text `2` should be a reliable way to target this specific element. Also check out all the [element-descriptions](../../api/01-API/table-of-contents.md#element-descriptions).
 
 ```typescript title="askui_example/my-first-askui-test-suite.test.ts" showLineNumbers
 it('should click on my element', async () => {
@@ -196,19 +206,19 @@ it('should click on my element', async () => {
 You can freely go to [Step 4: Executing an Instruction](#step-4-execute-an-instruction) before you finished the whole example to see how your workflow runs before you are finished.
 :::
 
-Now you run into a problem that somehow `.` is not detected as a text and you have a lot of buttons already. So targeting the button with `.` only by specifying a button will not work. But you can use relational selectors for this.
+Now you run into a problem that somehow `.` is not detected as a text and you have a lot of buttons already. So targeting the button with `.` only by specifying a button will not work. But you can use a relational selector for this.
 
 :::info
 
 **Using Relational Selectors**
 
 - **Process**: Chain multiple element descriptions together using commands like `leftOf()`, `above()`, etc., to create a unique selector based on element relationships. More information can be found in the [AskUI documentation](https://docs.askui.com/docs/0.11.6/general/Element%20Selection/relational-selectors).
-- **Advantages**: Increases selector specificity, particularly useful in complex UIs with numerous similar elements.
-- **Best Used When**: Targeting elements in a densely populated UI or when elements lack unique identifiers.
+- **Advantages**: Particularly useful in complex UIs with numerous similar elements.
+- **Best Used When**: Targeting elements in a densely populated UI or when elements lack unique visual identifiers.
 
 :::
 
-We will target the `.`-button by selecting it in _relation_ to another button that is recognized. We already know that the `2`-button works. So we instruct AskUI to click the button `below` the `2`-button:
+You will target the `.`-button by selecting it in _relation_ to another button that is recognized. You already know that the `2`-button works. So you instruct AskUI to click the button `below` the `2`-button:
 
 
 ```typescript
@@ -219,16 +229,16 @@ await aui.click()
          .exec();
 ```
 
-After you entered `5` and `+` as described [at the start of step 2](#step-2-identifying-and-interacting-with-your-target-element) you realize that `1` is neither recognized as text, nor is the button containing it recognized at all. AskUI offers image-in-image with search `customElement()` for this scenario.
+After you entered `5` and `+` as described [in step 2 and 3](#step-2-interacting-with-your-target-element) you realize that `1` is neither recognized as text, nor is the button containing it recognized at all. For these cases where an element is not recognised at all you can use `customElement()` with which you basically select the element based on an image of the element. 
 
 :::info
 
 **Custom Element-Descriptions**
 
-- **Process**: Use a screenshot snippet of the desired element to locate its exact position on the screen. More information can be found in the [AskUI documentation](../03-Element%20Selection/custom-elements.md).
-- **Advantages**: Highly accurate for unique or custom-designed elements.
+- **Process**:Take a screenshot of the desired element to locate it on the screen. More information can be found in the [AskUI documentation](../03-Element%20Selection/custom-elements.md).
+- **Advantages**: Allows to detected (custom-designed) elements AskUI can not detect (for example logos).
 - **Best Used When**: The element has a distinct visual appearance.
-- **Considerations**: This method is sometimes sensitive to screen resolution changes; ensure consistency in the automation/testing environment.
+- **Considerations**: Does not work if look of element changes too drastically, including drastic changes of the resolution or color. This is similar to other selectors / element descriptions, e.g., if the text changes too much, `withText()` also does not work anymore.
 
 :::
 
@@ -286,7 +296,7 @@ describe('jest with askui', () => {
         .exec();
 
     // The attentive reader might notice that the last step
-    // is missing: You should know how that works now.
+    // is missing: You should know how that works by now hopefully ;-)
     // If you need help visit https://community.askui.com/forums/home
   });
 });
