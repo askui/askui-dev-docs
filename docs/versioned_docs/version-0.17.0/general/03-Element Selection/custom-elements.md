@@ -5,11 +5,13 @@ title: Custom Elements
 
 # Custom Elements
 
-**Custom Element Detection** is a feature in AskUI that enables you to create custom element-descriptions for elements on the screen, instead of relying on the standard element-descriptions provided such as **Button**, **Textfield**, etc.
+With **Custom Element Detection** feature, you can define a custom element-description based on how the element is displayed on the screen. This can be particularly useful in situations where standard element-descriptions are unreliable due to the non-standard properties of the element:
 
-With this feature, you can define a custom element-description based on how the element is displayed on the screen. This can be particularly useful in situations where standard element-descriptions are unreliable due to the non-standard properties of the element.
+* Two elements only differ stably in color
+* Unknown icons or logos
+* Very low contrast where detection fails
 
-This page will explain step-by-step how to create a **Custom Element Detection** and also how to structure your workflow, so they remain maintainable.
+This page will explain step-by-step how to create a **Custom Element Detection** and also how to structure your workflows, so they remain maintainable.
 
 ## Understanding the `customElement()` in AskUI
 `customElement()` is an element to look for on the screen that is defined by the user with a given screenshot of that element. The following code shows the usage of a `customElement()` by clicking a custom element that looks like the element in the file `logo.png`.
@@ -31,13 +33,13 @@ Arguments:
 - **customImage** (*`string`, required*):
     - A cropped image in the form of a base64 string or file path.
 - **name** (*`string`, optional*):
-    - A unique name that can be used for filtering for the custom element. If not given, any text inside the custom image will be detected via OCR.
+    - A unique name that can be used for filtering for the custom element. If not given, any text inside the custom image will be detected via OCR. You can use [get()](../../api/06-Getters/get.md) to extract text from images or logos because of this.
 - **threshold** (*`number`, optional*):
     - A threshold for how much a UI element needs to be similar to the custom element as defined. Takes values between `0.0` (== all elements are recognized as the custom element which is probably not what you want) and `1.0` (== elements need to look exactly like the `customImage` which is unlikely to be achieved as even minor differences count). Defaults to `0.9`.
 - **rotationDegreePerStep** (*`number`, optional*):
     - Step size in rotation degree. Rotates the custom image by this step size until 360° is exceeded. The range is from `0` to `360`. Defaults to `0`.
 - **imageCompareFormat** (*`'RGB' | 'grayscale'`, optional*):
-    - The color compare style. `grayscale` compares the brightness of each pixel whereas `RGB` compares all three color. Defaults to `grayscale`.
+    - The color compare style. `grayscale` compares the brightness of each pixel whereas `RGB` compares all three color. `grayscale` is faster in execution, but does not allow to differentiate between color. Defaults to `grayscale`.
 
 ## Step-By-Step Guide
 Now that you know how to click a custom element you will create one on your own step-by-step.
@@ -116,7 +118,9 @@ await aui.moveMouseTo()
 When you have more than a few custom elements you want to think about the correct folder structure of your AskUI project and a naming scheme for each custom element. This ensures maintainability of your project.
 
 ### AskUI Project Structure
-The custom elements screenshots should not clutter your `root` folder of your AskUI project. Create a `custom_elements` folder to store all your screenshots. If you have many workflows with custom elements only used in specific workflows, you can think about creating subfolders for each workflow as shown in the example below:
+The custom elements screenshots should not clutter your `root` folder of your AskUI project. Create a `custom_elements` folder to store all your screenshots.
+
+If you have many workflows with custom elements only used in specific workflows, you can think about creating subfolders for each workflow as shown in the example below:
 
 ```bash
 project_root/
@@ -135,6 +139,10 @@ project_root/
 ├─ human-figure.png
 ```
 
+:::tip
+There is no _one-size-fits-all_ structure. If you develop workflows for different operating systems (OS) you may also want to create folders for each OS.
+:::
+
 ### Screenshot Naming Scheme
 It is also a good idea to create a naming scheme for screenshots. This will ensure that you can update them easier later.
 
@@ -146,10 +154,10 @@ For example for a `textfield` with the label `lastname` that is embedded in a fo
 
 **1) Create the Custom Image by Cropping it From The Actual Screen**
 
-- To find a matching element from the screen, the custom image **must be the same as it is displayed on the screen.**
+- To find a matching element from the screen, the custom image **must be very similar as it is displayed on the screen.**
 
 <!-- vale off -->
-**2) The Time of the Execution will Increase by a Notable Amount**
+**2) The Time of the Execution may Increase by a Notable Amount**
 <!-- vale on -->
 
-- To examine whether the custom image matches the given screen, AskUI iterates through the whole image pixels of the given screen as well as the custom image. So it is likely to increase the runtime by a notable amount. Therefore, if the task could be accomplished with other element-descriptions such as `icon()`, `button()`, or `text()`, then it may be better to avoid using the `customElement()`.
+- In some cases using a `customElement()` increases the runtime by a notable amount. Therefore, if the task could be accomplished with other element-descriptions such as `icon()`, `button()`, or `text()`, then it may be better to avoid using the `customElement()`.
