@@ -23,7 +23,7 @@ Please [fill out this form](https://www.askui.com/demo) to schedule a demonstrat
 :::
 
 ### Step 1: Download Installer
-Download the AskUI Installer [here](https://files.askui.com/releases/Installer/24.3.1/AskUI-Suite-24.3.1-System-Installer-Win-AMD64-Full.exe).
+Download the <span className="askui-installer-download-link-windows">[AskUI Installer here](https://files.askui.com/releases/Installer/24.4.1/AskUI-Suite-24.4.1-System-Installer-Win-AMD64-Full.exe).</span>
 
 It will install the following components:
 

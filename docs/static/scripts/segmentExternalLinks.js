@@ -10,10 +10,15 @@ function addTrackLink() {
             analytics.trackLink(cardButton, 'Clicked Gitpod Try Out Repository', {});
         }
         // AskUI-Installer download tracking
-        var askuiInstallerDownloadLink = document.getElementById('askui-installer-download-link');
-        if (typeof askuiInstallerDownloadLink !== 'undefined') {
-            askuiInstallerDownloadLink = askuiInstallerDownloadLink.getElementsByTagName('a')[0];
-            analytics.trackLink(askuiInstallerDownloadLink, 'Clicked AskUI-Installer download link', {});
+        const askuiInstallerDownloadLinks = document.querySelectorAll('.askui-installer-download-link-windows');
+        if (typeof askuiInstallerDownloadLinks !== 'undefined' && askuiInstallerDownloadLinks.length > 0) {
+            for (let i=0; i < askuiInstallerDownloadLinks.length; i++) {
+                analytics.trackLink(
+                    askuiInstallerDownloadLinks[i],
+                    'Download Windows Installer Pressed', {
+                        originsource: 'dev-docs'
+                    });
+            }
         }
     } else {
         setTimeout(addTrackLink, 1000);
