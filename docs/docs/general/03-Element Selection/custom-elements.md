@@ -5,13 +5,21 @@ title: Custom Elements
 
 # Custom Elements
 
-With **Custom Element Detection** feature, you can define a custom element-description based on how the element is displayed on the screen. This can be particularly useful in situations where standard element-descriptions are unreliable due to the non-standard properties of the element:
+With **Custom Elements**, you can define a custom element-description based on how the element is displayed on the screen. This can be particularly useful in situations where standard element-descriptions are unreliable due to the non-standard properties of the element:
 
-* Two elements only differ stably in color
+
+* Two elements only differ stably in color:
+![](images/custom-elements-buttons-differ-in-color.png)
+
 * Unknown icons or logos
-* Very low contrast where detection fails
+![](images/custom-elements-icon-not-recognized.png)
 
-This page will explain step-by-step how to create a **Custom Element Detection** and also how to structure your workflows, so they remain maintainable.
+* Very low contrast where detection fails:
+![](images/custom-elements-button-not-recognized.png)
+
+* ...
+
+This page will explain step-by-step how to create a **Custom Element** and also how to structure your workflows, so they remain maintainable.
 
 ## Understanding the `customElement()` in AskUI
 `customElement()` is an element to look for on the screen that is defined by the user with a given screenshot of that element. The following code shows the usage of a `customElement()` by clicking a custom element that looks like the element in the file `logo.png`.
@@ -33,13 +41,13 @@ Arguments:
 - **customImage** (*`string`, required*):
     - A cropped image in the form of a base64 string or file path.
 - **name** (*`string`, optional*):
-    - A unique name that can be used for filtering for the custom element. If not given, any text inside the custom image will be detected via OCR. You can use [get()](../../api/06-Getters/get.md) to extract text from images or logos because of this.
+    - A unique name that can be used for filtering for the custom element. If not given, any text inside the custom image will be detected via OCR. You can use [get()](../../api/06-Getters/get.md) to extract text from images or logos because of this. TODO test this!
 - **threshold** (*`number`, optional*):
     - A threshold for how much a UI element needs to be similar to the custom element as defined. Takes values between `0.0` (== all elements are recognized as the custom element which is probably not what you want) and `1.0` (== elements need to look exactly like the `customImage` which is unlikely to be achieved as even minor differences count). Defaults to `0.9`.
 - **rotationDegreePerStep** (*`number`, optional*):
     - Step size in rotation degree. Rotates the custom image by this step size until 360° is exceeded. The range is from `0` to `360`. Defaults to `0`.
 - **imageCompareFormat** (*`'RGB' | 'grayscale'`, optional*):
-    - The color compare style. `grayscale` compares the brightness of each pixel whereas `RGB` compares all three color. `grayscale` is faster in execution, but does not allow to differentiate between color. Defaults to `grayscale`.
+    - The color compare style. `grayscale` compares the brightness of each pixel whereas `RGB` compares all three color. `grayscale` is faster in execution, but `RGB` is generally more accurate, both in sensitivity and specificity. Defaults to `grayscale`.
 
 ## Step-By-Step Guide
 Now that you know how to click a custom element you will create one on your own step-by-step.
