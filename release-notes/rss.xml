@@ -4,11 +4,87 @@
         <title>askui - Humanizing UI Automation Blog</title>
         <link>https://docs.askui.com/release-notes</link>
         <description>askui - Humanizing UI Automation Blog</description>
-        <lastBuildDate>Mon, 25 Mar 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 22 Apr 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <copyright>Copyright © 2024 askui GmbH.</copyright>
+        <item>
+            <title><![CDATA[2024.04.22 | AskUI Suite 24.4.1 - Inference Speedup]]></title>
+            <link>https://docs.askui.com/release-notes/release-2024-04-22</link>
+            <guid>https://docs.askui.com/release-notes/release-2024-04-22</guid>
+            <pubDate>Mon, 22 Apr 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Introduction]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a href="https://docs.askui.com/release-notes/release-2024-04-22#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h2>
+<p>We released the <a href="https://docs.askui.com/release-notes/release-2024-04-22#askui-installer-update-2441">AskUI Installer version 24.4.1</a> which introduces new commandlets to start and stop the AskUI Controller, debug AskUI projects and processes.</p>
+<p>Removed the icon classifier from the default inference. You can still target icons with <code>icon().withText('&lt;icon_name&gt;')</code> so the change is backwards compatible. But the name will not be displayed anymore. This discourages using the names of the icons as they are flaky across runs generally and often wrong.</p>
+<p>Lastly we optimized our inference backend. This leads to faster workflow execution as it saves 300 - 700 milliseconds each time an instruction in an AskUI workflow invokes inference.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="changes">Changes<a href="https://docs.askui.com/release-notes/release-2024-04-22#changes" class="hash-link" aria-label="Direct link to Changes" title="Direct link to Changes">​</a></h2>
+<ul>
+<li>Removed the icon classifier from the default inference.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="improvements">Improvements<a href="https://docs.askui.com/release-notes/release-2024-04-22#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements">​</a></h2>
+<ul>
+<li>Inference is faster 300-700 milliseconds</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="askui-installer-update-2441">AskUI Installer Update 24.4.1<a href="https://docs.askui.com/release-notes/release-2024-04-22#askui-installer-update-2441" class="hash-link" aria-label="Direct link to AskUI Installer Update 24.4.1" title="Direct link to AskUI Installer Update 24.4.1">​</a></h2>
+<p>Introduces a number of new commandlets to manage your AskUI Installation: <a href="https://files.askui.com/releases/Installer/24.4.1/AskUI-Suite-24.4.1-System-Installer-Win-AMD64-Full.exe" target="_blank" rel="noopener noreferrer">Download link</a>.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features">New Features<a href="https://docs.askui.com/release-notes/release-2024-04-22#new-features" class="hash-link" aria-label="Direct link to New Features" title="Direct link to New Features">​</a></h2>
+<p>This release focuses on new ADE commandlets.</p>
+<ul>
+<li>ADE commandlets to start and stop the AskUI Controller (and child processes):<!-- -->
+<ul>
+<li><a href="https://docs.askui.com/docs/general/Components/AskUI-Development-Environment#askui-showcontrollers-command" target="_blank" rel="noopener noreferrer">AskUI-ShowControllers</a></li>
+<li><a href="https://docs.askui.com/docs/general/Components/AskUI-Development-Environment#askui-stopcontrollers-command" target="_blank" rel="noopener noreferrer">AskUI-StopControllers</a></li>
+</ul>
+</li>
+<li><a href="https://docs.askui.com/docs/general/Components/AskUI-Development-Environment#askui-showsettings-command" target="_blank" rel="noopener noreferrer">AskUI-ShowSettings</a>
+<ul>
+<li>New option: <code>WithSecrets</code></li>
+</ul>
+</li>
+<li>Debug Commands:<!-- -->
+<ul>
+<li><a href="https://docs.askui.com/docs/general/Components/AskUI-Development-Environment#project-management-debug-commands" target="_blank" rel="noopener noreferrer">Project Management Debug Commands</a></li>
+<li><a href="https://docs.askui.com/docs/general/Components/AskUI-Development-Environment#process-management-debug-commands" target="_blank" rel="noopener noreferrer">Process Management Debug Commands</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes">Fixes<a href="https://docs.askui.com/release-notes/release-2024-04-22#fixes" class="hash-link" aria-label="Direct link to Fixes" title="Direct link to Fixes">​</a></h2>
+<p>This release focuses on bug fixes.</p>
+<ul>
+<li>High CPU usage of the RemoteDeviceController process, especially during idle.</li>
+<li>All FFMPG processes are getting killed on AskUI Controller shutdown.</li>
+<li><code>scroll()</code> crashes AskUI Controller</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="versions">Versions<a href="https://docs.askui.com/release-notes/release-2024-04-22#versions" class="hash-link" aria-label="Direct link to Versions" title="Direct link to Versions">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="components-and-packages">Components and Packages<a href="https://docs.askui.com/release-notes/release-2024-04-22#components-and-packages" class="hash-link" aria-label="Direct link to Components and Packages" title="Direct link to Components and Packages">​</a></h3>
+<ul>
+<li>AskUI Controller<!-- -->
+<ul>
+<li>AskUI Controller: v0.2.1.0 Preview</li>
+<li>AskUI Legacy UI Controller: 0.14.0</li>
+</ul>
+</li>
+<li>AskUI Runner: 0.1.4</li>
+<li>AskUI Development Environment (ADE)</li>
+<li>AskUI Development Kit (ADK)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3rd-party-versions">3rd Party Versions<a href="https://docs.askui.com/release-notes/release-2024-04-22#3rd-party-versions" class="hash-link" aria-label="Direct link to 3rd Party Versions" title="Direct link to 3rd Party Versions">​</a></h3>
+<ul>
+<li>Node.JS: 21.0.0</li>
+<li>PowerShell 7.3.8</li>
+</ul>]]></content:encoded>
+            <author>johannes.dienst@askui.com (Johannes Dienst)</author>
+            <author>jonas.menesklou@askui.com (Jonas Menesklou)</author>
+            <category>AskUI Development Environment (ADE)</category>
+        </item>
         <item>
             <title><![CDATA[2024.03.25 | AskUI SDK Automations Directory Option]]></title>
             <link>https://docs.askui.com/release-notes/release-2024-03-25</link>

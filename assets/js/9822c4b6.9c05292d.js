@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[60484],{82040:e=>{e.exports=JSON.parse('{"permalink":"/release-notes/tags/ask-ui-development-environment-ade","page":1,"postsPerPage":3,"totalPages":1,"totalCount":3,"blogDescription":"Blog","blogTitle":"Release Notes"}')}}]);
