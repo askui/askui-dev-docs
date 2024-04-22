@@ -25,6 +25,49 @@ AskUI-StartController -LogLevel debug -RunInBackground
 Note: Adjust the parameters as needed for your specific use case.
 :::
 
+## Show All Controllers Over Terminal (AskUI Development Environment)
+First switch into the [AskUI Development Environment (ADE)](AskUI-Development-Environment.md) by executing the command `askui-shell` in a terminal. The `AskUI-ShowControllers` command is used to show the running **AskUI Controller** processes.
+
+:::info
+Only AskUI Controller processes started by the `AskUI-StartController` command during the same session can be shown by this command.
+:::
+
+### Example
+
+```powershell
+# Show all AskUI running AskUI Controllers.
+AskUI-ShowControllers
+
+# Output
+ProcessId DisplayNum Runtime Port
+--------- ---------- ------- ----
+     3528          0 desktop 6769
+    15184          0 android 6781
+```
+
+## Stop Over Terminal (AskUI Development Environment)
+First switch into the [AskUI Development Environment (ADE)](AskUI-Development-Environment.md) by executing the command `askui-shell` in a terminal. The `AskUI-StopControllers` command is used to stop the **AskUI Controller**.
+
+You have several configuration options, which you can find [here](AskUI-Development-Environment.md#askui-controller-management).
+
+:::info
+Only AskUI Controller processes started by the `AskUI-StartController` command during the same session can be stopped by this command.
+:::
+
+### Examples
+
+```powershell
+# Stops the AskUI Controller with the following options: Port: 6769
+AskUI-StopControllers -Port 6769
+
+# Stop the AskUI Controller with the following options: DisplayNum: 0, Runtime: desktop
+AskUI-StopControllers -DisplayNum 0 -Runtime desktop
+```
+
+:::info
+Note: Adjust the parameters as needed for your specific use case.
+:::
+
 ## Features
 
 ### Type Like a Human
