@@ -52,17 +52,25 @@ The `AskUI-ShowSettings` command retrieves and displays the AskUI configuration.
 Parameters:
 
 - **`Location`**: Specifies the settings to be displayed (Merged or User or Project or Default). Default is Merged.
+- **`WithSecrets`**: Specifies whether to display the settings secrets.
 
 **Example:**
 
 ```powershell
 # Get and display AskUI Merged Settings.
-  AskUI-ShowSettings
+# Access token will be masked with *.
+AskUI-ShowSettings
+```
+
+```powershell
+# Get and display AskUI Merged Settings.
+# Access token will be unmasked.
+AskUI-ShowSettings -WithSecrets
 ```
 
 ```powershell
 # Get and display AskUI User Settings.
-  AskUI-ShowSettings -Location User
+AskUI-ShowSettings -Location User
 ```
 
 ### `AskUI-RemoveSettings` Command
@@ -131,14 +139,14 @@ The `AskUI-StartController` command is used to launch the AskUI Remote Device Co
 - `DisplayNum`: Select a display number, default 0.
 - `Maximize`: Start the app as a Maximized window.
 - `Runtime`: Select the runtime (desktop, android). default desktop.
-- `Port`: Port of the web socket port server to connect via the runner-protocol. (Default: 6769)
+- `Port`: Port of the web socket server to connect via the runner-protocol. (Default: 6769)
 - `ActionWaitTime`: Waits x milliseconds after each action. This can be used to slow down or speed up the execution. (Default: 1000)
 - `WebSocketHost`: Host of the web socket server to connect via the runner-protocol. (Default: 127.0.0.1)
 - `LogFile`: Output path for generated logs.
 - `LogLevel`: Log level. (Default: debug)
 - `RunInBackground`: Start the app in background mode.
 
-**Example:**
+**Examples:**
 
 ```powershell
 # This Command will start the AskUI Controller in background with all default options.
@@ -146,7 +154,7 @@ AskUI-StartController -RunInBackground
 ```
 
 ```powershell
-#This Command will start the AskUI Controller in the background with the following options: DisplayNum: 0, Maximize: true, Runtime: desktop, Port: 6769, ActionWaitTime: 1000, WebSocketHost: 127.0.0.1
+# This Command will start the AskUI Controller in the background with the following options: DisplayNum: 0, Maximize: true, Runtime: desktop, Port: 6769, ActionWaitTime: 1000, WebSocketHost: 127.0.0.1
 AskUI-StartController -DisplayNum 0 -Maximize -Runtime desktop -Port 6769 -ActionWaitTime 1000 -WebSocketHost 127.0.0.1 -LogFile "C:/Logs/remote_device_log.txt" -LogLevel debug -RunInBackground
 ```
 :::info
@@ -155,16 +163,133 @@ Note: Adjust the parameters as needed for your specific use case.
 
 Also see the dedicated [AskUI Controller docs](AskUI-Controller.md) for more information.
 
+### `AskUI-ShowControllers` Command
+The `AskUI-ShowControllers` command is used to show the running **AskUI Controller** processes.
+
+:::info
+Only AskUI Controller processes started by the `AskUI-StartController` command during the same session can be shown by this command.
+:::
+
+**Example:**
+
+```powershell
+# Show all AskUI running AskUI Controllers.
+AskUI-ShowControllers
+
+# Output
+ProcessId DisplayNum Runtime Port
+--------- ---------- ------- ----
+     3528          0 desktop 6769
+    15184          0 android 6781
+```
+
+### `AskUI-StopControllers` Command
+The `AskUI-StopControllers` command is used to stop the AskUI Remote Device Controller with the following customizable options:
+
+- `DisplayNum`: Select a display number, default 0. Autocompletion support.
+- `Runtime`: The runtime (desktop, android), default _desktop_. Autocompletion support.
+- `Port`: Port of the web socket server of the AskUI Controller (Default: 6769) Autocompletion is provided.
+
+**Examples:**
+
+```powershell
+# Stops the AskUI Controller with the following options: Port: 6769
+AskUI-StopControllers -Port 6769
+```
+
+```powershell
+# Stop the AskUI Controller with the following options: DisplayNum: 0, Runtime: desktop
+AskUI-StopControllers -DisplayNum 0 -Runtime desktop
+```
+
+:::info
+Only Controller processes started by the `AskUI-StartController` command during the same session can be stopped by this command.
+:::
+
+## AskUI Debug Commands
+The _Debug Commands_ help you to debug and manage your AskUI projects and the processes ADE creates. You have to enable them by running the following command:
+
+```powershell
+# Enables the Debug Commands.
+AskUI-ImportDebugCommands
+```
+
+### Project Management Debug Commands
+The `AskUI-AddProjectSettingsIfNotExist` command adds the AskUI settings into the current path:
+
+**Example:**
+
+```powershell
+# Adds the AskUI settings to the current path.
+AskUI-AddProjectSettingsIfNotExist
+```
+
+### Process Management Debug Commands
+The _Process Management Debug_ commands are used to show all running AskUI processes and to stop faulty AskUI processes:
+
+#### `AskUI-ShowProcess` Command
+The `AskUI-ShowProcess` command is used to show AskUI processes.
+
+**Example:**
+
+```powershell
+# Show all AskUI processes.
+AskUI-ShowProcess
+
+# Output
+ProcessId ProcessName
+  --------- -----------
+      20356 askui-ui-controller
+      21944 askui-ui-controller
+      22244 askui-ui-controller
+      24384 askui-ui-controller
+      20536 AskuiRemoteDeviceController
+      14968 ffmpeg
+```
+
+#### `AskUI-StopProcess` Command
+The `AskUI-StopProcess` command is used to stop AskUI processes. This function accepts the following parameters:
+
+- `All`: Stops all AskUI processes.
+- `ProcessName <string>`: Stops the AskUI process with the specified name. Autocompletion and wildcards support.
+- `ProcessId <int>`: Stops the AskUI process with the specified process ID. Autocompletion supported.
+
+**Examples:**
+
+```powershell
+# Stop all AskUI processes.
+AskUI-StopProcess -All
+```
+
+```powershell
+# Stop all AskUI processes with the specified name.
+AskUI-StopProcess -ProcessName "AskUI-Controller"
+```
+
+```powershell
+# Stop all AskUI processes with the name starting with "askui".
+AskUI-StopProcess -ProcessName "askui*"
+```
+
+```powershell
+# Stop the AskUI process with the specified process ID.
+  AskUI-StopProcess -ProcessId 1234
+```
+
 ## AskUI Runner Management
 The AskUI Runner is a self-hosted component that downloads your workflows from AskUI Studio and runs them on the device it is hosted at.
 
+```powershell
+# Imports AskUI Debug Commands.
+AskUI-ImportDebugCommands
+```
 
 ### `AskUI-StartRunner` Command
 The `AskUI-StartRunner` command starts the AskUI Runner. This function accepts the following parameters:
 
 - `Token`: Specifies the AskUI token to be used for the runner. If not specified, the token from the AskUI settings is used.
 - `WorkspaceId`: Specifies the AskUI workspace ID to be used for the runner. If not specified, the workspace ID from the AskUI settings is used.
-- `Port`: Port of the web socket port server to connect via the runner-protocol. (Default: 6769)
+- `Port`: Port of the web socket server to connect via the runner-protocol. (Default: 6769)
 - `WebSocketHost`: Host of the web socket server to connect via the runner-protocol. (Default: 127.0.0.1)
 - `ForceProjectTemplateUpdate`: Specifies whether to force the update of the project template. This is helpful for debugging.
 - `LogLevel`: Specifies the AskUI Runner log level. Available values are: 'INFO', 'DEBUG', 'WARNING', 'ERROR', 'CRITICAL'. The default is 'INFO'.
