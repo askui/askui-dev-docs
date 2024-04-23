@@ -41,7 +41,7 @@ Arguments:
 - **customImage** (*`string`, required*):
     - A cropped image in the form of a base64 string or file path.
 - **name** (*`string`, optional*):
-    - A unique name that can be used for filtering for the custom element. If not given, any text inside the custom image will be detected via OCR. You can use [get()](../../api/06-Getters/get.md) to extract text from images or logos because of this. TODO test this!
+    - A unique name that can be used for filtering for the custom element. If not given, any text inside the custom image will be detected via OCR. You can use [get()](../../api/06-Getters/get.md) to extract text from images or logos because of this.
 - **threshold** (*`number`, optional*):
     - A threshold for how much a UI element needs to be similar to the custom element as defined. Takes values between `0.0` (== all elements are recognized as the custom element which is probably not what you want) and `1.0` (== elements need to look exactly like the `customImage` which is unlikely to be achieved as even minor differences count). Defaults to `0.9`.
 - **rotationDegreePerStep** (*`number`, optional*):

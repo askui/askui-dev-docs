@@ -20,14 +20,10 @@ You will learn:
   * **Limitation**: Sometimes dependent on resolution, font and linebreaks
 * `Button, textfield, checkbox, ...` [all classes](../../api/03-Element-Descriptions/button.md)
   * Finds an element of the class
-* `Icon`
-  * Finds elements of type icon and then filters for _specific_ icon
-  * Detects icons reliably
-  * **Limitation**: No icon classifier. This means you can not find an icon based on its name.
 * `Matching`
   * Natural language description.
   * Works on logos and images with text
-  * **Limitation**: Only finds the best matching element instead of multiple elements.
+  * **Limitation**: Only finds the best matching element instead of all elements matching the natural language description.
 
 ## Text Detection Fails
 This section describes typical problems you will run into when you try to detect text and provide **solutions**.
@@ -37,7 +33,7 @@ If a single character does not get detected you have two options depending on th
 
 ![Single character not enclosed and undetected.](images/recommended-practices/recommended-practices-single-character-not-detected.png)
 
-* Use a [custom element](../../api/03-Element-Descriptions/customelement.md) if the single character is not enclosed in another class like `button`
+* Use a [custom element](../../api/03-Element-Descriptions/customelement.md) if the single character is not enclosed in another class like `button`.
 
 ```typescript
 // Custom element instead of text('<your_character>')
@@ -117,7 +113,7 @@ Sometimes coherent text is split up into two or more text-elements.
 
 ![](images/recommended-practices/recommended-practices-this-should-not-be-split-up.png)
 
-* If you need to match the exact-text: Use a [custom element](../../api/03-Element-Descriptions/customelement.md)
+* If you need to match the exact-text, Use a [custom element](../../api/03-Element-Descriptions/customelement.md)
 
 ```typescript
 // Custom element instead of text(<your_text>)
@@ -158,13 +154,13 @@ You can target it like this:
 await aui.click().button().withText('4').exec();
 ```
 
-But when you change the screen resolution a little bit then the `4` is not recognized any more:
+But when you change the screen resolution, the `4` may not be recognized anymore:
 
 ![](images/recommended-practices/recommended-practices-button-with-4-undetected.png)
 
 You can do three things about this:
 
-1. Make the element-description more stable, for example with a [relational selector](../../api/04-Relations/above.md):
+1. Make the element-description more stable, for example, with a [relation](../../api/04-Relations/above.md):
 
 ```typescript
 // Make element-description more stable
@@ -198,7 +194,7 @@ await aui.click().button().withText('Sign in');
 ```
 
 ### Icon Detection Fails
-Detecting icons correctly is difficult because there are millions of icons available. You run into the problem that an icon is not detected sometimes:
+Detecting icons correctly is difficult because there are millions of icons available. Therefore, you may run into the problem that an icon is not detected sometimes:
 
 ![](images/recommended-practices/recommended-practices-icon-not-recognized.png)
 
@@ -217,7 +213,13 @@ Sometimes a button is not detected as one. Usually this is because of low contra
 
 ![](images/recommended-practices/recommended-practices-button-not-recognized.png)
 
-The only thing you can do is to use a [custom element](../../api/03-Element-Descriptions/customelement.md):
+If the button is not detected but the text or label inside it you can target the text element. Assume the `1` is recognized as a `text`-element in the image above. Then you can target the button like this, if there is no other `text`-element `1` on the screen:
+
+```typescript
+await aui.click().text('1').exec();
+```
+
+In the case above the only thing you can do is to use a [custom element](../../api/03-Element-Descriptions/customelement.md):
 
 ```typescript
 // Custom element instead of button().withText()
@@ -272,7 +274,7 @@ Sometimes you run into duplicate elements on an UI and you want to target a spec
 
 ![](images/recommended-practices/recommended-practices-duplicate-button.png)
 
-* Add a [relational selector](../../api/04-Relations/above.md)
+* Add a [relation](../../api/04-Relations/above.md)
 
 ```typescript
 // Add relational selector to custom element
