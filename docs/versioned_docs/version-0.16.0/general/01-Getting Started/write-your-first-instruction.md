@@ -148,7 +148,7 @@ With AskUI, there are near-infinite ways to target an element. We outlined the t
 To close out the interactive annotation, use `CMD/CTRL + W` or `ESC`.
 
 #### Approach B: Filtering by Proximity: Using Relational Selectors
-- **Process**: Chain multiple element descriptions together using commands like `leftOf()`, `above()`, etc., to create a unique selector based on element relationships. More information can be found in the [AskUI documentation](https://docs.askui.com/docs/0.11.6/general/Element%20Selection/relational-selectors).
+- **Process**: Chain multiple element-descriptions together using commands like `leftOf()`, `above()`, etc., to create a unique selector based on element relationships. More information can be found in the [AskUI documentation](https://docs.askui.com/docs/0.11.6/general/Element%20Selection/relational-selectors).
 - **Advantages**: Increases selector specificity, particularly useful in complex UIs with numerous similar elements.
 - **Best Used When**: Targeting elements in a densely populated UI or when elements lack unique identifiers.
 
@@ -185,7 +185,7 @@ Result:
 it('should click on my element', async () => {
   await aui
     // your action goes here
-    .text('Reference Text') // your element description
+    .text('Reference Text') // your element-description
     .exec();
 });
 ```
@@ -202,7 +202,7 @@ To do this, add the `click` method to your workflow file
 it('should click on my element', async () => {
   await aui
     .click() // your action
-    .text('Reference Text') // your element description
+    .text('Reference Text') // your element-description
     .exec();
 });
 ```
@@ -222,7 +222,7 @@ The final version should look like this:
     it('should click on my element', async () => {
       await aui
         .click() // your action
-        .text('Reference Text') // your element description
+        .text('Reference Text') // your element-description
         .exec();
     });
   });
