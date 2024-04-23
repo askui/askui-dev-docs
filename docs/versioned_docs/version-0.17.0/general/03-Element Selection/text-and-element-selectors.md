@@ -18,6 +18,28 @@ For a convenient demonstration, we will use a [Flutter web demo](https://gallery
 
 ------
 
+:::warning
+**Limitations of text-recognition**
+
+* Text recognition works line-by-line and can break when text changes due to responsive layout or different screen resolution
+  * Text breaks differently across lines
+  * Text gets truncated using `...`
+  * Switch from column to row layout
+  * ...
+
+_Solution: Provide multiple layout options with [`or()`](../../api/04-Relations/or.md)._
+
+* Character sequences with 1-3 characters can be flaky
+* Character sequences that do **not** contain letters or numbers may be classified wrong: `-----` for example looks like a line and not like a sequence of `-`
+
+_Solution: Use a [custom element](../../api/03-Element-Descriptions/customelement.md)._
+
+* Elements that are too small or too low in contrast are not reliably detected, like a single `.`.
+
+_Solution: Change the resolution or zoom in to enlarge it._
+
+:::
+
 ### Basic Text Matching
 
 The simplest way to interact with a text element is to use `withText()`. Go to the demo app page and run the code below:
