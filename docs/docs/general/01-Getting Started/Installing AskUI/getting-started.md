@@ -68,12 +68,16 @@ This command installs all components silently and sets the HTTP proxy address to
 
 ### Step 3: Activate the AskUI Development Environment (ADE)
 1. Open a terminal. We recommend using *PowerShell*.
-2. Run the command `askui-shell` (type it and press _Enter_). This brings you into the AskUI Development Environment (short ADE) where you can configure your installation, start the AskUI Controller, create new AskUI-Projects and run workflows.
+2. Run the following command (type it and press _Enter_). This brings you into the AskUI Development Environment (short ADE) where you can configure your installation, start the AskUI Controller, create new AskUI-Projects and run workflows.
+
+```shell
+askui-shell
+```
 
 Activating the ADE may take a few seconds.
 
 :::info
-If you are not what an ADE command does, you can run `Get-Help <command>` to get more information about it.
+If you are not sure what an ADE command does, you can run `Get-Help <command>` to get more information about it.
 :::
 
 ### Step 4: Connect Your AskUI Account
@@ -115,6 +119,10 @@ Configuring proxy or firewall settings can be a challenge. If you need assistanc
 
 :::info
 You have to disable mouse acceleration for the AskUI Controller to work properly!
+:::
+
+:::tip
+You can skip this if you checked `Launch AskUI Controller` at the last screen of the installation.
 :::
 
 Start the AskUI Controller with:

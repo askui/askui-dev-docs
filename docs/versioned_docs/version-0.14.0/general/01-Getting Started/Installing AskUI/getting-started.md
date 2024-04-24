@@ -65,7 +65,7 @@ This command installs all components silently and sets the HTTP proxy address to
 Activating the ADE may take a few seconds.
 
 :::info
-If you are not what an ADE command does, you can run `Get-Help <command>` to get more information about it.
+If you are not sure what an ADE command does, you can run `Get-Help <command>` to get more information about it.
 :::
 
 ### Step 4: Connect Your AskUI Account
