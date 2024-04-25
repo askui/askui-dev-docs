@@ -65,7 +65,7 @@ You will automate a [web calculator](https://askui.github.io/askui-practice-page
 :::tip
 You will learn:
 
-- How to see and get element descriptions from an annotated screen
+- How to see and get element-descriptions from an annotated screen
 - Use different element-selectors
 - Select elements that were not recognized by AskUI at first
 
@@ -178,9 +178,9 @@ it('should click on my element', async () => {
 ---
 
 ### Step 3: Identifying Your Target Element
-This step is about pinpointing the exact UI element (like a button or link) you want to interact with. The element's properties (called _element description_) acts like a unique identifier for each UI component.
+This step is about pinpointing the exact UI element (like a button or link) you want to interact with. The element's properties (called _element-description_) acts like a unique identifier for each UI component.
 
-First hover over the button containing the `2` and do a left mouse click. You now have the element description in your clipboard.
+First hover over the button containing the `2` and do a left mouse click. You now have the element-description in your clipboard.
 
 ![Hovering over the button containing the `2`](images/create-first-instruction-two-button.png)
 
@@ -190,18 +190,18 @@ Then add it to your action as shown in the code below.
 it('should click on my element', async () => {
   await aui
     .click() // your action
-    .button() // your element description
+    .button() // your element-description
     .exec();
 });
 ```
 
-As you can see AskUI tries to click a `button()` but it does not know _which one_ yet. Generally you need to think about what makes the target element unique visually. Possibly over multiple runs. In this case there is no other button with the label `2`, so targeting a button that contains the text `2` should be a reliable way to target this specific element. Also check out all the [element descriptions](../../api/01-API/table-of-contents.md#element-descriptions).
+As you can see AskUI tries to click a `button()` but it does not know _which one_ yet. Generally you need to think about what makes the target element unique visually. Possibly over multiple runs. In this case there is no other button with the label `2`, so targeting a button that contains the text `2` should be a reliable way to target this specific element. Also check out all the [element-descriptions](../../api/01-API/table-of-contents.md#element-descriptions).
 
 ```typescript title="askui_example/my-first-askui-test-suite.test.ts" showLineNumbers
 it('should click on my element', async () => {
   await aui
     .click() // your action
-    .button().contains().text('2') // your element description
+    .button().contains().text('2') // your element-description
     .exec();
 });
 ```
