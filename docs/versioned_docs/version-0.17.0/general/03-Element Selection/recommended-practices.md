@@ -113,7 +113,7 @@ Sometimes coherent text is split up into two or more text-elements.
 
 ![](images/recommended-practices/recommended-practices-this-should-not-be-split-up.png)
 
-* If you need to match the exact-text, Use a [custom element](../../api/03-Element-Descriptions/customelement.md)
+* If you need to match the exact-text, use a [custom element](../../api/03-Element-Descriptions/customelement.md).
 
 ```typescript
 // Custom element instead of text(<your_text>)
@@ -213,13 +213,13 @@ Sometimes a button is not detected as one. Usually this is because of low contra
 
 ![](images/recommended-practices/recommended-practices-button-not-recognized.png)
 
-If the button is not detected but the text or label inside it you can target the text element. Assume the `1` is recognized as a `text`-element in the image above. Then you can target the button like this, if there is no other `text`-element `1` on the screen:
+If the button is not detected but the text or label inside it, you can target the text element. Assume the `1` is recognized as a `text`-element in the image above. Then you can target the button like this if there is no other `text`-element `1` on the screen:
 
 ```typescript
 await aui.click().text('1').exec();
 ```
 
-In the case above the only thing you can do is to use a [custom element](../../api/03-Element-Descriptions/customelement.md):
+As not even the `1` is detected as `text` in the case above, you cannot use this approach. In these cases, you can try out using a [custom element](../../api/03-Element-Descriptions/customelement.md) instead:
 
 ```typescript
 // Custom element instead of button().withText()
