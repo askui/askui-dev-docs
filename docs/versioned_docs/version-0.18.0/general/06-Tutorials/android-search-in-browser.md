@@ -194,7 +194,7 @@ Add this code block to the bottom of our code:
 
 ```ts
 // We first look for the search bar. Depending on the system language of your device, the default text within the search bar may differ.
-await aui.clickText('search or type web address');
+await aui.clickText({text: 'search or type web address', type: 'similar'});
 
 // Type our desired keyword and hit enter
 await aui.type('spacecraft').exec();
@@ -210,9 +210,9 @@ try {
     // An instruction starting with 'expect()' must always end with 'exists()' or 'notExists()'
     await aui.expect().text().containsText('cookies').notExists().exec();
 } catch (error) {
-    await aui.clickText('read more');
+    await aui.clickText({text: 'read more', type: 'similar'});
     await aui.waitFor(1000).exec(); // wait until the scrolling animation has been finished
-    await aui.clickText('accept all');
+    await aui.clickText({text: 'accept all', type: 'similar'});
 }
 // From here, we can write our next instructions
 ```
@@ -273,7 +273,7 @@ describe('jest with askui', () => {
     await aui.waitFor(1500).exec();
 
     // We first look for the search bar. Depending on the system language of your device, the default text within the search bar may differ.
-    await aui.clickText('search or type web address');
+    await aui.clickText({text: 'search or type web address', type: 'similar'});
 
     // Type our desired keyword and hit enter
     await aui.type('spacecraft').exec();
@@ -287,9 +287,9 @@ describe('jest with askui', () => {
         // An instruction starting with 'expect()' must always end with 'exists()' or 'notExists()'
         await aui.expect().text().containsText('cookies').notExists().exec();
     } catch (error) {
-        await aui.clickText('read more');
+        await aui.clickText({text: 'read more', type: 'similar'});
         await aui.waitFor(1000).exec(); // wait until the scrolling animation has been finished
-        await aui.clickText('accept all');
+        await aui.clickText({text: 'accept all', type: 'similar'});
     }
 
     // We ask the AskUI to click the text that contains 'wikipedia' which is the text that is nearest to the text containing 'wikipedia.org'

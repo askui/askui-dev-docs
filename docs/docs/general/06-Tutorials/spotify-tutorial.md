@@ -57,7 +57,7 @@ it('should like Spotify song', async () => {
     ...
     await aui.moveMouseTo().text('Bohemian Rhapsody').below().text('Songs').exec();
     await aui.mouseRightClick().exec();
-    await aui.clickText('Save to your Liked Songs');
+    await aui.clickText({text: 'Save to your Liked Songs', type: 'similar'});
 });
 ```
 
@@ -74,7 +74,7 @@ Finally, we want to check whether the song was actually added to the liked songs
 ```ts
 it('should like Spotify song', async () => {
     ...
-    await aui.clickText('Liked Songs');
+    await aui.clickText({text: 'Liked Songs', type: 'similar'});
     await aui.expect().text('Bohemian Rhapsody').exists().exec();
 });
 ```
@@ -88,7 +88,7 @@ it('should like Spotify song', async () => {
     ...
     await aui.moveMouseTo().text('Bohemian Rhapsody').below().text('Title').exec();
     await aui.mouseRightClick().exec();
-    await aui.clickText('Remove from your Liked Songs');
+    await aui.clickText({text: 'Remove from your Liked Songs', type: 'similar'});
 });
 ```
 
@@ -103,12 +103,12 @@ it('should like Spotify song', async () => {
     await aui.pressKey('enter').exec();
     await aui.moveMouseTo().text('Bohemian Rhapsody').below().text('Songs').exec();
     await aui.mouseRightClick().exec();
-    await aui.clickText('Save to your Liked Songs');
-    await aui.clickText('Liked Songs');
+    await aui.clickText({text: 'Save to your Liked Songs', type: 'similar'});
+    await aui.clickText({text: 'Liked Songs', type: 'similar'});
     await aui.expect().text('Bohemian Rhapsody').exists().exec();
     await aui.moveMouseTo().text('Bohemian Rhapsody').below().text('Title').exec();
     await aui.mouseRightClick().exec();
-    await aui.clickText('Remove from your Liked Songs');
+    await aui.clickText({text: 'Remove from your Liked Songs', type: 'similar'});
 });
 ```
 

@@ -209,7 +209,7 @@ To type into a textfield, we first need to get focus on the desired textfield. W
 ```typescript
 // click on the textfield and type characters
 // repeat this as many times as the textfields
-await aui.clickText('Enter your username');
+await aui.clickText({text: 'Enter your username', type: 'similar'});
 await aui.type('askui').exec();
 ```
 
@@ -218,15 +218,15 @@ As we have multiple of textfields in our demo app, we can iterate the same proce
 ```typescript
 // click on the textfield and type characters
 // repeat this as many times as the textfields
-await aui.clickText('Enter your username');
+await aui.clickText({text: 'Enter your username', type: 'similar'});
 await aui.type('askui').exec();
 
 // click and type the email address
-await aui.clickText('Enter your email');
+await aui.clickText({text: 'Enter your email', type: 'similar'});
 await aui.type('askui@askui.com').exec();
 
 // Click and type the address
-await aui.clickText('Enter your address');
+await aui.clickText({text: 'Enter your address', type: 'similar'});
 await aui.type('Haid-und-Neu-Straße 18').exec();
 
 // Pressing enter is the equivalent of pressing the return button on the on-screen-keyboard
@@ -238,10 +238,10 @@ After filling up the textfields, we can push the buttons at the bottom of the pa
 
 ```typescript
 // Press the 'Submit' button
-await aui.clickText('Submit');
+await aui.clickText({text: 'Submit', type: 'similar'});
 
 // We will have a popup window that has two buttons. Press the 'Refuse' button
-await aui.clickText('Refuse');
+await aui.clickText({text: 'Refuse', type: 'similar'});
 
 // Here we press multiple toggle buttons one by one
 await aui.clickTexts(['Banana', 'Mango', 'Sunny', 'Rainy', 'Windy']);
@@ -272,9 +272,9 @@ First, we select and type characters into two different textfields:
 
 ```typescript
 // First, we type in the desired values into the textfields.
-await aui.clickText('Title');
+await aui.clickText({text: 'Title', type: 'similar'});
 await aui.type('My vacation plan').exec();
-await aui.clickText('Description');
+await aui.clickText({text: 'Description', type: 'similar'});
 await aui.type('0. Drink a lot of water').exec();
 await aui.pressAndroidKey('tab').exec();
 ```
@@ -289,16 +289,16 @@ await aui.click().icon().withText('chevron right').exec();
 
 // within the calendar, we push the > icon on the top right corner
 await aui.click().icon().withText('chevron right').exec();
-await aui.clickText('7'); // select 7
-await aui.clickText('ok'); // then, press OK
+await aui.clickText({text: '7', type: 'similar'}); // select 7
+await aui.clickText({text: 'ok', type: 'similar'}); // then, press OK
 
 // Repeat the step for the next Datepicker widget.
 await aui.click().text('edit').nearestTo().text('Return').exec();
 await aui.click().icon().withText('chevron right').exec();
 await aui.click().icon().withText('chevron right').exec();
 await aui.click().icon().withText('chevron right').exec();
-await aui.clickText('5');
-await aui.clickText('ok');
+await aui.clickText({text: '5', type: 'similar'});
+await aui.clickText({text: 'ok', type: 'similar'});
 ```
 
 Let's go further below to the bottom of the page, and then interact with more interfaces:
@@ -344,15 +344,15 @@ describe('jest with askui', () => {
     it('should fill up the textfields and push buttons', async () => {
         // click on the textfield and type characters
         // repeat this as many times as the textfields
-        await aui.clickText('Enter your username');
+        await aui.clickText({text: 'Enter your username', type: 'similar'});
         await aui.type('askui').exec();
 
         // click on the textfield and type the email        
-        await aui.clickText('Enter your email');
+        await aui.clickText({text: 'Enter your email', type: 'similar'});
         await aui.type('askui@askui.com').exec();
 
         // Click and type the address
-        await aui.clickText('Enter your address');
+        await aui.clickText({text: 'Enter your address', type: 'similar'});
         await aui.type('Haid-und-Neu-Straße 18').exec();
 
         // Pressing enter is the equivelant to pressing the return button on the on-screen-keyboard
@@ -360,10 +360,10 @@ describe('jest with askui', () => {
         await aui.pressAndroidKey('enter').exec();
 
         // Press the 'Submit' button
-        await aui.clickText('Submit');
+        await aui.clickText({text: 'Submit', type: 'similar'});
 
         // We will have a popup window that has two buttons. Press the 'Refuse' button
-        await aui.clickText('Refuse');
+        await aui.clickText({text: 'Refuse', type: 'similar'});
 
         // Here we press multiple of toggle buttons one by one
         await aui.clickTexts(['Banana', 'Mango', 'Sunny', 'Rainy', 'Windy']);
@@ -388,9 +388,9 @@ describe('jest with askui', () => {
 
     it('should pick the dates', async () => {
         // First, we type in the desired values into the textfields.
-        await aui.clickText('Title');
+        await aui.clickText({text: 'Title', type: 'similar'});
         await aui.type('My vacation plan').exec();
-        await aui.clickText('Description');
+        await aui.clickText({text: 'Description', type: 'similar'});
         await aui.type('0. Drink a lot of water').exec();
         await aui.pressAndroidKey('tab').exec();
 
@@ -399,8 +399,8 @@ describe('jest with askui', () => {
         await aui.click().text('edit').nearestTo().text('Depature').exec(); // this will open up the calendar
         await aui.click().icon().withText('chevron right').exec(); // within the calendar, we push the > icon on the top right corner
         await aui.click().icon().withText('chevron right').exec();
-        await aui.clickText('7'); // select 7
-        await aui.clickText('ok'); // then, press OK
+        await aui.clickText({text: '7', type: 'similar'}); // select 7
+        await aui.clickText({text: 'ok', type: 'similar'}); // then, press OK
 
 
         // Repeat the step for the next Datepicker widget.
@@ -408,8 +408,8 @@ describe('jest with askui', () => {
         await aui.click().icon().withText('chevron right').exec();
         await aui.click().icon().withText('chevron right').exec();
         await aui.click().icon().withText('chevron right').exec();
-        await aui.clickText('5');
-        await aui.clickText('ok');
+        await aui.clickText({text: '5', type: 'similar'});
+        await aui.clickText({text: 'ok', type: 'similar'});
 
         // click and check the checkbox
         await aui.click().checkboxUnchecked().nearestTo().text('Brushed Teeth').exec();

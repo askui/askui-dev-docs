@@ -67,7 +67,7 @@ Next, to open the login dialog, we need to click the text login at the top of th
 ```ts
 it('Should log into account', async () => {
     ...
-    await aui.clickText('Login');
+    await aui.clickText({text: 'Login', type: 'similar'});
 });
 ```
 
@@ -107,7 +107,7 @@ Finally, we need to check whether the login worked. We can do this by checking i
 it('Should log into account', async () => {
     ...
     await aui.expect().text('Logout test@askui.com').exists().exec();
-    await aui.clickText('Logout test@askui.com');
+    await aui.clickText({text: 'Logout test@askui.com', type: 'similar'});
 });
 ```
 
@@ -139,13 +139,13 @@ it('Should log into account', async () => {
 
     // Navigate to the website
     await aui.pressKey('enter').exec();
-    await aui.clickText('Login');
+    await aui.clickText({text: 'Login', type: 'similar'});
     await aui.typeIn('test@askui.com').textfield().contains().text('Email Address').exec();
     await aui.click().text('Login').above().textfield().exec();
     await aui.typeIn('passwort').textfield().contains().text('Password').exec();
     await aui.click().button().contains().text('Log in').exec();
     await aui.expect().text('test@askui.com').exists().exec();
-    await aui.clickText('Logout test@askui.com');
+    await aui.clickText({text: 'Logout test@askui.com', type: 'similar'});
 });
 ```
 
