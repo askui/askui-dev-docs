@@ -189,9 +189,9 @@ Then add it to your action as shown in the code below.
 ```typescript title="askui_example/my-first-askui-test-suite.test.ts" showLineNumbers
 it('should click on my element', async () => {
   await aui
-    .click() // your action
-    .button() // your element-description
-    .exec();
+           .click() // your action
+           .button() // your element-description
+           .exec();
 });
 ```
 
@@ -200,9 +200,9 @@ As you can see AskUI tries to click a `button()` but it does not know _which one
 ```typescript title="askui_example/my-first-askui-test-suite.test.ts" showLineNumbers
 it('should click on my element', async () => {
   await aui
-    .click() // your action
-    .button().contains().text('2') // your element-description
-    .exec();
+           .click() // your action
+           .button().contains().text('2') // your element-description
+           .exec();
 });
 ```
 
@@ -253,12 +253,11 @@ project_root/
 ```
 
 ```typescript
-  await aui
-    .click()
-    .customElement({
-      customImage: './custom_elements/plus.clickable.button.png',
-    })
-    .exec();
+  await aui.click()
+           .customElement({
+             customImage: './custom_elements/plus.clickable.button.png',
+           })
+           .exec();
 ```
 
 ---
@@ -278,17 +277,16 @@ describe('jest with askui', () => {
   it('should click on my element', async () => {
     await aui.click().button().contains().text('2').exec();
     await aui.click()
-        .button() // This is your target
-        .below()
-        .button().contains().text('2') // This is your anchor
-        .exec();
+             .button() // This is your target
+             .below()
+             .button().contains().text('2') // This is your anchor
+             .exec();
     await aui.click().button().contains().text('6').exec();
-    await aui
-        .click()
-        .customElement({
-          customImage: './custom_elements/plus.clickable.button.png',
-        })
-        .exec();
+    await aui.click()
+             .customElement({
+               customImage: './custom_elements/plus.clickable.button.png',
+             })
+             .exec();
     await aui.click().button().contains().text('2').exec();
 
     // The attentive reader might notice that the last step

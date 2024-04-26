@@ -95,7 +95,7 @@ After filling in email and password, we need to click the login button. The foll
 ```ts
 it('Should log into account', async () => {
     ...
-    await aui.click().button().contains().text('Log in').exec();
+    await aui.clickButton({label: 'Log in'});
 });
 ```
 

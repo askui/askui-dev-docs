@@ -321,7 +321,7 @@ In the final tab **Camera**, we can launch the device's camera and take a pictur
 
 ```typescript
 // Click on the button 'Take a Picture', then it will launch the camera
-await aui.click().button().contains().text('Take a Picture').exec();
+await aui.clickButton({label: 'Take a Picture'});
 
 // Notice how we select the record button.
 // Our demo-app intends to have the record button in a circular shape.

@@ -8,7 +8,7 @@ If you see this error message when you run AskUI you have a few different option
 
 ```bash
 # Executed instruction:
-await aui.click().button().withText("I feel happy!").exec();
+await aui.clickButton({label: 'I feel happy!'});
 
 # Error message
 A problem occurred while executing the instruction: 
