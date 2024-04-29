@@ -12,7 +12,7 @@ Optional relation identifies the button in relation to another element.
 await aui.clickButton({})
 await aui.clickButton({label: 'Checkout here'})
 await aui.clickButton({relation: {type: 'leftOf', text: 'Choose a ticket'}})
-await aui.clickButton({label: 'Click', {relation: {type: 'leftOf', text: 'Choose a ticket'}})
+await aui.clickButton({label: 'Click', relation: {type: 'leftOf', text: 'Choose a ticket'}})
 ```
 
    * @param \{Object} params - Object containing properties.
