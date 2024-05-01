@@ -61,7 +61,7 @@ Run the *AskUI Controller* on the remote devices with the following command:
 
 ```bash
 # Activate AskUI Development Environment (ADE) first
-AskUI-RunController --host 0.0.0.0 -p 6769 -d 0 -m
+AskUI-StartController -DisplayNum 0 -Port 6769
 ```
 
   </TabItem>
@@ -225,10 +225,10 @@ Set a different port for each AskUI Controller and specify which Android device 
 ```bash
 # Activate AskUI Development Environment (ADE) first
 # Connects to the first device returned by 'adb devices'
-AskUI-RunController --host 0.0.0.0 -p 6769 -d 0 -m
+AskUI-StartController -DisplayNum 0 -Runtime android -Port 6769
 
 # Connects to the second device returned by 'adb devices'
-AskUI-RunController --host 0.0.0.0 -p 6770 -d 1 -m
+AskUI-StartController -DisplayNum 1 -Runtime android -Port 6770
 ```
 
   </TabItem>
