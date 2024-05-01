@@ -240,10 +240,10 @@ Open a new terminal for each AskUI Controller instance as it gets started in the
 
 ```bash
 # Connects to the first device returned by 'adb devices'
-./askui-ui-controller.AppImage --host -p 6769 0.0.0.0 -d 0 -m -r android
+./askui-ui-controller.AppImage --host 0.0.0.0 -p 6769  -d 0 -m -r android
 
 # Connects to the second device returned by 'adb devices'
-./askui-ui-controller.AppImage --host -p 6770 0.0.0.0 -d 1 -m -r android
+./askui-ui-controller.AppImage --host 0.0.0.0 -p 6770 -d 1 -m -r android
 ```
 
   </TabItem>
