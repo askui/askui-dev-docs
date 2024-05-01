@@ -51,7 +51,7 @@
         "jira-prepare-commit-msg": "1.7.2",
         "lint-staged": "15.2.2",
         "pinst": "3.0.0",
-        "release-it": "^17.2.0",
+        "release-it": "^17.2.1",
         "zx": "8.0.2"
     },
     "jira-prepare-commit-msg": {
