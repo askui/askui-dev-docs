@@ -18,9 +18,9 @@ What you will learn
 
 ## Prerequisites
 - AskUI is installed on your computer.
-- The AskUI Controller is running.
+- _Only Windows:_ The AskUI Controller is running.
 - We recommend using a second monitor to ensure AskUI is not interacting with your code editor.
-- You have a workflow file open on your main display e.g. the original template `askui_example/my-first-askui-test-suite.test.ts` in the directory you initialized your AskUI-Project before.
+- You have a workflow file open on your main display, for example the original template `askui_example/my-first-askui-test-suite.test.ts`, in the directory you initialized your AskUI-Project before.
 
 :::info
 **For macOS Users**  
@@ -37,7 +37,7 @@ An AskUI Workflow file, using the Jest framework, is a versatile tool for automa
 
 **`it` Blocks**: Each block defines a specific UI interaction or automation task, such as form submissions, navigation, or simulating user actions.
 
-**AskUI API**: Utilized within it blocks for direct UI interactions, like clicking, typing, or navigating.
+**AskUI API**: Utilized within `it` blocks for direct UI interactions, like clicking, typing, or navigating.
 <!-- vale off -->
 **Execution Instructions**: Commands provided for running the automated tasks or tests through the terminal.
 <!-- vale on -->
@@ -80,44 +80,38 @@ The (interactive) annotation serves as the first step in automating UI interacti
   <TabItem value="windows" label="Windows" default>
 
 ```typescript title="askui_example/my-first-askui-test-suite.test.ts" showLineNumbers
-import { aui } from './helpers/askui-helper';
-
-describe('AskUI on Windows', () => {
+...
   it('should generate an HTML annotation', async () => {
     await aui.annotate();
   });
-});
+...
 ```
   </TabItem>
   <TabItem value="macos" label="MacOS">
 
 ```typescript title="askui_example/my-first-askui-test-suite.test.ts" showLineNumbers
-import { aui } from './helpers/askui-helper';
-
-describe('AskUI on MacOS', () => {
+...
   it('should generate an interactive annotation', async () => {
     await aui.annotateInteractively();
   });
-});
+...
 ```
   </TabItem>
   <TabItem value="linux" label="Linux">
 
 ```typescript title="askui_example/my-first-askui-test-suite.test.ts" showLineNumbers
-import { aui } from './helpers/askui-helper';
-
-describe('AskUI on Linux', () => {
+...
   it('should generate an interactive annotation', async () => {
     await aui.annotateInteractively();
   });
-});
+...
 ```
   </TabItem>
 </Tabs>
 
 ---
 
-#### Run the Annotation
+#### Step 1.1: Run the Annotation
 
 To execute the instruction:
 
@@ -178,7 +172,7 @@ it('should click on my element', async () => {
 ---
 
 ### Step 3: Identifying Your Target Element
-This step is about pinpointing the exact UI element (like a button or link) you want to interact with. The element's properties (called _element-description_) acts like a unique identifier for each UI component.
+This step is about pinpointing the exact UI element (like a button or link) you want to interact with. The element's properties (called _element-description_) act like a unique identifier for each UI component.
 
 First hover over the button containing the `2` and do a left mouse click. You now have the element-description in your clipboard.
 
@@ -195,7 +189,7 @@ it('should click on my element', async () => {
 });
 ```
 
-As you can see AskUI tries to click a `button()` but it does not know _which one_ yet. Generally you need to think about what makes the target element unique visually. Possibly over multiple runs. In this case there is no other button with the label `2`, so targeting a button that contains the text `2` should be a reliable way to target this specific element. Also check out all the [element-descriptions](../../api/01-API/table-of-contents.md#element-descriptions).
+As you can see AskUI tries to click a `button()` but it does not know _which one_ yet. Generally you need to think about what makes the target element unique visually. Possibly over multiple runs. In this case, there is no other button with the label `2`, so targeting a button that contains the text `2` should be a reliable way to target this specific element. Also check out all the [element-descriptions](../../api/01-API/table-of-contents.md#element-descriptions).
 
 ```typescript title="askui_example/my-first-askui-test-suite.test.ts" showLineNumbers
 it('should click on my element', async () => {
@@ -207,7 +201,7 @@ it('should click on my element', async () => {
 ```
 
 :::tip
-You can freely go to [Step 4: Executing an Instruction](#step-4-execute-an-instruction) before you finished the whole example to see how your workflow runs before you are finished.
+You can freely go to [Step 4: Executing an Instruction](#step-4-execute-an-instruction) before you finish the whole example to see how your workflow runs before you are finished.
 :::
 
 ---
@@ -226,7 +220,7 @@ await aui.click()
 
 ---
 
-After you entered `6` as described [in step 2 and 3](#step-2-interacting-with-your-target-element) you realize that the `+` is not recognized as text, but as an icon. For these cases where an element is not recognised correctly or not recognised at all you can use `customElement()` with which you basically select the element based on an image of the element. 
+After you entered `6` as described [in step 2 and 3](#step-2-interacting-with-your-target-element) you realize that the `+` is not recognized as text but as an icon. For these cases where an element is not recognized correctly or not recognized at all, you can use `customElement()` with which you select the element based on an image of the element. 
 
 :::warning
 
@@ -237,7 +231,8 @@ The annotation is dependent on your screen resolution and settings! The `+` may 
 Do the following to select the `+`-button:
 
 1. Create a new folder `custom_elements` in your AskUI Project. Then 
-2. Crop out the `+`-button from your screen like this with a snipping tool: ![Cropped out `+`-button](./images/create-first-instruction-plus-button.png)
+2. Crop out the `+`-button from your screen like this with a snipping tool.  
+(**Make sure to get the whole element, but crop it out as tightly as possible**): ![Cropped out `+`-button](./images/create-first-instruction-plus-button.png)
 3. Save it with the name `plus.clickable.button.png` in `custom_elements`
 
 ```bash

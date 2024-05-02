@@ -4,7 +4,7 @@ pagination_next: general/Getting Started/write-your-first-instruction
 ---
 
 # Enterprise Checklist
-If you want to get started with AskUI in an enterprise environment you will experience challenges unique to your company. This checklist will give you everything that AskUI needs and guidance on how to resolve upcoming errors. If you are not familiar with setting this up we __strongly__ suggest to get someone from your IT-department involved who knows how the network in your company works.
+If you want to get started with AskUI in an enterprise environment you will experience challenges unique to your company. This checklist will give you everything that AskUI needs and guidance on how to resolve upcoming errors. If you are not familiar with setting this up we **strongly** suggest getting someone from your IT department involved who knows how the network in your company works.
 
 Common problems you may run into:
 * [Network](#network): You need to use a proxy for internet access.
@@ -12,14 +12,14 @@ Common problems you may run into:
 * [Software needed](#software-needed): AskUI needs Node.js and Python and to install dependencies.
 
 :::tip
-On windows please use the PowerShell all the time.
+On Windows please use the PowerShell all the time.
 :::
 
 ## Network
 This is often a tricky one. So if you experience problems installing AskUI that suggests the problem is missing internet access:
 
 * Please check our [Troubleshooting - Proxy page](../../07-Troubleshooting/proxy.md)
-* Get help from your IT-department
+* Get help from your IT department
 
 ## Software Needed
 
@@ -40,13 +40,13 @@ Python `3.10` or higher needs to be installed. Open a terminal (Windows: PowerSh
 ### Windows
 When you want to use the `AskUI Runner` you will create a virtual environment.
 
-* Follow [these instruction](https://mothergeo-py.readthedocs.io/en/latest/development/how-to/venv-win.html). And consult your IT-department if you run into problems.
+* Follow [these instructions](https://mothergeo-py.readthedocs.io/en/latest/development/how-to/venv-win.html). And consult your IT department if you run into problems.
 
 ### Install Dependencies
-You will probably have to install dependencies like node-packages over a company internal repository management system like Artifactory.
+You will probably have to install dependencies like node-packages over a company's internal repository management system like Artifactory.
 
-* Find out how to set up `Node.js` and `Python` for your internal repository management system. Consult your IT-department if necessary.
-* Check our [proxy troubleshooting page](../../07-Troubleshooting/proxy.md) for AskUI specific guidance on how to setup the proxy for `Node.js`.
+* Find out how to set up `Node.js` and `Python` for your internal repository management system. Consult your IT department if necessary.
+* Check our [proxy troubleshooting [page](../../07-Troubleshooting/proxy.md) for AskUI-specific guidance on how to set up the proxy for `Node.js`.
 
 ### Permissions
 The AskUI Controller needs permissions for _screen recording_ and _accessibility features_ to control your machine like a human. Follow the instructions for your operating system.
