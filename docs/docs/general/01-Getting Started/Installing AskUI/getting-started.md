@@ -161,9 +161,9 @@ code .
 On the left, in your file explorer, you should see the files that make up your AskUI project.
 1. `.askui\Settings` - Global Project Settings
 2. `allure-results` - AskUI reporter files will be generated here
-3. `askui_example` - Workflow Files
-    a. `helpers` - Helper functions for your project
-    b. `jest.config.ts` - Jest Automation Framework Settings
+3. `askui_example` - Workflow Files  
+    a. `helpers` - Helper functions for your project  
+    b. `jest.config.ts` - Jest Automation Framework Settings  
     c. `my-first-askui-test-suite.ts` - An example workflow file
 4. `node_modules` - Packages needed to make AskUI work
 5. `report` - Annotations will be generated here
