@@ -283,20 +283,25 @@ Thereafter, we interact with two different date picker widgets that are represen
 
 ```typescript
 // Second, we select a desired date from the Datepicker widget.
-// Notice how we select the icon 'chevron right/left' to shift the calendar month.
 await aui.click().text('edit').nearestTo().text('Depature').exec(); // this will open up the calendar
-await aui.click().icon().withText('chevron right').exec();
+
+// Notice how we select the icon 'chevron right/left' to shift the calendar month.
+// We use a relational selector and the text '11'
+// which is generally recognized reliably
+await aui.moveMouseTo().icon().above().text('11').exec();
+await aui.mouseLeftClick().exec();
 
 // within the calendar, we push the > icon on the top right corner
-await aui.click().icon().withText('chevron right').exec();
+await aui.mouseLeftClick().exec();
 await aui.clickText({text: '7', type: 'similar'}); // select 7
 await aui.clickText({text: 'ok', type: 'similar'}); // then, press OK
 
 // Repeat the step for the next Datepicker widget.
 await aui.click().text('edit').nearestTo().text('Return').exec();
-await aui.click().icon().withText('chevron right').exec();
-await aui.click().icon().withText('chevron right').exec();
-await aui.click().icon().withText('chevron right').exec();
+await aui.moveMouseTo().icon().above().text('11').exec();
+await aui.mouseLeftClick().exec();
+await aui.mouseLeftClick().exec();
+await aui.mouseLeftClick().exec();
 await aui.clickText({text: '5', type: 'similar'});
 await aui.clickText({text: 'ok', type: 'similar'});
 ```
@@ -305,10 +310,10 @@ Let's go further below to the bottom of the page, and then interact with more in
 
 ```typescript
 // click and check the checkbox
-await aui.click().checkboxUnchecked().nearestTo().text('Brushed Teeth').exec();
+await aui.click().element().leftOf().text('Brushed Teeth').exec();
 
 // finally, we turn on the switch
-await aui.click().switchDisabled().nearestTo().text('Enable feature').exec();
+await aui.click().switch().rightOf().text('Enable feature').exec();
 
 // Swipe the page to the Camera tab
 await aui.execOnShell('input swipe 1000 1000 100 1000').exec();
@@ -325,9 +330,9 @@ await aui.clickButton({label: 'Take a Picture'});
 
 // Notice how we select the record button.
 // Our demo-app intends to have the record button in a circular shape.
-// So we can look for an icon which is a 'circle'
-// It might be different in other applications.
-await aui.click().icon().containsText('circle').exec();
+// It is generally recognized as an element of type 'switch'
+// We select it by anchoring it in relation to the camera icon
+await aui.click().switch().rightOf().icon().exec();
 ```
 
 ## Complete AskUI Code
@@ -395,27 +400,32 @@ describe('jest with askui', () => {
         await aui.pressAndroidKey('tab').exec();
 
         // Second, we select a desired date from the Datepicker widget.
-        // Notice how we select the icon 'chevron right/left' to shift the calendar month.
         await aui.click().text('edit').nearestTo().text('Depature').exec(); // this will open up the calendar
-        await aui.click().icon().withText('chevron right').exec(); // within the calendar, we push the > icon on the top right corner
-        await aui.click().icon().withText('chevron right').exec();
+        // We use a relational selector and the text '11'
+        // which is generally recognized reliably
+        await aui.moveMouseTo().icon().above().text('11').exec();
+        await aui.mouseLeftClick().exec();
+        await aui.mouseLeftClick().exec();
         await aui.clickText({text: '7', type: 'similar'}); // select 7
         await aui.clickText({text: 'ok', type: 'similar'}); // then, press OK
 
 
         // Repeat the step for the next Datepicker widget.
         await aui.click().text('edit').nearestTo().text('Return').exec();
-        await aui.click().icon().withText('chevron right').exec();
-        await aui.click().icon().withText('chevron right').exec();
-        await aui.click().icon().withText('chevron right').exec();
+        // We use a relational selector and the text '11'
+        // which is generally recognized reliably
+        await aui.moveMouseTo().icon().above().text('11').exec();
+        await aui.mouseLeftClick().exec();
+        await aui.mouseLeftClick().exec();
+        await aui.mouseLeftClick().exec();
         await aui.clickText({text: '5', type: 'similar'});
         await aui.clickText({text: 'ok', type: 'similar'});
 
         // click and check the checkbox
-        await aui.click().checkboxUnchecked().nearestTo().text('Brushed Teeth').exec();
+        await aui.click().element().leftOf().text('Brushed Teeth').exec();
 
         // finally, we turn on the switch
-        await aui.click().switchDisabled().nearestTo().text('Enable feature').exec();
+        await aui.click().switch().rightOf().text('Enable feature').exec();
 
         // Swipe the page to the Camera tab
         await aui.execOnShell('input swipe 1000 1000 100 1000').exec();
@@ -428,9 +438,9 @@ describe('jest with askui', () => {
 
         // Notice how we select the record button.
         // Our demo-app intends to have the record button in a circular shape.
-        // So we can look for an icon which is a 'circle'
-        // It might be different in other applications.
-        await aui.click().icon().containsText('circle').exec();
+        // It is generally recognized as an element of type 'switch'
+        // We select it by anchoring it in relation to the camera icon
+        await aui.click().switch().rightOf().icon().exec();
     });
 });
 ```

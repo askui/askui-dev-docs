@@ -5,6 +5,10 @@ pagination_next: general/Getting Started/write-your-first-instruction
 
 # AskUI on Windows
 
+<video controls>
+  <source src="https://files.askui.com/assets/docs/AskUI-Getting-Started-Windows-Educational.mp4"/>
+</video>
+
 ## Prerequisites
 
 Check if you have the following requirements, before you start the process.
