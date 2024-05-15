@@ -144,7 +144,7 @@ const config = {
       navbar: {
         logo: {
           alt: 'askui logo',
-          src: 'img/askui-logo.svg',
+          src: 'img/askui-logo-dark.svg',
           srcDark: 'img/askui-logo-white.svg',
         },
         items: [
