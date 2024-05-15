@@ -34,19 +34,31 @@ video {
 /* You can override the default Infima variables here. */
 :root {  
   --white: #fff;
-  --color-primary: #963dbd;
-  --color-primary-dark: #e4a6e5;;
-  --font-color-base: #403a60;
+  --purple: rgb(66, 62, 149);
+  --red: #962C5D;
+  --color-primary: rgb(186, 255, 73);
+  --color-primary-dark: rgb(186, 255, 73);
+  --font-color-base: rgb(16, 24, 40);
 
-  --ifm-color-primary: var(--color-primary);;
-  --ifm-color-secondary: var(--color-primary);;
+  --ifm-color-primary: var(--color-primary);
+  --ifm-color-secondary: var(--color-primary);
   --ifm-font-color-base: var(--font-color-base);
   --ifm-code-font-size: 95%;
   --ifm-font-size-base: 18px;
   --ifm-line-height-base: 1.5;
   --ifm-font-family-base: "Figtree", "Verdana", sans-serif;
+  --ifm-navbar-link-hover-color: var(--red);
+  --ifm-breadcrumb-color-active: var(--red);
+  --ifm-menu-color-active: var(--red);
+  --ifm-link-color: var(--red);
+  --ifm-tabs-color-active: var(--red);
+  --ifm-tabs-color-active-border: var(--red);
 
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+.table-of-contents__link--active {
+  color: var(--red); 
 }
 
 .navbar__search-input {
@@ -69,7 +81,7 @@ video {
 }
 
 .button.button--secondary {
-  color: var(--white);
+  color: var(--purple);
 }
 
 .footer {
@@ -84,13 +96,24 @@ video {
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 html[data-theme="dark"] {
-  --ifm-color-primary: var(--color-primary-dark);;
+  --ifm-color-primary: var(--color-primary-dark);
   --ifm-font-color-base: var(--white);
   --ifm-background-color: var(--font-color-base);
   --ifm-background-surface-color: var(--font-color-base);
+
+  --ifm-navbar-link-hover-color: var(--color-primary-dark);
+  --ifm-breadcrumb-color-active: var(--white);
+  --ifm-menu-color-active: var(--color-primary-dark);
+  --ifm-link-color: var(--white);
+  --ifm-tabs-color-active: var(--white);
+  --ifm-tabs-color-active-border: var(--color-primary-dark);
   
   .docusaurus-highlight-code-line {
     background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .table-of-contents__link--active {
+    color: var(--color-primary-dark); 
   }
 
   .footer__dark {
