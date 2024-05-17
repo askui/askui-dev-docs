@@ -27,7 +27,7 @@ The `AskUI-StartRunner` command starts the AskUI Runner. This function accepts t
 - `Tags`: Specifies the tags to be set in the AskUI runner configuration.
 
 ## Linux and macOS
-For Linux and macOS we do not provide an Installer yet. Thus you have to install the AskUI Runner from source ([GitHub-Repository](https://github.com/askui/askui-runner).
+For Linux and macOS we do not provide an Installer yet. Thus you have to install the AskUI Runner from source ([GitHub-Repository](https://github.com/askui/askui-runner)).
 
 ### Requirements
 
@@ -98,9 +98,9 @@ runner:
 ```
 
 ## Running a workflow
-Go back to AskUI Studio and access the workflow you intend to execute. Head over to the '**Run**' tab located in the right sidebar and choose "New Run." In the pop-up window that appears next, select "**Self-hosted**" and input one or more of the tags you previously included in the runner configuration file.
+Go back to AskUI Studio and access the workflow you intend to execute. Head over to the **Run** tab located in the right sidebar and choose **New Run**. In the pop-up window that appears next, select **Self-hosted** and input one or more of the tags you previously included in the runner configuration file.
 
-### Generating up-to-date Configuration Schema
+## Generating up-to-date Configuration Schema
 
 Requirements:
 - [PDM](https://pdm.fming.dev/latest/) 2.8 or higher for contributing and creating the JSON schema of the configuration
