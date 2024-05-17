@@ -57,7 +57,10 @@ video {
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-.table-of-contents__link--active {
+.table-of-contents__link--active,
+.table-of-contents__link--active code,
+.table-of-contents__link:hover,
+.table-of-contents__link:hover code {
   color: var(--red); 
 }
 
@@ -112,7 +115,10 @@ html[data-theme="dark"] {
     background-color: rgba(0, 0, 0, 0.3);
   }
 
-  .table-of-contents__link--active {
+  .table-of-contents__link--active,
+  .table-of-contents__link--active code,
+  .table-of-contents__link:hover,
+  .table-of-contents__link:hover code {
     color: var(--color-primary-dark); 
   }
 
