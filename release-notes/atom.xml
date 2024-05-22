@@ -6,7 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://docs.askui.com/release-notes"/>
     <subtitle>askui - Humanizing UI Automation Blog</subtitle>
-    <icon>https://docs.askui.com/img/askui_favicon.png</icon>
+    <icon>https://docs.askui.com/img/askui-favicon.png</icon>
     <rights>Copyright © 2024 askui GmbH.</rights>
     <entry>
         <title type="html"><![CDATA[2024.04.29 | AskUI SDK 0.18.0]]></title>
