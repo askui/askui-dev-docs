@@ -10,6 +10,7 @@ pagination_next: general/Getting Started/write-your-first-instruction
 - [Node.js](https://nodejs.org/) version 16 or above
 - __npm__ in version 7.10 or above (usually comes with the Node.js installation)
 - A text editor/IDE like [Visual Studio Code](https://code.visualstudio.com/)
+- An AskUI account. Don't have one? Sign up for a [7-day free trial here](https://www.app.askui.com)!
 
 :::danger
 
@@ -21,7 +22,7 @@ Some users have reported instability running AskUI on macOS with external displa
 
 As we need to prevent misuse of our API, we need you to create some credentials through our __AskUI Studio__ (for free).
 
-Please [fill out this form](https://www.askui.com/demo) to schedule a demonstration or request a trial to obtain access to __AskUI Studio__.
+Please [sign up for a 7-day free trial](https://www.app.askui.com).
 
 ## Installation
 
