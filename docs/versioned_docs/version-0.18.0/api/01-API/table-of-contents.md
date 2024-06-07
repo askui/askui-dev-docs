@@ -611,7 +611,7 @@ If you need to focus the element first, use typeIn()
 await aui.type('Type some text').exec()
 
 // mask the text so it is not send to the askui-inference server
-await aui.type('Type some text', \{ isSecret: true, secretMask: '**' }).exec()
+await aui.type('Type some text', { isSecret: true, secretMask: '**' }).exec()
 ```  
 
 </md-block>

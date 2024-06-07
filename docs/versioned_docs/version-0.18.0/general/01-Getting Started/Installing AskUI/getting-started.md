@@ -12,7 +12,7 @@ pagination_next: general/Getting Started/write-your-first-instruction
 ## Prerequisites
 
 Check if you have the following requirements, before you start the process.
-- You need an AskUI account. Don't have one? Register for a free trial [here](https://www.askui.com/demo)!
+- You need an AskUI account. Don't have one? Sign up for a [7-day free trial here](https://www.app.askui.com)!
 - Make sure you have Administrator privileges on the computer, where you want to use AskUI.
 - Consider using an IDE. We recommend [Visual Studio Code](https://code.visualstudio.com/).
 
@@ -23,7 +23,7 @@ Check if you have the following requirements, before you start the process.
 :::warning
 As we need to prevent misuse of our API, we need you to create some credentials through our __AskUI Studio__.
 
-Please [fill out this form](https://www.askui.com/demo) to schedule a demonstration or request a trial to obtain access to __AskUI Studio__.
+Please [sign up for a 7-day free trial](https://www.app.askui.com).
 :::
 
 ### Step 1: Download Installer
@@ -89,7 +89,7 @@ If you are not sure what an ADE command does, you can run `Get-Help <command>` t
 :::info
 As we need to prevent misuse of our API, we need you to create some credentials through our __AskUI Studio__.
 
-Please [fill out this form](https://www.askui.com/demo) to schedule a demonstration or request a trial to obtain access to __AskUI Studio__.
+Please [sign up for a 7-day free trial](https://www.app.askui.com).
 :::
 
 Run the following command to authenticate and connect your ADE to your AskUI account. Replace `<access token>` and `<workspace id>` with your real credentials.
@@ -183,7 +183,7 @@ To find them, navigate to the `askui_example` folder. This is the place, where y
 To add a new workflow, create a file in this folder, ending in `.test.ts`
 
 The project comes with one **template workflow**, which is called `my-first-askui-test-suite.ts`.
-On the next page, you will dive deeper on how to write instructions in the AskUI automation framework.
+On the next page, you will dive deeper into how to write instructions in the AskUI automation framework.
 
 ## Next Steps
 
