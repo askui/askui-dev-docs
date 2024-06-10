@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Select Elements by Proximity
 
-A common problem while writing instructions which one encounters is interacting with elements which share the same text.
+A common problem while writing instructions that one encounters is interacting with elements that share the same text.
 
 An example can be seen when you interactively annotate your Visual Studio Code Editor.
 Notice that the magnifying glass icon and many other elements throughout the UI share the same name:
