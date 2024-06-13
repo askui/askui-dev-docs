@@ -57,11 +57,11 @@ vale docs
 
 ### Create a New Release Notes Entry
 
-The blog is stored under `docs/blog`. Every entry gets its own folder and we use the following format as a naming convention `YYYY-MM-DD`. This makes sorting easier. Inside the folder you can store images and _maximal_ one Markdown file (`.md` file extension). The Markdown file contains your **Release Note** entry.
+The blog is stored under `docs/blog`. Every entry gets its own folder and we use the following format as a naming convention `YYYY-MM-DD`. This makes sorting easier. Inside the folder you can store images and _maximum_ one Markdown file (`.md` file extension). The Markdown file contains your **Release Note** entry.
 
 #### Anatomy of a Release Note File
 
-Every **Release Note** has a metadata header which looks like this.
+Every **Release Note** has a metadata header that looks like this.
 Choose a unique title and slug.
 
 ```yaml
