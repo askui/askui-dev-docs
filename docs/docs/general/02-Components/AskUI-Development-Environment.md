@@ -145,6 +145,7 @@ The `AskUI-StartController` command is used to launch the AskUI Remote Device Co
 - `LogFile`: Output path for generated logs.
 - `LogLevel`: Log level. (Default: debug)
 - `RunInBackground`: Start the app in background mode.
+- `showOverlay`: Renders a **Status Indicator** around your selected screen (Experimental).
 
 **Examples:**
 
