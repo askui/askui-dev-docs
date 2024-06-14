@@ -224,6 +224,71 @@ The `AskUI-AddProjectSettingsIfNotExist` command adds the AskUI settings into th
 AskUI-AddProjectSettingsIfNotExist
 ```
 
+## AskUI Error Reporting Commands
+The _Error Reporting Commands_ help you to create an error report that includes all the necessary information we need to troubleshoot an issue you may encounter.
+
+### `AskUI-BuildErrorReport` Command
+`AskUI-BuildErrorReport` is utilized to construct an error report directory, which is intended for user inspection and subsequent compression into a zip file. This zip file can then be sent to the AskUI Team for analysis. The function offers the following parameters:
+
+- `Project`: Project Paths to be included in the error report. Defaults to an empty list.
+- `AdditionalFiles`: Additional files to be included in the error report. Defaults to an empty list.
+- `MaxLogFileAgeInHours` : Maximum age of log files to be included in the error report. Default is 96 hours(4 * 24).
+
+**Example:**
+
+```powershell
+# Build an error report and save the $errorReportGUID in a variable
+# The GUID will be used in AskUI-CompressErrorReport (See next section)
+$errorReportGUID = AskUI-BuildErrorReport
+
+Generating a new error report...
+
+Error description file created at '<userProfile>\.askui\ErrorReports\7171dc0a-03ad-4e3c-8b9d-2a89d17339ce.prepared\ErrorDescription.md'. Please fill in the details.
+
+Error report created with GUID '7171dc0a-03ad-4e3c-8b9d-2a89d17339ce' at '<userProfile>\.askui\ErrorReports\7171dc0a-03ad-4e3c-8b9d-2a89d17339ce.prepared'.
+
+After inspecting the error report, use 'AskUI-CompressErrorReport -ErrorReportGUID 7171dc0a-03ad-4e3c-8b9d-2a89d17339ce' to compress the error report.
+```
+
+### `AskUI-CompressErrorReport` Command
+`AskUI-CompressErrorReport`is used to compress an error report identified by its GUID. The compressed error report can be sent to the AskUI Team for analysis. This function has the following parameters:
+
+- `ErrorReportGUID` (Mandatory): Error Report GUID to be compressed. This is used to identify the specific error report to compress.
+- `SkipCleanup`: Optional switch to skip the cleanup of the expanded error report directory after compression.
+
+**Example:**
+
+```powershell
+# Compress an error report identified by its GUID.
+AskUI-CompressErrorReport -ErrorReportGUID "7171dc0a-03ad-4e3c-8b9d-2a89d17339ce"
+
+Error report with GUID '7171dc0a-03ad-4e3c-8b9d-2a89d17339ce' compressed at '<userProfile>\.askui\ErrorReports\ErrorReport-7171dc0a-03ad-4e3c-8b9d-2a89d17339ce-2024-05-07T14_24.zip'.
+```
+
+### `AskUI-NewErrorReport` Command
+`AskUI-NewErrorReport` is used to generate a new error report. It creates an error report directory that includes project paths, additional files, and log files within a specified age. This function has the following parameters:
+
+- `Project`: Project Paths to be included in the error report. Defaults to an empty list.
+- `AdditionalFiles`: Additional files to be included in the error report. Defaults to an empty list. For example, annotations, screenshots, etc.
+- `MaxLogFileAgeInHours`: Maximum age of log files to be included in the error report, in hours. Default is 96 hours (4 * 24).
+- `SkipCleanup`: Optional switch to skip cleanup of the expanded error report directory after compression.
+- `AutoApprove`: Optional switch to automatically approve the error report content without user interaction.
+
+```powershell
+$zipFilePath = AskUI-NewErrorReport
+
+Generating a new error report...
+
+Error description file created at '<userProfile>\.askui\ErrorReports\bcff5e3d-75fd-4f00-a37a-defc9629b19c.prepared\ErrorDescription.md'. Please fill in the details.
+
+Do you want to open the error report directory? (y/n): n
+
+Do you approve the error report content? (y/n): y
+
+Error report with GUID 'bcff5e3d-75fd-4f00-a37a-defc9629b19c' compressed at '<userProfile>\.askui\ErrorReports\ErrorReport-bcff5e3d-75fd-4f00-a37a-defc9629b19c-2024-05-07T14_28.zip'.
+```
+
+
 ### Process Management Debug Commands
 The _Process Management Debug_ commands are used to show all running AskUI processes and to stop faulty AskUI processes:
 
