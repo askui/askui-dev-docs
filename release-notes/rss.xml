@@ -4,11 +4,83 @@
         <title>askui - Humanizing UI Automation Blog</title>
         <link>https://docs.askui.com/release-notes</link>
         <description>askui - Humanizing UI Automation Blog</description>
-        <lastBuildDate>Mon, 29 Apr 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 17 Jun 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <copyright>Copyright © 2024 askui GmbH.</copyright>
+        <item>
+            <title><![CDATA[2024.06.17 | AskUI Suite 24.5.1 - Custom Element Enhancements]]></title>
+            <link>https://docs.askui.com/release-notes/release-2024-06-17</link>
+            <guid>https://docs.askui.com/release-notes/release-2024-06-17</guid>
+            <pubDate>Mon, 17 Jun 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Introduction]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" href="https://docs.askui.com/release-notes/release-2024-06-17#introduction">​</a></h2>
+<p>We released the <a href="https://docs.askui.com/release-notes/release-2024-06-17#askui-installer-update-2551">AskUI Installer version 24.5.1</a> which introduces new commandlets for error reporting and an overlay option for the <strong>AskUI Controller</strong>.</p>
+<p>Also our <a href="https://docs.askui.com/release-notes/release-2024-06-17#changes">Custom Element</a> got a new implementation under the hood, so it works more consistently when changing the resolution of the screen. This change brings better stability to workflows that will be run on different machines. The update also expands the <a href="https://docs.askui.com/docs/api/Element-Descriptions/customelement" target="_blank" rel="noopener noreferrer">Custom Elements API</a> of the AskUI SDK. You can now add a <code>stopThreshold</code> to optimize execution time.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="changes">Changes<a class="hash-link" aria-label="Direct link to Changes" title="Direct link to Changes" href="https://docs.askui.com/release-notes/release-2024-06-17#changes">​</a></h2>
+<ul>
+<li><a href="https://docs.askui.com/docs/api/Element-Descriptions/customelement" target="_blank" rel="noopener noreferrer">Custom Elements API</a> has a new parameter <code>stopThreshold</code>.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="improvements">Improvements<a class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" href="https://docs.askui.com/release-notes/release-2024-06-17#improvements">​</a></h2>
+<ul>
+<li>Custom Elements implementation is more robust against screen resolution changes</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="askui-installer-update-2551">AskUI Installer Update 25.5.1<a class="hash-link" aria-label="Direct link to AskUI Installer Update 25.5.1" title="Direct link to AskUI Installer Update 25.5.1" href="https://docs.askui.com/release-notes/release-2024-06-17#askui-installer-update-2551">​</a></h2>
+<ul>
+<li>New commandlets to manage error reporting.</li>
+<li><strong>Status Indicator</strong> as an overlay of active screen.</li>
+</ul>
+<p><a href="https://files.askui.com/releases/Installer/24.5.1/AskUI-Suite-24.5.1-System-Installer-Win-AMD64-Full.exe" target="_blank" rel="noopener noreferrer">Download link</a>.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features">New Features<a class="hash-link" aria-label="Direct link to New Features" title="Direct link to New Features" href="https://docs.askui.com/release-notes/release-2024-06-17#new-features">​</a></h2>
+<p>ADE commandlets:</p>
+<ul>
+<li><a href="https://docs.askui.com/docs/general/Components/AskUI-Development-Environment#askui-builderrorreport-command" target="_blank" rel="noopener noreferrer">AskUI-BuildErrorReport</a></li>
+<li><a href="https://docs.askui.com/docs/general/Components/AskUI-Development-Environment#askui-compresserrorreport-command" target="_blank" rel="noopener noreferrer">AskUI-CompressErrorReport</a></li>
+<li><a href="https://docs.askui.com/docs/general/Components/AskUI-Development-Environment#askui-newerrorreport-command" target="_blank" rel="noopener noreferrer">AskUI-NewErrorReport</a></li>
+</ul>
+<p>AskUI Controller:</p>
+<ul>
+<li><a href="https://docs.askui.com/docs/general/Components/AskUI-Controller#render-status-indicator-askui-development-environment" target="_blank" rel="noopener noreferrer">Overlay option</a></li>
+</ul>
+<p>ADK:</p>
+<ul>
+<li><a href="https://docs.askui.com/docs/api/Element-Descriptions/customelement" target="_blank" rel="noopener noreferrer">Custom Elements API</a></li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes">Fixes<a class="hash-link" aria-label="Direct link to Fixes" title="Direct link to Fixes" href="https://docs.askui.com/release-notes/release-2024-06-17#fixes">​</a></h2>
+<ul>
+<li>Drag &amp; Drop (Mouse down, mouse move, mouse up) crashes controller</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="versions">Versions<a class="hash-link" aria-label="Direct link to Versions" title="Direct link to Versions" href="https://docs.askui.com/release-notes/release-2024-06-17#versions">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="components-and-packages">Components and Packages<a class="hash-link" aria-label="Direct link to Components and Packages" title="Direct link to Components and Packages" href="https://docs.askui.com/release-notes/release-2024-06-17#components-and-packages">​</a></h3>
+<ul>
+<li>AskUI Controller<!-- -->
+<ul>
+<li>AskUI Remote Device Controller: v0.3.0.0 Preview</li>
+<li>AskUI Legacy UI Controller: 0.14.1</li>
+<li>AskUI Remote Device Snipping Tool: v0.1.0.0 Preview</li>
+</ul>
+</li>
+<li>AskUI Runner: 0.1.4</li>
+<li>AskUI Development Environment (ADE): Preview 3</li>
+<li>AskUI Development Kit (ADK): 0.18.0</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3rd-party-versions">3rd Party Versions<a class="hash-link" aria-label="Direct link to 3rd Party Versions" title="Direct link to 3rd Party Versions" href="https://docs.askui.com/release-notes/release-2024-06-17#3rd-party-versions">​</a></h3>
+<ul>
+<li>Node.JS: 21.0.0</li>
+<li>PowerShell 7.3.8</li>
+</ul>]]></content:encoded>
+            <author>johannes.dienst@askui.com (Johannes Dienst)</author>
+            <author>jonas.menesklou@askui.com (Jonas Menesklou)</author>
+            <category>AskUI Development Environment (ADE)</category>
+            <category>AskUI SDK</category>
+        </item>
         <item>
             <title><![CDATA[2024.04.29 | AskUI SDK 0.18.0]]></title>
             <link>https://docs.askui.com/release-notes/release-2024-04-29</link>
