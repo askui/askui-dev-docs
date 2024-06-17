@@ -3,7 +3,7 @@ sidebar_position: 4
 ---
 
 # AskUI Controller
-The AskUI Controller is a service that runs on your operating system. It is able to control inputs and observe the visuals on the operating system. The AskUI SDK connects to it and issues commands for user input like mouse movement and keypresses to it which the AskUI Controller executes like a real human user.
+The AskUI Controller is a service that runs on your operating system. It can control inputs and observe the visuals on the operating system. The AskUI SDK connects to it and issues commands for user input like mouse movement and keypresses to it which the AskUI Controller executes like a real human user.
 
 ![Architecture drawing how the AskUI Controller works together with AskUI SDK. The AskUI Controller runs in an environment and executes commands given to it by AskUI SDK: keypresses, mouse movement and clicks. It also takes screenshots and sends them over the AskUI SDK to the AskUI Inference.](./images/askui-device-controller-simple-architecture.png)
 
@@ -15,6 +15,15 @@ The AskUI Controller only works on __Windows__ and you have to __disable mouse a
 First switch into the [AskUI Development Environment (ADE)](AskUI-Development-Environment.md) by executing the command `askui-shell` in a terminal. The `AskUI-StartController` command is used to launch the **AskUI Controller**.
 
 You have several configuration options, which you can find [here](AskUI-Development-Environment.md#askui-controller-management).
+
+## Render Status Indicator (AskUI Development Environment)
+The **Status Indicator** renders a border around your selected screen.
+
+It can be activated by using the keyboard-shortcut `alt + f1` or by providing the option `showOverlay` to the `AskUI-StartController` command:
+
+```powershell
+AskUI-StartController -showOverlay
+```
 
 ### Example
 
