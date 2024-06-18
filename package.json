@@ -49,7 +49,7 @@
         "husky": "9.0.11",
         "is-ci": "3.0.1",
         "jira-prepare-commit-msg": "1.7.2",
-        "lint-staged": "15.2.5",
+        "lint-staged": "15.2.7",
         "pinst": "3.0.0",
         "release-it": "^17.3.0",
         "zx": "8.1.2"
