@@ -1,8 +1,8 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "askui - Humanizing UI Automation Blog",
+    "title": "askui - What can be said can be solved Blog",
     "home_page_url": "https://docs.askui.com/release-notes",
-    "description": "askui - Humanizing UI Automation Blog",
+    "description": "askui - What can be said can be solved Blog",
     "items": [
         {
             "id": "https://docs.askui.com/release-notes/release-2024-06-17",

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://docs.askui.com/release-notes</id>
-    <title>askui - Humanizing UI Automation Blog</title>
+    <title>askui - What can be said can be solved Blog</title>
     <updated>2024-06-17T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://docs.askui.com/release-notes"/>
-    <subtitle>askui - Humanizing UI Automation Blog</subtitle>
+    <subtitle>askui - What can be said can be solved Blog</subtitle>
     <icon>https://docs.askui.com/img/askui-favicon.png</icon>
     <rights>Copyright © 2024 askui GmbH.</rights>
     <entry>
