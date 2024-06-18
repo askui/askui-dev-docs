@@ -3,7 +3,7 @@
 const lightCodeTheme = require('prism-react-renderer').themes.github;
 const darkCodeTheme = require('prism-react-renderer').themes.dracula;
 
-const tagline = 'Humanizing UI Automation';
+const tagline = 'What can be said can be solved';
 const path = require('path');
 
 // This is a hacky way to get GTM working //////////
