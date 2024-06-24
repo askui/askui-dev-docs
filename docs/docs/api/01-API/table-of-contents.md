@@ -666,6 +666,30 @@ await aui.typeIn('Type some text', \{ isSecret: true, secretMask: '**' }).textfi
         <tr>
             <td>
                 <details>
+                    <summary>aiElement()  <span class="theme-doc-version-badge badge badge--success">production</span> <span class="theme-doc-version-badge badge badge--success">Windows only</span> </summary>
+<md-block>
+
+Detects an AI Element created with the [snipping workflow](../../general/02-Components/aielement.md#snipping-workflow). 
+
+**Examples:**
+
+```typescript
+await aui.click().aiElement('askui-logo').exec();
+```
+
+   * @param \{string} name - The name of the AI Element
+
+</md-block>
+<md-block>
+
+
+</md-block>
+                </details>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <details>
                     <summary>button()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
 <md-block>
 

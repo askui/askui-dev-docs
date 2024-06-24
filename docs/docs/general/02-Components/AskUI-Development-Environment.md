@@ -3,7 +3,7 @@ sidebar_position: 3
 ---
 
 # AskUI Development Environment (ADE)
-After installation, the **ADE** is available for all users. No administrator privileges are necessary. ADE aims to reduce the amount of code needed to be written by you. It provides user-friendly commands which will assist you with AskUI product usage.
+After installation, the **ADE** is available for all users. No administrator privileges are necessary. ADE aims to reduce the amount of code needed to be written by you. It provides user-friendly commands that will assist you with AskUI product usage.
 
 Start by typing `askui-shell` in the terminal and this will make all ADE commands available.
 
@@ -90,12 +90,12 @@ The `AskUI-RemoveSettings` command is used to configure AskUI settings, allowing
 
 ```powershell
 # Removes the HTTP proxy address and AskUI token.
-  AskUI-RemoveSettings -HttpProxy -Token
+AskUI-RemoveSettings -HttpProxy -Token
 ```
 
 ```powershell
 # Removes the complete credentials.
-  AskUI-RemoveSettings -Credentials
+AskUI-RemoveSettings -Credentials
 ```
 
 ## Project Management

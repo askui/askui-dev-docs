@@ -112,6 +112,7 @@ const sidebars = {
       className: 'menu_category_askui_development_kit',
       items: [
         'general/Components/AskUI-Development-Environment',
+        'general/Components/aielement',
       ],
     },
     {
