@@ -56,7 +56,7 @@ await aui.click().button()
 ```
 
 ### Text In Overlay Merges with Text Below
-Some overlays like dialogues do not have enough padding so the text under the overlay appears to be on the same line as the text inside the overlay. This leads to text-merging where you can not reliably target a specific text because the similarity score will never be reached.
+Some overlays like dialogues do not have enough padding so the text under the overlay seems to be on the same line as the text inside the overlay. This leads to text-merging where you can not reliably target a specific text because the similarity score will never be reached.
 
 You have a few options you can try depending on your use case:
 

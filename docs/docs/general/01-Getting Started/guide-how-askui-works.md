@@ -8,7 +8,6 @@ sidebar_position: 1
 
 In this article, we will give a detailed overview of AskUI`s architecture and how it works under the hood.
 
-
 ![architecture](./images/how_askui_works_architecture.png)
 
 AskUI is built on top of a number of components. We will cover what these components are and how they work together to provide a flexible and reliable way to automate interactions with UI elements of any operating system or platform.
@@ -42,7 +41,7 @@ Throughout this article, we will use some terms that describe certain parts of A
 
 ![control-client](./images/how_askui_works_client.png)
 
-The **AskUI Control Client** provides the API that tells AskUI what/how to automate. Once you start using AskUI, you will mostly interact with AskUI via the **AskUI Control Client**. In most of our tutorials and demonstrations, you will see `let aui: UIControlClient` is declared and combined with an *Action* and *Element-descriptions* which ends up forming an instruction, e.g:
+The **AskUI Control Client** provides the API that tells AskUI what/how to automate. Once you start using AskUI, you will mostly interact with AskUI via the **AskUI Control Client**. In most of our tutorials and demonstrations, you will see `let aui: UIControlClient` is declared and combined with an *Action* and *Element-descriptions* which ends up forming an instruction, for example:
 
 ```ts
 await aui.click().button().withText('login').exec();
@@ -56,7 +55,7 @@ await aui.click().button().withText('login').exec();
 
 - The **AskUI Control Client** communicates with the **AskUI Inference Server**:
     - to send a screenshot to be annotated with the instruction.
-    - to receive the annotation, e.g. detected elements.
+    - to receive the annotation, for example detected elements.
 
 
 To use the **AskUI Control Client**, user credentials are required. User credentials can be obtained via our __AskUI Studio__. Please [sign up for a 7-day free trial](https://www.app.askui.com) or [fill out this form](https://www.askui.com/demo) to schedule a demonstration.
@@ -89,8 +88,8 @@ See our [API documentation](../02-Components/askui-ui-controller.md) for more in
 The **AskUI Inference Server** is responsible for the prediction of UI elements within the given screenshot. As soon as it receives a request from the **AskUI Control Client**, it performs the prediction on the given image and returns the annotation to the **AskUI Control Client**. 
 
 For the inference, we use a machine-learning model that consists of several sub-models:
-- **Object Detector**: Detects UI elements (e.g button, textfield).
-- **Icon Classifier**: Predicts the class of an icon based on the detected objects (e.g. a user icon 👤).
+- **Object Detector**: Detects UI elements (for example button, textfield).
+- **Icon Classifier**: Predicts the class of an icon based on the detected objects (for example a user icon 👤).
 - **Optical Character Recognition (OCR)**: Converts the image of a text into text.
 - **Custom Element Detector**: Searches for an area in the given screenshot that matches the image given by the *Element-description* `.customElement()`.
 
