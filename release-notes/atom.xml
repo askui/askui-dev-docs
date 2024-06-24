@@ -2,12 +2,52 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://docs.askui.com/release-notes</id>
     <title>askui - What can be said can be solved Blog</title>
-    <updated>2024-06-17T00:00:00.000Z</updated>
+    <updated>2024-06-24T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://docs.askui.com/release-notes"/>
     <subtitle>askui - What can be said can be solved Blog</subtitle>
     <icon>https://docs.askui.com/img/askui-favicon.png</icon>
     <rights>Copyright © 2024 askui GmbH.</rights>
+    <entry>
+        <title type="html"><![CDATA[2024.06.24 | AskUI SDK 0.20.0 and aiElement()]]></title>
+        <id>https://docs.askui.com/release-notes/release-2024-06-24</id>
+        <link href="https://docs.askui.com/release-notes/release-2024-06-24"/>
+        <updated>2024-06-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Introduction]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" href="https://docs.askui.com/release-notes/release-2024-06-24#introduction">​</a></h2>
+<p>This release includes two features we put a lot of effort into:</p>
+<ul>
+<li>AI Element Creation Workflow (Windows only)</li>
+<li>Convenience method <code>expectAllExist</code> which takes an array of descriptions for elements and returns if they are detected on the screen.</li>
+</ul>
+<p>We also introduced a breaking change for the convenience method <code>clickText()</code> to make our API more consistent.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="breaking-changes">Breaking Changes<a class="hash-link" aria-label="Direct link to Breaking Changes" title="Direct link to Breaking Changes" href="https://docs.askui.com/release-notes/release-2024-06-24#breaking-changes">​</a></h2>
+<ul>
+<li>Method signature changed for <code>clickText()</code>. <code>type</code> becomes <code>matching</code>. <a href="https://docs.askui.com/docs/api/Convenience/clicktext" target="_blank" rel="noopener noreferrer">API docs</a></li>
+</ul>
+<div class="language-typescript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-typescript codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">// Before</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">await</span><span class="token plain"> aui</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">clickText</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain">text</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">'Hello World'</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> type</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">'similar'</span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">// Now</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">await</span><span class="token plain"> aui</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">clickText</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain">text</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">'Hello World'</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> matching</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">'similar'</span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features">New Features<a class="hash-link" aria-label="Direct link to New Features" title="Direct link to New Features" href="https://docs.askui.com/release-notes/release-2024-06-24#new-features">​</a></h2>
+<p>ADE commandlets to create and manage <a href="https://docs.askui.com/docs/general/Components/aielement" target="_blank" rel="noopener noreferrer">AI Elements</a>:</p>
+<ul>
+<li><a href="https://docs.askui.com/docs/general/Components/aielement#askui-newaicustomelement-command" target="_blank" rel="noopener noreferrer">AskUI-NewAICustomElement</a></li>
+<li><a href="https://docs.askui.com/docs/general/Components/aielement#askui-showaielement-command" target="_blank" rel="noopener noreferrer">AskUI-ShowAIElement</a></li>
+<li><a href="https://docs.askui.com/docs/general/Components/aielement#askui-removeaicustomelement-command" target="_blank" rel="noopener noreferrer">AskUI-RemoveAICustomElement</a></li>
+<li><a href="https://docs.askui.com/docs/general/Components/aielement#askui-openaicustomelement-command" target="_blank" rel="noopener noreferrer">AskUI-OpenAICustomElement</a></li>
+<li><a href="https://docs.askui.com/docs/general/Components/aielement#snipping-workflow" target="_blank" rel="noopener noreferrer">Snipping Workflow</a></li>
+</ul>
+<p>Convenience method added to AskUI TypeScript SDK:</p>
+<ul>
+<li><a href="https://docs.askui.com/docs/api/Convenience/expectallexist" target="_blank" rel="noopener noreferrer">expectAllExist() API docs</a></li>
+</ul>
+<hr>]]></content>
+        <author>
+            <name>Johannes Dienst</name>
+            <email>johannes.dienst@askui.com</email>
+        </author>
+        <category label="AskUI SDK" term="AskUI SDK"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[2024.06.17 | AskUI Suite 24.5.1 - Custom Element Enhancements]]></title>
         <id>https://docs.askui.com/release-notes/release-2024-06-17</id>
@@ -15,7 +55,7 @@
         <updated>2024-06-17T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Introduction]]></summary>
         <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" href="https://docs.askui.com/release-notes/release-2024-06-17#introduction">​</a></h2>
-<p>We released the <a href="https://docs.askui.com/release-notes/release-2024-06-17#askui-installer-update-2551">AskUI Installer version 24.5.1</a> which introduces new commandlets for error reporting and an overlay option for the <strong>AskUI Controller</strong>.</p>
+<p>We released the <a href="https://docs.askui.com/release-notes/release-2024-06-17#askui-installer-update-2451">AskUI Installer version 24.5.1</a> which introduces new commandlets for error reporting and an overlay option for the <strong>AskUI Controller</strong>.</p>
 <p>Also our <a href="https://docs.askui.com/release-notes/release-2024-06-17#changes">Custom Element</a> got a new implementation under the hood, so it works more consistently when changing the resolution of the screen. This change brings better stability to workflows that will be run on different machines. The update also expands the <a href="https://docs.askui.com/docs/api/Element-Descriptions/customelement" target="_blank" rel="noopener noreferrer">Custom Elements API</a> of the AskUI SDK. You can now add a <code>stopThreshold</code> to optimize execution time.</p>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="changes">Changes<a class="hash-link" aria-label="Direct link to Changes" title="Direct link to Changes" href="https://docs.askui.com/release-notes/release-2024-06-17#changes">​</a></h2>
@@ -28,7 +68,7 @@
 <li>Custom Elements implementation is more robust against screen resolution changes</li>
 </ul>
 <hr>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="askui-installer-update-2551">AskUI Installer Update 25.5.1<a class="hash-link" aria-label="Direct link to AskUI Installer Update 25.5.1" title="Direct link to AskUI Installer Update 25.5.1" href="https://docs.askui.com/release-notes/release-2024-06-17#askui-installer-update-2551">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="askui-installer-update-2451">AskUI Installer Update 24.5.1<a class="hash-link" aria-label="Direct link to AskUI Installer Update 24.5.1" title="Direct link to AskUI Installer Update 24.5.1" href="https://docs.askui.com/release-notes/release-2024-06-17#askui-installer-update-2451">​</a></h2>
 <ul>
 <li>New commandlets to manage error reporting.</li>
 <li><strong>Status Indicator</strong> as an overlay of active screen.</li>
