@@ -126,7 +126,7 @@ beforeAll(async () => {
 })
 ```
 
-Here are some example for the `httpProxyUrl` (for more details see [docs from hpagent](https://github.com/delvedor/hpagent#usage))
+Here are some examples for the `httpProxyUrl` (for more details see [docs from hpagent](https://github.com/delvedor/hpagent#usage))
 
 | Proxy Type | URL | Description | 
 | --- | --- | --- | 
@@ -134,7 +134,7 @@ Here are some example for the `httpProxyUrl` (for more details see [docs from hp
 | HTTP + Basic Auth | e.g. http://username:password@proxy.company.com:8293 |  A HTTP proxy with authentication |
 | SOCKET |  |  Socket proxies are not supported by `hpagent` |
 
-Here are some example for the `httpsProxyUrl` (for more details see [docs from hpagent](https://github.com/delvedor/hpagent#usage))
+Here are some examples for the `httpsProxyUrl` (for more details see [docs from hpagent](https://github.com/delvedor/hpagent#usage))
 
 | Proxy Type | URL | Description | 
 | --- | --- | --- | 
@@ -155,37 +155,56 @@ or
  RequestError: unable to verify the first certificate
 ```
 
-There are multiple options to deal with this:
-
-#### Deactivate TLS certificate validation (NOT RECOMMENDED)
-
-This option deactivates the TLS validation (see [here](https://nodejs.org/api/cli.html#node_tls_reject_unauthorizedvalue)) and **is not recommended**. Only for testing!
-
-Windows:
-```shell
-set NODE_TLS_REJECT_UNAUTHORIZED 0
-```
-
-macOS/Unix:
-```bash
-export NODE_TLS_REJECT_UNAUTHORIZED=0
-```
+You can add a self-signed certificate as extra CA Certs to solve this problem as detailed in the next section.
 
 #### Add Self-Signed Certificate as Extra CA Certs (RECOMMENDED)
+The following step-by-step instructions will show you how to add the correct certificate as extra CA Certs.
 
-The other option is to add the self-signed certificate as [extra certificates for Node.js](https://nodejs.org/api/cli.html#node_extra_ca_certsfile). 
+1. Open the certificate viewer in your browser.
 
-1. Get the certificate and convert it to a `.pem` file, e.g., by [exporting it with Chrome](https://superuser.com/a/1292098).
-2. Set the `NODE_EXTRA_CA_CERTS` with the following commands:
+    Chrome: Depending on your operating system there is a **Lock**-icon left of your browser bar that opens the certificate viewer directly or another icon that opens a _Site Information_ menu where you have to select **Connection is Secure** -> **Certificate is Valid**
 
-Windows:
-```shell
-set NODE_EXTRA_CA_CERTS '<path>\<cert>.pem'
+    Firefox: Click the **Lock**-icon left of your browser bar. click on **Connection Secure** -> **More Information**. Select the tab **Security**. Click **View Certificate**.
+
+2. Chrome: Open the **Details** tab.
+
+   Firefox: Select the **GTS Root R1** certificate.
+3. Chrome: Select the Certificate **GTS Root R1** and click **Export...** on the bottom right.
+
+   Firefox: Under **Miscellaneous**, you can download the certificate.
+4. Save it somewhere you can find it.
+
+![](./images/proxy-windows-chrome-download-root-certificate.png)
+<figcaption>*Windows Chrome: Download the certificate in the three steps marked inside the picture above.*</figcaption>
+
+![](./images/proxy-macos-chrome-download-root-certificate1.png)
+<figcaption>*macOS/Unix Chrome: Open the certificate viewer step 1.*</figcaption>
+
+![](./images/proxy-macos-chrome-download-root-certificate2.png)
+<figcaption>*macOS/Unix Chrome: Open the certificate viewer step 2.*</figcaption>
+
+![](./images/proxy-macos-chrome-download-root-certificate2.png)
+<figcaption>_macOS/Unix Chrome: Open the certificate viewer step 3.*</figcaption>
+
+##### Windows:
+
+Add the following to your `<project>\.askui\Settings\AskuiEnvironmentSettings.json`
+
+```json
+{
+	...
+  "environmentVariables": {
+    ...
+    "NODE_EXTRA_CA_CERTS": "<insert absolute path of certificate>"
+    ...
+  },
+  ...
+}
 ```
 
-macOS/Unix:
+##### macOS/Unix:
 ```bash
-export NODE_EXTRA_CA_CERTS='<path>/<cert>.pem'
+export NODE_EXTRA_CA_CERTS='<insert absolute path of certificate>'
 ```
 
 **Additional information:**
