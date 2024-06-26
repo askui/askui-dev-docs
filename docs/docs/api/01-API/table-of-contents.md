@@ -727,13 +727,18 @@ await aui.typeIn('Type some text', \{ isSecret: true, secretMask: '**' }).textfi
                     <summary>aiElement()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
 <md-block>
 
-Detects an AI Element created with the workflow creator.  
+Detects an AI Element created with the [snipping workflow](https://docs.askui.com/docs/general/Components/aielement#snipping-workflow).
+
+**Examples:**
+
+```typescript
+await aui.click().aiElement('askui-logo').exec();
+```  
 
 </md-block>
 <md-block>
 
 * @param \{string} aiElementName - Name of the AI Element.
-* @param \{string} aiElementName - 
 
 </md-block>
                 </details>
@@ -765,24 +770,6 @@ await aui.click().button().contains().text().withText('Google Search').exec()
         <tr>
             <td>
                 <details>
-                    <summary>cell()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
-<md-block>
-
-  
-
-</md-block>
-<md-block>
-
-* @param \{number} row_index - row index
-* @param \{number} column_index - column index
-
-</md-block>
-                </details>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <details>
                     <summary>checkbox()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
 <md-block>
 
@@ -791,23 +778,6 @@ Filters for a UI element 'checkbox'.
 </md-block>
 <md-block>
 
-
-</md-block>
-                </details>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <details>
-                    <summary>column()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
-<md-block>
-
-  
-
-</md-block>
-<md-block>
-
-* @param \{number} index - element index
 
 </md-block>
                 </details>
@@ -860,9 +830,9 @@ Filters for text containing the text provided as an argument.
                     <summary>customElement()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
 <md-block>
 
-Filters for a 'custom element', that is a UI element which is defined by providing an image and other parameters such as degree of rotation. It allows filtering for a UI element based on an image instead of using text or element descriptions like `button().withText('Submit')` in `await aui.click().button().withText('Submit').exec()`.
+Filters for a 'custom element', that is a UI element that is defined by providing an image and other parameters such as degree of rotation. It allows filtering for a UI element based on an image instead of using text or element descriptions like `button().withText('Submit')` in `await aui.click().button().withText('Submit').exec()`.
 
-See the tutorial - [Custom Element](https://docs.askui.com/docs/general/Tutorials/custom-element) for more detail.
+See the tutorial - [Custom Element](https://docs.askui.com/docs/general/Element%20Selection/custom-elements) for more details.
 
 **Example**
 ```typescript
@@ -893,7 +863,7 @@ await aui
 - **rotationDegreePerStep** (*`number`, optional*):
     - Step size in rotation degree. Rotates the custom image by this step size until 360° is exceeded. The range is from `0` to `360`. Defaults to `0`.
 - **imageCompareFormat** (*`'RGB' | 'grayscale' | 'edges'`, optional*):
-    - The color compare style. 'edges' compares only edges, 'greyscale' compares the brightness of each pixel whereas 'RGB' compares all three colors (red, green, blue). Defaults to 'grayscale'.
+    - The color compare style. `'edges'` compares only edges, `'greyscale'` compares the brightness of each pixel whereas `'RGB'` compares all three colors (red, green, blue). Defaults to `'grayscale'`.
   
 
 </md-block>
@@ -1002,7 +972,7 @@ A bit of playing around to find a matching description is sometimes needed:
 E.g., `puzzle piece` can fail while `an icon showing a puzzle piece` might work.
 Generally, the more detail the better.
 
-We also recommend to not restrict the type of element by using the generalselector `element()` as shown in the examples below.
+We also recommend to not restrict the type of element by using the general selector `element()` as shown in the examples below.
 
 **Examples:**
 ```typescript
@@ -1039,23 +1009,6 @@ Filters for a UI element 'other element'.
 </md-block>
 <md-block>
 
-
-</md-block>
-                </details>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <details>
-                    <summary>row()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
-<md-block>
-
-  
-
-</md-block>
-<md-block>
-
-* @param \{number} index - element index
 
 </md-block>
                 </details>
@@ -1111,7 +1064,7 @@ Filters for a UI element 'switch'.
                     <summary>table()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
 <md-block>
 
-  
+Filters for a UI element 'table'.  
 
 </md-block>
 <md-block>
@@ -1248,8 +1201,8 @@ _We use [RapidFuzz](https://maxbachmann.github.io/RapidFuzz/Usage/fuzz.html#rati
 'other' === withText('text') => false
 
 // optional parameter: similarity_score
-'978-0-201-00650-6' == withText('978-0-201-00') => true with 82.76 similarity
-'978-0-201-00650-6' == withText('978-0-201-00650', 90) => true with 93.75 < 90 similarity
+'978-0-201-00650-6' == withText("978-0-201-00", 90) => false with 82.76 < 90 similarity
+'978-0-201-00650-6' == withText("978-0-201-00650", 90) => true with 93.75 > 90 similarity
 ```
 ![](/img/gif/withText.gif)  
 
@@ -1257,7 +1210,7 @@ _We use [RapidFuzz](https://maxbachmann.github.io/RapidFuzz/Usage/fuzz.html#rati
 <md-block>
 
 * @param \{string} text - A text to be matched.
-* @param \{number} [similarityScore=70] - Similarity score minimum value, it should be between 0 and 100.
+* @param \{number} [similarityScore=70] - Similarity score minimum value, it should be between `0` and `100`.
 
 </md-block>
                 </details>
@@ -1835,6 +1788,7 @@ console.log(text);
 ]
 ```
 
+```typescript
 // *************************************************** //
 // Examples on how to work with the returned elements  //
 // *************************************************** //
@@ -1923,6 +1877,7 @@ console.log(detectedElements);
         xmax: 1178.8204241071428,
         ymax: 180.83512834821428
      },
+  },
   DetectedElement {
      name: 'ICON',
      text: 'search',
@@ -1932,8 +1887,8 @@ console.log(detectedElements);
         xmax: 450.6304241071428,
         ymax: 950.47812834821428
      },
-     ... 381 more items
-   }
+   },
+  ... 381 more items
  ]
 ```  
 
