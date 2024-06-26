@@ -32,8 +32,12 @@ If you need a simple mouseleftclick/tap only, use `mouseLeftClick`.
 
 **Example:**
 ```typescript 
-await aui.click().button().withText('Submit').exec()
-```  
+await aui.click().button().withText('Google Search').exec();
+```
+
+![](/img/gif/click.gif)
+
+  
 
 </md-block>
 <md-block>
@@ -115,7 +119,9 @@ If you need to move the mouse first, use `moveMouseTo()`.
 await aui.moveMouseTo().button().withText('Login').exec();
 
 await aui.mouseDoubleLeftClick().exec();
-```  
+```
+
+![](/img/gif/mousedoubleleftclick.gif)  
 
 </md-block>
 <md-block>
@@ -261,12 +267,18 @@ await aui.mouseRightClick().exec();
                     <summary>mouseToggleDown()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
 <md-block>
 
-Toggles mouse down (Left mouse key/tap).
+Toggles mouse down (Left mouse key/tap). 
+
+ This is the equivalent to **mouse-left-press-and-hold**. It holds the mouse button until the `mouseToogleUp()` is called. Often combined with `mouseToggleUP` to automate **drag-and-drop**.
 
 **Example:**
 ```typescript
 await aui.mouseToggleDown().exec();
-```  
+await aui.moveMouseRelatively(-400,0).exec();
+await aui.mouseToggleUp().exec();
+```
+
+![](/img/gif/mouseToggleDownUp.gif)  
 
 </md-block>
 <md-block>
@@ -284,10 +296,16 @@ await aui.mouseToggleDown().exec();
 
 Toggles mouse up (Left mouse key/tap).
 
+This is the equivalent to releasing the pressing mouse left button. Often combined with `mouseToggleDown()` to automate **drag-and-drop**.
+
 **Example:**
 ```typescript
+await aui.mouseToggleDown().exec();
+await aui.moveMouseRelatively(-400,0).exec();
 await aui.mouseToggleUp().exec();
-```  
+```
+
+![](/img/gif/mouseToggleDownUp.gif)  
 
 </md-block>
 <md-block>
@@ -310,7 +328,9 @@ If you want to move your mouse cursor to an element, use `moveMouseTo()`.
 **Example:**
 ```typescript
 await aui.moveMouse(500, 500).exec();
-```  
+```
+
+![](/img/gif/moveMouse.gif)  
 
 </md-block>
 <md-block>
@@ -332,8 +352,10 @@ Moves the mouse from the current position (relative) in x and y direction.
 
 **Example:**
 ```typescript
-await aui.moveMouseRelatively(20, 20).exec();
-```  
+await aui.moveMouseRelatively(0, 50).exec();
+```
+
+![](/img/gif/movemouserelatively.gif)  
 
 </md-block>
 <md-block>
@@ -381,8 +403,12 @@ Move mouse over the filtered element.
 
 **Example:**
 ```typescript 
-await aui.moveMouseTo().button().withText('Submit').exec()
-```  
+await aui.moveMouseTo().text().withText('Grinning_Face').exec()
+```
+
+![](/img/gif/movemouseto.gif)
+
+  
 
 </md-block>
 <md-block>
@@ -398,7 +424,15 @@ await aui.moveMouseTo().button().withText('Submit').exec()
                     <summary>pressAndroidKey()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
 <md-block>
 
-Press one Android key like `DEL`  
+Press one Android key like `del`
+See [API docs](https://docs.askui.com/docs/api/Actions/pressandroidtwokey) for available keys.
+
+**Examples:**
+```typescript
+await aui.pressAndroidKey('notification').exec();
+```
+
+![](/img/gif/pressAndroidKey.gif)  
 
 </md-block>
 <md-block>
@@ -434,7 +468,15 @@ Press three Android keys like `CTRL+ALT+DEL`
                     <summary>pressAndroidTwoKey()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
 <md-block>
 
-Press two Android keys like `ALT+F4`  
+Press two Android keys like `volume_down+power`
+See [API docs](https://docs.askui.com/docs/api/Actions/pressandroidtwokey) for available keys.
+
+**Examples:**
+```typescript
+await aui.pressAndroidTwoKey('volume_down', 'power').exec();
+```
+
+![](/img/gif/pressAndroidTwoKey.gif)  
 
 </md-block>
 <md-block>
@@ -456,8 +498,13 @@ Press one keys like `DEL`
 
 **Operating system specific mappings:**
 1. Windows: `command`-key maps to `windows`-key
----
-  
+
+**Examples:**
+```typescript
+await aui.pressKey('tab').exec();
+```
+
+![](/img/gif/pressKey.gif)  
 
 </md-block>
 <md-block>
@@ -478,8 +525,13 @@ Press three keys like `CTRL+ALT+DEL`
 
 **Operating system specific mappings:**
 1. Windows: `command`-key maps to `windows`-key
----
-  
+
+**Examples:**
+```typescript
+await aui.pressThreeKeys('control', 'command' 'space').exec();
+```
+
+![](/img/gif/pressThreeKeys.gif)  
 
 </md-block>
 <md-block>
@@ -529,9 +581,11 @@ Scrolls based on the current mouse position in the x and y direction.
 
 **Example:**
 ```typescript 
-// Scroll 10 up in y direction
-await aui.scroll(0, 10).exec()
-```  
+// Scroll 500 pixels down in y direction
+await aui.scroll(0, -500).exec()
+```
+
+![](/img/gif/scroll.gif)  
 
 </md-block>
 <md-block>
@@ -555,8 +609,10 @@ Moves mouse to the filtered element and scrolls in the x and y direction.
 
 **Example:**
 ```typescript 
-await aui.scroll(0, 10).textarea().exec()
-```  
+await aui.scrollInside(0,-500).text().withText('Bottom sheet').exec();
+```
+
+![](/img/gif/scrollinside.gif)  
 
 </md-block>
 <md-block>
@@ -608,11 +664,13 @@ If you need to focus the element first, use typeIn()
 
 **Examples:**
 ```typescript 
-await aui.type('Type some text').exec()
+await aui.type('askui@askui.com').exec()
 
 // mask the text so it is not send to the askui-inference server
-await aui.type('Type some text', { isSecret: true, secretMask: '**' }).exec()
-```  
+await aui.type('Type some text', \{ isSecret: true, secretMask: '**' }).exec()
+```
+
+![](/img/gif/type.gif)  
 
 </md-block>
 <md-block>
@@ -666,22 +724,16 @@ await aui.typeIn('Type some text', \{ isSecret: true, secretMask: '**' }).textfi
         <tr>
             <td>
                 <details>
-                    <summary>aiElement()  <span class="theme-doc-version-badge badge badge--success">production</span> <span class="theme-doc-version-badge badge badge--success">Windows only</span> </summary>
+                    <summary>aiElement()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
 <md-block>
 
-Detects an AI Element created with the [snipping workflow](../../general/02-Components/aielement.md#snipping-workflow). 
-
-**Examples:**
-
-```typescript
-await aui.click().aiElement('askui-logo').exec();
-```
-
-   * @param \{string} name - The name of the AI Element
+Detects an AI Element created with the workflow creator.  
 
 </md-block>
 <md-block>
 
+* @param \{string} aiElementName - Name of the AI Element.
+* @param \{string} aiElementName - 
 
 </md-block>
                 </details>
@@ -697,12 +749,32 @@ Filters for a UI element 'button'.
 
 **Examples:** 
 ```typescript
-await aui.moveMouseTo().button().exec()
-```  
+await aui.click().button().contains().text().withText('Google Search').exec()
+```
+
+![](/img/gif/button.gif)  
 
 </md-block>
 <md-block>
 
+
+</md-block>
+                </details>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <details>
+                    <summary>cell()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+<md-block>
+
+  
+
+</md-block>
+<md-block>
+
+* @param \{number} row_index - row index
+* @param \{number} column_index - column index
 
 </md-block>
                 </details>
@@ -719,6 +791,23 @@ Filters for a UI element 'checkbox'.
 </md-block>
 <md-block>
 
+
+</md-block>
+                </details>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <details>
+                    <summary>column()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+<md-block>
+
+  
+
+</md-block>
+<md-block>
+
+* @param \{number} index - element index
 
 </md-block>
                 </details>
@@ -771,9 +860,9 @@ Filters for text containing the text provided as an argument.
                     <summary>customElement()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
 <md-block>
 
-Filters for a 'custom element', that is a UI element that is defined by providing an image and other parameters such as degree of rotation. It allows filtering for a UI element based on an image instead of using text or element descriptions like `button().withText('Submit')` in `await aui.click().button().withText('Submit').exec()`.
+Filters for a 'custom element', that is a UI element which is defined by providing an image and other parameters such as degree of rotation. It allows filtering for a UI element based on an image instead of using text or element descriptions like `button().withText('Submit')` in `await aui.click().button().withText('Submit').exec()`.
 
-See the tutorial - [Custom Element](https://docs.askui.com/docs/general/Element%20Selection/custom-elements) for more details.
+See the tutorial - [Custom Element](https://docs.askui.com/docs/general/Tutorials/custom-element) for more detail.
 
 **Example**
 ```typescript
@@ -804,7 +893,7 @@ await aui
 - **rotationDegreePerStep** (*`number`, optional*):
     - Step size in rotation degree. Rotates the custom image by this step size until 360° is exceeded. The range is from `0` to `360`. Defaults to `0`.
 - **imageCompareFormat** (*`'RGB' | 'grayscale' | 'edges'`, optional*):
-    - The color compares style. 'edges' compares only edges, 'greyscale' compares the brightness of each pixel whereas 'RGB' compares all three colors (red, green, blue). Defaults to 'grayscale'.
+    - The color compare style. 'edges' compares only edges, 'greyscale' compares the brightness of each pixel whereas 'RGB' compares all three colors (red, green, blue). Defaults to 'grayscale'.
   
 
 </md-block>
@@ -852,6 +941,8 @@ You can combine it with the element-description 'withText()' to look for a speci
 icon().withText('plus')
 ```
 
+![](/img/gif/icon.gif)
+
 **Note:** This is an alpha feature. The prediction of the icon name is sometimes unstable. Use custom elements as an alternative.  
 
 </md-block>
@@ -876,9 +967,13 @@ Filters for a UI element 'image'.
 await aui.click().image().exec();
 
 // Works if you have an image with
-// a caption text below
-await aui.click().image().above().text('The caption').exec();
-```  
+// a text below
+await aui.click().image().above().text().withText('Automating WebGL').exec();
+```
+
+![](/img/gif/image.gif)
+
+  
 
 </md-block>
 <md-block>
@@ -907,10 +1002,9 @@ A bit of playing around to find a matching description is sometimes needed:
 E.g., `puzzle piece` can fail while `an icon showing a puzzle piece` might work.
 Generally, the more detail the better.
 
-We also recommend to not restrict the type of element by using the general
-selector `element()` as shown in the examples below.
+We also recommend to not restrict the type of element by using the generalselector `element()` as shown in the examples below.
 
-**Examples:** 
+**Examples:**
 ```typescript
 // Select the black sneaker from a bunch of sneakers
 await aui.click().element().matching('a black sneaker shoe').exec();
@@ -945,6 +1039,23 @@ Filters for a UI element 'other element'.
 </md-block>
 <md-block>
 
+
+</md-block>
+                </details>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <details>
+                    <summary>row()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+<md-block>
+
+  
+
+</md-block>
+<md-block>
+
+* @param \{number} index - element index
 
 </md-block>
                 </details>
@@ -1000,7 +1111,7 @@ Filters for a UI element 'switch'.
                     <summary>table()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
 <md-block>
 
-Filters for a UI element 'table'.  
+  
 
 </md-block>
 <md-block>
@@ -1027,6 +1138,11 @@ See also the filters `withTextRegex()` and `withExactText()`
 ```typescript
 await aui.click().text().exec();
 await aui.click().text('Username').exec();
+
+// Matching with an exact text
+await aui.click().text().withExactText('Username').exec();
+
+// Matching with a regex
 await aui.click().text().withTextRegex('\b[Ss]\w+').exec();
 ```  
 
@@ -1054,8 +1170,12 @@ await aui.typeIn('Oh yeah').textfield().exec();
 
 // Works if you have a labeled textfield
 // Label is above the textfield
-await aui.typeIn('Oh yeah').textfield().below().text('E-Mail Address').exec();
-```  
+await aui.typeIn('Oh yeah').textfield().below().text().withText('E-Mail Address').exec();
+```
+
+![](/img/gif/textfield.gif)
+
+  
 
 </md-block>
 <md-block>
@@ -1084,7 +1204,11 @@ Filters for equal text.
 'other' === withExactText('text') => false
 
 await aui.moveMouseTo().text().withExactText('Password').exec()
-```  
+```
+
+![](/img/gif/withexacttext.gif)
+
+  
 
 </md-block>
 <md-block>
@@ -1119,12 +1243,13 @@ _We use [RapidFuzz](https://maxbachmann.github.io/RapidFuzz/Usage/fuzz.html#rati
 'texst' === withText('text') => true
 'texts' === withText('text') => true
 
+// usually false
 'atebxtc' === withText('text') => false
 'other' === withText('text') => false
 
 // optional parameter: similarity_score
-'978-0-201-00650-6' == withText("978-0-201-00", 90) => false with 82.76 < 90 similarity
-'978-0-201-00650-6' == withText("978-0-201-00650", 90) => true with 93.75 > 90 similarity
+'978-0-201-00650-6' == withText('978-0-201-00') => true with 82.76 similarity
+'978-0-201-00650-6' == withText('978-0-201-00650', 90) => true with 93.75 < 90 similarity
 ```
 ![](/img/gif/withText.gif)  
 
@@ -1132,6 +1257,7 @@ _We use [RapidFuzz](https://maxbachmann.github.io/RapidFuzz/Usage/fuzz.html#rati
 <md-block>
 
 * @param \{string} text - A text to be matched.
+* @param \{number} [similarityScore=70] - Similarity score minimum value, it should be between 0 and 100.
 
 </md-block>
                 </details>
@@ -1153,7 +1279,11 @@ Filters for texts, which match the regex pattern.
 'The rain in switzerland' === withTextRegex('\b[Ss]\w+') => true
 
 await aui.get().text().withTextRegex('\b[Ss]\w+').exec()
-```  
+```
+
+![](/img/gif/withtextregex.gif)
+
+  
 
 </md-block>
 <md-block>
@@ -1184,7 +1314,12 @@ await aui.get().text().withTextRegex('\b[Ss]\w+').exec()
 
 Filters for an element above another element.
 
-Takes an optional parameter `index` to select the `nth` element (starting with 0)
+Takes an optional parameter `index` to select the nth element (defaults to `0`).
+
+Takes an optional parameter `intersection_area` to specify which elements above of the other element are filtered for based on their horizontal position (y-coordinates of bounding box):
+- `"element_center_line"` - considered above of the other element if element's bounding box intersects with a vertical line passing through the center of the other element
+- `"element_edge_area"` - considered above of the other element if element's bounding box intersects with an area between the left and the right edge of the other element
+- `"display_edge_area"` - considered above of the other element no matter where it is placed horizontally on the screen (y-axis)
 
 **Examples:**
 ```typescript 
@@ -1211,7 +1346,8 @@ Takes an optional parameter `index` to select the `nth` element (starting with 0
 </md-block>
 <md-block>
 
-* @param \{number} [optionalIndex=0] - element index
+* @param \{number} [index=0] - Index of element to filter for going into the direction specified. Defaults to `0` which is the first element (zero-indexed) found in that direction.
+* @param \{INTERSECTION_AREA} [intersection_area="element_edge_area"] - Intersecting with either `"element_center_line"`, `"element_edge_area"` or `"display_edge_area"`. Defaults to `"element_edge_area"`.
 
 </md-block>
                 </details>
@@ -1298,7 +1434,12 @@ The get returns only the user icon although both elements are icons.
 
 Filters for an element below another element.
 
-Takes an optional parameter `index` to select the `nth` element (starting with 0)
+Takes an optional parameter `index` to select the nth element (defaults to `0`).
+
+Takes an optional parameter `intersection_area` to specify which elements below of the other element are filtered for based on their horizontal position (y-coordinates of bounding box):
+- `"element_center_line"` - considered below of the other element if element's bounding box intersects with a vertical line passing through the center of the other element
+- `"element_edge_area"` - considered below of the other element if element's bounding box intersects with an area between the left and the right edge of the other element
+- `"display_edge_area"` - considered below of the other element no matter where it is placed horizontally on the screen (y-axis)
 
 **Examples:**
 ```typescript 
@@ -1325,7 +1466,8 @@ Takes an optional parameter `index` to select the `nth` element (starting with 0
 </md-block>
 <md-block>
 
-* @param \{number} [optionalIndex=0] - element index
+* @param \{number} [index=0] - Index of element to filter for going into the direction specified. Defaults to `0` which is the first element (zero-indexed) found in that direction.
+* @param \{INTERSECTION_AREA} [intersection_area="element_edge_area"] - Intersecting with either `"element_center_line"`, `"element_edge_area"` or `"display_edge_area"`. Defaults to `"element_edge_area"`.
 
 </md-block>
                 </details>
@@ -1405,7 +1547,12 @@ Filters for an element inside another element.
 
 Filters for an element left of another element.
 
-Takes an optional parameter `index` to select the `nth` element (starting with 0)
+Takes an optional parameter `index` to select the nth element (defaults to `0`).
+
+Takes an optional parameter `intersection_area` to specify which elements left of the other element are filtered for based on their vertical position (y-coordinates of bounding box):
+- `"element_center_line"` - considered left of the other element if element's bounding box intersects with a horizontal line passing through the center of the other element
+- `"element_edge_area"` - considered left of the other element if element's bounding box intersects with an area between the top and the bottom edge of the other element
+- `"display_edge_area"` - considered left of the other element no matter where it is placed vertically on the screen (y-axis)
 
 **Examples:**
 ```typescript 
@@ -1426,7 +1573,8 @@ Takes an optional parameter `index` to select the `nth` element (starting with 0
 </md-block>
 <md-block>
 
-* @param \{number} [optionalIndex=0] - element index
+* @param \{number} [index=0] - Index of element to filter for going into the direction specified. Defaults to `0` which is the first element (zero-indexed) found in that direction.
+* @param \{INTERSECTION_AREA} [intersection_area="element_edge_area"] - Intersecting with either `"element_center_line"`, `"element_edge_area"` or `"display_edge_area"`. Defaults to `"element_edge_area"`.
 
 </md-block>
                 </details>
@@ -1527,7 +1675,12 @@ Returns the same button for both cases
 
 Filters for an element right of another element.
 
-Takes an optional parameter `index` to select the `nth` element (starting with 0)
+Takes an optional parameter `index` to select the nth element (defaults to `0`).
+
+Takes an optional parameter `intersection_area` to specify which elements right of the other element are filtered for based on their vertical position (y-coordinates of bounding box):
+- `"element_center_line"` - considered right of the other element if element's bounding box intersects with a horizontal line passing through the center of the other element
+- `"element_edge_area"` - considered right of the other element if element's bounding box intersects with an area between the top and the bottom edge of the other element
+- `"display_edge_area"` - considered right of the other element no matter where it is placed vertically on the screen (y-axis)
 
 **Examples:**
 ```typescript 
@@ -1548,7 +1701,8 @@ Takes an optional parameter `index` to select the `nth` element (starting with 0
 </md-block>
 <md-block>
 
-* @param \{number} [optionalIndex=0] - element index
+* @param \{number} [index=0] - Index of element to filter for going into the direction specified. Defaults to `0` which is the first element (zero-indexed) found in that direction.
+* @param \{INTERSECTION_AREA} [intersection_area="element_edge_area"] - Intersecting with either `"element_center_line"`, `"element_edge_area"` or `"display_edge_area"`. Defaults to `"element_edge_area"`.
 
 </md-block>
                 </details>
@@ -1666,7 +1820,7 @@ A detected element has the following properties:
 const text = await aui.get().text('Sign').exec();
 console.log(text);
 
-// Console output
+// Console output 
 [
   DetectedElement {
     name: 'TEXT',
@@ -1681,7 +1835,6 @@ console.log(text);
 ]
 ```
 
-```typescript 
 // *************************************************** //
 // Examples on how to work with the returned elements  //
 // *************************************************** //
@@ -1701,6 +1854,7 @@ console.log(texts);
       xmax: 1178.8204241071428,
       ymax: 180.83512834821428
     },
+  },
   DetectedElement {
     name: 'TEXT',
     text: 'Login',
@@ -1710,8 +1864,8 @@ console.log(texts);
       xmax: 450.6304241071428,
       ymax: 950.47812834821428
     },
-    ... 10 more items
-  }
+  },
+  ... 10 more items
 ]
 
 // Extract the FIRST element
@@ -1731,7 +1885,7 @@ console.log(texts[1].text)
 
 // Console output
 Login
-```
+```  
 
 </md-block>
 <md-block>
@@ -1769,7 +1923,6 @@ console.log(detectedElements);
         xmax: 1178.8204241071428,
         ymax: 180.83512834821428
      },
-   }
   DetectedElement {
      name: 'ICON',
      text: 'search',
