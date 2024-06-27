@@ -121,7 +121,7 @@ await aui.moveMouseTo().button().withText('Login').exec();
 await aui.mouseDoubleLeftClick().exec();
 ```
 
-![](/img/gif/mouseDoubleLeftClickgif)  
+![](/img/gif/mouseDoubleLeftClick.gif)  
 
 </md-block>
 <md-block>
@@ -612,7 +612,7 @@ Moves mouse to the filtered element and scrolls in the x and y direction.
 await aui.scrollInside(0,-500).text().withText('Bottom sheet').exec();
 ```
 
-![](/img/gif/scrollinside.gif)  
+![](/img/gif/scrollInside.gif)  
 
 </md-block>
 <md-block>
@@ -969,7 +969,7 @@ It understands color, some famous company/product names, general descriptions.
 **Important: _Matching only returns the best matching element when you use it with `get()`_**
 
 A bit of playing around to find a matching description is sometimes needed:
-for example, `puzzle piece` can fail while `an icon showing a puzzle piece` might work.
+For example, `puzzle piece` can fail while `an icon showing a puzzle piece` might work.
 Generally, the more detail the better.
 
 We also recommend to not restrict the type of element by using the general selector `element()` as shown in the examples below.
@@ -1159,7 +1159,7 @@ Filters for equal text.
 await aui.moveMouseTo().text().withExactText('Password').exec()
 ```
 
-![](/img/gif/withexacttext.gif)
+![](/img/gif/withExactText.gif)
 
   
 
@@ -1234,7 +1234,7 @@ Filters for texts, which match the regex pattern.
 await aui.get().text().withTextRegex('\b[Ss]\w+').exec()
 ```
 
-![](/img/gif/withtextregex.gif)
+![](/img/gif/withTextRegex.gif)
 
   
 
