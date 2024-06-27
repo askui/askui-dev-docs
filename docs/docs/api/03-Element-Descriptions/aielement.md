@@ -2,9 +2,9 @@
 displayed_sidebar: apiSidebar
 ---
 # aiElement
-<span class="theme-doc-version-badge badge badge--success">production</span><span class="theme-doc-version-badge badge badge--success">Windows only</span><br/><br/>
+<span class="theme-doc-version-badge badge badge--success">production</span><br/><br/>
 
-Detects an AI Element created with the [snipping workflow](../../general/02-Components/aielement.md#snipping-workflow).
+Detects an AI Element created with the [snipping workflow](https://docs.askui.com/docs/general/Components/aielement#snipping-workflow).
 
 **Examples:**
 
@@ -12,4 +12,4 @@ Detects an AI Element created with the [snipping workflow](../../general/02-Comp
 await aui.click().aiElement('askui-logo').exec();
 ```
 
-   * @param \{string} name - The name of the AI Element
+   * @param \{string} aiElementName - Name of the AI Element.

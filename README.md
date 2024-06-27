@@ -45,13 +45,13 @@ Do the following to install _Vale_ and the AskUI style guide.
 * Symlink the styles to your `.github` folder
 
 ```bash
-ln -s <Path to cloned askui-vale-repository>/styles ./github/styles
+ln -s <Path to cloned askui-vale-repository from .github folder>/styles .github/styles
 ```
 
 To run _Vale_ manually before committing:
 
 ```shell
-# Switch to root directory first
+cd docs
 vale docs
 ```
 
