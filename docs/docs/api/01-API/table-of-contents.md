@@ -121,7 +121,7 @@ await aui.moveMouseTo().button().withText('Login').exec();
 await aui.mouseDoubleLeftClick().exec();
 ```
 
-![](/img/gif/mousedoubleleftclick.gif)  
+![](/img/gif/mouseDoubleLeftClick.gif)  
 
 </md-block>
 <md-block>
@@ -355,7 +355,7 @@ Moves the mouse from the current position (relative) in x and y direction.
 await aui.moveMouseRelatively(0, 50).exec();
 ```
 
-![](/img/gif/movemouserelatively.gif)  
+![](/img/gif/moveMouseRelatively.gif)  
 
 </md-block>
 <md-block>
@@ -969,7 +969,7 @@ It understands color, some famous company/product names, general descriptions.
 **Important: _Matching only returns the best matching element when you use it with `get()`_**
 
 A bit of playing around to find a matching description is sometimes needed:
-for example, `puzzle piece` can fail while `an icon showing a puzzle piece` might work.
+For example, `puzzle piece` can fail while `an icon showing a puzzle piece` might work.
 Generally, the more detail the better.
 
 We also recommend to not restrict the type of element by using the general selector `element()` as shown in the examples below.
