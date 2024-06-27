@@ -612,7 +612,7 @@ Moves mouse to the filtered element and scrolls in the x and y direction.
 await aui.scrollInside(0,-500).text().withText('Bottom sheet').exec();
 ```
 
-![](/img/gif/scrollinside.gif)  
+![](/img/gif/scrollInside.gif)  
 
 </md-block>
 <md-block>
@@ -1159,7 +1159,7 @@ Filters for equal text.
 await aui.moveMouseTo().text().withExactText('Password').exec()
 ```
 
-![](/img/gif/withexacttext.gif)
+![](/img/gif/withExactText.gif)
 
   
 
@@ -1234,7 +1234,7 @@ Filters for texts, which match the regex pattern.
 await aui.get().text().withTextRegex('\b[Ss]\w+').exec()
 ```
 
-![](/img/gif/withtextregex.gif)
+![](/img/gif/withTextRegex.gif)
 
   
 
