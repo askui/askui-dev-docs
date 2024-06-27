@@ -406,7 +406,7 @@ Move mouse over the filtered element.
 await aui.moveMouseTo().text().withText('Grinning_Face').exec()
 ```
 
-![](/img/gif/movemouseto.gif)
+![](/img/gif/moveMouseTo.gif)
 
   
 

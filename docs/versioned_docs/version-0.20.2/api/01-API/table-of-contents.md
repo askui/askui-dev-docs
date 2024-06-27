@@ -121,7 +121,7 @@ await aui.moveMouseTo().button().withText('Login').exec();
 await aui.mouseDoubleLeftClick().exec();
 ```
 
-![](/img/gif/mousedoubleleftclick.gif)  
+![](/img/gif/mouseDoubleLeftClickgif)  
 
 </md-block>
 <md-block>
@@ -355,7 +355,7 @@ Moves the mouse from the current position (relative) in x and y direction.
 await aui.moveMouseRelatively(0, 50).exec();
 ```
 
-![](/img/gif/movemouserelatively.gif)  
+![](/img/gif/moveMouseRelatively.gif)  
 
 </md-block>
 <md-block>
@@ -406,7 +406,7 @@ Move mouse over the filtered element.
 await aui.moveMouseTo().text().withText('Grinning_Face').exec()
 ```
 
-![](/img/gif/movemouseto.gif)
+![](/img/gif/moveMouseTo.gif)
 
   
 
