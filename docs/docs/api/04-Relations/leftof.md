@@ -15,12 +15,12 @@ Takes an optional parameter `intersection_area` to specify which elements left o
 
 **Examples:**
 ```typescript 
- ---------                     --------- ----------
- | text3 |                     | text0 | | button |
- ---------           --------- --------- ----------
-           --------- | text1 |
-           | text2 | ---------
-           ---------
+---------                   --------- ----------
+| text3 |                   | text0 | | button |
+---------         --------- --------- ----------
+        --------- | text1 |
+        | text2 | ---------
+        ---------
 
 // General explanation for element_center_line
 // This will find text0 and text3

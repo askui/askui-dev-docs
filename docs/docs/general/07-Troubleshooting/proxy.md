@@ -24,7 +24,7 @@ Choose the binary option if a package manager is not feasible in your environmen
 ### Windows Startup
 You can add _Px_ to the startup for the binary zipped option in Windows like this:
 
-1. Create a `px-start.bat` file within the unzipped folder, e.g., `c:\tools\px` with the content:
+1. Create a `px-start.bat` file within the unzipped folder, for example, `c:\tools\px` with the content:
     
     ```bash
     cd c:\tools\px (or whatever path you unzipped the archive to)
@@ -84,7 +84,7 @@ If you need even more control, you can also configure an HTTP agent and HTTPS ag
 - the AskUI Controller (configuring the `UiController`) running on the OS you would like to control and
 - the Inference API (configuring the `UiControlClient`) running on our servers and providing the vision to run your tests.
 
-In the following example we are going to use [hpagent](https://github.com/delvedor/hpagent) again but you can use any HTTP and HTTPS agents that support proxies, e.g., the [http.Agent](https://nodejs.org/api/http.html#class-httpagent) or the [https.Agent](https://nodejs.org/api/https.html#class-httpsagent) provided by the `http` and `https` module of Node.js, respectively.
+In the following example we are going to use [hpagent](https://github.com/delvedor/hpagent) again but you can use any HTTP and HTTPS agents that support proxies, for example, the [http.Agent](https://nodejs.org/api/http.html#class-httpagent) or the [https.Agent](https://nodejs.org/api/https.html#class-httpsagent) provided by the `http` and `https` module of Node.js, respectively.
 
 1. Install `hpagent`
 ```bash
@@ -130,16 +130,16 @@ Here are some examples for the `httpProxyUrl` (for more details see [docs from h
 
 | Proxy Type | URL | Description | 
 | --- | --- | --- | 
-| HTTP | e.g. http://proxy.company.com:8293 |  A HTTP proxy without authentication |
-| HTTP + Basic Auth | e.g. http://username:password@proxy.company.com:8293 |  A HTTP proxy with authentication |
+| HTTP | for example http://proxy.company.com:8293 |  A HTTP proxy without authentication |
+| HTTP + Basic Auth | for example http://username:password@proxy.company.com:8293 |  A HTTP proxy with authentication |
 | SOCKET |  |  Socket proxies are not supported by `hpagent` |
 
 Here are some examples for the `httpsProxyUrl` (for more details see [docs from hpagent](https://github.com/delvedor/hpagent#usage))
 
 | Proxy Type | URL | Description | 
 | --- | --- | --- | 
-| HTTPS | e.g. https://proxy.company.com:8293 |  A HTTPS proxy without authentication |
-| HTTPS + Basic Auth | e.g. https://username:password@proxy.company.com:8293 |  A HTTP proxy with authentication.  |
+| HTTPS | for example https://proxy.company.com:8293 |  A HTTPS proxy without authentication |
+| HTTPS + Basic Auth | for example https://username:password@proxy.company.com:8293 |  A HTTP proxy with authentication.  |
 | SOCKET |  |  Socket proxies are not supported by `hpagent` |
 
 ### Deep Package Inspection

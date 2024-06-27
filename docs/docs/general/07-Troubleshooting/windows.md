@@ -24,7 +24,7 @@ Set-ExecutionPolicy unrestricted
 
 On Windows, the AskUI Controller may not terminate after each execution. This may lead to problems when using the AskUI Controller in a pipeline like a pipeline's run not coming to an end.
 
-In this case you can force termination of the AskUI Controller. The `UiController.stop()` takes an optional `boolean` argument which is set to `false` by default. If we pass `true` to the `UiController.stop()` method, e.g., `uiController.stop(true)`, we kill the AskUI Controller process. 
+In this case you can force termination of the AskUI Controller. The `UiController.stop()` takes an optional `boolean` argument which is set to `false` by default. If we pass `true` to the `UiController.stop()` method, for example, `uiController.stop(true)`, we kill the AskUI Controller process. 
 
 ```typescript
 await uiController.stop(true);

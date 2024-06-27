@@ -85,7 +85,7 @@ await aui.execOnShell("chrome").exec();
                     <summary>expect()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
 <md-block>
 
-Expects a condition, e.g., `exists()` or `notExits()`.
+Expects a condition, for example, `exists()` or `notExits()`.
 
 Use the structure `expect().<your filter>.(exists()|notExists())` as shown in the examples below.
 
@@ -476,7 +476,7 @@ See [API docs](https://docs.askui.com/docs/api/Actions/pressandroidtwokey) for a
 await aui.pressAndroidTwoKey('volume_down', 'power').exec();
 ```
 
-![](/img/gif/pressAndroidTwoKey.gif)  
+![](/img/gif/pressAndroidTwoKeys.gif)  
 
 </md-block>
 <md-block>
@@ -969,7 +969,7 @@ It understands color, some famous company/product names, general descriptions.
 **Important: _Matching only returns the best matching element when you use it with `get()`_**
 
 A bit of playing around to find a matching description is sometimes needed:
-E.g., `puzzle piece` can fail while `an icon showing a puzzle piece` might work.
+for example, `puzzle piece` can fail while `an icon showing a puzzle piece` might work.
 Generally, the more detail the better.
 
 We also recommend to not restrict the type of element by using the general selector `element()` as shown in the examples below.
@@ -1276,22 +1276,54 @@ Takes an optional parameter `intersection_area` to specify which elements above 
 
 **Examples:**
 ```typescript 
---------------
-|   text1    |
---------------
---------------
-|   text0    |
---------------
---------------
-|   button   |
---------------
+------------
+|  text3   |
+------------
+            ------------
+            |  text2   |
+            ------------
+    ------------
+    |  text1   |
+    ------------
+------------
+|  text0   |
+------------
+------------
+|  button  |
+------------
 
-// Returns text0 because text0 is the first element above button
+// General explanation for element_center_line
+// This will find text0 and text3
+...text().above(..., 'element_center_line').button()
+
+// General explanation for element_edge_area
+// This will find text0, text1 and text3
+...text().above(..., 'element_edge_area').button()
+
+// General explanation and display_edge_area
+// This will find text0, text1, text2 and text3
+...text().above(..., 'display_edge_area').button()
+
+// More examples:
+// Returns text0 because it is the first element above button
 ...text().above().button()
 ...text().above(0).button()
-// Returns text1 because text1 is the second element above button
-...text().above(1).button()
-// Returns no element because button is below text
+...text().above(0, 'element_edge_area').button()
+
+// Returns text3 because it is the second text touched by the
+// vertical line from the center of button
+// Notice: text1 is not touched!
+...text().above(1, 'element_center_line').button()
+
+// Returns text3 because it is the third text touched by the
+// vertical area above the x-axis of button
+// Notice: text2 is not touched!
+...text().above(2, 'element_edge_area').button()
+
+// Returns text2 because it is the third element above button
+...text().above(2, 'display_edge_area').button()
+
+// Returns no element because button is below the texts
 ...button().above().text()
 ```
 ![](/img/gif/above.gif)  
@@ -1396,22 +1428,54 @@ Takes an optional parameter `intersection_area` to specify which elements below 
 
 **Examples:**
 ```typescript 
---------------
-|    text    |
---------------
---------------
-|   button0  |
---------------
---------------
-|   button1  |
---------------
+------------
+|   text   |
+------------
+------------
+|  button0 |
+------------
+         -----------
+         | button1 |
+         -----------
+            -----------
+            | button2 |
+            -----------
+------------
+|  button3 |
+------------
 
+// General explanation for element_center_line
+// This will find button0 and button3
+...button().below(..., 'element_center_line').text()
+
+// General explanation for element_edge_area
+// This will find button0, button1 and button3
+...button().below(..., 'element_edge_area').text()
+
+// General explanation and display_edge_area
+// This will find button0, button1, button2 and button3
+...button().below(..., 'display_edge_area').text()
+
+// More examples:
 // Returns button0 because button0 is the first button below text
 ...button().below().text()
 ...button().below(0).text()
-// Returns button1 because button1  is the second button below text
-...button().below(1).text()
-// Returns no element because text is above button
+...button().below(0, 'element_edge_area').text()
+
+// Returns button3 because it is the second button touched by the
+// vertical line from the center of text
+// Notice: button1 is not touched
+...button().below(1, 'element_center_line').text()
+
+// Returns button3 because it is the third button touched by the
+// vertical area below the x-axis of text
+// Notice: button2 is not touched!
+...button().below(2, 'element_edge_area').text()
+
+// Returns button2 because it is the third element below text
+...button().below(2, 'display_edge_area').text()
+
+// Returns no element because text is above the buttons
 ...text().below().button()
 ```
 ![](/img/gif/below.gif)  
@@ -1509,17 +1573,46 @@ Takes an optional parameter `intersection_area` to specify which elements left o
 
 **Examples:**
 ```typescript 
---------------  --------------  --------------
-|  leftEl1   |  |  leftEl0   |  |  rightEl   |
---------------  --------------  --------------
+---------                   --------- ----------
+| text3 |                   | text0 | | button |
+---------         --------- --------- ----------
+        --------- | text1 |
+        | text2 | ---------
+        ---------
 
-// Returns leftEl0 because leftEl0 is the first element left of rightEl
-...leftEl().leftOf().rightEl()
-...leftEl().leftOf(0).rightEl()
-// Returns leftEl1 because leftEl1 is the second element left of rightEl
-...leftEl().leftOf(1).rightEl()
-// Returns no element because rightEl is left of leftEl
-...rightEl().leftOf().leftEl()
+// General explanation for element_center_line
+// This will find text0 and text3
+...text().leftOf(..., 'element_center_line').button()
+
+// General explanation for element_edge_area
+// This will find text0, text1 and text3
+...text().leftOf(..., 'element_edge_area').button()
+
+// General explanation and display_edge_area
+// This will find text0, text1, text2 and text3
+...text().leftOf(..., 'display_edge_area').button()
+
+// More examples:
+// Returns text0 because it is the first element leftOf button
+...text().leftOf().button()
+...text().leftOf(0).button()
+...text().leftOf(0, 'element_edge_area').button()
+
+// Returns text3 because it is the second text touched by the
+// horizontal line from the center of button
+// Notice: text1 is not touched!
+...text().leftOf(1, 'element_center_line').button()
+
+// Returns text3 because it is the third text touched by the
+// vertical area leftOf the y-axis of button
+// Notice: text2 is not touched!
+...text().leftOf(2, 'element_edge_area').button()
+
+// Returns text2 because it is the third element leftOf button
+...text().leftOf(2, 'display_edge_area').button()
+
+// Returns no element because button is rightOf the texts
+...button().leftOf().text()
 ```
 ![](/img/gif/leftOf.gif)  
 
@@ -1637,17 +1730,46 @@ Takes an optional parameter `intersection_area` to specify which elements right 
 
 **Examples:**
 ```typescript 
---------------  --------------  --------------
-|  leftEl    |  |  rightEl0  |  |  rightEl1  |
---------------  --------------  --------------
+---------- ---------                     ---------
+| button | | text0 |                     | text3 |
+---------- --------- ---------           ---------
+                     | text1 | ---------
+                     --------- | text2 |
+                               ---------
 
-// Returns rightEl0 because rightEl0 is the first element right of leftEl
-...rightEl().rightOf().leftEl()
-...rightEl().rightOf(0).leftEl()
-// Returns rightEl1 because rightEl1 is the second element right of leftEl
-...rightEl().rightOf(1).leftEl()
-// Returns no element because leftEl is left of rightEl
-...leftEl().rightOf().rightEl()
+// General explanation for element_center_line
+// This will find text0 and text3
+...text().rightOf(..., 'element_center_line').button()
+
+// General explanation for element_edge_area
+// This will find text0, text1 and text3
+...text().rightOf(..., 'element_edge_area').button()
+
+// General explanation and display_edge_area
+// This will find text0, text1, text2 and text3
+...text().rightOf(..., 'display_edge_area').button()
+
+// More examples:
+// Returns text0 because it is the first element rightOf button
+...text().rightOf().button()
+...text().rightOf(0).button()
+...text().rightOf(0, 'element_edge_area').button()
+
+// Returns text3 because it is the second text touched by the
+// horizontal line from the center of button
+// Notice: text1 is not touched!
+...text().rightOf(1, 'element_center_line').button()
+
+// Returns text3 because it is the third text touched by the
+// vertical area rightOf the y-axis of button
+// Notice: text2 is not touched!
+...text().rightOf(2, 'element_edge_area').button()
+
+// Returns text2 because it is the third element rightOf button
+...text().rightOf(2, 'display_edge_area').button()
+
+// Returns no element because button is rightOf the texts
+...button().rightOf().text()
 ```
 ![](/img/gif/rightOf.gif)  
 

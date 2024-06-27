@@ -15,9 +15,9 @@ Takes an optional parameter `intersection_area` to specify which elements right 
 
 **Examples:**
 ```typescript 
- ---------- ---------                     ---------
- | button | | text0 |                     | text3 |
- ---------- --------- ---------           ---------
+---------- ---------                     ---------
+| button | | text0 |                     | text3 |
+---------- --------- ---------           ---------
                      | text1 | ---------
                      --------- | text2 |
                                ---------

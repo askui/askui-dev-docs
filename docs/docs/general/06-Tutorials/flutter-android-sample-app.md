@@ -191,11 +191,11 @@ The code is divided into three parts, and each part automates a different tab wi
 ## 0. General Tips for Using AskUI as a More Friendly Tool:
 1) Try to annotate : Use `await aui.annotateInteractively()` or `await aui.annotate()` in order to see how AskUI is understanding the visible elements on your screen. By using `await aui.annotate()`, the result of the annotation will be saved in the folder `report/` as an HTML file.
 
-2) **Be aware of the screen size of your device**: AskUI understands your application based on the screen shown and captured. Therefore, on some occasions, you may want to know your screen size to e.g. properly scroll or swipe within your application. You may need to change the numbers for the `input swipe` command within the provided code so that it suits the screen size of your device.
+2) **Be aware of the screen size of your device**: AskUI understands your application based on the screen shown and captured. Therefore, on some occasions, you may want to know your screen size to for example properly scroll or swipe within your application. You may need to change the numbers for the `input swipe` command within the provided code so that it suits the screen size of your device.
 
 3) **Try to select the elements by their text**
 
-*tip: If you are using a device with a larger screen e.g. Tablet, then the screen of your device (real Android device or emulator) might be big enough to see the whole page without scrolling.*
+*tip: If you are using a device with a larger screen for example Tablet, then the screen of your device (real Android device or emulator) might be big enough to see the whole page without scrolling.*
 
 ### 1. Click and Type
 The code is within the file `askui-test/demo-automation.ts`. Copy and paste the code into your AskUI code.

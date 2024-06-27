@@ -4,7 +4,7 @@ displayed_sidebar: apiSidebar
 # expect
 <span class="theme-doc-version-badge badge badge--success">production</span><br/><br/>
 
-Expects a condition, e.g., `exists()` or `notExits()`.
+Expects a condition, for example, `exists()` or `notExits()`.
 
 Use the structure `expect().<your filter>.(exists()|notExists())` as shown in the examples below.
 

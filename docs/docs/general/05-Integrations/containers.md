@@ -5,7 +5,7 @@ title: Using AskUI in Docker
 
 ## AskUI Controller Docker Images
 
-We maintain Docker images for running instructions with AskUI inside a Docker Container, e.g., locally or in a CI/CD pipeline. The images are based on Ubuntu (amd64) images and contain the AskUI Controller and a browser. The AskUI SDK connects to the AskUI Controller inside the Docker container to execute workflows inside it.
+We maintain Docker images for running instructions with AskUI inside a Docker Container, for example, locally or in a CI/CD pipeline. The images are based on Ubuntu (amd64) images and contain the AskUI Controller and a browser. The AskUI SDK connects to the AskUI Controller inside the Docker container to execute workflows inside it.
 
 You can find our images on [DockerHub](https://hub.docker.com/r/askuigmbh/askui-ui-controller).
 
@@ -49,7 +49,7 @@ We use the following tag schema:
 You will only need the Docker CLI but you can install Docker Desktop, too if you want.
 
 ### Starting Container *Manually*
-You can pull an image using `docker pull`, e.g.,
+You can pull an image using `docker pull`, for example,
 
 ```shell
 docker pull askuigmbh/askui-ui-controller:0.11.2-chrome-119.0-amd64

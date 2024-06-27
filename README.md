@@ -88,7 +88,7 @@ If you want to add a new author follow the convention in `authors.yml`. The auth
 
 ### Branching
 
-Your branch name should conform to the format `<issue id>-<issue title lower-cased and kebab-cased>`, e.g., let's say you have an issue named *Hello World* with id *AS-101*, the branch name would be `AS-101-hello-world`. We use the issue id prefix to prepend a link to the issue to the commit message header. In some cases, when doing a quick fix of a typo etc. when there is no issue, feel free to just use a descriptive name of what you are doing, e.g., `fix-typo-in-example-readme`.
+Your branch name should conform to the format `<issue id>-<issue title lower-cased and kebab-cased>`, e.g., let's say you have an issue named *Hello World* with id *AS-101*, the branch name would be `AS-101-hello-world`. We use the issue id prefix to prepend a link to the issue to the commit message header. In some cases, when doing a quick fix of a typo etc. when there is no issue, feel free to just use a descriptive name of what you are doing, for example, `fix-typo-in-example-readme`.
 
 ### Commit Message Standard
 
@@ -100,7 +100,7 @@ The [one version rule](https://opensource.google/documentation/reference/thirdpa
 
 ### Githooks
 
-This repository uses [githooks](https://git-scm.com/docs/githooks) with [husky](https://github.com/typicode/husky) to lint and test the code, to help you stick to the commit message standard by opening up a CLI for constructing the commit message on each commit, prepending the commit message with the issue number or linting the commit message etc. In some cases, e.g., when using a Git client such as [Git Tower](https://www.git-tower.com/) or [GitKraken](https://www.gitkraken.com/), cherry-picking, rebasing or in a CI pipeline, you may want to disable githooks, especially the interactive CLI.
+This repository uses [githooks](https://git-scm.com/docs/githooks) with [husky](https://github.com/typicode/husky) to lint and test the code, to help you stick to the commit message standard by opening up a CLI for constructing the commit message on each commit, prepending the commit message with the issue number or linting the commit message etc. In some cases, for example, when using a Git client such as [Git Tower](https://www.git-tower.com/) or [GitKraken](https://www.gitkraken.com/), cherry-picking, rebasing or in a CI pipeline, you may want to disable githooks, especially the interactive CLI.
 
 For skipping the interactive CLI when committing, set the environment variable `SKIP_CZ_CLI` to `true`.
 ```sh

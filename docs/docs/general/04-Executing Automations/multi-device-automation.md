@@ -92,7 +92,7 @@ Change to the directory of the `askui-ui-controller` binary first: See [Download
   </TabItem>
 </Tabs>
 
-If running successfully, you should see the logs printed on the terminal, e.g:
+If running successfully, you should see the logs printed on the terminal, for example:
 
 ```bash
 [2023-01-02 17:31:19.634 +0100] DEBUG (AskuiUiController): Window is minimized.

@@ -21,12 +21,12 @@ Takes an optional parameter `intersection_area` to specify which elements below 
 ------------
 |  button0 |
 ------------
-         ------------
-         |  button1 |
-         ------------
-               ------------
-               |  button2 |
-               ------------
+         -----------
+         | button1 |
+         -----------
+            -----------
+            | button2 |
+            -----------
 ------------
 |  button3 |
 ------------

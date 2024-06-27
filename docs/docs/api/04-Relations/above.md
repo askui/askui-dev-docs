@@ -18,12 +18,12 @@ Takes an optional parameter `intersection_area` to specify which elements above 
 ------------
 |  text3   |
 ------------
-             ------------
-             |  text2   |
-             ------------
-       ------------
-       |  text1   |
-       ------------
+            ------------
+            |  text2   |
+            ------------
+    ------------
+    |  text1   |
+    ------------
 ------------
 |  text0   |
 ------------

@@ -13,7 +13,7 @@ ADE comprises three types of settings:
 1. **Global Settings:**
     - Created by the installer.
     - Available for all users.
-    - Includes configurations set during installation (e.g., proxy settings).
+    - Includes configurations set during installation (for example, proxy settings).
 2. **User Settings:**
     - Located in **`<USER_HOME_DIR>/.askui/Settings/AskuiEnvironmentSettings.json`**.
     - Applied to all new projects.
@@ -423,7 +423,7 @@ Add the recommended extensions for VSCode by adding `<project>/.vscode/extension
 }
 ```
 
-- `ms-vscode.live-server`: HTML [Live Viewer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server) for viewing annotations inside VSCode instead of, e.g., having to jump out of VSCode and open it in a web browser.
+- `ms-vscode.live-server`: HTML [Live Viewer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server) for viewing annotations inside VSCode instead of, for example, having to jump out of VSCode and open it in a web browser.
 - `firsttris.vscode-jest-runner`: [Jest Runner](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner) to start single test out of the IDE.
 - `dbaeumer.vscode-eslint`: [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) plugin to show missing `exec()`.
 
