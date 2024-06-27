@@ -15,17 +15,46 @@ Takes an optional parameter `intersection_area` to specify which elements right 
 
 **Examples:**
 ```typescript 
---------------  --------------  --------------
-|  leftEl    |  |  rightEl0  |  |  rightEl1  |
---------------  --------------  --------------
+ ---------- ---------                     ---------
+ | button | | text0 |                     | text3 |
+ ---------- --------- ---------           ---------
+                     | text1 | ---------
+                     --------- | text2 |
+                               ---------
 
-// Returns rightEl0 because rightEl0 is the first element right of leftEl
-...rightEl().rightOf().leftEl()
-...rightEl().rightOf(0).leftEl()
-// Returns rightEl1 because rightEl1 is the second element right of leftEl
-...rightEl().rightOf(1).leftEl()
-// Returns no element because leftEl is left of rightEl
-...leftEl().rightOf().rightEl()
+// General explanation for element_center_line
+// This will find text0 and text3
+...text().rightOf(..., 'element_center_line').button()
+
+// General explanation for element_edge_area
+// This will find text0, text1 and text3
+...text().rightOf(..., 'element_edge_area').button()
+
+// General explanation and display_edge_area
+// This will find text0, text1, text2 and text3
+...text().rightOf(..., 'display_edge_area').button()
+
+// More examples:
+// Returns text0 because it is the first element rightOf button
+...text().rightOf().button()
+...text().rightOf(0).button()
+...text().rightOf(0, 'element_edge_area').button()
+
+// Returns text3 because it is the second text touched by the
+// horizontal line from the center of button
+// Notice: text1 is not touched!
+...text().rightOf(1, 'element_center_line').button()
+
+// Returns text3 because it is the third text touched by the
+// vertical area rightOf the y-axis of button
+// Notice: text2 is not touched!
+...text().rightOf(2, 'element_edge_area').button()
+
+// Returns text2 because it is the third element rightOf button
+...text().rightOf(2, 'display_edge_area').button()
+
+// Returns no element because button is rightOf the texts
+...button().rightOf().text()
 ```
 ![](/img/gif/rightOf.gif)
 

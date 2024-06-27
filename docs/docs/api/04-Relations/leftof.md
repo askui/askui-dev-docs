@@ -15,17 +15,46 @@ Takes an optional parameter `intersection_area` to specify which elements left o
 
 **Examples:**
 ```typescript 
---------------  --------------  --------------
-|  leftEl1   |  |  leftEl0   |  |  rightEl   |
---------------  --------------  --------------
+ ---------                     --------- ----------
+ | text3 |                     | text0 | | button |
+ ---------           --------- --------- ----------
+           --------- | text1 |
+           | text2 | ---------
+           ---------
 
-// Returns leftEl0 because leftEl0 is the first element left of rightEl
-...leftEl().leftOf().rightEl()
-...leftEl().leftOf(0).rightEl()
-// Returns leftEl1 because leftEl1 is the second element left of rightEl
-...leftEl().leftOf(1).rightEl()
-// Returns no element because rightEl is left of leftEl
-...rightEl().leftOf().leftEl()
+// General explanation for element_center_line
+// This will find text0 and text3
+...text().leftOf(..., 'element_center_line').button()
+
+// General explanation for element_edge_area
+// This will find text0, text1 and text3
+...text().leftOf(..., 'element_edge_area').button()
+
+// General explanation and display_edge_area
+// This will find text0, text1, text2 and text3
+...text().leftOf(..., 'display_edge_area').button()
+
+// More examples:
+// Returns text0 because it is the first element leftOf button
+...text().leftOf().button()
+...text().leftOf(0).button()
+...text().leftOf(0, 'element_edge_area').button()
+
+// Returns text3 because it is the second text touched by the
+// horizontal line from the center of button
+// Notice: text1 is not touched!
+...text().leftOf(1, 'element_center_line').button()
+
+// Returns text3 because it is the third text touched by the
+// vertical area leftOf the y-axis of button
+// Notice: text2 is not touched!
+...text().leftOf(2, 'element_edge_area').button()
+
+// Returns text2 because it is the third element leftOf button
+...text().leftOf(2, 'display_edge_area').button()
+
+// Returns no element because button is rightOf the texts
+...button().leftOf().text()
 ```
 ![](/img/gif/leftOf.gif)
 
