@@ -121,7 +121,7 @@ await aui.moveMouseTo().button().withText('Login').exec();
 await aui.mouseDoubleLeftClick().exec();
 ```
 
-![](/img/gif/mousedoubleleftclick.gif)  
+![](/img/gif/mouseDoubleLeftClick.gif)  
 
 </md-block>
 <md-block>
