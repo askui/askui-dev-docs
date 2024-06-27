@@ -612,7 +612,7 @@ Moves mouse to the filtered element and scrolls in the x and y direction.
 await aui.scrollInside(0,-500).text().withText('Bottom sheet').exec();
 ```
 
-![](/img/gif/scrollinside.gif)  
+![](/img/gif/scrollInside.gif)  
 
 </md-block>
 <md-block>
