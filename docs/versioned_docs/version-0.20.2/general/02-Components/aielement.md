@@ -9,11 +9,11 @@ This feature is currently only available on Windows. Linux and macOS will be sup
 :::
 
 :::note
-Enable the *AskUI Development Environment* as described in [AskUI Development Environment](AskUI-Development-Environment.md) first.
+Enable the *AskUI Development Environment* as described in [AskUI Development Environment](AskUI-Development-Environment.md) and then activate the experimental commands by running `AskUI-ImportExperimentalCommands` in your terminal.
 :::
 
-## `AskUI-NewAICustomElement` Command
-`AskUI-NewAICustomElement` allows you to capture elements from your screen. You can use these elements later in AskUI workflows. Accepted parameters:
+## `AskUI-NewAIElement` Command
+`AskUI-NewAIElement` allows you to capture elements from your screen. You can use these elements later in AskUI workflows. Accepted parameters:
 
 - `Name` (Optional): The name of the screenshot file. If defined, it indicates that only one element is being snipped. If not defined, you will be prompted to provide a name later. For snipping multiple elements, you must provide a name for each one.
 - `WorkspaceId` (Optional): By default, the command will use the Workspace ID specified in the settings file. If neither is set, an error will be thrown.
@@ -22,7 +22,7 @@ Enable the *AskUI Development Environment* as described in [AskUI Development En
 - `OneShot` (Optional): The snipping ends after the first successful creation of an AI Element.
 
 ```powershell
-AskUI-NewAICustomElement
+AskUI-NewAIElement
 
 # Output
 Taking screenshots for project:
@@ -42,38 +42,6 @@ Screenshot #2:
   Name:     <name2>
   File:     <askuiUserDirectory>\SnippingTool\AIElement\<workspaceId>\{644A00B8-1E27-7ADF-7C68-1751672A5931}.png
   Metadata: <askuiUserDirectory>\SnippingTool\AIElement\<workspaceId>\{644A00B8-1E27-7ADF-7C68-1751672A5931}.json
-```
-
-## `AskUI-ShowAIElement` Command
-`AskUI-ShowAIElement` shows a list of all available AI Elements. Accepted parameters:
-
-- `NameFilter` (Optional): Lists the AI Element with the provided name filter. If not set, all AI Elements are listed.
-
-```powershell
-# Lists all AI Elements with the name 'logo'
-AskUI-ShowAIElement -NameFilter "logo"
-```
-
-## `AskUI-RemoveAICustomElement` Command
-`AskUI-RemoveAICustomElement` removes AI elements by name.
-
-- `NameFilter` (Mandatory): Specifies a name filter for the AI element to be removed.
-- `NoPreview`(Optional): Skips the preview of the filtered AI elements before removal.
-- `AutoApproval` (Optional): Automatically approves the deletion without prompting for confirmation.
-
-```powershell
-# Removes AI Element with the name 'logo'
-AskUI-RemoveAICustomElement -NameFilter "logo" -AutoApproval
-```
-
-## `AskUI-OpenAICustomElement` Command
-`AskUI-OpenAICustomElement` shows AI Elements by name.
-
-- `NameFilter` (Mandatory): Specifies a name filter for the AI Element to be viewed.
-
-```powershell
-# Opens all AI Elements with the name 'logo'
-AskUI-OpenAICustomElement -NameFilter "logo"
 ```
 
 ## Snipping Workflow
@@ -100,7 +68,7 @@ When in polygon mode:
 - Optional: Press right mouse button to remove the last point.
 - Move mouse to the first point and press left mouse button to finish polygon.
 
-When you called `AskUI-NewAICustomElement` with the `OneShot` parameter, the snipping ends after the first successful creation of an AI-element.
+When you called `AskUI-NewAIElement` with the `OneShot` parameter, the snipping ends after the first successful creation of an AI-element.
 
 Otherwise snipping continues until `ESC` is pressed.
 
@@ -126,3 +94,36 @@ Otherwise snipping continues until `ESC` is pressed.
 
 - `r` Activate rectangle mode (when not active).
 - `p` Activate polygon mode (when not active).
+
+
+## `AskUI-ShowAIElement` Command
+`AskUI-ShowAIElement` shows a list of all available AI Elements. Accepted parameters:
+
+- `NameFilter` (Optional): Lists the AI Element with the provided name filter. If not set, all AI Elements are listed.
+
+```powershell
+# Lists all AI Elements with the name 'logo'
+AskUI-ShowAIElement -NameFilter "logo"
+```
+
+## `AskUI-RemoveAIElement` Command
+`AskUI-RemoveAIElement` removes AI elements by name.
+
+- `NameFilter` (Mandatory): Specifies a name filter for the AI element to be removed.
+- `NoPreview`(Optional): Skips the preview of the filtered AI elements before removal.
+- `AutoApproval` (Optional): Automatically approves the deletion without prompting for confirmation.
+
+```powershell
+# Removes AI Element with the name 'logo'
+AskUI-RemoveAIElement -NameFilter "logo" -AutoApproval
+```
+
+## `AskUI-OpenAIElement` Command
+`AskUI-OpenAIElement` shows AI Elements by name.
+
+- `NameFilter` (Mandatory): Specifies a name filter for the AI Element to be viewed.
+
+```powershell
+# Opens all AI Elements with the name 'logo'
+AskUI-OpenAIElement -NameFilter "logo"
+```
