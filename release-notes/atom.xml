@@ -2,12 +2,42 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://docs.askui.com/release-notes</id>
     <title>askui - What can be said can be solved Blog</title>
-    <updated>2024-06-24T00:00:00.000Z</updated>
+    <updated>2024-07-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://docs.askui.com/release-notes"/>
     <subtitle>askui - What can be said can be solved Blog</subtitle>
     <icon>https://docs.askui.com/img/askui-favicon.png</icon>
     <rights>Copyright © 2024 askui GmbH.</rights>
+    <entry>
+        <title type="html"><![CDATA[2024.07.01 | Relational Selector - Intersecting Option]]></title>
+        <id>https://docs.askui.com/release-notes/release-2024-07-01</id>
+        <link href="https://docs.askui.com/release-notes/release-2024-07-01"/>
+        <updated>2024-07-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Introduction]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" href="https://docs.askui.com/release-notes/release-2024-07-01#introduction">​</a></h2>
+<p>This release adds a new parameter <code>intersection_area</code> to the relational selectors <code>above()</code>, <code>below()</code>, <code>rightOf()</code> and <code>leftOf()</code>. It allows you to specify more granular which elements get detected.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features">New Features<a class="hash-link" aria-label="Direct link to New Features" title="Direct link to New Features" href="https://docs.askui.com/release-notes/release-2024-07-01#new-features">​</a></h2>
+<p>Optional parameter <code>intersection_area</code> for relational selectors <code>above()</code>, <code>below()</code>, <code>rightOf()</code> and <code>leftOf()</code> in AskUI TypeScript SDK:</p>
+<ul>
+<li><a href="https://docs.askui.com/docs/api/Relations/above" target="_blank" rel="noopener noreferrer">above() API docs</a></li>
+<li><a href="https://docs.askui.com/docs/api/Relations/below" target="_blank" rel="noopener noreferrer">below() API docs</a></li>
+<li><a href="https://docs.askui.com/docs/api/Relations/leftof" target="_blank" rel="noopener noreferrer">leftOf() API docs</a></li>
+<li><a href="https://docs.askui.com/docs/api/Relations/rightof" target="_blank" rel="noopener noreferrer">rightOf() API docs</a></li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes">Fixes<a class="hash-link" aria-label="Direct link to Fixes" title="Direct link to Fixes" href="https://docs.askui.com/release-notes/release-2024-07-01#fixes">​</a></h2>
+<ul>
+<li>Drag &amp; Drop (Mouse down, mouse move, mouse up) crashes controller.</li>
+<li>TypeScript ADK retries requests to AskUI Inference that need fixing by a user. Resulted in long execution times because of unsuccessful retries.</li>
+<li>AskUI Controller crashes when trying to implement Drag &amp; Drop behavior with <code>mouseToggleDown()</code> and <code>mouseToggleUp()</code>.</li>
+</ul>]]></content>
+        <author>
+            <name>Johannes Dienst</name>
+            <email>johannes.dienst@askui.com</email>
+        </author>
+        <category label="AskUI SDK" term="AskUI SDK"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[2024.06.24 | AskUI SDK 0.20.0 and aiElement()]]></title>
         <id>https://docs.askui.com/release-notes/release-2024-06-24</id>
