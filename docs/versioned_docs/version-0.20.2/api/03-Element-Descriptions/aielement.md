@@ -4,7 +4,7 @@ displayed_sidebar: apiSidebar
 # aiElement
 <span class="theme-doc-version-badge badge badge--success">production</span><br/><br/>
 
-Detects an AI Element created with the [snipping workflow](https://docs.askui.com/docs/general/Components/aielement#snipping-workflow).
+Detects an AI Element created with the [snipping workflow](../../general/03-Element%20Selection/aielement.md#snipping-workflow).
 
 **Examples:**
 

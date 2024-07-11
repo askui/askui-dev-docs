@@ -669,7 +669,7 @@ await aui.typeIn('Type some text', \{ isSecret: true, secretMask: '**' }).textfi
                     <summary>aiElement()  <span class="theme-doc-version-badge badge badge--success">production</span> <span class="theme-doc-version-badge badge badge--success">Windows only</span> </summary>
 <md-block>
 
-Detects an AI Element created with the [snipping workflow](../../general/02-Components/aielement.md#snipping-workflow). 
+Detects an AI Element created with the [snipping workflow](../../general/03-Element%20Selection/aielement.md#snipping-workflow). 
 
 **Examples:**
 

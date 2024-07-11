@@ -33,10 +33,10 @@ Download the <span className="askui-installer-download-link-windows">[AskUI Inst
   <summary>
   It will install the following components:
   </summary>
-    * [AskUI Controller](../../02-Components/AskUI-Controller.md)
-    * [AskUI Development Environment (ADE)](../../02-Components/AskUI-Development-Environment.md)
+    * [AskUI Controller](../../../adk/02-Components/AskUI-Controller.md)
+    * [AskUI Development Environment (ADE)](../../../adk/02-Components/AskUI-Development-Environment.md)
     * AskUI Development Kit (SDK)
-    * (optional) [AskUI Runner (Executing workflows from AskUI Studio)](../../02-Components/AskUI-Runner.md)
+    * (optional) [AskUI Runner (Executing workflows from AskUI Studio)](../../../adk/02-Components/AskUI-Runner.md)
 </details>
 
 ### Step 2: Setup AskUI on Your Computer

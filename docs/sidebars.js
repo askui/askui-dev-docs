@@ -64,6 +64,7 @@ const sidebars = {
             'general/Element Selection/custom-elements',
             'general/Element Selection/text-and-element-selectors',
             'general/Element Selection/relational-selectors',
+            'general/Element Selection/aielement',
             'general/Element Selection/scraping-and-storing-lements',
             'general/Element Selection/scrolling',
             'general/Element Selection/assertions',
@@ -87,41 +88,6 @@ const sidebars = {
             'general/Tutorials/spotify-tutorial',
           ],
         },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'AskUI Controller',
-      collapsed: true,
-      className: 'menu_category_askui_controller',
-      items: [
-        {
-          type: 'doc',
-          id: 'general/Components/AskUI-Controller',
-          label: 'Introduction',
-        },
-        'general/Components/Supported-Keys',
-        'general/Components/askui-ui-control-client',
-        'general/Components/askui-ui-controller',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'AskUI Development Kit',
-      collapsed: true,
-      className: 'menu_category_askui_development_kit',
-      items: [
-        'general/Components/AskUI-Development-Environment',
-        'general/Components/aielement',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'AskUI Packages',
-      collapsed: true,
-      className: 'menu_category_askui_packages',
-      items: [
-        'general/Components/AskUI-Runner'
       ],
     },
     {
@@ -177,6 +143,40 @@ const sidebars = {
       href: '/release-notes',
       className: 'menu_category_release_notes' 
     }
+  ],
+
+  adkSidebar: [
+    {
+      type: 'doc',
+      id: 'adk/Components/AskUI-Development-Environment',
+      label: 'AskUI Development Kit',
+      className: 'menu_category_askui_development_kit',
+    },
+    {
+      type: 'category',
+      label: 'AskUI Controller',
+      collapsed: true,
+      className: 'menu_category_askui_controller',
+      items: [
+        {
+          type: 'doc',
+          id: 'adk/Components/AskUI-Controller',
+          label: 'Introduction',
+        },
+        'adk/Components/Supported-Keys',
+        'adk/Components/askui-ui-control-client',
+        'adk/Components/askui-ui-controller',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'AskUI Packages',
+      collapsed: true,
+      className: 'menu_category_askui_packages',
+      items: [
+        'adk/Components/AskUI-Runner'
+      ],
+    },
   ],
 };
 
