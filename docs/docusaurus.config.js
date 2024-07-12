@@ -53,6 +53,8 @@ const config = {
           '/docs/api/**/*',
           '/docs/general/*',
           '/docs/general/**/*',
+          '/docs/suite/*',
+          '/docs/suite/**/*',
         ]
       }
     ],
@@ -152,13 +154,19 @@ const config = {
             type: 'doc',
             docId: 'general/Getting Started/start',
             position: 'left',
-            label: 'Docs',
+            label: 'SDK',
           },
           {
             type: 'doc',
             docId: 'api/API/table-of-contents',
             position: 'left',
             label: 'API',
+          },
+          {
+            type: 'doc',
+            docId: 'suite/Components/AskUI-Suite',
+            position: 'left',
+            label: 'AskUI Suite',
           },
           {
             type: 'docsVersionDropdown',

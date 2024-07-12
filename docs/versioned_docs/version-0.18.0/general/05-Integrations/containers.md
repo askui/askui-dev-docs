@@ -73,7 +73,7 @@ You have to adjust the `askui_example/helpers/askui-helper.ts` that is created w
 
 * Remove everything related to `uiController`
 * Check your credentials
-* _Optional: Set the `uiControllerUrl` in `UiControlClient` if you exposed the AskUI Controller on a different port (see [UI Control Client API Docs](../02-Components/askui-ui-control-client.md) for more information_
+* _Optional: Set the `uiControllerUrl` in `UiControlClient` if you exposed the AskUI Controller on a different port (see [UI Control Client API Docs](../../suite/02-Components/askui-ui-control-client.md) for more information_
 
 It should look like this:
 

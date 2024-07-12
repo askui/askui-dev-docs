@@ -78,40 +78,6 @@
     },
     {
       "type": "category",
-      "label": "AskUI Controller",
-      "collapsed": true,
-      "className": "menu_category_askui_controller",
-      "items": [
-        {
-          "type": "doc",
-          "id": "general/Components/AskUI-Controller",
-          "label": "Introduction"
-        },
-        "general/Components/Supported-Keys",
-        "general/Components/askui-ui-control-client",
-        "general/Components/askui-ui-controller"
-      ]
-    },
-    {
-      "type": "category",
-      "label": "AskUI Development Kit",
-      "collapsed": true,
-      "className": "menu_category_askui_development_kit",
-      "items": [
-        "general/Components/AskUI-Development-Environment"
-      ]
-    },
-    {
-      "type": "category",
-      "label": "AskUI Packages",
-      "collapsed": true,
-      "className": "menu_category_askui_packages",
-      "items": [
-        "general/Components/AskUI-Runner"
-      ]
-    },
-    {
-      "type": "category",
       "label": "Integrations",
       "collapsed": true,
       "className": "menu_category_integrations",
@@ -162,6 +128,45 @@
       "label": "Release Notes",
       "href": "/release-notes",
       "className": "menu_category_release_notes"
+    }
+  ],
+  "suiteSidebar": [
+    {
+      "type": "doc",
+      "id": "suite/Components/AskUI-Suite",
+      "label": "AskUI Suite",
+      "className": "menu_category_askui_suite"
+    },
+    {
+      "type": "doc",
+      "id": "suite/Components/AskUI-Development-Environment",
+      "label": "AskUI Development Environment",
+      "className": "menu_category_askui_development_environment"
+    },
+    {
+      "type": "category",
+      "label": "AskUI Controller",
+      "collapsed": true,
+      "className": "menu_category_askui_controller",
+      "items": [
+        {
+          "type": "doc",
+          "id": "suite/Components/AskUI-Controller",
+          "label": "Introduction"
+        },
+        "suite/Components/Supported-Keys",
+        "suite/Components/askui-ui-control-client",
+        "suite/Components/askui-ui-controller"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "AskUI Packages",
+      "collapsed": true,
+      "className": "menu_category_askui_packages",
+      "items": [
+        "suite/Components/AskUI-Runner"
+      ]
     }
   ]
 }

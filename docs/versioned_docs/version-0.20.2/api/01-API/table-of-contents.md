@@ -727,7 +727,7 @@ await aui.typeIn('Type some text', \{ isSecret: true, secretMask: '**' }).textfi
                     <summary>aiElement()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
 <md-block>
 
-Detects an AI Element created with the [snipping workflow](https://docs.askui.com/docs/general/Components/aielement#snipping-workflow).
+Detects an AI Element created with the [snipping workflow](../../general/03-Element%20Selection/aielement.md#snipping-workflow).
 
 **Examples:**
 

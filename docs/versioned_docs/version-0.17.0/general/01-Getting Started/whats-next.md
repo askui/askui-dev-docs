@@ -27,7 +27,7 @@ With our pipeline integration toolkit you can quickly set up workflows in your p
 
 ## Your Own Device Farm with AskUI Runners
 AskUI Runner gives you the ability to remotely carry out a workflow in QA on a local device. The runner receives instructions from AskUI Studio and carries them out, sending back a report after it is done.
-[Learn more](https://docs.askui.com/docs/next/general/Components/AskUI-Runner)
+[Learn more](https://docs.askui.com/docs/next/suite/Components/AskUI-Runner)
 
 ## Visit Our YouTube Channel
 Need ideas or prior art? Our [YouTube channel](https://www.youtube.com/@askui4398) has some cool things you can do by hooking your AskUI environment up to different things. Everything from automating your Android phone, to orchestrating and debugging your Workflows with custom-built software.
