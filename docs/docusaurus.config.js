@@ -53,8 +53,8 @@ const config = {
           '/docs/api/**/*',
           '/docs/general/*',
           '/docs/general/**/*',
-          '/docs/adk/*',
-          '/docs/adk/**/*',
+          '/docs/suite/*',
+          '/docs/suite/**/*',
         ]
       }
     ],
@@ -164,9 +164,9 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'adk/Components/AskUI-Development-Environment',
+            docId: 'suite/Components/AskUI-Suite',
             position: 'left',
-            label: 'ADK',
+            label: 'AskUI Suite',
           },
           {
             type: 'docsVersionDropdown',

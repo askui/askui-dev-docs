@@ -9,7 +9,7 @@ This feature is currently only available on Windows. Linux and macOS will be sup
 :::
 
 :::note
-Enable the *AskUI Development Environment* as described in [AskUI Development Environment](../../adk/02-Components/AskUI-Development-Environment.md) and then activate the experimental commands by running `AskUI-ImportExperimentalCommands` in your terminal.
+Enable the *AskUI Development Environment* as described in [AskUI Development Environment](../../suite/02-Components/AskUI-Development-Environment.md) and then activate the experimental commands by running `AskUI-ImportExperimentalCommands` in your terminal.
 :::
 
 ## `AskUI-NewAIElement` Command

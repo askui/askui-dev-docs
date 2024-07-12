@@ -145,12 +145,24 @@ const sidebars = {
     }
   ],
 
-  adkSidebar: [
+  suiteSidebar: [
+    {
+      type: "doc",
+      id: "suite/Components/AskUI-Suite",
+      label: "AskUI Suite",
+      className: "menu_category_askui_suite"
+    },
+    {
+      type: "doc",
+      id: "suite/Components/AskUI-Development-Environment",
+      label: "AskUI Development Environment",
+      className: "menu_category_askui_development_environment"
+    },
     {
       type: 'doc',
-      id: 'adk/Components/AskUI-Development-Environment',
-      label: 'AskUI Development Kit',
-      className: 'menu_category_askui_development_kit',
+      id: 'suite/Components/AskUI-Development-Environment',
+      label: 'AskUI Development Environment',
+      className: 'menu_category_askui_development_environment',
     },
     {
       type: 'category',
@@ -160,12 +172,12 @@ const sidebars = {
       items: [
         {
           type: 'doc',
-          id: 'adk/Components/AskUI-Controller',
+          id: 'suite/Components/AskUI-Controller',
           label: 'Introduction',
         },
-        'adk/Components/Supported-Keys',
-        'adk/Components/askui-ui-control-client',
-        'adk/Components/askui-ui-controller',
+        'suite/Components/Supported-Keys',
+        'suite/Components/askui-ui-control-client',
+        'suite/Components/askui-ui-controller',
       ],
     },
     {
@@ -174,7 +186,7 @@ const sidebars = {
       collapsed: true,
       className: 'menu_category_askui_packages',
       items: [
-        'adk/Components/AskUI-Runner'
+        'suite/Components/AskUI-Runner'
       ],
     },
   ],

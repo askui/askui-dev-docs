@@ -117,7 +117,7 @@ To execute the instruction:
 
 <Tabs>
   <TabItem value="windows" label="Windows" default>
-  Switch into [AskUI Development Environment (ADE)](../../adk/02-Components/AskUI-Development-Environment.md) by running `askui-shell` in a Command Prompt first.
+  Switch into [AskUI Development Environment (ADE)](../../suite/02-Components/AskUI-Development-Environment.md) by running `askui-shell` in a Command Prompt first.
 
   ```shell
   AskUI-RunProject

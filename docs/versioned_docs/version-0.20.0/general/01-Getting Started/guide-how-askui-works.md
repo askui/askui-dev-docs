@@ -60,7 +60,7 @@ await aui.click().button().withText('login').exec();
 
 To use the **AskUI Control Client**, user credentials are required. User credentials can be obtained via our __AskUI Studio__. Please [sign up for a 7-day free trial](https://www.app.askui.com) or [fill out this form](https://www.askui.com/demo) to schedule a demonstration.
 
-See our [API documentation](../../adk/02-Components/askui-ui-control-client.md) for more information on this component.
+See our [API documentation](../../suite/02-Components/askui-ui-control-client.md) for more information on this component.
 
 ------
 
@@ -76,7 +76,7 @@ The **AskUI Controller** is a binary that controls the operating system. This bi
     - Triggering the *InputEvent*, i.e MouseInputEvent, KeyboardInputEvent, or shell execution.
     - Running the [interactive annotation](../03-Element%20Selection/annotations-and-screenshots.md#interactive-annotation).
 
-See our [API documentation](../../adk/02-Components/askui-ui-controller.md) for more information on this component.
+See our [API documentation](../../suite/02-Components/askui-ui-controller.md) for more information on this component.
 
 ------
 
