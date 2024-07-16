@@ -15,7 +15,7 @@ as well as the digits from 0 to 9 and English alphabets.
 
 **Example:**
 ```typescript
-await aui.pressAndroidKey('notification').exec;
+await aui.pressAndroidKey('notification').exec();
 ```
 
 ![](/img/gif/pressAndroidKey.gif)
