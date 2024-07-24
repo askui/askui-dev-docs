@@ -159,12 +159,6 @@ const sidebars = {
       className: "menu_category_askui_development_environment"
     },
     {
-      type: 'doc',
-      id: 'suite/Components/AskUI-Development-Environment',
-      label: 'AskUI Development Environment',
-      className: 'menu_category_askui_development_environment',
-    },
-    {
       type: 'category',
       label: 'AskUI Controller',
       collapsed: true,
