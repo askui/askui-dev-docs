@@ -14,6 +14,8 @@ import Link from '@docusaurus/Link';
 import Image from '@theme/IdealImage';
 import Heading from '@theme/Heading';
 
+import {AskUIEmbedded} from '@site/src/components/AskUIEmbedded';
+
 const Playgrounds = [
   {
     name: '📦 Quickstart',
@@ -137,6 +139,27 @@ function PlaygroundCard({name, url, description, cta, idbutton}: Props) {
 export function InstallationCardsRow(): JSX.Element {
   return (
     <div className="row">
+      <div class="col col--4 margin-bottom--lg">
+        <div class="card">
+          <div class="card__body">
+            <h3>📦 Stackblitz</h3>
+            <p>Try AskUI without any hassle in your browser!</p>
+          </div>
+          <div class="card__footer">
+            <div class="button-group button-group--block">
+              <AskUIEmbedded
+                projectId="vitejs-vite-khtc7d"
+                files={{
+                  ".env": 'ASKUI_WORKSPACE_ID=AWI\nASKUI_TOKEN=AT\nREMOTE_ASKUI_CONTROLLER_URL=RACU\nREMOTE_VNC=RVNV'
+                }}
+                >
+                Basic Example Open in StackBlitz
+              </AskUIEmbedded>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="embedStackBlitz">&nbsp;</div>
       {Playgrounds.map((playground) => (
         <PlaygroundCard key={playground.name} {...playground} />
       ))}
