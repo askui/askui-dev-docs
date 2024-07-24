@@ -112,7 +112,7 @@ AskUI-SetSettings -HttpProxy <http_proxy_address> -HttpsProxy <https_proxy_addre
 If you have already configured your proxy settings in the setup wizard, you can skip this step.
 
 :::info
-Configuring proxy or firewall settings can be a challenge. If you need assistance with this task, feel free to schedule a call with our enterprise support team [here](https://calendly.com/d/3m3-myw-9z7/askui-enterprise-onboarding-assistance).
+Configuring proxy or firewall settings can be a challenge. If you need assistance with this task, feel free to schedule a call with our enterprise support team [here](https://app.apollo.io/#/meet/managed-meetings/jonas_menesklou_074/kmf-79d-7f3/30-min).
 :::
 
 ### Step 6: Start the Controller

@@ -99,6 +99,6 @@ If you have a recurring or persisting issue while following this tutorial, donâ€
 
 :::caution
 
-This page is currently under construction. If you have any questions, please feel free to reach out to info@askui.com or book a meeting with Jonas [over Calendly](https://calendly.com/jonas-menesklou/digital-get-to-know).
+This page is currently under construction. If you have any questions, please feel free to reach out to info@askui.com or book a meeting with Jonas [over Apollo](https://app.apollo.io/#/meet/jonas_menesklou_074/30-mins).
 
 :::
