@@ -9,7 +9,7 @@ Welcome to the Single Sign-On (SSO) setup guide. This document will guide you th
 Before you begin, ensure you have administrative access to your organization’s IdP service and that your enterprise account with us is eligible for SSO integration.
 
 > **Note**: If you do not have an Enterprise account and are interested in this feature, please contact our sales team for more information on upgrading your account.
-> [Book a call](https://calendly.com/d/3m3-myw-9z7/on-enterprise-interest)
+> [Book a call](https://app.apollo.io/#/meet/managed-meetings/jonas_menesklou_074/kmf-79d-7f3/30-min)
 
 ## Supported Identity Providers
 
