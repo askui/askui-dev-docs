@@ -119,18 +119,6 @@ AskUI-SetSettings -WorkspaceId <workspace id> -Token <access token>
   ```
 </details>
 
-### Step 5: (Optional) Configure Proxy
-If you are behind a proxy you have to set the proxy address. Replace `<http_proxy_address>` and `<https_proxy_address>` with the ones for your proxy:
-
-```shell
-AskUI-SetSettings -HttpProxy <http_proxy_address> -HttpsProxy <https_proxy_address>
-```
-If you have already configured your proxy settings in the setup wizard, you can skip this step.
-
-:::info
-Configuring proxy or firewall settings can be a challenge. If you need assistance with this task, feel free to schedule a call with our enterprise support team [here](https://app.apollo.io/#/meet/managed-meetings/jonas_menesklou_074/kmf-79d-7f3/30-min).
-:::
-
 ### Step 6: Start the Controller
 
 :::info
