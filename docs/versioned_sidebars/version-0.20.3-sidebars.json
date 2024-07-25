@@ -31,7 +31,16 @@
             "general/Getting Started/Installing AskUI/enterprise-checklist"
           ]
         },
-        "general/Getting Started/write-your-first-instruction",
+        {
+          "type": "category",
+          "label": "Create Your First Instruction",
+          "collapsed": true,
+          "className": "menu_category_create_your_first_instruction",
+          "items": [
+            "general/Getting Started/write-your-first-instruction",
+            "general/Getting Started/write-your-first-instruction-part-two"
+          ]
+        },
         "general/Getting Started/whats-next"
       ]
     },
