@@ -4,10 +4,6 @@ sidebar_position: 4
 
 # AI Element
 
-:::info
-This feature is currently only available on Windows. Linux and macOS will be supported as soon as possible!
-:::
-
 :::note
 Enable the *AskUI Development Environment* as described in [AskUI Development Environment](../../suite/02-Components/AskUI-Development-Environment.md) and then activate the experimental commands by running `AskUI-ImportExperimentalCommands` in your terminal.
 :::

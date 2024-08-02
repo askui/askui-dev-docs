@@ -77,7 +77,6 @@ Next, follow the instructions in the setup wizard until the end.
     ```
 </details>
 
-
 ### Step 3: Activate the AskUI Development Environment (ADE)
 Open a terminal and run the following command:
 
@@ -119,7 +118,7 @@ AskUI-SetSettings -WorkspaceId <workspace id> -Token <access token>
   ```
 </details>
 
-### Step 6: Start the Controller
+### Step 5: Start the Controller
 
 :::info
 You have to disable mouse acceleration for the AskUI Controller to work properly!
@@ -135,14 +134,14 @@ Start the AskUI Controller with:
 AskUI-StartController -RunInBackground
 ```
 
-### Step 7: Create a New Project
+### Step 6: Create a New Project
 Switch to a directory where you want to create the new AskUI project and run:
 
 ```shell
 AskUI-NewProject -ProjectName askui_first -TestFramework jest -TypeScriptConfig true
 ```
 
-### Step 8: Open Your Project
+### Step 7: Open Your Project
 Your new AskUI project has now been created inside the folder you specified and its path is set as your current working directory: `<path you ran AskUI-NewProject>/<your_askui_project_name>`.
 
 Now open this folder with your IDE of choice.
@@ -169,7 +168,7 @@ Now open this folder with your IDE of choice.
   ![AskUI Project Visual Studio Code](Visual_Studio_Code.png)
 </details>
 
-### Step 9: Open a Workflow File
+### Step 8: Open a Workflow File
 The workflow files are where you will write your automation scripts.
 To find them, navigate to the `askui_example` folder.
 
