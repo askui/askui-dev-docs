@@ -1182,7 +1182,7 @@ Filters for similar -- meaning >70% similar -- text.
 
 Takes an optional parameter to specify the similarity. Usually you need the optional parameter for long texts you want to match precisely.
 
-_We use [RapidFuzz](https://maxbachmann.github.io/RapidFuzz/Usage/fuzz.html#ratio) which calculates the similarity like this:_
+_We use [RapidFuzz](https://rapidfuzz.github.io/RapidFuzz/Usage/fuzz.html#ratio) which calculates the similarity like this:_
 
 `1 - (distance / (lengthString1 + lengthString2))`
 

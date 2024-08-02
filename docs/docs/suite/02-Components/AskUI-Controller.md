@@ -84,7 +84,7 @@ Together with the asynchronous execution of actions we also introduce natural ty
 first iteration of this feature uses the typical typing speed of a human.
 
 ### Android on Windows
-AskUI automation works on an Android device that is controlled from a Windows machine. It allows you to run a workflow on an Android device, including recording the session. Instructions how to setup the Android workflow can be found in our [documentation](../../general/04-Executing%20Automations/mobile-automation.md#android).
+AskUI automation works on an Android device that is controlled from a Windows machine. It allows you to run a workflow on an Android device, including recording the session. Instructions on how to set up the Android workflow can be found in our [documentation](../../general/04-Executing%20Automations/mobile-automation.md).
 
 > Please also read the [known issues section](#known-issues).
 

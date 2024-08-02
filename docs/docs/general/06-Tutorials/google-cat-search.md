@@ -8,7 +8,7 @@ The following tutorial shows you how to search for cat images on Google Image Se
 
 ## Setup
 
-* Follow one of the two options under <a href="../Getting%20Started/start" target="_blank">Start to install AskUI</a>
+* Follow one of the two options under [Start to install AskUI](../01-Getting%20Started/start.mdx)
 * Open a Chrome browser window on your screen
   * If you have multiple screens, configure the used display by setting the display variable in `test/helpers/askui-helper.ts`
 
@@ -189,7 +189,7 @@ await aui
 
 It is always a good idea to try to play around with the functions and see if you can tackle the problem from a different angle.
 
-If you have a recurring or persisting issue, don’t hesitate to [ask the community](https://bit.ly/3ekHnGR) for help. You can be sure that your questions will be answered there. We’re excited to hear about how you apply AskUI to your projects.
+If you have a recurring or persisting issue, don’t hesitate to [ask the community](https://app.outverse.com/askui/home) for help. You can be sure that your questions will be answered there. We’re excited to hear about how you apply AskUI to your projects.
 
 If you have any feature requests, please feel free to [post them in our Featurebase board](https://bit.ly/3AP20T7).
 
