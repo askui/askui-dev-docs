@@ -2,12 +2,132 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://docs.askui.com/release-notes</id>
     <title>askui - What can be said can be solved Blog</title>
-    <updated>2024-07-01T00:00:00.000Z</updated>
+    <updated>2024-08-05T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://docs.askui.com/release-notes"/>
     <subtitle>askui - What can be said can be solved Blog</subtitle>
     <icon>https://docs.askui.com/img/askui-favicon.png</icon>
     <rights>Copyright © 2024 askui GmbH.</rights>
+    <entry>
+        <title type="html"><![CDATA[2024.08.05 | ADK 0.20.7 - macOS and Linux Installer]]></title>
+        <id>https://docs.askui.com/release-notes/release-2024-08-05</id>
+        <link href="https://docs.askui.com/release-notes/release-2024-08-05"/>
+        <updated>2024-08-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Introduction]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" href="https://docs.askui.com/release-notes/release-2024-08-05#introduction">​</a></h2>
+<p>This release delivers some improvements to the AskUI initial setup and the error reporting.</p>
+<ul>
+<li>Video recording is disabled by default now.</li>
+<li>We added a <code>.gitignore</code> file to the initial project. This prevents checking in unwanted files like reports or <code>.env</code>.</li>
+<li>If an instruction fails the error log contains the code including the line number, so you can find the failing AskUI Instruction fast.</li>
+</ul>
+<p>We also release the macOS and Linux Installer which brings the <em>AskUI Suite</em> to macOS and Linux. It includes the <em>ADE</em> and the new implementation of the <em>AskUI Controller</em>. The <em>ADE</em> makes managing all the AskUI components and AskUI projects way easier and streamlined. While the new <em>AskUI Controller</em> improves the execution speed and operating system compatibility. A better developer experience and faster execution for you!</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features">New Features<a class="hash-link" aria-label="Direct link to New Features" title="Direct link to New Features" href="https://docs.askui.com/release-notes/release-2024-08-05#new-features">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="video-recording-is-disabled-by-default">Video Recording Is Disabled by Default<a class="hash-link" aria-label="Direct link to Video Recording Is Disabled by Default" title="Direct link to Video Recording Is Disabled by Default" href="https://docs.askui.com/release-notes/release-2024-08-05#video-recording-is-disabled-by-default">​</a></h3>
+<p>Video recording is disabled by default in <code>helpers/askui-helper.ts</code>. Enable it by uncommenting the commented-out lines.</p>
+<div class="language-typescript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockTitle_Ktv7">Relevant lines in helpers/askui-helper.ts</div><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-typescript codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token operator" style="color:#393A34">...</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token function" style="color:#d73a49">beforeEach</span><span class="token punctuation" style="color:#393A34">(</span><span class="token keyword" style="color:#00009f">async</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">=&gt;</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token comment" style="color:#999988;font-style:italic">/* Uncomment to enable video recording</span><br></span><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">  await aui.startVideoRecording();</span><br></span><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">  */</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token function" style="color:#d73a49">afterEach</span><span class="token punctuation" style="color:#393A34">(</span><span class="token keyword" style="color:#00009f">async</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">=&gt;</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token comment" style="color:#999988;font-style:italic">/* Uncomment to enable video recording</span><br></span><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">  await aui.stopVideoRecording();</span><br></span><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">  const video = await aui.readVideoRecording();</span><br></span><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">  await AskUIAllureStepReporter.attachVideo(video);</span><br></span><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">  */</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token operator" style="color:#393A34">...</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="gitignore-for-reports-directories-and-configuration-files"><code>.gitignore</code> for Reports-Directories and Configuration Files<a class="hash-link" aria-label="Direct link to gitignore-for-reports-directories-and-configuration-files" title="Direct link to gitignore-for-reports-directories-and-configuration-files" href="https://docs.askui.com/release-notes/release-2024-08-05#gitignore-for-reports-directories-and-configuration-files">​</a></h2>
+<p>When you create a new project a sensible <code>.gitignore</code> file will be added. So you do not check in the following files accidentally:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">allure-results/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">report/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">xray-report/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">.env</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">.vscode</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Dangerous (may contain secrets)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">.npmrc</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Dependencies</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">/node_modules</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Caches</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">.npm</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">.eslintcache</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Misc</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">.DS_Store</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Logs</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">npm-debug.log*</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">yarn-debug.log*</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">yarn-error.log*</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="helpful-error-message-when-askui-instruction-fails">Helpful Error Message When AskUI Instruction Fails<a class="hash-link" aria-label="Direct link to Helpful Error Message When AskUI Instruction Fails" title="Direct link to Helpful Error Message When AskUI Instruction Fails" href="https://docs.askui.com/release-notes/release-2024-08-05#helpful-error-message-when-askui-instruction-fails">​</a></h2>
+<p>The error messages Jest displayed when an AskUI Workflow/Instruction failed made it hard to find the offending line of code. Especially on larger workflows, it was a challenge. Now the error message contains the exact line and also the code that failed:</p>
+<p><img decoding="async" loading="lazy" alt="The image is a screenshot of a Jest test failure log from a test file named my-first-askui-test-suite.test.ts. The log shows an error message indicating a ControlCommandError due to the inability to find a button containing the text &amp;quot;aloha blub&amp;quot;. The error occurred in an asynchronous test function intended to &amp;quot;produce an error log&amp;quot;. The relevant code snippet highlights the problematic line with await aui.click().button().withText(&amp;#39;aloha blub&amp;#39;).exec();. The stack trace provides details of where the error occurred within the test file. There is also a reference to documentation for troubleshooting this issue." src="https://docs.askui.com/assets/images/jest-stacktrace-acaa0613f7fa1a018e7a4f1c3b3b982d.png" width="1405" height="343" class="img_ev3q"></p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="askui-installer-update-2462">AskUI Installer Update 24.6.2<a class="hash-link" aria-label="Direct link to AskUI Installer Update 24.6.2" title="Direct link to AskUI Installer Update 24.6.2" href="https://docs.askui.com/release-notes/release-2024-08-05#askui-installer-update-2462">​</a></h2>
+<p>This ships the <em>AskUI Controller</em> and the <em>AskUI Suite</em> for all major desktop operating systems.</p>
+<p>Since the support for MacOS and Linux is new there might be undiscovered issues that will be tackled step by step.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="supported-operating-systems">Supported Operating Systems<a class="hash-link" aria-label="Direct link to Supported Operating Systems" title="Direct link to Supported Operating Systems" href="https://docs.askui.com/release-notes/release-2024-08-05#supported-operating-systems">​</a></h3>
+<ul>
+<li>Windows 11<!-- -->
+<ul>
+<li>Version: 22H2</li>
+<li>Architecture(s): AMD64 and ARM64</li>
+</ul>
+</li>
+<li>MacOS<!-- -->
+<ul>
+<li>Version: 14.x</li>
+<li>Architecture(s): ARM64 (Apple Silicon)</li>
+</ul>
+</li>
+<li>Linux<!-- -->
+<ul>
+<li>Version: Ubuntu 22.04.2</li>
+<li>Architecture(s): AMD64</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="windows-installation">Windows Installation<a class="hash-link" aria-label="Direct link to Windows Installation" title="Direct link to Windows Installation" href="https://docs.askui.com/release-notes/release-2024-08-05#windows-installation">​</a></h4>
+<p><a href="https://files.askui.com/releases/Installer/24.6.2/AskUI-Suite-24.6.2-System-Installer-Win-AMD64-Full.exe" target="_blank" rel="noopener noreferrer">Download link</a>.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="macos-installation">macOS Installation<a class="hash-link" aria-label="Direct link to macOS Installation" title="Direct link to macOS Installation" href="https://docs.askui.com/release-notes/release-2024-08-05#macos-installation">​</a></h4>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># Download installer into /tmp folder</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">curl -o /tmp/AskUI-Suite-24.6.2-User-Installer-MacOS-ARM64-Full.run https://files.askui.com/releases/Installer/24.6.2/AskUI-Suite-24.6.2-User-Installer-MacOS-ARM64-Full.run</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Run the installer</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">bash /tmp/AskUI-Suite-24.6.2-User-Installer-MacOS-ARM64-Full.run</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="linux-installation">Linux Installation<a class="hash-link" aria-label="Direct link to Linux Installation" title="Direct link to Linux Installation" href="https://docs.askui.com/release-notes/release-2024-08-05#linux-installation">​</a></h4>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># Download installer into /tmp folder</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">curl -o /tmp/AskUI-Suite-24.6.2-User-Installer-Linux-x64-Full.run https://files.askui.com/releases/Installer/24.6.2/AskUI-Suite-24.6.2-User-Installer-Linux-x64-Full.run</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Run the installer</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">bash /tmp/AskUI-Suite-24.6.2-User-Installer-Linux-x64-Full.run</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features-1">New Features<a class="hash-link" aria-label="Direct link to New Features" title="Direct link to New Features" href="https://docs.askui.com/release-notes/release-2024-08-05#new-features-1">​</a></h2>
+<p>Support for macOS and Linux.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="changes">Changes<a class="hash-link" aria-label="Direct link to Changes" title="Direct link to Changes" href="https://docs.askui.com/release-notes/release-2024-08-05#changes">​</a></h2>
+<ul>
+<li>The status indicator of the <em>AskUI Controller</em> was changed to match the users expectation.<!-- -->
+<ul>
+<li>Stats that are rendered:<!-- -->
+<ul>
+<li>Workflow in Progress<!-- -->
+<ul>
+<li>Color: Dark blue (Logo color)</li>
+<li>Description: A workflow is in progress but the <em>AskUI Controller</em> waits for the next action.</li>
+</ul>
+</li>
+<li>Execution<!-- -->
+<ul>
+<li>Color: Green</li>
+<li>Description: Indicates that for instance a mouse move or typing is in progress.</li>
+</ul>
+</li>
+<li>Idle<!-- -->
+<ul>
+<li>Color: White</li>
+<li>Description: <em>AskUI Controller</em> is running but no workflow is in progress.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes">Fixes<a class="hash-link" aria-label="Direct link to Fixes" title="Direct link to Fixes" href="https://docs.askui.com/release-notes/release-2024-08-05#fixes">​</a></h2>
+<ul>
+<li>N&amp;A</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="versions">Versions<a class="hash-link" aria-label="Direct link to Versions" title="Direct link to Versions" href="https://docs.askui.com/release-notes/release-2024-08-05#versions">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="components-and-packages">Components and Packages<a class="hash-link" aria-label="Direct link to Components and Packages" title="Direct link to Components and Packages" href="https://docs.askui.com/release-notes/release-2024-08-05#components-and-packages">​</a></h3>
+<ul>
+<li>AskUI Controller<!-- -->
+<ul>
+<li>AskUI Remote Device Controller: v0.9.0.0</li>
+<li>AskUI Legacy UI Controller: 0.14.3</li>
+<li>AskUI Remote Device Snipping Tool: v0.1.1.0</li>
+</ul>
+</li>
+<li>AskUI Runner: 0.1.4</li>
+<li>AskUI Development Environment (ADE): v0.9.0.0</li>
+<li>AskUI Development Kit (ADK): 0.20.7</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3rd-party-versions">3rd Party Versions<a class="hash-link" aria-label="Direct link to 3rd Party Versions" title="Direct link to 3rd Party Versions" href="https://docs.askui.com/release-notes/release-2024-08-05#3rd-party-versions">​</a></h3>
+<ul>
+<li>Node.JS: 21.0.0</li>
+<li>PowerShell 7.3.12</li>
+</ul>]]></content>
+        <author>
+            <name>Johannes Dienst</name>
+            <email>johannes.dienst@askui.com</email>
+        </author>
+        <category label="AskUI SDK" term="AskUI SDK"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[2024.07.01 | Relational Selector - Intersecting Option]]></title>
         <id>https://docs.askui.com/release-notes/release-2024-07-01</id>
