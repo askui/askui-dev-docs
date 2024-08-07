@@ -27,7 +27,7 @@ Please [sign up for a 7-day free trial](https://www.app.askui.com).
 :::
 
 ### Step 1: Download Installer
-Download the <span className="askui-installer-download-link-windows">[AskUI Installer here](https://files.askui.com/releases/Installer/24.5.1/AskUI-Suite-24.5.1-System-Installer-Win-AMD64-Full.exe).</span>
+Download the <span className="askui-installer-download-link-windows">[AskUI Installer here](https://files.askui.com/releases/Installer/24.6.2/AskUI-Suite-24.6.2-System-Installer-Win-AMD64-Full.exe).</span>
 
 <details>
   <summary>
