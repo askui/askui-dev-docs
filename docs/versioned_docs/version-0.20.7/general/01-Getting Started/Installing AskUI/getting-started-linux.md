@@ -25,7 +25,7 @@ Please [sign up for a 7-day free trial](https://www.app.askui.com).
 
 ```bash
 # Download installer into /tmp folder
-curl -o /tmp/AskUI-Suite-24.6.2-User-Installer-Linux-x64-Full.run https://files.askui.com/releases/Installer/24.6.2/AskUI-Suite-24.6.2-User-Installer-Linux-x64-Full.run
+curl -o /tmp/AskUI-Suite-24.7.1-User-Installer-Linux-x64-Full.run https://files.askui.com/releases/Installer/24.7.1/AskUI-Suite-24.7.1-User-Installer-Linux-x64-Full.run
 ```
 
 <details>
@@ -42,7 +42,7 @@ curl -o /tmp/AskUI-Suite-24.6.2-User-Installer-Linux-x64-Full.run https://files.
 Run the installer:
 
 ```bash
-bash /tmp/AskUI-Suite-24.6.2-User-Installer-Linux-x64-Full.run
+bash /tmp/AskUI-Suite-24.7.1-User-Installer-Linux-x64-Full.run
 ```
 
 * Press `Enter` to review the license agreement. Then press and hold Enter to scroll.
