@@ -110,7 +110,11 @@ Start the AskUI Controller with:
 AskUI-StartController -RunInBackground
 ```
 
-### Step 7: Create a New Project
+:::warning
+The *AskUI Controller* needs permission to screen recording and accessibility features. On first run it will prompt you to grant these permissions in your *Privacy* settings.
+:::
+
+### Step 6: Create a New Project
 Switch to a directory where you want to create the new AskUI project and run:
 
 ```shell
