@@ -113,7 +113,7 @@ Start the AskUI Controller with:
 AskUI-StartController -RunInBackground
 ```
 
-### Step 7: Create a New Project
+### Step 6: Create a New Project
 Switch to a directory where you want to create the new AskUI project and run:
 
 ```shell

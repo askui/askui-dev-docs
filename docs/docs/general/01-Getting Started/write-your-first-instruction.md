@@ -113,29 +113,9 @@ The (interactive) annotation serves as the first step in automating UI interacti
 
 To execute the instruction:
 
-<Tabs>
-  <TabItem value="windows" label="Windows" default>
-  Switch into [AskUI Development Environment (ADE)](../../suite/02-Components/AskUI-Development-Environment.md) by running `askui-shell` in a Command Prompt first.
-
-  ```shell
-  AskUI-RunProject
-  ```
-  </TabItem>
-  <TabItem value="macOS" label="macOS" default>
-  Enter into your terminal:
-
-  ```shell
-  npm run askui
-  ```
-  </TabItem>
-  <TabItem value="linux" label="Linux" default>
-  Enter into your terminal:
-
-  ```shell
-  npm run askui
-  ```
-  </TabItem>
-</Tabs>
+```shell
+AskUI-RunProject
+```
 
 A few seconds later an (interactive) annotation will be generated. If you have used the `annotate()` command, the annotation files are saved under `<project_root>/report`.
 
