@@ -2,12 +2,103 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://docs.askui.com/release-notes</id>
     <title>askui - What can be said can be solved Blog</title>
-    <updated>2024-08-05T00:00:00.000Z</updated>
+    <updated>2024-08-12T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://docs.askui.com/release-notes"/>
     <subtitle>askui - What can be said can be solved Blog</subtitle>
     <icon>https://docs.askui.com/img/askui-favicon.png</icon>
     <rights>Copyright © 2024 askui GmbH.</rights>
+    <entry>
+        <title type="html"><![CDATA[2024.08.12 | AskUI Seuite 24.7.1]]></title>
+        <id>https://docs.askui.com/release-notes/release-2024-08-12</id>
+        <link href="https://docs.askui.com/release-notes/release-2024-08-12"/>
+        <updated>2024-08-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Introduction]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" href="https://docs.askui.com/release-notes/release-2024-08-12#introduction">​</a></h2>
+<p>This release delivers version 24.7.1 of the <em>AskUI Suite</em>, which includes debug rendering features, support for local proxies and non-admin Windows Installation.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-features">New Features<a class="hash-link" aria-label="Direct link to New Features" title="Direct link to New Features" href="https://docs.askui.com/release-notes/release-2024-08-12#new-features">​</a></h2>
+<ul>
+<li>Debug rendering for internal use.<!-- -->
+<ul>
+<li>Animated mouse movement vectors.</li>
+<li>Scrollable text view of executed controller actions (and their parameters; not ADK steps).</li>
+<li>Step index and icon of executed action on the screen (non-mouse actions are placed at the current mouse position).</li>
+</ul>
+</li>
+<li>Support for local proxies.</li>
+<li>Non-admin Windows installation.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="changes">Changes<a class="hash-link" aria-label="Direct link to Changes" title="Direct link to Changes" href="https://docs.askui.com/release-notes/release-2024-08-12#changes">​</a></h2>
+<ul>
+<li>The <em>AskUI Controller</em> logs into <code>~/.askui/Logs/AskUI Controller</code> directory.</li>
+<li>The execOnShell ADK function supports specifying a timeout.</li>
+<li>Status indicator rendering is on by default now.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixes">Fixes<a class="hash-link" aria-label="Direct link to Fixes" title="Direct link to Fixes" href="https://docs.askui.com/release-notes/release-2024-08-12#fixes">​</a></h2>
+<ul>
+<li><code>AskUI-NewProject</code> commandlet does not copy user settings to project settings anymore.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="improvements">Improvements<a class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" href="https://docs.askui.com/release-notes/release-2024-08-12#improvements">​</a></h2>
+<ul>
+<li>Overlay rendering should require less resources (CPU/GPU).</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="supported-operating-systems">Supported Operating Systems<a class="hash-link" aria-label="Direct link to Supported Operating Systems" title="Direct link to Supported Operating Systems" href="https://docs.askui.com/release-notes/release-2024-08-12#supported-operating-systems">​</a></h2>
+<ul>
+<li>Windows 11<!-- -->
+<ul>
+<li>Version: 22H2</li>
+<li>Architecture(s): AMD64 and ARM64</li>
+</ul>
+</li>
+<li>MacOS<!-- -->
+<ul>
+<li>Version: 14.x</li>
+<li>Architecture(s): ARM64 (Apple Silicon)</li>
+</ul>
+</li>
+<li>Linux<!-- -->
+<ul>
+<li>Version: Ubuntu 22.04.2</li>
+<li>Architecture(s): AMD64</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="windows-installation">Windows Installation<a class="hash-link" aria-label="Direct link to Windows Installation" title="Direct link to Windows Installation" href="https://docs.askui.com/release-notes/release-2024-08-12#windows-installation">​</a></h2>
+<p><a href="https://files.askui.com/releases/Installer/24.7.1/AskUI-Suite-24.7.1-System-Installer-Win-AMD64-Full.exe" target="_blank" rel="noopener noreferrer">Download link</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="macos-installation">macOS Installation<a class="hash-link" aria-label="Direct link to macOS Installation" title="Direct link to macOS Installation" href="https://docs.askui.com/release-notes/release-2024-08-12#macos-installation">​</a></h2>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># Download installer into /tmp folder</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">curl -o /tmp/AskUI-Suite-24.7.1-User-Installer-MacOS-ARM64-Full.run https://files.askui.com/releases/Installer/24.7.1/AskUI-Suite-24.7.1-User-Installer-MacOS-ARM64-Full.run</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Run the installer</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">bash /tmp/AskUI-Suite-24.7.1-User-Installer-MacOS-ARM64-Full.run</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="linux-installation">Linux Installation<a class="hash-link" aria-label="Direct link to Linux Installation" title="Direct link to Linux Installation" href="https://docs.askui.com/release-notes/release-2024-08-12#linux-installation">​</a></h2>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># Download installer into /tmp folder</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">curl -o /tmp/AskUI-Suite-24.7.1-User-Installer-Linux-x64-Full.run https://files.askui.com/releases/Installer/24.7.1/AskUI-Suite-24.7.1-User-Installer-Linux-x64-Full.run</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Run the installer</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">bash /tmp/AskUI-Suite-24.7.1-User-Installer-Linux-x64-Full.run</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="versions">Versions<a class="hash-link" aria-label="Direct link to Versions" title="Direct link to Versions" href="https://docs.askui.com/release-notes/release-2024-08-12#versions">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="components-and-packages">Components and Packages<a class="hash-link" aria-label="Direct link to Components and Packages" title="Direct link to Components and Packages" href="https://docs.askui.com/release-notes/release-2024-08-12#components-and-packages">​</a></h3>
+<ul>
+<li>AskUI Controller<!-- -->
+<ul>
+<li>AskUI Remote Device Controller: v0.9.0.0</li>
+<li>AskUI Legacy UI Controller: 0.14.6</li>
+<li>AskUI Remote Device Snipping Tool: v0.1.1.0</li>
+</ul>
+</li>
+<li>AskUI Runner: 0.1.4</li>
+<li>AskUI Development Environment (ADE): v0.9.0.0</li>
+<li>AskUI Development Kit (ADK): 0.20.7</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3rd-party-versions">3rd Party Versions<a class="hash-link" aria-label="Direct link to 3rd Party Versions" title="Direct link to 3rd Party Versions" href="https://docs.askui.com/release-notes/release-2024-08-12#3rd-party-versions">​</a></h3>
+<ul>
+<li>Node.JS: 21.0.0</li>
+<li>PowerShell 7.3.12</li>
+</ul>]]></content>
+        <author>
+            <name>Johannes Dienst</name>
+            <email>johannes.dienst@askui.com</email>
+        </author>
+        <category label="AskUI Suite" term="AskUI Suite"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[2024.08.05 | ADK 0.20.7 - macOS and Linux Installer]]></title>
         <id>https://docs.askui.com/release-notes/release-2024-08-05</id>
