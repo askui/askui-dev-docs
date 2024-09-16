@@ -138,6 +138,14 @@
     {
       "type": "category",
       "label": "Troubleshooting",
+      "link": {
+        "type": "generated-index",
+        "title": "Troubleshooting",
+        "description": "Troubleshooting categories.",
+        "slug": "/category/troubleshooting",
+        "keywords": ["troubleshooting"],
+        "image": "/img/docusaurus.png"
+      },
       "collapsed": true,
       "className": "menu_category_troubleshooting",
       "items": [
