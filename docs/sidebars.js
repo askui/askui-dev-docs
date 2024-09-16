@@ -60,6 +60,14 @@ const sidebars = {
     {
       type: 'category',
       label: 'How to Select Elements',
+      link: {
+        type: 'generated-index',
+        title: 'How to Select Elements',
+        description: 'Learn everything about AskUIs element selection!',
+        slug: '/category/how-to-select-elements',
+        keywords: ['element-selection'],
+        image: '/img/docusaurus.png',
+      },
       collapsed: true,
       className: 'menu_category_element_selection',
       items: [
@@ -76,6 +84,14 @@ const sidebars = {
     {
       type: 'category',
       label: 'Guides',
+      link: {
+        type: 'generated-index',
+        title: 'Guides',
+        description: 'Available guides.',
+        slug: '/category/guides',
+        keywords: ['guides'],
+        image: '/img/docusaurus.png',
+      },
       collapsed: true,
       className: 'menu_category_guides',
       items: [
@@ -102,6 +118,14 @@ const sidebars = {
     {
       type: 'category',
       label: 'Integrations',
+      link: {
+        type: 'generated-index',
+        title: 'Integrations',
+        description: 'Integrations for AskUI.',
+        slug: 'integrations',
+        keywords: ['integrations'],
+        image: '/img/docusaurus.png',
+      },
       collapsed: true,
       className: 'menu_category_integrations',
       items: [
