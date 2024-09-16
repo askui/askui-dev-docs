@@ -23,7 +23,7 @@ There are already several pre-built reporters for you to choose from, but you ca
 AskUI was designed with quality assurance professionals in mind. That's why everything is built on the jest framework, which lets you integrate AskUI into your QA process faster.
 
 With our pipeline integration toolkit you can quickly set up workflows in your pipeline for a complete 360-degree view of your test runs.
-[Learn more](../05-Integrations/continuous-integration.md)
+[Learn more](../05-Integrations/github-actions.md)
 
 ## Visit Our YouTube Channel
 Need ideas or prior art? Our [YouTube channel](https://www.youtube.com/@askui4398) has some cool things you can do by hooking your AskUI environment up to different things. Everything from automating your Android phone, to orchestrating and debugging your Workflows with custom-built software.

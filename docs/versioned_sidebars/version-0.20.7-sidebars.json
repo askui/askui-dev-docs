@@ -116,23 +116,33 @@
       "collapsed": true,
       "className": "menu_category_integrations",
       "items": [
-        {
-          "type": "category",
-          "label": "Reporting",
-          "collapsed": true,
-          "className": "menu_category_reporting",
-          "items": [
-            "general/Integrations/reporting",
-            "general/Integrations/allure-reporting",
-            "general/Integrations/html-reporting",
-            "general/Integrations/xray-reporting",
-            "general/Integrations/annotation-reporting"
-          ]
-        },
-        "general/Integrations/visual-regression",
-        "general/Integrations/continuous-integration",
+        "general/Integrations/github-actions",
+        "general/Integrations/gitlab-ci",
+        "general/Integrations/azure-devops",
         "general/Integrations/containers",
-        "general/Integrations/SSO"
+        "general/Integrations/SSO",
+        "general/Integrations/visual-regression"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Reporting",
+      "link": {
+        "type": "generated-index",
+        "title": "Reporting",
+        "description": "Reporters available.",
+        "slug": "/category/reporters",
+        "keywords": ["reporters"],
+        "image": "/img/docusaurus.png"
+      },
+      "collapsed": true,
+      "className": "menu_category_reporting",
+      "items": [
+        "general/Integrations/reporting",
+        "general/Integrations/allure-reporting",
+        "general/Integrations/html-reporting",
+        "general/Integrations/xray-reporting",
+        "general/Integrations/annotation-reporting"
       ]
     },
     {

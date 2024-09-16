@@ -129,10 +129,12 @@ const sidebars = {
       collapsed: true,
       className: 'menu_category_integrations',
       items: [
-        'general/Integrations/visual-regression',
-        'general/Integrations/continuous-integration',
+        'general/Integrations/github-actions',
+        'general/Integrations/gitlab-ci',
+        'general/Integrations/azure-devops',
         'general/Integrations/containers',
         'general/Integrations/SSO',
+        'general/Integrations/visual-regression',
       ],
     },
     {
