@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4
+title: Creating and Selecting AI Elements
 ---
 
 # AI Element
