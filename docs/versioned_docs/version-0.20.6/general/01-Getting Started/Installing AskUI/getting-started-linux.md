@@ -17,7 +17,7 @@ pagination_next: general/Getting Started/write-your-first-instruction
 
 As we need to prevent misuse of our API, we need you to create some credentials through our __AskUI Studio__ (for free).
 
-Please [sign up for a 7-day free trial](https://www.app.askui.com).
+Please [sign up for a free trial](https://www.app.askui.com).
 
 ## Installation
 

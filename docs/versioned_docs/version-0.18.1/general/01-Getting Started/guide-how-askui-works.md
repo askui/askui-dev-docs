@@ -59,7 +59,7 @@ await aui.click().button().withText('login').exec();
     - to receive the annotation, e.g. detected elements.
 
 
-To use the **AskUI Control Client**, user credentials are required. User credentials can be obtained via our __AskUI Studio__. Please [sign up for a 7-day free trial](https://www.app.askui.com) or [fill out this form](https://www.askui.com/demo) to schedule a demonstration.
+To use the **AskUI Control Client**, user credentials are required. User credentials can be obtained via our __AskUI Studio__. Please [sign up for a free trial](https://www.app.askui.com) or [fill out this form](https://www.askui.com/demo) to schedule a demonstration.
 
 See our [API documentation](../../suite/02-Components/askui-ui-control-client.md) for more information on this component.
 

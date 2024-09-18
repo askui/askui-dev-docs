@@ -178,7 +178,7 @@ const config = {
             position: 'left',
           },
           {
-            href: 'https://github.com/askui/askui',
+            href: 'https://github.com/askui/askui-dev-docs',
             position: 'right',
             className: 'header-github-link',
             'aria-label': 'GitHub repository',
