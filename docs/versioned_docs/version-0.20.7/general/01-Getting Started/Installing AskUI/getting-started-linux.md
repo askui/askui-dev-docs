@@ -18,7 +18,7 @@ Check if you have the following requirements, before you start the process.
 :::warning
 As we need to prevent misuse of our API, we need you to create some credentials through our [__AskUI Studio__](https://app.askui.com/).
 
-Please [sign up for a 7-day free trial](https://www.app.askui.com).
+Please [sign up for a free trial](https://www.app.askui.com).
 :::
 
 ### Step 1: Download Installer
@@ -78,7 +78,7 @@ If you are not sure what an ADE command does, you can run `Get-Help <command>` t
 :::info
 As we need to prevent misuse of our API, we need you to create some credentials through our [__AskUI Studio__](https://app.askui.com/).
 
-Please [sign up for a 7-day free trial](https://www.app.askui.com).
+Please [sign up for a free trial](https://www.app.askui.com).
 :::
 
 Run the following command to authenticate and connect your ADE to your AskUI account. Replace `<access token>` and `<workspace id>` with your real credentials from AskUI Studio.

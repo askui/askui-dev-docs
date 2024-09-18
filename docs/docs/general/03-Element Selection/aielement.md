@@ -1,9 +1,9 @@
 ---
 sidebar_position: 4
-title: Creating and Selecting AI Elements
+title: AI Elements
 ---
 
-# AI Element
+# AI Elements
 
 :::note
 Enable the *AskUI Development Environment* as described in [AskUI Development Environment](../../suite/02-Components/AskUI-Development-Environment.md) and then activate the experimental commands by running `AskUI-ImportExperimentalCommands` in your terminal.
