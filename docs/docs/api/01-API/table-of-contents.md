@@ -16,14 +16,16 @@ Use your browser search: `CMD/CTRL + f`
 <table style={{display: 'table'}}>
     <thead>
         <tr>
-            <th style={{width: '100%', textAlign: "left"}}>Name</th>
+            <th style={{width: '10%', textAlign: "left"}}>Name</th>
+            <th style={{width: '90%', textAlign: "left"}}>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>
-                <details>
-                    <summary>click()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`click()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Mouse left-clicks/taps on the filtered element by moving the mouse cursor to the filtered element first.
@@ -44,13 +46,13 @@ await aui.click().button().withText('Google Search').exec();
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>execOnShell()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`execOnShell()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Executes a shell command on the device your AskUI Controller is connected to.
@@ -61,9 +63,9 @@ Executes a shell command on the device your AskUI Controller is connected to.
 await aui.execOnShell('monkey -p com.lastpass.authenticator 1').exec();
 
 // Open Google Chrome on Windows
-await aui.execOnShell("start chrome").exec()
+await aui.execOnShell("start chrome").exec();
 
-;// Open Google Chrome on macOS
+// Open Google Chrome on macOS
 await aui.execOnShell("open -a 'Google Chrome'").exec();
 
 // Open Google Chrome on Linux
@@ -73,16 +75,17 @@ await aui.execOnShell("chrome").exec();
 </md-block>
 <md-block>
 
-* @param \{string} shell_command - A shell command which is executed.
+    * @param \{string} shellCommand - A shell command which is executed.
+    * @param \{number} [timeoutInMilliseconds=1] - A timeout in milliseconds.
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>expect()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`expect()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Expects a condition, for example, `exists()` or `notExits()`.
@@ -100,13 +103,13 @@ await aui.expect().text('Login').notExists().exec()
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>mouseDoubleLeftClick()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`mouseDoubleLeftClick()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Double-clicks with left mouse key.
@@ -128,13 +131,13 @@ await aui.mouseDoubleLeftClick().exec();
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>mouseDoubleMiddleClick()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`mouseDoubleMiddleClick()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Double-clicks with middle mouse key.
@@ -154,13 +157,13 @@ await aui.mouseDoubleMiddleClick().exec();
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>mouseDoubleRightClick()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`mouseDoubleRightClick()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Double-clicks with right mouse key.
@@ -180,13 +183,13 @@ await aui.mouseDoubleRightClick().exec();
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>mouseLeftClick()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`mouseLeftClick()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Clicks with left mouse key.
@@ -206,13 +209,13 @@ await aui.mouseLeftClick().exec();
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>mouseMiddleClick()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`mouseMiddleClick()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Clicks with middle mouse key.
@@ -232,13 +235,13 @@ await aui.mouseMiddleClick().exec();
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>mouseRightClick()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`mouseRightClick()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Clicks with right mouse key.
@@ -258,13 +261,13 @@ await aui.mouseRightClick().exec();
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>mouseToggleDown()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`mouseToggleDown()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Toggles mouse down (Left mouse key/tap). 
@@ -285,13 +288,13 @@ await aui.mouseToggleUp().exec();
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>mouseToggleUp()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`mouseToggleUp()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Toggles mouse up (Left mouse key/tap).
@@ -312,13 +315,13 @@ await aui.mouseToggleUp().exec();
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>moveMouse()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`moveMouse()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Moves the mouse to the absolute x and y coordinates.
@@ -335,17 +338,17 @@ await aui.moveMouse(500, 500).exec();
 </md-block>
 <md-block>
 
-* @param \{number} x_coordinate - A (positive/negative) x coordinate.
-* @param \{number} y_coordinate - A (positive/negative) y coordinate.
+    * @param \{number} x_coordinate - A (positive/negative) x coordinate.
+    * @param \{number} y_coordinate - A (positive/negative) y coordinate.
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>moveMouseRelatively()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`moveMouseRelatively()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Moves the mouse from the current position (relative) in x and y direction.
@@ -360,17 +363,17 @@ await aui.moveMouseRelatively(0, 50).exec();
 </md-block>
 <md-block>
 
-* @param \{number} x_offset - A (positive/negative) x direction.
-* @param \{number} y_offset - A (positive/negative) y direction.
+    * @param \{number} x_offset - A (positive/negative) x direction.
+    * @param \{number} y_offset - A (positive/negative) y direction.
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>moveMouseRelativelyTo()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`moveMouseRelativelyTo()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Moves the mouse relatively to an element in the direction.
@@ -386,17 +389,17 @@ await aui.moveMouseRelativelyTo(0, 30).button().withText('Submit').exec()
 </md-block>
 <md-block>
 
-* @param \{number} x_offset - A (positive/negative) x direction.
-* @param \{number} y_offset - A (positive/negative) y direction.
+    * @param \{number} x_offset - A (positive/negative) x direction.
+    * @param \{number} y_offset - A (positive/negative) y direction.
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>moveMouseTo()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`moveMouseTo()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Move mouse over the filtered element.
@@ -415,13 +418,13 @@ await aui.moveMouseTo().text().withText('Grinning_Face').exec()
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>pressAndroidKey()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`pressAndroidKey()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Press one Android key like `del`
@@ -437,16 +440,16 @@ await aui.pressAndroidKey('notification').exec();
 </md-block>
 <md-block>
 
-* @param \{ANDROID_KEY} key - A Android key
+    * @param \{ANDROID_KEY} key - A Android key
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>pressAndroidThirdKey()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`pressAndroidThirdKey()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Press three Android keys like `CTRL+ALT+DEL`  
@@ -454,18 +457,18 @@ Press three Android keys like `CTRL+ALT+DEL`
 </md-block>
 <md-block>
 
-* @param \{ANDROID_KEY} first_key - A Android key
-* @param \{ANDROID_KEY} second_key - A Android key
-* @param \{ANDROID_KEY} third_key - A Android key
+    * @param \{ANDROID_KEY} first_key - A Android key
+    * @param \{ANDROID_KEY} second_key - A Android key
+    * @param \{ANDROID_KEY} third_key - A Android key
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>pressAndroidTwoKey()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`pressAndroidTwoKey()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Press two Android keys like `volume_down+power`
@@ -481,17 +484,17 @@ await aui.pressAndroidTwoKey('volume_down', 'power').exec();
 </md-block>
 <md-block>
 
-* @param \{ANDROID_KEY} first_key - A Android key
-* @param \{ANDROID_KEY} second_key - A Android key
+    * @param \{ANDROID_KEY} first_key - A Android key
+    * @param \{ANDROID_KEY} second_key - A Android key
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>pressKey()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`pressKey()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Press one keys like `DEL`
@@ -509,16 +512,16 @@ await aui.pressKey('tab').exec();
 </md-block>
 <md-block>
 
-* @param \{PC_AND_MODIFIER_KEY} key - A key
+    * @param \{PC_AND_MODIFIER_KEY} key - A key
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>pressThreeKeys()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`pressThreeKeys()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Press three keys like `CTRL+ALT+DEL`
@@ -536,18 +539,18 @@ await aui.pressThreeKeys('control', 'command' 'space').exec();
 </md-block>
 <md-block>
 
-* @param \{MODIFIER_KEY} first_key - A modifier key
-* @param \{MODIFIER_KEY} second_key - A modifier key
-* @param \{PC_KEY} third_key - A key
+    * @param \{MODIFIER_KEY} first_key - A modifier key
+    * @param \{MODIFIER_KEY} second_key - A modifier key
+    * @param \{PC_KEY} third_key - A key
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>pressTwoKeys()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`pressTwoKeys()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Press two keys like `ALT+F4`
@@ -560,17 +563,17 @@ Press two keys like `ALT+F4`
 </md-block>
 <md-block>
 
-* @param \{MODIFIER_KEY} first_key - A modifier key
-* @param \{PC_KEY} second_key - A key
+    * @param \{MODIFIER_KEY} first_key - A modifier key
+    * @param \{PC_KEY} second_key - A key
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>scroll()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`scroll()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Scrolls based on the current mouse position in the x and y direction.
@@ -590,17 +593,17 @@ await aui.scroll(0, -500).exec()
 </md-block>
 <md-block>
 
-* @param \{number} x_offset - A (positive/negative) x direction.
-* @param \{number} y_offset - A (positive/negative) y direction.
+    * @param \{number} x_offset - A (positive/negative) x direction.
+    * @param \{number} y_offset - A (positive/negative) y direction.
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>scrollInside()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`scrollInside()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Moves mouse to the filtered element and scrolls in the x and y direction.
@@ -617,17 +620,17 @@ await aui.scrollInside(0,-500).text().withText('Bottom sheet').exec();
 </md-block>
 <md-block>
 
-* @param \{number} x_offset - A (positive/negative) x direction.
-* @param \{number} y_offset - A (positive/negative) y direction.
+    * @param \{number} x_offset - A (positive/negative) x direction.
+    * @param \{number} y_offset - A (positive/negative) y direction.
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>swipe()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`swipe()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Swipe an element in the x and y direction.
@@ -644,17 +647,17 @@ await aui.swipe(500, 0).image().exec()
 </md-block>
 <md-block>
 
-* @param \{number} x_offset - A x direction. positive and negative values are accepted
-* @param \{number} y_offset - A y direction. positive and negative values are accepted
+    * @param \{number} x_offset - A x direction. positive and negative values are accepted
+    * @param \{number} y_offset - A y direction. positive and negative values are accepted
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>type()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`type()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Types a text at the current position.
@@ -675,16 +678,16 @@ await aui.type('Type some text', \{ isSecret: true, secretMask: '**' }).exec()
 </md-block>
 <md-block>
 
-* @param \{string} text - A text to type
+    * @param \{string} text - A text to type
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>typeIn()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`typeIn()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Puts the focus on the filtered element and types in the text.
@@ -703,10 +706,9 @@ await aui.typeIn('Type some text', \{ isSecret: true, secretMask: '**' }).textfi
 </md-block>
 <md-block>
 
-* @param \{string} text - A text to type
+    * @param \{string} text - A text to type
 
 </md-block>
-                </details>
             </td>
         </tr>
     </tbody>
@@ -717,17 +719,19 @@ await aui.typeIn('Type some text', \{ isSecret: true, secretMask: '**' }).textfi
 <table style={{display: 'table'}}>
     <thead>
         <tr>
-            <th style={{width: '100%', textAlign: "left"}}>Name</th>
+            <th style={{width: '10%', textAlign: "left"}}>Name</th>
+            <th style={{width: '90%', textAlign: "left"}}>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>
-                <details>
-                    <summary>aiElement()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`aiElement()`</md-block>
+            </td>
+            <td>
 <md-block>
 
-Detects an AI Element created with the [snipping workflow](../../general/03-Element%20Selection/aielement.md#snipping-workflow).
+Detects an AI Element created with the [snipping workflow](https://docs.askui.com/docs/general/Element%20Selection/aielement#snipping-workflow).
 
 **Examples:**
 
@@ -738,16 +742,16 @@ await aui.click().aiElement('askui-logo').exec();
 </md-block>
 <md-block>
 
-* @param \{string} aiElementName - Name of the AI Element.
+    * @param \{string} aiElementName - Name of the AI Element.
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>button()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`button()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for a UI element 'button'.
@@ -764,13 +768,13 @@ await aui.click().button().contains().text().withText('Google Search').exec()
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>checkbox()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`checkbox()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for a UI element 'checkbox'.  
@@ -780,13 +784,13 @@ Filters for a UI element 'checkbox'.
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>container()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`container()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for a UI element 'container'.  
@@ -796,13 +800,13 @@ Filters for a UI element 'container'.
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>containsText()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`containsText()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for text containing the text provided as an argument.
@@ -818,16 +822,16 @@ Filters for text containing the text provided as an argument.
 </md-block>
 <md-block>
 
-* @param \{string} text - A text to be matched.
+    * @param \{string} text - A text to be matched.
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>customElement()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`customElement()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for a 'custom element', that is a UI element that is defined by providing an image and other parameters such as degree of rotation. It allows filtering for a UI element based on an image instead of using text or element descriptions like `button().withText('Submit')` in `await aui.click().button().withText('Submit').exec()`.
@@ -841,7 +845,7 @@ await aui
     .customElement({
         customImage: './logo.png', // required
         name: 'myLogo', // optional
-        threshold: 0.9, // optional, defaults to 0.9
+        threshold: 0.5, // optional, defaults to 0.5
         stopThreshold: 0.9, // optional, defaults to 0.9
         rotationDegreePerStep: 0, // optional, defaults to 0
         imageCompareFormat: 'grayscale', // optional, defaults to 'grayscale'
@@ -857,7 +861,7 @@ await aui
 - **name** (*`string`, optional*):
     - A unique name that can be used for filtering for the custom element. If not given, any text inside the custom image will be detected via OCR.
 - **threshold** (*`number`, optional*):
-    - A threshold for how much a UI element needs to be similar to the custom element as defined by the image. Takes values between `0.0` (== all elements are recognized as the custom element which is probably not what you want) and `1.0` (== elements need to look exactly like the `customImage` which is unlikely to be achieved as even minor differences count). Defaults to `0.9`.
+    - A threshold for how much a UI element needs to be similar to the custom element as defined by the image. Takes values between `0.0` (== all elements are recognized as the custom element which is probably not what you want) and `1.0` (== elements need to look exactly like the `customImage` which is unlikely to be achieved as even minor differences count). Defaults to `0.5`.
 - **stopThreshold** (*`number`, optional*):
     - A threshold for when to stop searching for UI elements similar to the custom element. As soon as UI elements have been found that are at least as similar as the `stopThreshold`, the search is going to stop. After that elements are filtered using the `threshold`. Because of that the `stopThreshold` should be greater than or equal to `threshold`. It is primarily to be used as a speed improvement (by lowering the value). Takes values between `0.0` and `1.0`. Defaults to `0.9`.
 - **rotationDegreePerStep** (*`number`, optional*):
@@ -869,16 +873,16 @@ await aui
 </md-block>
 <md-block>
 
-* @param \{CustomElementJson} customElement - The custom element to filter for.
+    * @param \{CustomElementJson} customElement - The custom element to filter for.
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>element()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`element()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for any UI element on the screen.
@@ -893,13 +897,13 @@ await aui.moveMouseTo().element().exec()
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>icon()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`icon()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for a UI element 'icon'.
@@ -920,13 +924,13 @@ icon().withText('plus')
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>image()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`image()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for a UI element 'image'.
@@ -950,13 +954,13 @@ await aui.click().image().above().text().withText('Automating WebGL').exec();
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>matching()  <span class="theme-doc-version-badge badge badge--secondary">experimental</span> </summary>
+                <md-block>`matching()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters elements based on a textual description.
@@ -992,16 +996,16 @@ await aui.click().element().matching('logo looking like a seashell').exec();
 </md-block>
 <md-block>
 
-* @param \{string} text - A description of the target element.
+    * @param \{string} text - A description of the target element.
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>otherElement()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`otherElement()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for a UI element 'other element'.  
@@ -1011,13 +1015,13 @@ Filters for a UI element 'other element'.
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>special()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`special()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters special elements defined over a specifically trained custom element descriptor.
@@ -1036,16 +1040,16 @@ await aui.moveMouseTo().element().special("circle").exec()
 </md-block>
 <md-block>
 
-* @param \{string} text - A text to be matched.
+    * @param \{string} text - A text to be matched.
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>switch()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`switch()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for a UI element 'switch'.  
@@ -1055,13 +1059,13 @@ Filters for a UI element 'switch'.
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>table()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`table()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for a UI element 'table'.  
@@ -1071,13 +1075,13 @@ Filters for a UI element 'table'.
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>text()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`text()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for an UI element 'text'.
@@ -1102,16 +1106,16 @@ await aui.click().text().withTextRegex('\b[Ss]\w+').exec();
 </md-block>
 <md-block>
 
-* @param \{string} [text] - A text to be matched.
+    * @param \{string} [text] - A text to be matched.
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>textfield()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`textfield()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for a UI element 'textfield'.
@@ -1135,13 +1139,13 @@ await aui.typeIn('Oh yeah').textfield().below().text().withText('E-Mail Address'
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>withExactText()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`withExactText()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for equal text.
@@ -1166,23 +1170,23 @@ await aui.moveMouseTo().text().withExactText('Password').exec()
 </md-block>
 <md-block>
 
-* @param \{string} text - A text to be matched.
+    * @param \{string} text - A text to be matched.
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>withText()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`withText()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for similar -- meaning >70% similar -- text.
 
 Takes an optional parameter to specify the similarity. Usually you need the optional parameter for long texts you want to match precisely.
 
-_We use [RapidFuzz](https://rapidfuzz.github.io/RapidFuzz/Usage/fuzz.html#ratio) which calculates the similarity like this:_
+_We use [RapidFuzz](https://maxbachmann.github.io/RapidFuzz/Usage/fuzz.html#ratio) which calculates the similarity like this:_
 
 `1 - (distance / (lengthString1 + lengthString2))`
 
@@ -1209,17 +1213,17 @@ _We use [RapidFuzz](https://rapidfuzz.github.io/RapidFuzz/Usage/fuzz.html#ratio)
 </md-block>
 <md-block>
 
-* @param \{string} text - A text to be matched.
-* @param \{number} [similarityScore=70] - Similarity score minimum value, it should be between `0` and `100`.
+    * @param \{string} text - A text to be matched.
+    * @param \{number} [similarityScore=70] - Similarity score minimum value, it should be between `0` and `100`.
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>withTextRegex()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`withTextRegex()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for texts, which match the regex pattern.
@@ -1241,10 +1245,9 @@ await aui.get().text().withTextRegex('\b[Ss]\w+').exec()
 </md-block>
 <md-block>
 
-* @param \{string} regex_pattern - A regex pattern
+    * @param \{string} regex_pattern - A regex pattern
 
 </md-block>
-                </details>
             </td>
         </tr>
     </tbody>
@@ -1255,14 +1258,16 @@ await aui.get().text().withTextRegex('\b[Ss]\w+').exec()
 <table style={{display: 'table'}}>
     <thead>
         <tr>
-            <th style={{width: '100%', textAlign: "left"}}>Name</th>
+            <th style={{width: '10%', textAlign: "left"}}>Name</th>
+            <th style={{width: '90%', textAlign: "left"}}>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>
-                <details>
-                    <summary>above()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`above()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for an element above another element.
@@ -1331,17 +1336,17 @@ Takes an optional parameter `intersection_area` to specify which elements above 
 </md-block>
 <md-block>
 
-* @param \{number} [index=0] - Index of element to filter for going into the direction specified. Defaults to `0` which is the first element (zero-indexed) found in that direction.
-* @param \{INTERSECTION_AREA} [intersection_area="element_edge_area"] - Intersecting with either `"element_center_line"`, `"element_edge_area"` or `"display_edge_area"`. Defaults to `"element_edge_area"`.
+    * @param \{number} [index=0] - Index of element to filter for going into the direction specified. Defaults to `0` which is the first element (zero-indexed) found in that direction.
+    * @param \{INTERSECTION_AREA} [intersection_area="element_edge_area"] - Intersecting with either `"element_center_line"`, `"element_edge_area"` or `"display_edge_area"`. Defaults to `"element_edge_area"`.
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>and()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`and()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Logic and operator
@@ -1408,13 +1413,13 @@ The get returns only the user icon although both elements are icons.
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>below()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`below()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for an element below another element.
@@ -1483,17 +1488,17 @@ Takes an optional parameter `intersection_area` to specify which elements below 
 </md-block>
 <md-block>
 
-* @param \{number} [index=0] - Index of element to filter for going into the direction specified. Defaults to `0` which is the first element (zero-indexed) found in that direction.
-* @param \{INTERSECTION_AREA} [intersection_area="element_edge_area"] - Intersecting with either `"element_center_line"`, `"element_edge_area"` or `"display_edge_area"`. Defaults to `"element_edge_area"`.
+    * @param \{number} [index=0] - Index of element to filter for going into the direction specified. Defaults to `0` which is the first element (zero-indexed) found in that direction.
+    * @param \{INTERSECTION_AREA} [intersection_area="element_edge_area"] - Intersecting with either `"element_center_line"`, `"element_edge_area"` or `"display_edge_area"`. Defaults to `"element_edge_area"`.
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>contains()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`contains()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for an element containing another element.
@@ -1520,13 +1525,13 @@ Filters for an element containing another element.
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>in()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`in()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for an element inside another element.
@@ -1553,13 +1558,13 @@ Filters for an element inside another element.
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>leftOf()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`leftOf()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for an element left of another element.
@@ -1619,17 +1624,17 @@ Takes an optional parameter `intersection_area` to specify which elements left o
 </md-block>
 <md-block>
 
-* @param \{number} [index=0] - Index of element to filter for going into the direction specified. Defaults to `0` which is the first element (zero-indexed) found in that direction.
-* @param \{INTERSECTION_AREA} [intersection_area="element_edge_area"] - Intersecting with either `"element_center_line"`, `"element_edge_area"` or `"display_edge_area"`. Defaults to `"element_edge_area"`.
+    * @param \{number} [index=0] - Index of element to filter for going into the direction specified. Defaults to `0` which is the first element (zero-indexed) found in that direction.
+    * @param \{INTERSECTION_AREA} [intersection_area="element_edge_area"] - Intersecting with either `"element_center_line"`, `"element_edge_area"` or `"display_edge_area"`. Defaults to `"element_edge_area"`.
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>nearestTo()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`nearestTo()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for an element nearest to another element.
@@ -1659,13 +1664,13 @@ Filters for an element nearest to another element.
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>or()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`or()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Logic or operator
@@ -1710,13 +1715,13 @@ Returns the same button for both cases
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>rightOf()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`rightOf()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Filters for an element right of another element.
@@ -1776,11 +1781,10 @@ Takes an optional parameter `intersection_area` to specify which elements right 
 </md-block>
 <md-block>
 
-* @param \{number} [index=0] - Index of element to filter for going into the direction specified. Defaults to `0` which is the first element (zero-indexed) found in that direction.
-* @param \{INTERSECTION_AREA} [intersection_area="element_edge_area"] - Intersecting with either `"element_center_line"`, `"element_edge_area"` or `"display_edge_area"`. Defaults to `"element_edge_area"`.
+    * @param \{number} [index=0] - Index of element to filter for going into the direction specified. Defaults to `0` which is the first element (zero-indexed) found in that direction.
+    * @param \{INTERSECTION_AREA} [intersection_area="element_edge_area"] - Intersecting with either `"element_center_line"`, `"element_edge_area"` or `"display_edge_area"`. Defaults to `"element_edge_area"`.
 
 </md-block>
-                </details>
             </td>
         </tr>
     </tbody>
@@ -1791,14 +1795,16 @@ Takes an optional parameter `intersection_area` to specify which elements right 
 <table style={{display: 'table'}}>
     <thead>
         <tr>
-            <th style={{width: '100%', textAlign: "left"}}>Name</th>
+            <th style={{width: '10%', textAlign: "left"}}>Name</th>
+            <th style={{width: '90%', textAlign: "left"}}>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>
-                <details>
-                    <summary>exists()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`exists()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Expects that filtered element exists.
@@ -1826,13 +1832,13 @@ try {
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>notExists()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`notExists()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Expects that filtered element not exists.
@@ -1860,7 +1866,6 @@ try {
 
 
 </md-block>
-                </details>
             </td>
         </tr>
     </tbody>
@@ -1871,14 +1876,16 @@ try {
 <table style={{display: 'table'}}>
     <thead>
         <tr>
-            <th style={{width: '100%', textAlign: "left"}}>Name</th>
+            <th style={{width: '10%', textAlign: "left"}}>Name</th>
+            <th style={{width: '90%', textAlign: "left"}}>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>
-                <details>
-                    <summary>get()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`get()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Returns an array with all filtered elements.
@@ -1968,13 +1975,13 @@ Login
 
 
 </md-block>
-                </details>
             </td>
         </tr>
         <tr>
             <td>
-                <details>
-                    <summary>getAll()  <span class="theme-doc-version-badge badge badge--success">production</span> </summary>
+                <md-block>`getAll()`</md-block>
+            </td>
+            <td>
 <md-block>
 
 Returns an array with all detected elements.
@@ -2019,7 +2026,6 @@ console.log(detectedElements);
 
 
 </md-block>
-                </details>
             </td>
         </tr>
     </tbody>
