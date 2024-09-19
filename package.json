@@ -31,7 +31,7 @@
         "ui-automation"
     ],
     "scripts": {
-        "postinstall": "husky install",
+        "prepare": "husky",
         "postpublish": "pinst --enable",
         "prepublishOnly": "pinst --disable",
         "release:prerelease": "release-it --preRelease=next",
@@ -43,10 +43,10 @@
         "@release-it/bumper": "^6.0.1",
         "@release-it/conventional-changelog": "^8.0.1",
         "@typescript-eslint/eslint-plugin": "8.6.0",
-        "@typescript-eslint/parser": "7.17.0",
+        "@typescript-eslint/parser": "8.0.0",
         "commitizen": "4.3.0",
         "cz-conventional-changelog": "3.3.0",
-        "husky": "9.1.1",
+        "husky": "9.1.6",
         "is-ci": "3.0.1",
         "jira-prepare-commit-msg": "1.7.2",
         "lint-staged": "15.2.10",
