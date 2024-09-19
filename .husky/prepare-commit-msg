@@ -1,4 +1,2 @@
-#!/bin/sh
-
 (npx is-ci || [ "$SKIP_CZ_CLI" = "true" ]) && exit 0
 exec < /dev/tty && npx --no -- cz --hook || true
