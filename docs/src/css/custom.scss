@@ -55,6 +55,8 @@ video {
   --ifm-tabs-color-active: var(--link-color);
   --ifm-tabs-color-active-border: var(--link-color);
 
+  --ifm-card-text-shadow: 0 1px 2px 0 var(--button-hover-color);
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
@@ -96,6 +98,20 @@ a.sidebarItemLinkActive_I1ZP {
 .button.button--secondary:hover {
   background-color: var(--button-hover-color);
 }
+
+.homepage-card {
+  a { 
+    text-decoration: none;
+    color: var(--ifm-heading-color);
+  }
+  .card {
+    box-shadow: var(--ifm-card-text-shadow);
+  }
+  .card:hover {
+    border: 1px solid var(--button-hover-color);
+  }
+}
+  
 
 .footer {
   background-image: url("../../static/img/background-website-1-01-01-scaled.jpeg");
