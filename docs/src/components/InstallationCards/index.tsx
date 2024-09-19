@@ -1,10 +1,3 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 /* eslint-disable global-require */
 
 import React from 'react';
@@ -45,7 +38,7 @@ const Playgrounds = [
     description: (
       <Translate id="gettingstarted.installandroid.description">
         {
-          'Learn how to automate an Android device.'
+          'Learn how to automate on Android.'
         }
       </Translate>
     ),
@@ -91,19 +84,19 @@ const Playgrounds = [
     cta: 'Get started!',
     idbutton: 'install-enterprise-button',
   },
-  {
-    name: '📱 iOS',
-    url: 'Installing%20AskUI/getting-started',
-    description: (
-      <Translate id="gettingstarted.installenterprise.description">
-        {
-          '🚧 Coming soon! 🚧'
-        }
-      </Translate>
-    ),
-    cta: 'Get started!',
-    idbutton: 'install-iOS-button',
-  },
+  // {
+  //   name: '📱 iOS',
+  //   url: 'Installing%20AskUI/getting-started',
+  //   description: (
+  //     <Translate id="gettingstarted.installenterprise.description">
+  //       {
+  //         '🚧 Coming soon! 🚧'
+  //       }
+  //     </Translate>
+  //   ),
+  //   cta: 'Get started!',
+  //   idbutton: 'install-iOS-button',
+  // },
 ];
 
 interface Props {
@@ -136,10 +129,12 @@ function PlaygroundCard({name, url, description, cta, idbutton}: Props) {
 
 export function InstallationCardsRow(): JSX.Element {
   return (
-    <div className="row">
-      {Playgrounds.map((playground) => (
-        <PlaygroundCard key={playground.name} {...playground} />
-      ))}
+    <div>
+      <div className="row">
+        {Playgrounds.map((playground) => (
+          <PlaygroundCard key={playground.name} {...playground} />
+        ))}
+      </div>
     </div>
   );
 }
