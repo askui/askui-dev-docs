@@ -119,8 +119,12 @@ const config = {
             },
           sidebarPath: require.resolve('./sidebars.js'),
           breadcrumbs: true,
-          editUrl: ({versionDocsDirPath, docPath}) =>
-            `https://github.com/askui/askui/tree/main/docs/${versionDocsDirPath}/${docPath}`,
+          editUrl: ({versionDocsDirPath, docPath}) => {
+            if (versionDocsDirPath.indexOf(' ') >= 0 || docPath.indexOf(' ') >= 0) {
+              return 'https://pr.new/askui/askui-dev-docs';
+            }
+            return `https://pr.new/askui/askui-dev-docs/edit/main/docs/${versionDocsDirPath}/${docPath}`;
+          }
         },
         blog: {
           blogTitle: 'Release Notes',
