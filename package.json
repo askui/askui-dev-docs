@@ -35,7 +35,10 @@
         "postpublish": "pinst --enable",
         "prepublishOnly": "pinst --disable",
         "release:prerelease": "release-it --preRelease=next",
-        "release": "release-it"
+        "release": "release-it",
+        "install-docs": "cd docs && npm install",
+        "start-docs": "cd docs && npm run start",
+        "start": "cd docs && npm install && npm run start"
     },
     "devDependencies": {
         "@commitlint/cli": "19.5.0",
