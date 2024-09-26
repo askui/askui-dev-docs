@@ -118,3 +118,20 @@ $ export HUSKY=0
 ```
 
 In a CI pipeline, the githooks are skipped by default.
+
+## Edit The Whole Repository In Stackblitz/Codeflow
+
+If you are familiar with the layout of this repository we recommend to open the repository in [Stackblitz](https://stackblitz.com/) with the following button. If you created an account there and linked it to your GitHub account, you can also push edits directly to GitHub:
+
+[![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https:///pr.new/askui/askui-dev-docs)
+
+ *Pushing changes directly to the repository is not possible currently. You must fork the repository to your account instead and submit the Pull Request from there!*
+
+## Edit Single Pages
+Every page has a **Edit this page** link at the bottom which takes you to a specialized editor called [Web Publisher](https://developer.stackblitz.com/codeflow/integrating-web-publisher).
+
+There, you can edit the page directly and see the changes.
+
+ *Pushing changes directly to the repository is not possible currently. You must fork the repository to your account instead and submit the Pull Request from there!*
+
+**⚠️IMPORTANT: Does not work for pages with a whitespace (%20) in the URL. For them the whole repository will be opened in the Stackblitz editor.**
