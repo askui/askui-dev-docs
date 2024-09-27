@@ -178,6 +178,12 @@ const config = {
             label: 'AskUI Suite',
           },
           {
+            href: 'https://workspaces.askui.com/docs',
+            position: 'left',
+            className: 'header-workspace-api-link',
+            label: 'Workspaces API'
+          },
+          {
             type: 'docsVersionDropdown',
             position: 'left',
             dropdownActiveClassDisabled: true,

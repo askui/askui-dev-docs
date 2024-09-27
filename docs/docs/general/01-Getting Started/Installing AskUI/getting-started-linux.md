@@ -25,8 +25,13 @@ Please [sign up for a free trial](https://www.app.askui.com).
 ### Step 1: Download Installer
 
 ```bash
+# If you have AMD64 use this
 # Download installer into /tmp folder
-curl -o /tmp/AskUI-Suite-24.7.1-User-Installer-Linux-x64-Full.run https://files.askui.com/releases/Installer/24.7.1/AskUI-Suite-24.7.1-User-Installer-Linux-x64-Full.run
+curl -o /tmp/AskUI-Suite-24.9.1-User-Installer-Linux-x64-Full.run https://files.askui.com/releases/Installer/24.9.1/AskUI-Suite-24.9.1-User-Installer-Linux-x64-Full.run
+
+# If you have ARM64 use this
+# Download installer into /tmp folder (ARM64)
+curl -o /tmp/AskUI-Suite-24.9.1-User-Installer-Linux-x64-Full.run https://files.askui.com/releases/Installer/24.9.1/AskUI-Suite-24.9.1-User-Installer-Linux-ARM64-Full.run
 ```
 
 <details>
@@ -43,7 +48,11 @@ curl -o /tmp/AskUI-Suite-24.7.1-User-Installer-Linux-x64-Full.run https://files.
 Run the installer:
 
 ```bash
-bash /tmp/AskUI-Suite-24.7.1-User-Installer-Linux-x64-Full.run
+# If you have AMD64 use this
+bash /tmp/AskUI-Suite-24.9.1-User-Installer-Linux-x64-Full.run
+
+# If you have ARM64 use this
+bash /tmp/AskUI-Suite-24.9.1-User-Installer-Linux-ARM64-Full.run
 ```
 
 * Press `Enter` to review the license agreement. Then press and hold Enter to scroll.

@@ -21,6 +21,7 @@ Enable the *AskUI Development Environment* as described in [AskUI Development En
 - `AlwaysPreview` (Optional): Automatically opens the preview without prompting. *Can not be used together with the `NoPreview` parameter*.
 - `NoPreview` (Optional): Skips the preview and does not open it. *Can not be used with the `AlwaysPreview` parameter.
 - `OneShot` (Optional): The snipping ends after the first successful creation of an AI Element.
+- `Annotate` (Optional): Allows you to take a fullscreen capture and annotate regions on that screenshot.
 
 ```powershell
 AskUI-NewAIElement
@@ -78,6 +79,7 @@ Otherwise snipping continues until `ESC` is pressed.
 #### General
 
 - `ESC` End the snipping tool.
+- `SPACE` Same as left click on the current location.
 
 #### Magnifier
 
