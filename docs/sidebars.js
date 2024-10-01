@@ -204,10 +204,36 @@ const sidebars = {
       className: "menu_category_askui_suite"
     },
     {
-      type: "doc",
-      id: "suite/Components/AskUI-Development-Environment",
+      type: "category",
       label: "AskUI Development Environment",
-      className: "menu_category_askui_development_environment"
+      className: "menu_category_askui_development_environment",
+      items: [
+        {
+          type: 'doc',
+          id: 'suite/Components/AskUI-Development-Environment',
+          label: 'ADE Management',
+        },
+        {
+          type: 'doc',
+          id: 'suite/ADE/askui-ide-vscode',
+          label: 'AskUI in VSCode',
+        },
+        {
+          type: 'doc',
+          id: 'suite/ADE/annotations-for-training',
+          label: 'Annotations for Retraining',
+        },
+        {
+          type: 'doc',
+          id: 'suite/Components/silent-unix-installer',
+          label: 'Silent Installer',
+        },
+        {
+          type: 'doc',
+          id: 'suite/ADE/command-configuration-file',
+          label: 'Command Configuration File',
+        },
+      ],
     },
     {
       type: 'category',
@@ -224,6 +250,12 @@ const sidebars = {
         'suite/Components/askui-ui-control-client',
         'suite/Components/askui-ui-controller',
       ],
+    },
+    {
+      type: "doc",
+      id: "suite/Components/AskUI-OCR-Teaching",
+      label: "AskUI OCR Teaching",
+      className: "menu_category_askui_ocr_teaching"
     },
     {
       type: 'category',

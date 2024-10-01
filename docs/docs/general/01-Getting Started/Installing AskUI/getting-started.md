@@ -12,7 +12,7 @@ pagination_next: general/Getting Started/write-your-first-instruction
 ## Prerequisites
 
 Check if you have the following requirements, before you start the process.
-- You need an AskUI account. Don't have one? Sign up for a [7-day free trial here](https://www.app.askui.com)!
+- You need an AskUI account. Don't have one? Sign up for a [free trial here](https://www.app.askui.com)!
 - Make sure you have Administrator privileges on the computer, where you want to use AskUI.
 - Consider using an IDE. We recommend [Visual Studio Code](https://code.visualstudio.com/).
 
@@ -27,7 +27,7 @@ Please [sign up for a free trial](https://www.app.askui.com).
 :::
 
 ### Step 1: Download Installer
-Download the <span className="askui-installer-download-link-windows">[AskUI Installer here](https://files.askui.com/releases/Installer/24.7.1/AskUI-Suite-24.7.1-Installer-Win-AMD64-Full.exe).</span>
+Download the <span className="askui-installer-download-link-windows">[AskUI Installer for AMD64 here](https://files.askui.com/releases/Installer/24.9.1/AskUI-Suite-24.9.1-Installer-Win-AMD64-Full.exe)</span> or <span className="askui-installer-download-link-windows">[AskUI Installer for ARM64 here](https://files.askui.com/releases/Installer/24.9.1/AskUI-Suite-24.9.1-Installer-Win-ARM64-Full.exe)</span>.
 
 <details>
   <summary>
