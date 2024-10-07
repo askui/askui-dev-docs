@@ -68,7 +68,6 @@ To install the ADBKeyboard on your device,
 4. Install the ADBKeyboard on the device:
 
     ```bash
-    # inside ADBKeyBoard/
     adb -s <your device id> install ADBKeyboard.apk
     ```
     
