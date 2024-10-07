@@ -8,7 +8,7 @@ pagination_next: general/Getting Started/write-your-first-instruction
 ## Prerequisites
 
 Check if you have the following requirements, before you start the process.
-- You need an AskUI account. Don't have one? Sign up for a [7-day free trial here](https://www.app.askui.com)!
+- You need an AskUI account. Don't have one? Sign up for a [free trial here](https://www.app.askui.com)!
 - Make sure you have Administrator privileges on the computer, where you want to use AskUI.
 - Consider using an IDE. We recommend [Visual Studio Code](https://code.visualstudio.com/).
 
