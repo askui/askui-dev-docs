@@ -834,6 +834,12 @@ Filters for text containing the text provided as an argument.
             <td>
 <md-block>
 
+:::tip
+
+We have a powerful replacement of *Custom Elements*: [Please use AI Elements](#element-descriptions).
+
+:::
+
 Filters for a 'custom element', that is a UI element that is defined by providing an image and other parameters such as degree of rotation. It allows filtering for a UI element based on an image instead of using text or element descriptions like `button().withText('Submit')` in `await aui.click().button().withText('Submit').exec()`.
 
 See the tutorial - [Custom Element](https://docs.askui.com/docs/general/Element%20Selection/custom-elements) for more details.

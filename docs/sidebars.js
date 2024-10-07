@@ -72,7 +72,6 @@ const sidebars = {
       className: 'menu_category_element_selection',
       items: [
         'general/Element Selection/recommended-practices',
-        'general/Element Selection/custom-elements',
         'general/Element Selection/text-and-element-selectors',
         'general/Element Selection/relational-selectors',
         'general/Element Selection/aielement',

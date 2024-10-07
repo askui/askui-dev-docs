@@ -5,6 +5,12 @@ title: Custom Elements
 
 # Custom Elements
 
+:::tip
+
+We have a powerful replacement of *Custom Elements*: [Please use AI Elements](aielement.md).
+
+:::
+
 With **Custom Elements**, you can define a custom element-description based on how the element is displayed on the screen. This can be particularly useful in situations where standard element-descriptions are unreliable due to the non-standard properties of the element:
 
 
