@@ -13,34 +13,34 @@ You will learn:
 
 ## Methods of Detecting Elements
 
-* `Custom element`
-  * Detect elements with a screenshot
+* `AI Element`
+  * Capture elements from your screen.
 * `Text`
   * Finds an element of class text. If you pass an argument `text('hello')` it also uses text-recognition
   * **Limitation**: Sometimes dependent on resolution, font and linebreaks
 * `Button, textfield, checkbox, ...` [all classes](../../api/03-Element-Descriptions/button.md)
   * Finds an element of the class
-* `Matching`
-  * Natural language description.
-  * Works on logos and images with text
-  * **Limitation**: Only finds the best matching element instead of all elements matching the natural language description.
 
 ## Text Detection Fails
 This section describes typical problems you will run into when you try to detect text and provide **solutions**.
 
 ### Single Character Not Detected as Text
+
+:::tip
+
+[Try our OCR Teaching to get better text recognition!](../../suite/02-Components/AskUI-OCR-Teaching.md)
+
+:::
+
 If a single character does not get detected you have two options depending on the use case:
 
 ![Single character not enclosed and undetected.](images/recommended-practices/recommended-practices-single-character-not-detected.png)
 
-* Use a [custom element](../../api/03-Element-Descriptions/customelement.md) if the single character is not enclosed in another class like `button`.
+* Use an [AI Element](aielement.md) if the single character is not enclosed in another class like `button`.
 
 ```typescript
-// Custom element instead of text('<your_character>')
-await aui.click().customElement({
-                     customImage: 'custom_elements/seven.text.png'
-                   })
-                   .exec();
+// AI Element instead of text('<your_character>')
+await aui.click().aiElement('seven-text').exec();
 ```
 
 * Target the element that contains the single character. If you only have one `button` for example you can target the class. If you have more than one `button` on your screen you can use a [relational selector](../../api/04-Relations/above.md).
@@ -61,15 +61,13 @@ Some overlays like dialogues do not have enough padding so the text under the ov
 You have a few options you can try depending on your use case:
 
 * Maximize the dialogue/overlay if possible in your workflow, for example with a shortcut: This removes the underlying text.
-* Use a [custom element](../../api/03-Element-Descriptions/customelement.md) as a fallback with [or()](../../api/04-Relations/or.md)
+* Use an [AI Element](aielement.md) as a fallback with [or()](../../api/04-Relations/or.md)
 
 ```typescript
 await aui.click().text('So it starts')
                  .or()
-                 .customElement({
-                     customImage: 'custom_elements/beginning.text.png'
-                   })
-                   .exec();
+                 .aiElement('beginning-text')
+                 .exec();
 ```
 
 * If you just need to interact with the text and it is not important where it is exactly: Target the beginning of the text
@@ -113,14 +111,11 @@ Sometimes coherent text is split up into two or more text-elements.
 
 ![](images/recommended-practices/recommended-practices-this-should-not-be-split-up.png)
 
-* If you need to match the exact-text, use a [custom element](../../api/03-Element-Descriptions/customelement.md).
+* If you need to match the exact-text, use an [AI Element](aielement.md).
 
 ```typescript
-// Custom element instead of text(<your_text>)
-await aui.click().customElement({
-  customImage: 'custom_elements/thisshouldnot.text.png'
-                   })
-                   .exec();
+// AI element instead of text(<your_text>)
+await aui.click().aiElement('thisshouldnot-text').exec();
 ```
 
 * If you just need to interact with the text and it is not important where it is exactly: Target any part of the text
@@ -169,43 +164,37 @@ await aui.click().button().withText('Sign in')
                  .exec();
 ```
 
-2. Add a [custom element](../../api/03-Element-Descriptions/customelement.md) with [or()](../../api/04-Relations/or.md) as a fallback:
+2. Add an [AI Element](aielement.md) with [or()](../../api/04-Relations/or.md) as a fallback:
 
 ```typescript
-// Fallback to custom element
+// Fallback to ai element
 await aui.click().button().withText('Sign in')
                  .or()
-                 .customElement({
-                     customImage: 'custom_elements/signin.button.png'
-                   })
+                 .aiElement('signin-button')
                  .exec();
 ```
 
 3. Add multiple fallbacks with [or()](../../api/04-Relations/or.md) and different element-descriptions:
 
 ```typescript
-// Add additional element-description and a custom element as fallback
+// Add additional element-description and an ai element as fallback
 await aui.click().button().withText('Sign in');
                  .or().button().containsText('Sign')
-                 .or().customElement({
-                     customImage: 'custom_elements/signin.button.png'
-                   })
+                 .or().aiElement('signin-button')
                  .exec();
 ```
 
-### Icon Detection Fails
+### Icon Detection Fails - Use AI Element
 Detecting icons correctly is difficult because there are millions of icons available. Therefore, you may run into the problem that an icon is not detected sometimes:
 
 ![](images/recommended-practices/recommended-practices-icon-not-recognized.png)
 
-Our recommended approach is to use a [custom element](../../api/03-Element-Descriptions/customelement.md) instead.
+Our recommended approach is to use an [AI Element](aielement.md) instead.
 
 ```typescript
-// Custom element to target the microwave icon
+// AI element to target the microwave icon
 // from the image above
-await aui.click().customElement({
-    customImage: 'custom_elements/microwave.icon.png'
-  }).exec();
+await aui.click().aiElement('microwave-icon').exec();
 ```
 
 ### Button Not Detected as Element
@@ -219,13 +208,11 @@ If the button is not detected but the text or label inside it, you can target th
 await aui.click().text('1').exec();
 ```
 
-As not even the `1` is detected as `text` in the case above, you cannot use this approach. In these cases, you can try out using a [custom element](../../api/03-Element-Descriptions/customelement.md) instead:
+As not even the `1` is detected as `text` in the case above, you cannot use this approach. In these cases, you can try out using an [AI Element](aielement.md) instead:
 
 ```typescript
-// Custom element instead of button().withText()
-await aui.click().customElement({
-                     customImage: 'custom_elements/one.button.png'
-                   }).exec();
+// AI element instead of button().withText()
+await aui.click().aiElement('one-button').exec();
 ```
 
 ---
@@ -243,28 +230,13 @@ AskUI can not detect color (yet). If you have an element that changes color like
 
 You can try the following:
 
-* Use a [custom element](../../api/03-Element-Descriptions/customelement.md) with `imageCompareFormat` set to `grayscale` (default value)
-
-```typescript
-// Use custom element default
-await aui.click().customElement({
-  customImage: 'custom_elements/light.button.png',
-                 }).exec();
-```
-
-* Use two [custom elements](../../api/03-Element-Descriptions/customelement.md) together with [or()](../../api/04-Relations/or.md) and `imageCompareFormat` set to `RGB`
+* Use two [AI Elements](aielement.md) together with [or()](../../api/04-Relations/or.md).
 
 ```typescript
 // Use two elements that compare with color
-await aui.click().customElement({
-  customImage: 'custom_elements/light.button.png',
-                   imageCompareFormat: 'RGB'
-                 })
+await aui.click().aiElement('light-button')
                  .or()
-                 .customElement({
-                   customImage: 'custom_elements/dark.button.png',
-                    imageCompareFormat: 'RGB'
-                    }).exec();
+                 .aiElement('dark-button').exec();
 ```
 
 ---
@@ -277,24 +249,20 @@ Sometimes you run into duplicate elements on an UI and you want to target a spec
 * Add a [relation](../../api/04-Relations/above.md)
 
 ```typescript
-// Add relational selector to custom element
-await aui.click().customElement({
-  customImage: 'custom_elements/submit.button.png'
-                   })
-                   .leftOf().button().withText('Sign up')
-                   .exec();
+// Add relational selector to ai element
+await aui.click().aiElement('submit-button')
+                 .leftOf().button().withText('Sign up')
+                 .exec();
 ```
 
 * Add more element-descriptions with [and()](../../api/04-Relations/and.md)
 
 ```typescript
 // More specificity with and() and additional element-description
-await aui.click().customElement({
-                     customImage: 'custom_elements/submit.button.png'
-                   })
-                   .leftOf().button().withText('Sign up')
-                   .and()
-                   .button().withText('Submit')
-                            .rightOf().button().withText('Login')
-                   .exec();
+await aui.click().aiElement('submit-button')
+                 .leftOf().button().withText('Sign up')
+                 .and()
+                 .button().withText('Submit')
+                          .rightOf().button().withText('Login')
+                 .exec();
 ```
