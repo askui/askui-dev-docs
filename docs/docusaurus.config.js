@@ -55,6 +55,8 @@ const config = {
           '/docs/general/**/*',
           '/docs/suite/*',
           '/docs/suite/**/*',
+          '/docs/studio/*',
+          '/docs/studio/**/*',
         ]
       }
     ],
@@ -176,6 +178,12 @@ const config = {
             docId: 'suite/Components/AskUI-Suite',
             position: 'left',
             label: 'AskUI Suite',
+          },
+          {
+            type: 'doc',
+            docId: 'studio/overview',
+            position: 'left',
+            label: 'AskUI Studio',
           },
           {
             href: 'https://workspaces.askui.com/docs',

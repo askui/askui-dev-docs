@@ -42,9 +42,17 @@ Import the screenshot into **AskUI OCR Teaching** application by clicking the ca
 ## Step 4: Retrain Wrongly Recognized Text Elements
 First enable the switch **Trained Model**, so you can retrain our default model.
 
+:::info
+
+Why not switch on **Word-Level Model** as well? This is for special problems:
+<!-- vale off -->
+Take a label consisting of two words **Full Name** for example. The `space` may be problematic if you want to match with the instruction `.withText('Full Name')`. AskUI always matches on *sentence-level* which means that **Full Name** should be recognized correctly even when the model detects two elements **Full** and **Name**. Training on *word-level* allows you to correct errors on single words, **Ful** instead of **Full** for example.
+<!-- vale on -->
+:::
+
 On the right half you can scroll through all the text elements that were recognized by AskUI and check if they are correct. Once you find one you can correct it and click **Train Correction** on the right. This will trigger a retraining which may take a few seconds. After it completed the text should refresh and be correct.
 
-:::NOTE
+:::note
 
 Sometimes you need more than one retraining for the model to adapt. In this case retrain again until the element gets recognized correctly.
 
