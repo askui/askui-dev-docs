@@ -32,7 +32,7 @@ _Solution: Provide multiple layout options with [`or()`](../../api/04-Relations/
 * Character sequences with 1-3 characters can be flaky
 * Character sequences that do **not** contain letters or numbers may be classified wrong: `-----` for example looks like a line and not like a sequence of `-`
 
-_Solution: Use a [custom element](../../api/03-Element-Descriptions/customelement.md)._
+_Solution: Use an [AI Element](aielement.md)._
 
 * Elements that are too small or too low in contrast are not reliably detected, like a single `.`.
 
