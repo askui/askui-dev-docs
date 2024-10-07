@@ -55,7 +55,7 @@
         "lint-staged": "15.2.10",
         "pinst": "3.0.0",
         "release-it": "^17.6.0",
-        "zx": "8.1.8"
+        "zx": "8.1.9"
     },
     "jira-prepare-commit-msg": {
         "isConventionalCommit": true,
