@@ -80,7 +80,7 @@ Now you should see the demo app running on your Android device.
 In this example, we are going to automate the typing on the Android device. To let AskUI fluently type as desired, we will use a virtual keyboard that handles the keyboard input via `adb`: [ADBKeyboard.apk](https://github.com/senzhk/ADBKeyBoard)
 
 ‍
-1) Download the ADBKeyboard package (Important: Version 2.0): [Link to GitHub Repository](https://github.com/senzhk/ADBKeyBoard/releases/tag/v2.0)
+1) Download the ADBKeyboard package: [Link to GitHub Repository](https://github.com/senzhk/ADBKeyBoard/blob/master/ADBKeyboard.apk)
 
 2) Unzip it.
 
@@ -94,14 +94,12 @@ adb devices
 4) Install the ADBKeyboard on the device:
 
 ```shell
-# inside ADBKeyBoard-2.0/
 adb -s <your device id> install ADBKeyboard.apk
 ```
 
 5) Configure the ADB Keyboard:
 
 ```shell
-# inside ADBKeyBoard-2.0/
 adb -s <your device id> shell settings put secure default_input_method com.android.adbkeyboard/.AdbIME
 ```
 

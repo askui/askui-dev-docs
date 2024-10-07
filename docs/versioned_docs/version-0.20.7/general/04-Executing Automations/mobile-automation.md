@@ -55,7 +55,7 @@ One noticeable advantage of using ADBKeyboard is that it can also handle base64 
 
 To install the ADBKeyboard on your device,
 
-1. Download the ADBKeyboard package from [this GitHub Repository](https://github.com/senzhk/ADBKeyBoard/releases/tag/v2.0) *(Important: Version 2.0)*
+1. Download the ADBKeyboard package from [this GitHub Repository](https://github.com/senzhk/ADBKeyBoard/blob/master/ADBKeyboard.apk)
 2. Unzip it.
 3. Find your device:
 
@@ -68,7 +68,7 @@ To install the ADBKeyboard on your device,
 4. Install the ADBKeyboard on the device:
 
     ```bash
-    # inside ADBKeyBoard-2.0/
+    # inside ADBKeyBoard/
     adb -s <your device id> install ADBKeyboard.apk
     ```
     
