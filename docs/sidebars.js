@@ -94,6 +94,7 @@ const sidebars = {
         'general/Executing Automations/mobile-automation',
         'general/Executing Automations/multi-device-automation',
         'general/Element Selection/condition-based-execution',
+        'general/Executing Automations/retry-strategy',
         'general/Element Selection/annotations-and-screenshots',
         {
           type: 'category',
