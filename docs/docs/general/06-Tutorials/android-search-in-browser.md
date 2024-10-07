@@ -28,45 +28,34 @@ If you have already set up your development environment, go directly to [3. Auto
 
 ## 1. Prepare the AskUI Development Environment
 
-### Install and initialize AskUI
+### Install and Initialize AskUI
 
-Please follow the [Getting Started](../01-Getting%20Started/Installing%20AskUI/getting-started.md) tutorial.
+Please follow the **Getting Started**:
 
-**Configure AskUI for Android**
+* [Windows](../01-Getting%20Started/Installing%20AskUI/getting-started.md)
+* [macOS](../01-Getting%20Started/Installing%20AskUI/getting-started-macos.md)
+* [Linux](../01-Getting%20Started/Installing%20AskUI/getting-started-linux.md)
 
-We need to run the AskUI Controller manually with an extra argument to specify the runtime mode, as the current version of AskUI doesn't provide the API for running it with the runtime option yet:
+### Configure AskUI for Android
 
-```bash
-# first, go to the folder that contains the binary
-cd <YOUR_PROJECT_DIRECTORY>/node_modules/askui/dist/release/latest/<YOUR_PLATFORM>
+We need to run the AskUI Controller manually with an extra argument to specify the runtime mode for Android.
 
-# for example, Mac OS
-cd node_modules/askui/dist/release/latest/darwin/askui-ui-controller.app/Contents/MacOS/
+```powershell
+# First find out the device id
+adb devices
 
-# then run it
-./askui-ui-controller -r android
-
-# If you can't find the binary as described above,
-# then you might have AskUI freshly installed and haven't run it yet.
-# The binary gets downloaded as the AskUI code runs the first time.
-# Run the command below to run the AskUI code:
-npm run askui
+# Substitute <your-device-id> with
+# the returned device id
+AskUI-StartController -Runtime android -RunInBackground -DeviceId "<your-device-id>"
 ```
 
-If the AskUI Controller starts, it will display its logs in the terminal. We can leave it in the background, and prepare a new terminal window for the next step.
-
-💡*If you got any errors after running the binary, please check if your android device/emulator is properly connected and recognized by the Android Debug Bridge `adb` by using this command: `adb devices`. You should see a list of recognized devices.*
+💡*If you got any errors after running the AskUI Controller, please check if your android device/emulator is properly connected and recognized by the Android Debug Bridge `adb` by using this command: `adb devices`.*
 
 
-Next, we have to change a few lines of the generated code, as the code ships with the part that creates another **AskUI Controller** instance.
-
-Go to `helper/jest.setup.ts` and comment out every line that is using `uiController`:
+Next, we have to change a few lines of the generated code in  `helpers/askui-helper.ts`. It should look like this:
 
 ```ts
-import { UiControlClient, UiController } from 'askui';
-
-// Server for controlling the operating system
-// let uiController: UiController;
+import { UiControlClient} from 'askui';
 
 // Client is necessary to use the askui API
 // eslint-disable-next-line import/no-mutable-exports
@@ -75,29 +64,11 @@ let aui: UiControlClient;
 jest.setTimeout(60 * 1000 * 60);
 
 beforeAll(async () => {
-//   uiController = new UiController({
-//     /**
-//      * Select the display you want to run your tests on, display 0 is your main display;
-//      * ignore if you have only one display
-//      */
-//     display: 0,
-//   });
-
-//   await uiController.start();
-
-  aui = await UiControlClient.build({
-    credentials: {
-      workspaceId: myworkspaceid,
-      token: mytoken,
-    }
-  });
-
+  aui = await UiControlClient.build({});
   await aui.connect();
 });
 
 afterAll(async () => {
-//   await uiController.stop();
-
   aui.disconnect();
 });
 
@@ -109,9 +80,9 @@ export { aui };
 ## 2. Try Annotating
 Make sure that your Android device is connected, or if you are using the Android Emulator, make sure that it is open and running on your local machine.
 
-**AskUI** provides a feature where you can monitor how the visible elements are understood by **AskUI**. Try to change the code within `test/my-first-askui-test-suite.test.ts` to the following:
+**AskUI** provides a feature where you can monitor how the visible elements are detected by **AskUI**. Try to change the code within `askui_example/my-first-askui-test-suite.test.ts` to the following:
 ```ts
-import { aui } from './helper/jest.setup';
+import { aui } from './helpers/askui-helper';
 
 describe('jest with askui', () => {
   it('should show the annotation', async () => {
@@ -122,7 +93,7 @@ describe('jest with askui', () => {
 
 and run,
 ```bash
-npm run askui
+AskUI-RunProject
 ```
 
 ![annotated-chrome](images/annotation-chrome.png)
@@ -157,7 +128,7 @@ This approach will give us a more consistent result because typing "chrome" in t
 Try to change your code according to this:
 
 ```ts
-import { aui } from './helper/jest.setup';
+import { aui } from './helpers/askui-helper';
 
 describe('jest with askui', () => {
   it('should open chrome', async () => {
@@ -255,7 +226,7 @@ You might wonder how `withText()` and `containsText()` differ. `withText()` trie
 
 ## 4. Complete AskUI Code
 ```ts
-import { aui } from './helper/jest.setup';
+import { aui } from './helpers/askui-helper';
 
 describe('jest with askui', () => {
   it('should search spacecraft in chrome', async () => {

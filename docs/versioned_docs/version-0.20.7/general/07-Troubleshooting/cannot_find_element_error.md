@@ -56,9 +56,8 @@ await aui
 ```
 This method is not restricted to icon elements, but can also be used for a wide range of elements.
 
-
-### 3. Use Custom Element Selection
-Custom element selection is your last resort because it is slow as it uses image-in-image search. Check out our [Custom Elements page](../03-Element%20Selection/custom-elements.md) to see how you can make use of it.
+### 3. Use AI Element Selection
+Check out our an [AI Element](../03-Element%20Selection/aielement.md), which uses screenshots of the element to find it, to see how you can make use of it.
 
 ## Selecting Image
 Images are supposed to have a very certain visual property.
@@ -69,6 +68,13 @@ Images are supposed to have a very certain visual property.
 Generally speaking, everything on the screen can be an image. For example, icons on a website are actually images. But in terms of visual semantics, we don't deal with the notion of image in general. So it is worth knowing that the above two conditions are critical when using the `image()` descriptor.
 
 ## Selecting Text
+
+:::tip
+
+[Try our OCR Teaching to get better text recognition!](../../suite/02-Components/AskUI-OCR-Teaching.md)
+
+:::
+
 OCR is tricky and we are working hard to improve it. But you will encounter cases where some text may not be recognized reliably depending on the font size, style or typeface:
 
 ### 1. Missing Blankspaces Between Words

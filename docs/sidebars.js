@@ -73,11 +73,7 @@ const sidebars = {
       items: [
         'general/Element Selection/recommended-practices',
         'general/Element Selection/text-and-element-selectors',
-        'general/Element Selection/relational-selectors',
         'general/Element Selection/aielement',
-        'general/Element Selection/scraping-and-storing-lements',
-        'general/Element Selection/scrolling',
-        'general/Element Selection/assertions',
       ],
     },
     {

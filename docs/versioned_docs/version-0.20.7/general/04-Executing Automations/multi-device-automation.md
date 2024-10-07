@@ -15,94 +15,38 @@ This tutorial shows how to automate multiple devices on the same network by usin
 
 ## Automate Remote Devices Running on Windows, Linux or macOS
 
-### 1. Download and Prepare the AskUI Controller Binary for Each Device
-
-Download the binary for the respective platform and install it on the device(s) you want to automate remotely:
-
-<Tabs>
-  <TabItem value="windows" label="Windows" default>
-
-[Windows - Please use the AskUI Installer from our Getting Started](../01-Getting%20Started/Installing%20AskUI/getting-started.md)
-
-  </TabItem>
-  <TabItem value="linux" label="Linux" default>
-
-:::info
-For Linux you have to make the downloaded _AppImage_ executable:
+### 1. Run the AskUI Controller for Each Device
+Run the following command to start the *AskUI Controller* for your local device on port 6769:
 
 ```bash
-chmod +x askui-ui-controller.AppImage
+# DisplayNum specifies the display the AskUI Controller is controlling
+# If you have more than 1 display you have to change accordingly (0 main display)
+# The AskUI Controller renders a white border overlay around the controlled display
+AskUI-StartController -DisplayNum 0 -RunInBackground -Port 6769
 ```
-:::
-
-[Linux](https://files.askui.com/releases/askui-ui-controller/latest/linux/x64/askui-ui-controller.AppImage)
-
-  </TabItem>
-  <TabItem value="macos" label="macOS" default>    
-
-:::info
-
-**macOS** After installation to `Applications` remove the quarantine flag with the following command run from a terminal: `xattr -d com.apple.quarantine /Applications/askui-ui-controller.app`
-
-:::
-
-[macOS(Intel)](https://files.askui.com/releases/askui-ui-controller/latest/darwin/x64/askui-ui-controller.dmg) |
-[macOS(Apple silicon)](https://files.askui.com/releases/askui-ui-controller/latest/darwin/arm64/askui-ui-controller.dmg)
-
-  </TabItem>
-</Tabs>
-
-
-### 2. Run the Controller on Each Device
-Run the *AskUI Controller* on the remote devices with the following command:
-
-<Tabs>
-  <TabItem value="windows" label="Windows" default>
-
-```bash
-# Activate AskUI Development Environment (ADE) first
-AskUI-StartController -DisplayNum 0 -Port 6769
-```
-
-  </TabItem>
-  <TabItem value="linux" label="Linux" default>
-
-:::info
-Change to the directory of the `askui-ui-controller` binary first: See [Download and Prepare step](#1-download-and-prepare-the-askui-controller-binary-for-each-device).
-:::
-
-
-```bash
-# Linux
-./askui-ui-controller.AppImage --host 0.0.0.0 -p 6769 -d 0 -m
-```
-
-  </TabItem>
-  <TabItem value="macos" label="macOS" default>    
-
-:::info
-Change to the directory of the `askui-ui-controller` binary first: See [Download and Prepare step](#1-download-and-prepare-the-askui-controller-binary-for-each-device).
-:::
-
-```bash
-# macOS
-/Applications/askui-ui-controller.app/Contents/MacOS/askui-ui-controller --host 0.0.0.0 -p 6769 -d 0 -m
-```
-
-  </TabItem>
-</Tabs>
 
 If running successfully, you should see the logs printed on the terminal, for example:
 
 ```bash
-[2023-01-02 17:31:19.634 +0100] DEBUG (AskuiUiController): Window is minimized.
-[2023-01-02 17:31:19.639 +0100] INFO (AskuiUiController): Selecting display number 0.
-[2023-01-02 17:31:19.641 +0100] INFO (AskuiUiController): Successfully started.
+[2024-10-07 14:04:25.663 +0200] INFO (AskUI Controller): Selecting display number '1'.
+[2024-10-07 14:04:25.665 +0200] INFO (AskUI Controller): Successfully started.
 ```
 
-### 3. Configure the `askui-helper.ts`
+### 2. Configure the `helpers/askui-helper.ts`
+For a remote device you can use the [Silent Installer option of the installer (Only Linux and macOS)](../../suite/02-Components/silent-unix-installer.md). After the installation you have to first start the AskUI controller and then find out the IP of the remote device. You need it for connecting to the AskUI Controller from your local device:
 
-Figure out the local IP address of the remote device(s), and then change the `<ip-address-remote-device*>` in the `askui-helper.ts`:
+```bash
+# Windows only
+ipconfig /all
+
+# macOS only
+ipconfig getifaddr en0
+
+# Linux only
+hostname -I
+```
+
+And then change the `<ip-address-remote-device*>` in the `helpers/askui-helper.ts`:
 
 ```ts
 import { UiControlClient, UiController } from 'askui';
@@ -114,19 +58,12 @@ jest.setTimeout(60 * 1000 * 60);
 
 beforeAll(async () => {
 
-    // Get your AskUI credentials from https://app.askui.com/workspaces
-    const credentials = {
-        workspaceId: '<your-workspace-id>',
-        token: '<your-token>',
-    }
-
     // This client will communicate with
     // the controller running on the remote device 1.
     // Replace the <ip-address-remote-device1>
     // with the IP from remote device 1
     remoteDevice1 = await UiControlClient.build({ 
         uiControllerUrl: "ws://<ip-address-remote-device2>:6769",
-        credentials,
     });
 
     await remoteDevice1.connect();
@@ -136,8 +73,7 @@ beforeAll(async () => {
     // Replace the <ip-address-remote-device2>
     // with the IP from remote device 2
     remoteDevice2 = await UiControlClient.build({    
-        uiControllerUrl: "ws://<ip-address-remote-device2>:6769", 
-        credentials,
+        uiControllerUrl: "ws://<ip-address-remote-device2>:6769",
     });
 
     await remoteDevice2.connect();
@@ -146,8 +82,11 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
-    remoteDevice1.close();
-    remoteDevice2.close();
+    remoteDevice1.disconnect();
+    remoteDevice2.disconnect();
+
+    // Do not forget:
+    // Add disconnect for additional UIControlClients
 });
 
 export { remoteDevice1, remoteDevice2 };
@@ -201,13 +140,11 @@ adb devices
 ```
 
 ### 2. Start AskUI Controller for Each Device
-You __must__ start a separate AskUI Controller for each Android device you are automating. The `-p` argument sets the port the AskUI Controller is listening on for commands. Choose a different one for each device.
+You __must__ start a separate AskUI Controller for each Android device you are automating. The `-Port` argument sets the port the AskUI Controller is listening on for commands. Choose a different one for each device.
 
 :::tip
 
-The `-d` flag specifies to which device a AskUI Controller instance connects (Read on how it works!).
-
-Run `adb devices` in a terminal to get a list of connected devices. In the following example, if you want to connect to `emulator-1` you use `-d 0` and for `emulator-2` you use `-d 1`.
+Run `adb devices` in a terminal to get a list of connected devices and their device ids.
 
 ```bash
 $ adb devices
@@ -217,54 +154,18 @@ emulator-2 device product:sdk_google_phone_x86 model:Android_SDK_built_for_x86 d
 
 :::
 
-<Tabs>
-  <TabItem value="windows" label="Windows" default>
-
 Set a different port for each AskUI Controller and specify which Android device to connect to with the `-d` flag.
 
 ```bash
 # Activate AskUI Development Environment (ADE) first
 # Connects to the first device returned by 'adb devices'
-AskUI-StartController -DisplayNum 0 -Runtime android -Port 6769
+AskUI-StartController -Runtime android -RunInBackground -Port 6769 -DeviceId "<your-device-id-1>"
 
 # Connects to the second device returned by 'adb devices'
-AskUI-StartController -DisplayNum 1 -Runtime android -Port 6770
+AskUI-StartController -Runtime android -RunInBackground -Port 6770 -DeviceId "<your-device-id-2>"
 ```
 
-  </TabItem>
-  <TabItem value="linux" label="Linux" default>
-
-Set a different port for each AskUI Controller and specify which Android device to connect to with the `-d` flag.
-
-Open a new terminal for each AskUI Controller instance as it gets started in the foreground.
-
-```bash
-# Connects to the first device returned by 'adb devices'
-./askui-ui-controller.AppImage --host 0.0.0.0 -p 6769  -d 0 -m -r android
-
-# Connects to the second device returned by 'adb devices'
-./askui-ui-controller.AppImage --host 0.0.0.0 -p 6770 -d 1 -m -r android
-```
-
-  </TabItem>
-  <TabItem value="macos" label="macOS" default>    
-
-Set a different port for each AskUI Controller and specify which Android device to connect to with the `-d` flag.
-
-Open a new terminal for each AskUI Controller instance as it gets started in the foreground.
-
-```bash
-# Connects to the first device returned by 'adb devices'
-/Applications/askui-ui-controller.app/Contents/MacOS/askui-ui-controller --host 0.0.0.0 -p 6769 -d 0 -m -r android
-
-# Connects to the second device returned by 'adb devices'
-/Applications/askui-ui-controller.app/Contents/MacOS/askui-ui-controller --host 0.0.0.0 -p 6770 -d 1 -m -r android
-```
-
-  </TabItem>
-</Tabs>
-
-### 3. Configure the `askui-helper.ts`
+### 3. Configure the `helpers/askui-helper.ts`
 
 ```typescript
 import { UiControlClient } from 'askui';
@@ -275,25 +176,17 @@ let auiAndroidDevice2: UiControlClient;
 
 jest.setTimeout(60 * 1000 * 60);
 
-// Get your AskUI credentials from https://app.askui.com/workspaces
-const credentials = {
-    workspaceId: '<your-workspace-id>',
-    token: '<your-token>',
-}
-
 beforeAll(async () => {
 
   // Connects to AskUI Controller 1 (emulator-1)
   remoteDevice1 = await UiControlClient.build({
     uiControllerUrl: "ws://127.0.0.1:6769",
-    credentials,
   });
   await remoteDevice1.connect();
   
   // Connects to AskUI Controller 2 (emulator-2)
   remoteDevice2 = await UiControlClient.build({
     uiControllerUrl: "ws://127.0.0.1:6770",
-    credentials,
   });
   
   await remoteDevice2.connect();
@@ -332,24 +225,11 @@ describe('jest with askui', () => {
 
 Run the command below to run the AskUI code:
 
-<Tabs>
-  <TabItem value="windows" label="Windows" default>
-  Switch into ADE by running `askui-shell` in a Command Prompt first.
-  ```shell
-  AskUI-RunProject
-  ```
-  </TabItem>
-  <TabItem value="linux" label="Linux" default>
-  ```shell
-  npm run askui
-  ```
-  </TabItem>
-  <TabItem value="macOS" label="macOS" default>
-  ```shell
-  npm run askui
-  ```
-  </TabItem>
-</Tabs>
+Switch into ADE by running `askui-shell` in a command prompt first.
+
+```powershell
+AskUI-RunProject
+```
 
 ## Conclusion
 Now you should be able to automate multiple devices in the network. If you got any issues while following this tutorial, don't hesitate to ask our [Outverse-Community](https://community.askui.com/forums/home)!
