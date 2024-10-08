@@ -1,0 +1,15 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.featureSvg {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  fill: var(--ifm-font-color-base);
+  height: 3rem;
+  width: 3rem;
+}

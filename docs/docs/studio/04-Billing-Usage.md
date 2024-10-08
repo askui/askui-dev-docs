@@ -24,7 +24,7 @@ Depending on your payment provider you may have complete confirmation steps with
 
 :::info
 
-You can only upgrade your plan to a paid version **after** you added a [Payment Method](#addchange-payment-method)! 
+You can only upgrade your plan to a paid version **after** you added a [Payment Method](#add-payment-method)! 
 
 :::
 
