@@ -7,7 +7,7 @@ import Link from '@docusaurus/Link';
 const FeatureList = [
   {
     title: 'Get Started',
-    Svg: require('../../static/img/icons/engineering_white.svg').default,
+    Svg: require('../../static/img/icons/Start.svg').default,
     url: 'docs/general/Getting%20Started/start',
     description: (
       <>
@@ -17,7 +17,7 @@ const FeatureList = [
   },
   {
     title: 'SDK',
-    Svg: require('../../static/img/icons/engineering_white.svg').default,
+    Svg: require('../../static/img/icons/SDK.svg').default,
     url: 'docs/category/how-to-select-elements',
     description: (
       <>
@@ -27,7 +27,7 @@ const FeatureList = [
   },
   {
     title: 'API',
-    Svg: require('../../static/img/icons/engineering_white.svg').default,
+    Svg: require('../../static/img/icons/API.svg').default,
     url: 'docs/api/API/table-of-contents',
     description: (
       <>
@@ -37,7 +37,7 @@ const FeatureList = [
   },
   {
     title: 'AskUI Suite',
-    Svg: require('../../static/img/icons/engineering_white.svg').default,
+    Svg: require('../../static/img/icons/Suite.svg').default,
     url: 'docs/suite/Components/AskUI-Suite',
     description: (
       <>
@@ -47,7 +47,7 @@ const FeatureList = [
   },
   {
     title: 'AskUI Studio',
-    Svg: require('../../static/img/icons/engineering_white.svg').default,
+    Svg: require('../../static/img/icons/Studio.svg').default,
     url: 'docs/studio/overview',
     description: (
       <>
@@ -68,7 +68,7 @@ function Feature({ title, Svg, description, url }) {
               alt={title}
             />
             <div style={{marginLeft: 40}}>
-              <h4 className="margin-vert--none">{title}</h4>
+              <h3 className="margin-vert--none">{title}</h3>
               <p>{description}</p>
             </div>
           </div>
