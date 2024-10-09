@@ -1,6 +1,32 @@
 import React from 'react';
+import clsx from 'clsx';
+import Layout from '@theme/Layout';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import styles from './index.module.scss';
+import HomepageFeatures from '../components/HomepageFeatures';
 
-import {Redirect} from '@docusaurus/router';
+function HomepageHeader() {
+  const { siteConfig } = useDocusaurusContext();
+  return (
+    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <div className="container">
+        <h1 className="hero__title">Documentation</h1>
+        <div>
+          Getting Started, references, APIs, recommended practices - All you need to build with AskUI.
+        </div>
+      </div>
+    </header>
+  );
+}
+
 export default function Home() {
-    return <Redirect to="/docs/general/Getting Started/start" />;
+  const { siteConfig } = useDocusaurusContext();
+  return (
+    <Layout>
+      <HomepageHeader />
+      <main>
+        <HomepageFeatures />
+      </main>
+    </Layout>
+  );
 }

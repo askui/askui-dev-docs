@@ -215,8 +215,8 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Outverse',
-                href: 'https://community.askui.com/forums/home',
+                label: 'Community',
+                href: 'https://community.askui.com',
               },
               {
                 label: 'Linkedin',
