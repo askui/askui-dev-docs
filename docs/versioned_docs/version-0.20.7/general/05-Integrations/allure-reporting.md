@@ -22,7 +22,7 @@ With the `AskUIAllureStepReporter` you can create a detailed HTML-Report from yo
 ## Add the reporter to the `UiControlClient` in `helpers/askui-helper.ts`:
 
 :::warning
-If you used the AskUI Installer and did not change anything in `helpers/askui-helper.ts` you can skip the configuration and directly go to [Display Report](#render-and-view-the-report-in-a-browser-java-required).
+If you used the AskUI Installer and did not change anything in `helpers/askui-helper.ts` you can skip the configuration and directly go to [Render and View Report](#render-and-view-the-report-in-a-browser-java-required).
 :::
 
 ```typescript
