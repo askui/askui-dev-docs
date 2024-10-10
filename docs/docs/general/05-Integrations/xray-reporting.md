@@ -27,7 +27,7 @@ We will try to move this into the custom `testEnvironment` we provide.
 5. Add writing the report to `afterAll()` hook
 
 ```typescript
-import { UiControlClient, UiController } from 'askui';
+import { UiControlClient } from 'askui';
 
 /* 1 Import the reporter */
 import { AskUIXRayStepReporter } from '@askui/askui-reporters';
@@ -52,10 +52,6 @@ let xRayReporter = new AskUIXRayStepReporter({
 beforeAll(async () => {
   ...
   aui = await UiControlClient.build({
-    credentials: {
-      workspaceId: '<your workspace id>',
-      token: '<your access token>',
-    },
     /* 3 Enable reporter */
     reporter: xRayReporter,
   });
@@ -77,7 +73,6 @@ afterAll(async () => {
   /* 5 Writing the report */
   await xRayReporter.writeReport();
   aui.disconnect();
-  await uiController.stop();
 });
 
 export { aui };
