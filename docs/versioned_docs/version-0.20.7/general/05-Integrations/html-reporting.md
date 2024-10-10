@@ -5,6 +5,10 @@ title: HTML
 
 # AskUIJestHtmlStepReporter
 
+The `AskUIJestHtmlStepReporter` generates a HTML report with optional before and after screenshots. It is saved in your project's root folder in the file `jest-html-reporters-attach`.
+
+![](./images/html-reporting-example.png)
+
 :::tip
 Please read the [Getting started with reporting first](reporting.md).
 :::
