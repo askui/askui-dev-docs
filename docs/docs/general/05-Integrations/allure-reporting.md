@@ -9,11 +9,23 @@ title: Allure
 Please read the [Getting started with reporting first](reporting.md).
 :::
 
-:::warning
-If you used the AskUI Installer or followed the _Getting Started_ for Linux or macOS and did not change anything in `helpers/askui-helper.ts` you can skip the configuration and directly go to [Display Report](#display-report-in-a-browser).
-:::
+With the `AskUIAllureStepReporter` you can create a detailed HTML-Report from your AskUI Runs. The following report is pulled from [GitHub Repository: askui-example-allure-reporter](https://github.com/askui/askui-example-allure-reporter): 
+
+<iframe
+  id="inlineFrameExample"
+  title="Inline Frame Example"
+  width="1024"
+  height="768"
+  src="https://askui.github.io/askui-example-allure-reporter/6/">
+</iframe>
+
+
 
 ## Add the reporter to the `UiControlClient` in `helpers/askui-helper.ts`:
+
+:::warning
+If you used the AskUI Installer and did not change anything in `helpers/askui-helper.ts` you can skip the configuration and directly go to [Display Report](#display-report-in-a-browser).
+:::
 
 ```typescript
 import { AskUIAllureStepReporter } from "@askui/askui-reporters";
@@ -82,7 +94,7 @@ const config: Config.InitialOptions = {
 export default config;
 ```
 
-## Display Report in a Browser
+## Render and View the Report in a Browser (Java Required)
 
 ### Step 1: Install Java
 We recommend _SDKMAN!_ for managing Java. Please follow the [Installation guide on their homepage](https://sdkman.io/install).
