@@ -130,3 +130,46 @@ AskUI-RemoveAIElement -NameFilter "logo" -AutoApproval
 # Opens all AI Elements with the name 'logo'
 AskUI-OpenAIElement -NameFilter "logo"
 ```
+
+## Using AI Elements with Git
+
+AI Elements can be version controlled and shared across team members using Git. Here's how to set it up:
+
+### Current Behavior
+By default, AI Elements are stored in the Global AI Element Location under `~/.askui/SnippingTool/AIElement/<workspace-id>/`. This location is not version controlled by Git.
+
+### Prerequisites
+- Update askui to version 0.22.0 or higher:
+```bash
+npm install askui@latest
+```
+
+### Configuration Steps
+1. Create a folder in your Git project called `<project>/ai-elements`
+2. Update your `askui_example/helpers/askui-helper.ts`:
+
+```typescript
+beforeAll(async () => {
+  aui = await UiControlClient.build({
+    // ... existing configuration ...
+    aiElementArgs: {
+      additionalLocations: [
+        "./ai-elements/" // Add your local AI Element location here
+      ]
+    }
+  });
+});
+```
+
+### Adding AI Elements to Git
+1. Open `askui-shell`
+2. Get the global AI Element location:
+   - Run `AskUI-ShowAIElement`
+   - Copy the path from the Image File
+3. Open the path in File Explorer
+4. Copy all files from the Global AI Element Location to your Project AI Element Location
+5. Add and commit the files to Git
+
+### Current Limitations
+- `AskUI-NewAIElement` command only stores elements in the Global AI Element Location. Manual copying is required
+- `AskUI-*AIElement` commands are only compatible with the Global AI Element Location
