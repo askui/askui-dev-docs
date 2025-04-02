@@ -27,14 +27,13 @@ Please [sign up for a free trial](https://www.app.askui.com).
 
 ```bash
 # Download installer into /tmp folder (AMD64)
-curl -o /tmp/AskUI-Suite-24.12.1-User-Installer-Linux-x64-Full.run https://files.askui.com/releases/Installer/24.12.1/AskUI-Suite-24.12.1-User-Installer-Linux-x64-Full.run
-
+curl -L -o /tmp/AskUI-Suite-Latest-User-Installer-Linux-AMD64-Web.run https://files.askui.com/releases/Installer/Latest/AskUI-Suite-Latest-User-Installer-Linux-AMD64-Web.run
 ```
 
 #### If you have ARM64 use this:
 ```bash
 # Download installer into /tmp folder (ARM64)
-curl -o /tmp/AskUI-Suite-24.12.1-User-Installer-Linux-ARM64-Full.run https://files.askui.com/releases/Installer/24.12.1/AskUI-Suite-24.12.1-User-Installer-Linux-ARM64-Full.run
+curl -L -o /tmp/AskUI-Suite-Latest-User-Installer-Linux-ARM64-Web.run https://files.askui.com/releases/Installer/Latest/AskUI-Suite-Latest-User-Installer-Linux-ARM64-Web.run
 ```
 
 <details>
@@ -52,22 +51,15 @@ curl -o /tmp/AskUI-Suite-24.12.1-User-Installer-Linux-ARM64-Full.run https://fil
 
 ```bash
 # If you have AMD64 use this
-bash /tmp/AskUI-Suite-24.12.1-User-Installer-Linux-x64-Full.run
+bash /tmp/AskUI-Suite-Latest-User-Installer-Linux-AMD64-Web.run
 ```
 
 #### Run the installer (ARM64)
 
 ```bash
 # If you have ARM64 use this
-bash /tmp/AskUI-Suite-24.12.1-User-Installer-Linux-ARM64-Full.run
+bash /tmp/AskUI-Suite-Latest-User-Installer-Linux-ARM64-Web.run
 ```
-
-* Press `Enter` to review the license agreement. Then press and hold Enter to scroll.
-* Accept the license agreement.
-
-Answer the questions:
-* Do you use a proxy?
-* Do you want to make AskUI Command globally available?
 
 :::tip
 Close and re-open your terminal window for the installation to take effect.
@@ -77,11 +69,7 @@ Close and re-open your terminal window for the installation to take effect.
 Open a terminal and run the following command:
 
 ```shell
-# If you made the command globally available
 askui-shell
-
-# If you have NOT made the command globally available
-~/.askui-suites/Tools/askui-shell
 ```
 
 Activating the ADE may take a few seconds.

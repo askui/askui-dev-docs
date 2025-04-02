@@ -8,34 +8,31 @@ The ADE Command `AskUI-NewAnnotationsForTraining` allows users to annotate their
 
 - `WorkspaceId` (Optional): Specifies the AskUI workspace ID to be used. If not specified, the workspace ID from the AskUI settings is used.
 - `Delay`: Time in seconds before the screen gets frozen. Default is 0.
+- `Token`: Token for sending the annotation to the train endpoint.
+- `Url`: URL for the inference server. Default is `https://inference.askui.com`.
+- `ConfigFile`: *Experimental* Absolute file path for the configuration to be loaded.
 
-The results will be saved under:
-
-- `$HOME/.askui/SnippingTool/Annotation/<WorkspaceId>/<GUID>.json`
-- `$HOME/.askui/SnippingTool/Annotation/<WorkspaceId>/<GUID>.png`
+The results will be sent to the train endpoint and the user will be informed about the success of the operation.
 
 ## Usage
 
 ```powershell
-# Import experimental commands.
-AskUI-ImportExperimentalCommands
-
 AskUI-NewAnnotationsForTraining
 
 # Output
-Finished taking of 2 annotationss.
-Annotation #1 requires additional metadata.
+Info:  Finished taking of 2 annotationss.
+Info:  Annotation #1 requires additional metadata.
   Enter the category: custom button
 WARNING: Category must be one of the following: Text, Textfield, Button, Icon, CheckBox, Other.
   Enter the category: button
-  Enter the label: custom button
   Enter the description: dummy button with dummy colors
-Annotation #2 requires additional metadata.
+Info:  Annotation #2 requires additional metadata.
   Enter the category: Text
-  Enter the label: login text
   Enter the description: a red login text with the text login 
-Processing data ...
-Finished preparation of data package for training
+Info:  Processing data ...
+Info:  Finished preparation of data package for training.                                                               
+Info:  Sending annotation to train endpoint ...
+Info:  Finished sending annotation to train endpoint.
 ```
 
 ## Help Output
@@ -51,14 +48,13 @@ SYNOPSIS
     
     
 SYNTAX
-    New-AskUIAnnotationsForTraining [-WorkspaceId <String>] [-Delay <Int32>] [-ConfigFile <String>] [<CommonParameters>]
+    New-AskUIAnnotationsForTraining [-WorkspaceId <String>] [-Token <String>] [-Delay <Int32>] [-Url <String>] [-ConfigFile <String>] [<CommonParameters>]
     
     
 DESCRIPTION
     Starts the Snipping Tool and allows the user to annotate the screen.
     The user will be asked to provide additional metadata for each annotation.
     the metadata includes:
-    - label: The label for each annotation.
     - category: The category for each annotation. Valid categories are: 'Text', 'Textfield', 'Button', 'Icon', 'CheckBox', 'Other'.
     - description: The description for each annotation.
     
@@ -67,8 +63,14 @@ PARAMETERS
     -WorkspaceId <String>
         (Optional) Workspace ID for the annotation.
         
+    -Token <String>
+        (Optional) Token for sending the annotation to the train endpoint.
+        
     -Delay <Int32>
         (Optional) Delay in seconds before the screen freezes. Default is 0.
+        
+    -Url <String>
+        (Optional) URL for the inference server. Default is https://inference.askui.com.
         
     -ConfigFile <String>
         *Experimental* (Optional) Absolute file path for the configuration to be loaded.
@@ -81,5 +83,12 @@ PARAMETERS
     
     -------------------------- EXAMPLE 1 --------------------------
     
-    ADE> AskUI-NewAnnotationsForTraining
+    ADE>AskUI-NewAnnotationsForTraining
+    
+    Creates a new annotation for training.
+
+REMARKS
+    To see the examples, type: "Get-Help New-AskUIAnnotationsForTraining -Examples"
+    For more information, type: "Get-Help New-AskUIAnnotationsForTraining -Detailed"
+    For technical information, type: "Get-Help New-AskUIAnnotationsForTraining -Full"
 ```
