@@ -9,10 +9,6 @@ title: AI Elements
   <source src="https://files.askui.com/assets/docs/askui-bytes-aiElement.mp4"/>
 </video>
 
-:::note
-Enable the *AskUI Development Environment* as described in [AskUI Development Environment](../../suite/02-Components/AskUI-Development-Environment.md) and then activate the experimental commands by running `AskUI-ImportExperimentalCommands` in your terminal.
-:::
-
 ## `AskUI-NewAIElement` Command
 `AskUI-NewAIElement` allows you to capture elements from your screen. You can use these elements later in AskUI workflows. Accepted parameters:
 
